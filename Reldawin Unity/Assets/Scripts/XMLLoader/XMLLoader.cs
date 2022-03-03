@@ -12,6 +12,43 @@ namespace LowCloud.Reldawin
         public static Dictionary<int, DEDoodad> doodadinfo = new Dictionary<int, DEDoodad>();
         public static Dictionary<int, IEItem> iteminfo = new Dictionary<int, IEItem>();
 
+        public static TETile GetTile( int key )
+        {
+            if ( tileinfo.ContainsKey( key ) )
+            {
+                return tileinfo[key];
+            }
+            else
+            {
+                Debug.LogError( key + " isn't in the XMLLoader tileinfo dictionary" );
+                return tileinfo[0];
+            }
+        }
+        public static DEDoodad GetDoodad( int key )
+        {
+            if ( doodadinfo.ContainsKey( key ) )
+            {
+                return doodadinfo[key];
+            }
+            else
+            {
+                Debug.LogError( key + " isn't in the XMLLoader doodadinfo dictionary" );
+                return doodadinfo[0];
+            }
+        }
+        public static IEItem GetItem( int key )
+        {
+            if ( iteminfo.ContainsKey( key ) )
+            {
+                return iteminfo[key];
+            }
+            else
+            {
+                Debug.LogError( key + " isn't in the XMLLoader iteminfo dictionary" );
+                return iteminfo[0];
+            }
+        }
+
         private static TETileList tileList;
         private static IEItemList itemList;
         private static DEDoodadList doodadList;
@@ -61,71 +98,5 @@ namespace LowCloud.Reldawin
             doodadList = serializer.Deserialize( stream ) as DEDoodadList;
             stream.Close();
         }
-    }
-
-    [XmlRoot( "DoodadSpawns" )]
-    public class Spawns
-    {
-        public int id { get; set; }
-        public double rate { get; set; }
-    }
-
-    [XmlRoot( "Tile" )]
-    public class TETile
-    {
-        public string name { get; set; }
-        public int id { get; set; }
-        public float minHeight { get; set; }
-        public float maxHeight { get; set; }
-        public int layerIndex { get; set; }
-
-        [XmlArray( "DoodadSpawnRatesOnTile" )]
-        public Spawns[] _doodadSpawnsAndProbabilities;
-    }
-
-    [XmlRoot( "Tiles" )]
-    public class TETileList
-    {
-        public List<TETile> list = new List<TETile>();
-    }
-
-    [Serializable, XmlRoot( "Item" )]
-    public class IEItem
-    {
-        public string name { get; set; }
-        public int id { get; set; }
-        public string itemSpriteFileName16x16 { get; set; }
-        public string itemSpriteFileName32x32 { get; set; }
-        public string itemSpriteOnFloorFileName { get; set; }
-        public string flavourText { get; set; }
-    }
-
-    [Serializable, XmlRoot( "Items" )]
-    public class IEItemList
-    {
-        public List<IEItem> list = new List<IEItem>();
-    }
-
-    [XmlRoot( "ItemYield" )]
-    public class Yield
-    {
-        public string id { get; set; }
-        public float rate { get; set; }
-    }
-
-    [XmlRoot( "Doodad" )]
-    public class DEDoodad
-    {
-        public string name { get; set; }
-        public int id { get; set; }
-
-        [XmlArray( "ItemYields" )]
-        public Yield[] _yieldProbabilities;
-    }
-
-    [XmlRoot( "Doodads" )]
-    public class DEDoodadList
-    {
-        public List<DEDoodad> list = new List<DEDoodad>();
     }
 }

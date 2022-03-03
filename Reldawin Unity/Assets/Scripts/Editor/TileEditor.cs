@@ -1,53 +1,23 @@
 using UnityEngine;
 using UnityEditor;
-using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
 
-[XmlRoot( "DoodadSpawns" )]
-public class Spawns
-{
-    public int id { get; set; } 
-    public int rate { get; set; }
-}
-
-[XmlRoot( "Tile" )]
-public class TETile
-{
-    public string name { get; set; }
-    public int id { get; set; }
-    public float minHeight { get; set; }
-    public float maxHeight { get; set; }
-    public int layerIndex { get; set; }
-
-    [XmlArray( "DoodadSpawnRatesOnTile" )]
-    public Spawns[] _doodadSpawnsAndProbabilities;
-}
-
-[XmlRoot( "Tiles" )]
-public class TETileList
-{
-    public List<TETile> list = new List<TETile>();
-}
-
 public class TileEditor : EditorWindow
 {
-    enum WindowState { Main, Create }
-    private const string ServerDir = "C:/Users/Retri/Documents/GitHub/ReldawinUnity2D/ReldawinServerMaster/ReldawinServerMaster/bin/Debug/";
-
-    //select tile to load
+    private enum WindowState { Main, Create }
     private WindowState windowState = WindowState.Main;
+    private const string ServerDir = "C:/Users/Retri/Documents/GitHub/Reldawin/ReldawinServerMaster/ReldawinServerMaster/bin/Debug/";
     private bool loaded = false;
     private static TETileList activeList;
+    private DEDoodadList doodadList;
     private int loadIndex = 0;
     private int y = 0;
     private int tempProbabilityOptionIndex = 0;
     private int tempProbabilitySpawnRate = 0;
-    string[] options = new string[] { "ShortGrass", "Pebble", "MorePebbles", "Fern", "Crater", "Tree", "Boulder" };
 
-
-    //active tile properties
+    //tile properties
     private string _tileName;
     private int _ID;
     private float _minHeight;
@@ -61,7 +31,6 @@ public class TileEditor : EditorWindow
         GetWindow( typeof( TileEditor ) );
     }
 
-    [System.Obsolete]
     private void OnGUI()
     {
         focusedWindow.minSize = new Vector2( 400, 100 );
@@ -80,7 +49,10 @@ public class TileEditor : EditorWindow
     public void MainWindow()
     {
         if ( !loaded )
+        {
             Load();
+            LoadDoodads();
+        }
 
         PaintLoadList();
 
@@ -127,7 +99,7 @@ public class TileEditor : EditorWindow
     {
         foreach ( Spawns prob in _probabilities )
         {
-            EditorGUI.LabelField( new Rect( 4, y, position.width - 12, 20 ), options[prob.id].ToString() + " (" + prob.id.ToString() + ")" );
+            EditorGUI.LabelField( new Rect( 4, y, position.width - 12, 20 ), doodadList.GetNames[prob.id].ToString() + " (" + prob.id.ToString() + ")" );
             EditorGUI.LabelField( new Rect( position.width / 2, y, position.width / 2, 20 ), prob.rate.ToString() + " %" ); 
             // we need a button to remove probabilities
             //if (GUILayout.Button("x")) { _probabilities.Remove(prob); return; }
@@ -147,11 +119,11 @@ public class TileEditor : EditorWindow
             new Rect( 4, y, position.width - 12, 20 ),
             "Doodad", 
             tempProbabilityOptionIndex, 
-            options ); y += 22;
+            doodadList.GetNames ); y += 22;
 
-        tempProbabilitySpawnRate = EditorGUI.IntSlider( new Rect( 4, y, position.width - 12, 20 ), "Spawnrate", tempProbabilitySpawnRate, 0, 1 ); y += 22;
+        tempProbabilitySpawnRate = EditorGUI.IntSlider( new Rect( 4, y, position.width - 12, 20 ), "Spawnrate", tempProbabilitySpawnRate, 0, 100 ); y += 22;
 
-        EditorGUI.BeginDisabledGroup( tempProbabilitySpawnRate == 0.0f );
+        EditorGUI.BeginDisabledGroup( tempProbabilitySpawnRate == 0 );
         GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ), "Dicks" ); y += 22;
         if ( GUILayout.Button( "Add probability" ) )
         {
@@ -210,14 +182,16 @@ public class TileEditor : EditorWindow
 
         if ( GUILayout.Button( string.Format( "Save [ {0} ]", _tileName ) ) )
         {
-            TETile newTile = new TETile();
+            TETile newTile = new TETile
+            {
 
-            newTile.id = _ID;
-            newTile.layerIndex = _layerIndex;
-            newTile.maxHeight = _maxHeight;
-            newTile.minHeight = _minHeight;
-            newTile.name = _tileName;
-            newTile._doodadSpawnsAndProbabilities = _probabilities.ToArray();
+                id = _ID,
+                layerIndex = _layerIndex,
+                maxHeight = _maxHeight,
+                minHeight = _minHeight,
+                name = _tileName,
+                _doodadSpawnsAndProbabilities = _probabilities.ToArray()
+            };
 
             if ( activeList != null )
             {
@@ -268,42 +242,54 @@ public class TileEditor : EditorWindow
 
     private void Save()
     {
-        try
-        {
-            XmlSerializer serializer = new XmlSerializer( typeof( TETileList ) );
-            FileStream stream = new FileStream( Application.streamingAssetsPath + "/tiles.xml", FileMode.Create );
-            serializer.Serialize( stream, activeList );
-            stream.Close();
+        XmlSerializer serializer = new XmlSerializer( typeof( TETileList ) );
+        FileStream stream = new FileStream( Application.streamingAssetsPath + "/tiles.xml", FileMode.Create );
+        serializer.Serialize( stream, activeList );
+        stream.Close();
 
-            //save to server
-            stream = new FileStream( ServerDir + "tiles.xml", FileMode.Create );
-            serializer.Serialize( stream, activeList );
-            stream.Close();
-        }
-        catch ( Exception e)
-        {
-            Debug.LogError( e.Message );
-        }
+        //save to server
+        stream = new FileStream( ServerDir + "tiles.xml", FileMode.Create );
+        serializer.Serialize( stream, activeList );
+        stream.Close();
     }
 
     private void Load()
     {
-        activeList = new TETileList();
+        loaded = true;
 
         try
         {
-            loaded = true;
             XmlSerializer serializer = new XmlSerializer( typeof( TETileList ) );
             FileStream stream = new FileStream( Application.streamingAssetsPath + "/tiles.xml", FileMode.Open );
             activeList = serializer.Deserialize( stream ) as TETileList;
             stream.Close();
         }
-        catch ( Exception e )
+        catch ( System.Exception e)
         {
-            Debug.LogWarning( e.Message );
+            Debug.LogWarning( "Could not open tiles.xml" );
         }
 
-        if(activeList == null )
+
+        if ( activeList == null )
             activeList = new TETileList();
+    }
+
+    private void LoadDoodads()
+    {
+        loaded = true;
+        try
+        {
+            XmlSerializer serializer = new XmlSerializer( typeof( DEDoodadList ) );
+        FileStream stream = new FileStream( Application.streamingAssetsPath + "/doodads.xml", FileMode.Open );
+        doodadList = serializer.Deserialize( stream ) as DEDoodadList;
+        stream.Close();
+        }
+        catch ( System.Exception e )
+        {
+            Debug.LogWarning( "Could not open doodads.xml" );
+        }
+
+        if ( doodadList == null )
+            doodadList = new DEDoodadList();
     }
 }

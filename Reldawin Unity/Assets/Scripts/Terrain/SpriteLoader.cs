@@ -17,34 +17,6 @@ namespace LowCloud.Reldawin
                 return tileUVMap["Empty"];
             }
         }
-        public static Vector2[] GetVoid
-        {
-            get
-            {
-                return tileUVMap["Void"];
-            }
-        }
-        public static Vector2[] GetGrass
-        {
-            get
-            {
-                return GetTile( "Grass_" + Random.Range( 1, 5 ) );
-            }
-        }
-        public static Vector2[] GetDirt
-        {
-            get
-            {
-                return GetTile( "Dirt_" + Random.Range( 1, 5 ) );
-            }
-        }
-        public static Vector2[] GetSand
-        {
-            get
-            {
-                return tileUVMap["Sand_1"];
-            }
-        }
 
         /// Width and Height specify the dimensions of Template2.png
         public static void Setup( int spriteMapWidth, int spriteMapHeight )
@@ -111,9 +83,9 @@ namespace LowCloud.Reldawin
                 return GetEmpty;
 
             if ( neighbours == null )
-                return GetTile( XMLLoader.tileinfo[type].name + "_" + Random.Range( 1, 5 ) );
+                return GetTile( XMLLoader.GetTile(type).name + "_" + Random.Range( 1, 5 ) );
 
-            string key = XMLLoader.tileinfo[type].name + "_" + quadrant.ToString();
+            string key = XMLLoader.GetTile(type).name + "_" + quadrant.ToString();
 
             switch ( quadrant )
             {
@@ -234,6 +206,32 @@ namespace LowCloud.Reldawin
             {
                 Debug.LogError( key + " isn't in the tileUVMap dictionary" );
                 return tileUVMap["Void"];
+            }
+        }
+
+        public static Sprite GetDoodad( string key )
+        {
+            if ( doodadDictionary.ContainsKey( key ) )
+            {
+                return doodadDictionary[key];
+            }
+            else
+            {
+                Debug.LogError( key + " isn't in the SpriteLoader Doodad Dictionary" );
+                return doodadDictionary["Empty"];
+            }
+        }
+
+        public static Sprite GetItem( string key )
+        {
+            if ( itemDictionary.ContainsKey( key ) )
+            {
+                return itemDictionary[key];
+            }
+            else
+            {
+                Debug.LogError( key + " isn't in the SpriteLoader Item Dictionary" );
+                return itemDictionary["FlintKnife"];
             }
         }
     }

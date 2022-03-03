@@ -1,47 +1,19 @@
 using UnityEngine;
 using UnityEditor;
-using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
 
 public class DoodadEditor : EditorWindow
 {
-    [XmlRoot( "ItemYield" )]
-    public class Yield
-    {
-        // yield id is in binary because the yield is an item
-        public int id { get; set; }
-        public int rate { get; set; }
-    }
-
-    [XmlRoot( "Doodad" )]
-    public class DEDoodad
-    {
-        public string name { get; set; }
-        public int id { get; set; }
-
-        [XmlArray( "ItemYields" )]
-        public Yield[] _doodadSpawnsAndProbabilities;
-    }
-
-    [XmlRoot( "Doodads" )]
-    public class DEDoodadList
-    {
-        public List<DEDoodad> list = new List<DEDoodad>();
-    }
-
-    enum WindowState { Main, Create }
-
-    //select tile to load
+    private enum WindowState { Main, Create }
     private WindowState windowState = WindowState.Main;
-    private const string ServerDir = "C:/Users/Retri/Documents/GitHub/ReldawinUnity2D/ReldawinServerMaster/ReldawinServerMaster/bin/Debug/";
+    private const string ServerDir = "C:/Users/Retri/Documents/GitHub/Reldawin/ReldawinServerMaster/ReldawinServerMaster/bin/Debug/";
     private static DEDoodadList activeList;
-    private static ItemEditor.IEItemList itemList;
+    private static IEItemList itemList;
     private bool loaded = false;
     private int loadIndex = 0;
     private int y = 0;
-    private string[] options;
 
     //doodad properties
     private string _doodadName = string.Empty;
@@ -57,7 +29,6 @@ public class DoodadEditor : EditorWindow
         GetWindow( typeof( DoodadEditor ) );
     }
 
-    [System.Obsolete]
     private void OnGUI()
     {
         focusedWindow.minSize = new Vector2( 400, 100 );
@@ -94,7 +65,7 @@ public class DoodadEditor : EditorWindow
 
             _doodadName = activeList.list[loadIndex].name;
             _ID = activeList.list[loadIndex].id;
-            yieldRates = new List<Yield>( activeList.list[loadIndex]._doodadSpawnsAndProbabilities );
+            yieldRates = new List<Yield>( activeList.list[loadIndex]._yieldProbabilities );
 
             return;
         }
@@ -107,7 +78,8 @@ public class DoodadEditor : EditorWindow
         PaintTileName();
         PaintID();
         PaintHorizontalLine();
-        ResourceYieldProbability();
+        if(itemList.GetNames.Length > 0)
+            ResourceYieldProbability();
         PaintHorizontalLine();
         PaintProbabilities();
 
@@ -159,11 +131,12 @@ public class DoodadEditor : EditorWindow
 
         if ( GUILayout.Button( string.Format( "Save [ {0} ]", _doodadName ) ) )
         {
-            DEDoodad newDoodad = new DEDoodad();
-
-            newDoodad.id = _ID;
-            newDoodad.name = _doodadName;
-            newDoodad._doodadSpawnsAndProbabilities = yieldRates.ToArray();
+            DEDoodad newDoodad = new DEDoodad
+            {
+                id = _ID,
+                name = _doodadName,
+                _yieldProbabilities = yieldRates.ToArray()
+            };
 
             if ( activeList != null )
             {
@@ -178,7 +151,6 @@ public class DoodadEditor : EditorWindow
                         activeList.list.Remove( doodadInList );
                         activeList.list.Add( newDoodad );
                     }
-
                 }
             }
 
@@ -224,8 +196,6 @@ public class DoodadEditor : EditorWindow
 
     private void Load()
     {
-        activeList = new DEDoodadList();
-
         try
         {
             loaded = true;
@@ -234,9 +204,9 @@ public class DoodadEditor : EditorWindow
             activeList = serializer.Deserialize( stream ) as DEDoodadList;
             stream.Close();
         }
-        catch ( Exception e )
+        catch ( System.Exception e )
         {
-            Debug.LogWarning( e.Message );
+            Debug.LogWarning( "Could not open doodads.xml" );
         }
 
         if ( activeList == null )
@@ -245,30 +215,33 @@ public class DoodadEditor : EditorWindow
 
     private void LoadItems()
     {
-        loaded = true;
-        XmlSerializer serializer = new XmlSerializer( typeof( ItemEditor.IEItemList ) );
-        FileStream stream = new FileStream( Application.streamingAssetsPath + "/items.xml", FileMode.Open );
-        itemList = serializer.Deserialize( stream ) as ItemEditor.IEItemList;
-        stream.Close();
+        try
+        {
+            loaded = true;
+            XmlSerializer serializer = new XmlSerializer( typeof( IEItemList ) );
+            FileStream stream = new FileStream( Application.streamingAssetsPath + "/items.xml", FileMode.Open );
+            itemList = serializer.Deserialize( stream ) as IEItemList;
+            stream.Close();
+        }
+        catch ( System.Exception e )
+        {
+            Debug.LogWarning( "Could not open items.xml" );
+        }
+
+        if ( itemList == null )
+            itemList = new IEItemList();
     }
 
     private void Save()
     {
-        try
-        {
-            XmlSerializer serializer = new XmlSerializer( typeof( DEDoodadList ) );
-            FileStream stream = new FileStream( Application.streamingAssetsPath + "/doodads.xml", FileMode.Create );
-            serializer.Serialize( stream, activeList );
-            stream.Close();
+        XmlSerializer serializer = new XmlSerializer( typeof( DEDoodadList ) );
+        FileStream stream = new FileStream( Application.streamingAssetsPath + "/doodads.xml", FileMode.Create );
+        serializer.Serialize( stream, activeList );
+        stream.Close();
 
-            //save to server
-            stream = new FileStream( ServerDir + "doodads.xml", FileMode.Create );
-            serializer.Serialize( stream, activeList );
-            stream.Close();
-        }
-        catch ( Exception e )
-        {
-            Debug.LogError( e.Message );
-        }
+        //save to server
+        stream = new FileStream( ServerDir + "doodads.xml", FileMode.Create );
+        serializer.Serialize( stream, activeList );
+        stream.Close();
     }
 }

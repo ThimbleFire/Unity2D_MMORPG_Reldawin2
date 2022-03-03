@@ -50,7 +50,7 @@ namespace LowCloud.Reldawin
 
         }
 
-        private void Chunk_OnChunkDestroyed( List<Doodad> doodadsToRecycle )
+        private void Chunk_OnChunkDestroyed( Vector2Int chunkIndex, List<Doodad> doodadsToRecycle )
         {
             foreach ( Doodad doodad in doodadsToRecycle )
             {
