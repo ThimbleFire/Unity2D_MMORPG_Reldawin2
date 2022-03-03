@@ -27,7 +27,7 @@
       <name>Shallow_Water</name>
       <id>5</id>
       <minHeight>0</minHeight>
-      <maxHeight>5</maxHeight>
+      <maxHeight>0.05</maxHeight>
       <layerIndex>1</layerIndex>
     </TETile>
     <TETile>
