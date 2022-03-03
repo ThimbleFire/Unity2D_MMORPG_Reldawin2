@@ -190,7 +190,7 @@ namespace LowCloud.Reldawin
                 doodad.gameObject.SetActive(false);
             }            
             
-            OnChunkDestroyed?.Invoke( activeDoodads );
+            OnChunkDestroyed?.Invoke( ChunkIndex, activeDoodads );
             activeDoodads.Clear();
         }
 
@@ -202,7 +202,7 @@ namespace LowCloud.Reldawin
 
         public delegate void ClickAction( Vector2Int cellClicked, Vector2 pointClicked );
 
-        public delegate void ChunkDestroyImminent( List<Doodad> doodadsToRecycle );
+        public delegate void ChunkDestroyImminent( Vector2Int chunkIndex, List<Doodad> doodads );
 
         private Mesh Mesh
         {

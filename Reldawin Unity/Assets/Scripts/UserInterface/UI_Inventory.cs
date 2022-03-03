@@ -31,8 +31,8 @@ public class UI_Inventory : MonoBehaviour, IHasChanged
     {
         gameObject.SetActive( !gameObject.activeSelf );
 
-        btn.image.sprite = gameObject.activeSelf ? LowCloud.Reldawin.SpriteLoader.doodadDictionary["btnPressed"] :
-                                                   LowCloud.Reldawin.SpriteLoader.doodadDictionary["btnNotPressed"];
+        btn.image.sprite = gameObject.activeSelf ? LowCloud.Reldawin.SpriteLoader.GetDoodad("btnPressed") :
+                                                   LowCloud.Reldawin.SpriteLoader.GetDoodad( "btnNotPressed");
     }
 }
 

@@ -18,7 +18,7 @@
       <flavourText />
     </IEItem>
     <IEItem>
-      <name>Rock</name>
+      <name>Stone</name>
       <id>2</id>
       <itemSpriteFileName16x16>items_16x16_2</itemSpriteFileName16x16>
       <itemSpriteFileName32x32>items_32x32_2</itemSpriteFileName32x32>

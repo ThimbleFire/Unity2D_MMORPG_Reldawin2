@@ -2,20 +2,15 @@
 <Tiles xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <list>
     <TETile>
-      <DoodadSpawnRatesOnTile>
-        <Spawns>
-          <id>4</id>
-          <rate>33</rate>
-        </Spawns>
-        <Spawns>
-          <id>1</id>
-          <rate>33</rate>
-        </Spawns>
-        <Spawns>
-          <id>2</id>
-          <rate>34</rate>
-        </Spawns>
-      </DoodadSpawnRatesOnTile>
+      <DoodadSpawnRatesOnTile />
+      <name>Dirt</name>
+      <id>3</id>
+      <minHeight>0.125</minHeight>
+      <maxHeight>0.175</maxHeight>
+      <layerIndex>4</layerIndex>
+    </TETile>
+    <TETile>
+      <DoodadSpawnRatesOnTile />
       <name>Sand</name>
       <id>4</id>
       <minHeight>0.05</minHeight>
@@ -31,66 +26,45 @@
       <layerIndex>1</layerIndex>
     </TETile>
     <TETile>
-      <DoodadSpawnRatesOnTile>
-        <Spawns>
-          <id>1</id>
-          <rate>25</rate>
-        </Spawns>
-        <Spawns>
-          <id>2</id>
-          <rate>25</rate>
-        </Spawns>
-        <Spawns>
-          <id>5</id>
-          <rate>10</rate>
-        </Spawns>
-        <Spawns>
-          <id>6</id>
-          <rate>40</rate>
-        </Spawns>
-      </DoodadSpawnRatesOnTile>
-      <name>Dirt</name>
-      <id>3</id>
-      <minHeight>0.125</minHeight>
-      <maxHeight>0.175</maxHeight>
-      <layerIndex>4</layerIndex>
-    </TETile>
-    <TETile>
       <DoodadSpawnRatesOnTile />
       <name>Empty</name>
       <id>0</id>
-      <minHeight>0</minHeight>
-      <maxHeight>0</maxHeight>
+      <minHeight>1</minHeight>
+      <maxHeight>1</maxHeight>
       <layerIndex>0</layerIndex>
     </TETile>
     <TETile>
       <DoodadSpawnRatesOnTile />
       <name>Void</name>
       <id>1</id>
-      <minHeight>0</minHeight>
-      <maxHeight>0</maxHeight>
+      <minHeight>1</minHeight>
+      <maxHeight>1</maxHeight>
       <layerIndex>0</layerIndex>
     </TETile>
     <TETile>
       <DoodadSpawnRatesOnTile>
         <Spawns>
           <id>5</id>
-          <rate>70</rate>
+          <rate>50</rate>
+        </Spawns>
+        <Spawns>
+          <id>3</id>
+          <rate>15</rate>
         </Spawns>
         <Spawns>
           <id>0</id>
           <rate>15</rate>
         </Spawns>
         <Spawns>
-          <id>1</id>
-          <rate>5</rate>
+          <id>6</id>
+          <rate>10</rate>
         </Spawns>
         <Spawns>
           <id>2</id>
           <rate>5</rate>
         </Spawns>
         <Spawns>
-          <id>3</id>
+          <id>1</id>
           <rate>5</rate>
         </Spawns>
       </DoodadSpawnRatesOnTile>

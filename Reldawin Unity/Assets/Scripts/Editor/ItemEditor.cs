@@ -1,68 +1,28 @@
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.UIElements;
-using System;
 using System.Xml.Serialization;
 using System.IO;
-using System.Collections.Generic;
 
 public class ItemEditor : EditorWindow
 {
-    [Serializable, XmlRoot( "Item" )]
-    public class IEItem
-    {
-        public string name { get; set; }
-        public int id { get; set; }
-        public string itemSpriteFileName16x16 { get; set; }
-        public string itemSpriteFileName32x32 { get; set; }
-        public string itemSpriteOnFloorFileName { get; set; }
-        public string flavourText { get; set; }
-    }
-
-    [Serializable, XmlRoot( "Items" )]
-    public class IEItemList
-    {
-        public List<IEItem> list = new List<IEItem>();
-
-        public string[] GetNames
-        {
-            get
-            {
-                string[] names = new string[list.Count];
-
-                for ( int i = 0; i < list.Count; i++ )
-                {
-                    names[i] = list[i].name;
-                }
-
-                return names;
-            }
-        }
-    }
-
-    enum WindowState { Main, Create }
-
-    //select item to load
+    private enum WindowState { Main, Create }
     private WindowState windowState = WindowState.Main;
     private const byte BaseTwo = 2;
-    int loadIndex = 0;
-    bool loaded = false; int y = 0;
-
-    private const string ServerDir = "C:/Users/Retri/Documents/GitHub/ReldawinUnity2D/ReldawinServerMaster/ReldawinServerMaster/bin/Debug/";
-
+    private int loadIndex = 0;
+    private bool loaded = false; int y = 0;
+    private static IEItemList activeList;
+    private const string ServerDir = "C:/Users/Retri/Documents/GitHub/Reldawin/ReldawinServerMaster/ReldawinServerMaster/bin/Debug/";
 
     //item properties
-    string _itemName = string.Empty;
-    string _itemSpriteFileName16x16 = string.Empty;
-    string _itemSpriteFileName32x32 = string.Empty;
-    string _itemSpriteOnFloorFileName = string.Empty;
-    Sprite _sprite16;
-    Sprite _sprite32;
-    Sprite _spriteOnFloor;
-    string _flavourText;
-    int _ID;
-
-    static IEItemList activeList;
+    private string _itemName = string.Empty;
+    private string _itemSpriteFileName16x16 = string.Empty;
+    private string _itemSpriteFileName32x32 = string.Empty;
+    private string _itemSpriteOnFloorFileName = string.Empty;
+    private Sprite _sprite16;
+    private Sprite _sprite32;
+    private Sprite _spriteOnFloor;
+    private string _flavourText;
+    private int _ID;
 
     [MenuItem( "Window/Item Editor" )]
 
@@ -72,7 +32,6 @@ public class ItemEditor : EditorWindow
         GetWindow( typeof( ItemEditor ) );
     }
 
-    [System.Obsolete]
     private void OnGUI()
     {
         focusedWindow.minSize = new Vector2( 400, 100 );
@@ -80,7 +39,7 @@ public class ItemEditor : EditorWindow
         switch ( windowState )
         {
             case WindowState.Main:
-                Main();
+                MainWindow();
                 break;
             case WindowState.Create:
                 Create();
@@ -88,7 +47,7 @@ public class ItemEditor : EditorWindow
         }
     }
 
-    private void Main()
+    private void MainWindow()
     {
         if ( !loaded )
             Load();
@@ -159,7 +118,6 @@ public class ItemEditor : EditorWindow
         loadIndex = EditorGUI.Popup( new Rect( 4, 42, position.width - 8, 20 ), loadIndex, options );
     }
 
-    [System.Obsolete]
     private void Create()
     {
         y = 4;
@@ -184,7 +142,7 @@ public class ItemEditor : EditorWindow
 
     private Sprite PaintSpriteField(Sprite sprite, ref string fileName)
     {
-        sprite = (Sprite)EditorGUI.ObjectField( new Rect( 4, y, 64, 64 ), sprite, typeof( Sprite ) );
+        sprite = (Sprite)EditorGUI.ObjectField( new Rect( 4, y, 64, 64 ), sprite, typeof( Sprite ), false );
 
         if ( sprite != null )
         {
@@ -214,14 +172,15 @@ public class ItemEditor : EditorWindow
         GUILayout.BeginArea( new Rect( 32, position.height - 70, position.width - 70, 20 ) );
         if ( GUILayout.Button( string.Format( "Save [ {0} ]", _itemName ) ) )
         {
-            IEItem newItem = new IEItem();
-
-            newItem.id = this._ID;
-            newItem.flavourText = this._flavourText;
-            newItem.name = this._itemName;
-            newItem.itemSpriteFileName16x16 = this._itemSpriteFileName16x16;
-            newItem.itemSpriteFileName32x32 = this._itemSpriteFileName32x32;
-            newItem.itemSpriteOnFloorFileName = this._itemSpriteOnFloorFileName;
+            IEItem newItem = new IEItem
+            {
+                id = _ID,
+                flavourText = _flavourText,
+                name = _itemName,
+                itemSpriteFileName16x16 = _itemSpriteFileName16x16,
+                itemSpriteFileName32x32 = _itemSpriteFileName32x32,
+                itemSpriteOnFloorFileName = _itemSpriteOnFloorFileName,
+            };
 
             if ( activeList != null )
             {
@@ -271,10 +230,20 @@ public class ItemEditor : EditorWindow
 
     public void Load()
     {
-        loaded = true;
-        XmlSerializer serializer = new XmlSerializer( typeof( IEItemList ) );
-        FileStream stream = new FileStream( Application.streamingAssetsPath + "/items.xml", FileMode.Open );
-        activeList = serializer.Deserialize( stream ) as IEItemList;
-        stream.Close();
+        try
+        {
+            loaded = true;
+            XmlSerializer serializer = new XmlSerializer( typeof( IEItemList ) );
+            FileStream stream = new FileStream( Application.streamingAssetsPath + "/items.xml", FileMode.Open );
+            activeList = serializer.Deserialize( stream ) as IEItemList;
+            stream.Close();
+        }
+        catch ( System.Exception e )
+        {
+            Debug.LogWarning( "Could not open items.xml" );
+        }
+
+        if ( activeList == null )
+            activeList = new IEItemList();
     }
 }

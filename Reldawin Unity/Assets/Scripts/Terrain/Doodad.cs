@@ -37,7 +37,7 @@ namespace LowCloud.Reldawin
             transform.position = MyMath.CellToIsometric( d.tilePositionInWorld ) + Vector2.right * Tile.WorldSpaceHalfWidth;
 
             // setup sprite
-            renderer.sprite = SpriteLoader.doodadDictionary[XMLLoader.doodadinfo[data.type].name];
+            renderer.sprite = SpriteLoader.GetDoodad(XMLLoader.GetDoodad(data.type).name);
 
             // setup collision size
             Vector2 colliderSize = renderer.sprite.bounds.size;

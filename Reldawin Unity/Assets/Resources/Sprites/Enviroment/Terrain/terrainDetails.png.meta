@@ -25,7 +25,7 @@ TextureImporter:
     second: Boulder
   - first:
       213: 5243997224379663064
-    second: terrainDetails_7
+    second: Empty
   - first:
       213: -9178891151248309224
     second: terrainDetails_8
@@ -276,7 +276,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -284,6 +284,27 @@ TextureImporter:
       bones: []
       spriteID: 3d3c3f71af7a1e090800000000000000
       internalID: -8006933969902517293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Empty
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 330
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2c84211bb66c840800000000000000
+      internalID: 5243997224379663064
       vertices: []
       indices: 
       edges: []

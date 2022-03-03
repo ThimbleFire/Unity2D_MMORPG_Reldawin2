@@ -54,15 +54,15 @@ namespace LowCloud.Reldawin
             Chunk.OnChunkDestroyed += Chunk_OnChunkDestroyed;
         }
 
-        private void Chunk_OnChunkDestroyed( List<Doodad> doodads )
+        private void Chunk_OnChunkDestroyed( Vector2Int chunkIndex, List<Doodad> doodads )
         {
-            bool result = chunkLookup.TryGetValue( doodads[0].data.chunkIndex, out Chunk data );
+            bool result = chunkLookup.TryGetValue( chunkIndex, out Chunk data );
 
             if ( result )
             {
                 inactiveChunks.Add( data );
                 activeChunks.Remove( data );
-                chunkLookup.Remove( doodads[0].data.chunkIndex );
+                chunkLookup.Remove( chunkIndex );
             }
         }
 

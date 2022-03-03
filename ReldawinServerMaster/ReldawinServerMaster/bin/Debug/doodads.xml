@@ -4,46 +4,6 @@
     <DEDoodad>
       <ItemYields>
         <Yield>
-          <id>3</id>
-          <rate>25</rate>
-        </Yield>
-      </ItemYields>
-      <name>Pebble</name>
-      <id>1</id>
-    </DEDoodad>
-    <DEDoodad>
-      <ItemYields>
-        <Yield>
-          <id>3</id>
-          <rate>33</rate>
-        </Yield>
-      </ItemYields>
-      <name>MorePebbles</name>
-      <id>2</id>
-    </DEDoodad>
-    <DEDoodad>
-      <ItemYields>
-        <Yield>
-          <id>1</id>
-          <rate>25</rate>
-        </Yield>
-      </ItemYields>
-      <name>Fern</name>
-      <id>3</id>
-    </DEDoodad>
-    <DEDoodad>
-      <ItemYields>
-        <Yield>
-          <id>0</id>
-          <rate>20</rate>
-        </Yield>
-      </ItemYields>
-      <name>Tree</name>
-      <id>5</id>
-    </DEDoodad>
-    <DEDoodad>
-      <ItemYields>
-        <Yield>
           <id>1</id>
           <rate>50</rate>
         </Yield>
@@ -54,12 +14,57 @@
     <DEDoodad>
       <ItemYields>
         <Yield>
+          <id>1</id>
+          <rate>50</rate>
+        </Yield>
+      </ItemYields>
+      <name>Fern</name>
+      <id>3</id>
+    </DEDoodad>
+    <DEDoodad>
+      <ItemYields />
+      <name>Crater</name>
+      <id>4</id>
+    </DEDoodad>
+    <DEDoodad>
+      <ItemYields>
+        <Yield>
+          <id>0</id>
+          <rate>50</rate>
+        </Yield>
+      </ItemYields>
+      <name>Tree</name>
+      <id>5</id>
+    </DEDoodad>
+    <DEDoodad>
+      <ItemYields>
+        <Yield>
           <id>2</id>
-          <rate>33</rate>
+          <rate>50</rate>
         </Yield>
       </ItemYields>
       <name>Boulder</name>
-      <id>4</id>
+      <id>6</id>
+    </DEDoodad>
+    <DEDoodad>
+      <ItemYields>
+        <Yield>
+          <id>3</id>
+          <rate>50</rate>
+        </Yield>
+      </ItemYields>
+      <name>Pebble</name>
+      <id>1</id>
+    </DEDoodad>
+    <DEDoodad>
+      <ItemYields>
+        <Yield>
+          <id>3</id>
+          <rate>50</rate>
+        </Yield>
+      </ItemYields>
+      <name>MorePebbles</name>
+      <id>2</id>
     </DEDoodad>
   </list>
 </Doodads>
