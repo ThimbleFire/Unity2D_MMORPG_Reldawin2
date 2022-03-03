@@ -238,7 +238,7 @@ public class ItemEditor : EditorWindow
             activeList = serializer.Deserialize( stream ) as IEItemList;
             stream.Close();
         }
-        catch ( System.Exception e )
+        catch
         {
             Debug.LogWarning( "Could not open items.xml" );
         }

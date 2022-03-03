@@ -204,7 +204,7 @@ public class DoodadEditor : EditorWindow
             activeList = serializer.Deserialize( stream ) as DEDoodadList;
             stream.Close();
         }
-        catch ( System.Exception e )
+        catch
         {
             Debug.LogWarning( "Could not open doodads.xml" );
         }
@@ -223,7 +223,7 @@ public class DoodadEditor : EditorWindow
             itemList = serializer.Deserialize( stream ) as IEItemList;
             stream.Close();
         }
-        catch ( System.Exception e )
+        catch
         {
             Debug.LogWarning( "Could not open items.xml" );
         }

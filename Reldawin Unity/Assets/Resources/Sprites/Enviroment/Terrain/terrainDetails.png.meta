@@ -19,7 +19,7 @@ TextureImporter:
     second: Crater
   - first:
       213: 3366047580871111500
-    second: Tree
+    second: Tree2
   - first:
       213: -8006933969902517293
     second: Boulder
@@ -28,7 +28,7 @@ TextureImporter:
     second: Empty
   - first:
       213: -9178891151248309224
-    second: terrainDetails_8
+    second: Tree
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -247,15 +247,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree
+      name: Tree2
       rect:
         serializedVersion: 2
-        x: 78
+        x: 77
         y: 457
-        width: 30
+        width: 32
         height: 55
       alignment: 9
-      pivot: {x: 0.5, y: 0.05}
+      pivot: {x: 0.5, y: 0.07272727}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,7 +297,7 @@ TextureImporter:
         width: 28
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -305,6 +305,27 @@ TextureImporter:
       bones: []
       spriteID: 8d2c84211bb66c840800000000000000
       internalID: 5243997224379663064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 50
+        height: 95
+      alignment: 9
+      pivot: {x: 0.5, y: 0.10526316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8144ed931270e9080800000000000000
+      internalID: -9178891151248309224
       vertices: []
       indices: 
       edges: []

@@ -131,7 +131,7 @@ namespace ReldawinServerMaster
                 World.Seed = setseed;
                 Console.WriteLine( "\n[Program] Operation TRUE" );
             }
-            catch ( Exception ) { Console.WriteLine( "\n[Program] Operation FALSE. \nsetseed takes 1 parameter type <int>." ); }
+            catch { Console.WriteLine( "\n[Program] Operation FALSE. \nsetseed takes 1 parameter type <int>." ); }
         }
 
         private static void CommandSetHeight( int length, string input )
@@ -143,7 +143,7 @@ namespace ReldawinServerMaster
                 World.Height = setheight;
                 Console.WriteLine( "\n[Program] Operation TRUE" );
             }
-            catch ( Exception ) { Console.WriteLine( "\n[Program] Operation FALSE. \nsetheight takes 1 parameter type <int>." ); }
+            catch { Console.WriteLine( "\n[Program] Operation FALSE. \nsetheight takes 1 parameter type <int>." ); }
         }
 
         private static void CommandSetWidth( int length, string input )
@@ -155,7 +155,7 @@ namespace ReldawinServerMaster
                 World.Width = setwidth;
                 Console.WriteLine( "\n[Program] Operation TRUE" );
             }
-            catch ( Exception ) { Console.WriteLine( "\n[Program] Operation FALSE. \nsetwidth takes 1 parameter type <int>." ); }
+            catch { Console.WriteLine( "\n[Program] Operation FALSE. \nsetwidth takes 1 parameter type <int>." ); }
         }
 
         private static void PrintHelp()

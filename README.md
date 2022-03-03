@@ -5,12 +5,9 @@ Reldawin is a multiplayer 2d isometric RPG. The player character starts in a wil
 
 ## TODO List
 
-- [x] [Change] Remove dependency on enumerable lists for items, doodads and tiles
-- [x] [Add] Woodcutting animation
+- [ ] [Fix] Moving items in the inventory.
 - [ ] [Add] Doodad destruction  
 - [ ] [Add] Mining animation 
-- [x] [Add] Gathering animation (kneeling)
-- [x] [Add] Add item to inventory
 - [ ] [Add] Item database
 - [ ] [Add] Chat window
 - [ ] [Add] Drop item from inventory
@@ -20,4 +17,5 @@ Reldawin is a multiplayer 2d isometric RPG. The player character starts in a wil
 - [ ] [Add] Doodad decay (yes, including trees which will grow, die and spread naturally over time)
 
 ## Bugs to squash
-Sometimes when you move away from doodads while interacting the interaction animation persists. Cause unknown.
+- Sometimes when you move away from doodads while interacting the interaction animation persists.
+- Water tiles below a certain height are using ["EMPTY"] tile type. Not sure why because water uses heights 0.0d to 0.05d

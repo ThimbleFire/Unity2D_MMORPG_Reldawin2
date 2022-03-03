@@ -264,7 +264,7 @@ public class TileEditor : EditorWindow
             activeList = serializer.Deserialize( stream ) as TETileList;
             stream.Close();
         }
-        catch ( System.Exception e)
+        catch
         {
             Debug.LogWarning( "Could not open tiles.xml" );
         }
@@ -284,7 +284,7 @@ public class TileEditor : EditorWindow
         doodadList = serializer.Deserialize( stream ) as DEDoodadList;
         stream.Close();
         }
-        catch ( System.Exception e )
+        catch
         {
             Debug.LogWarning( "Could not open doodads.xml" );
         }
