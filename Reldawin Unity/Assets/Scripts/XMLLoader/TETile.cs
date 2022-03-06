@@ -10,6 +10,6 @@ public class TETile
     public float maxHeight { get; set; }
     public int layerIndex { get; set; }
 
-    [XmlArray( "DoodadSpawnRatesOnTile" )]
-    public Spawns[] _doodadSpawnsAndProbabilities;
+    [XmlArray( "Droprates" )]
+    public Droprate[] droprates;
 }
