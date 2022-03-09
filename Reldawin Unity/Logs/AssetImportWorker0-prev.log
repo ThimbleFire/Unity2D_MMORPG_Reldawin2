@@ -15,11 +15,11 @@ C:/Users/Retri/Documents/GitHub/Reldawin/Reldawin Unity
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54087
+49509
 Successfully changed project path to: C:/Users/Retri/Documents/GitHub/Reldawin/Reldawin Unity
 C:/Users/Retri/Documents/GitHub/Reldawin/Reldawin Unity
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 18.01 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 17.30 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.2f1 (e5d502d80fbb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.2f1/Editor/Data/Resources/UnitySubsystems
@@ -35,1073 +35,121 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.2f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56720
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56248
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001900 seconds.
+Registered in 0.001762 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 26.34 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 17.20 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.241 seconds
+- Completed reload, in  2.329 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000641 seconds.
+Registered in 0.000498 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.673 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 621 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.5 MB.
+System memory in use after: 62.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1105.
+Total: 1.547900 ms (FindLiveObjects: 0.134300 ms CreateObjectMapping: 0.020100 ms MarkObjects: 1.376700 ms  DeleteObjects: 0.015900 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/StreamingAssets/tiles.xml
+  artifactKey: Guid(7ac52b4ac49a2fc49abeb179e697f11e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/StreamingAssets/tiles.xml using Guid(7ac52b4ac49a2fc49abeb179e697f11e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd01f7c1c2c5307c3a89004c4ebb594a') in 0.034343 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000468 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.643 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 614 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1108.
+Total: 1.494200 ms (FindLiveObjects: 0.117800 ms CreateObjectMapping: 0.015200 ms MarkObjects: 1.348900 ms  DeleteObjects: 0.011200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000546 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.628 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.16 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 614 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.2 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1111.
+Total: 1.467800 ms (FindLiveObjects: 0.106800 ms CreateObjectMapping: 0.015600 ms MarkObjects: 1.334000 ms  DeleteObjects: 0.010600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000481 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.633 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 614 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
+System memory in use after: 62.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1114.
+Total: 2.041400 ms (FindLiveObjects: 0.156800 ms CreateObjectMapping: 0.019900 ms MarkObjects: 1.850700 ms  DeleteObjects: 0.012900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000557 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.712 seconds
+- Completed reload, in  0.723 seconds
 Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.21 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 622 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 62.3 MB.
+Unloading 614 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 62.2 MB.
 System memory in use after: 62.3 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1105.
-Total: 1.687500 ms (FindLiveObjects: 0.132600 ms CreateObjectMapping: 0.019100 ms MarkObjects: 1.517300 ms  DeleteObjects: 0.017000 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1117.
+Total: 1.427000 ms (FindLiveObjects: 0.112000 ms CreateObjectMapping: 0.014500 ms MarkObjects: 1.289000 ms  DeleteObjects: 0.010700 ms)
 
-========================================================================
-Received Import Request.
-  path: Assets/Scripts/Terrain/World.cs
-  artifactKey: Guid(7d7f63f0f919d4a46bde23e8dd9aa7c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Terrain/World.cs using Guid(7d7f63f0f919d4a46bde23e8dd9aa7c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79351799dc1757bb6e80702e0dc6d125') in 0.020450 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000567 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.659 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 62.0 MB.
-System memory in use after: 62.0 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1108.
-Total: 1.576100 ms (FindLiveObjects: 0.123500 ms CreateObjectMapping: 0.014500 ms MarkObjects: 1.423600 ms  DeleteObjects: 0.013200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000639 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.669 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 62.0 MB.
-System memory in use after: 62.0 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1111.
-Total: 1.793700 ms (FindLiveObjects: 0.110800 ms CreateObjectMapping: 0.015500 ms MarkObjects: 1.650700 ms  DeleteObjects: 0.015500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 893.749417 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/terrainDetails.png
-  artifactKey: Guid(3e2d7ce185de6314fa59db30e8711d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/terrainDetails.png using Guid(3e2d7ce185de6314fa59db30e8711d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '861346ec1376848b52594600af39b656') in 0.091575 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000495 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.643 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 616 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 66.4 MB.
-System memory in use after: 66.4 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1142.
-Total: 1.470100 ms (FindLiveObjects: 0.122000 ms CreateObjectMapping: 0.014600 ms MarkObjects: 1.322500 ms  DeleteObjects: 0.010200 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 84.346851 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a044f5fa5cac5546aa2d8bffd34f71b') in 0.120511 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000614 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.646 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 616 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 67.3 MB.
-System memory in use after: 67.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1163.
-Total: 1.962300 ms (FindLiveObjects: 0.132300 ms CreateObjectMapping: 0.016200 ms MarkObjects: 1.796300 ms  DeleteObjects: 0.016000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 40.895108 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '333eaa061bfd2dbd9a8275bcff12d9a2') in 0.116398 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 114.761839 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d27d2cfb9174e7fd8cb4740d1db540f') in 0.088841 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 39.453628 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05ee96769ea9771bde94535c68541dcd') in 0.088056 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 45.608585 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa523857214d112113f11ff571ecf5ca') in 0.089233 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 32.375412 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5b658c3cb2a0bc66d8dc6aaa32d58ce') in 0.086526 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000480 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.658 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 69.3 MB.
-System memory in use after: 69.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1237.
-Total: 1.762100 ms (FindLiveObjects: 0.191600 ms CreateObjectMapping: 0.017000 ms MarkObjects: 1.540900 ms  DeleteObjects: 0.011500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000577 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.686 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 69.2 MB.
-System memory in use after: 69.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1240.
-Total: 1.785000 ms (FindLiveObjects: 0.147700 ms CreateObjectMapping: 0.015800 ms MarkObjects: 1.608500 ms  DeleteObjects: 0.011500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 242.418586 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/terrainDetails.png
-  artifactKey: Guid(3e2d7ce185de6314fa59db30e8711d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/terrainDetails.png using Guid(3e2d7ce185de6314fa59db30e8711d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20700931c6af48e4525b6a9d912caaca') in 0.055449 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 80.424403 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/terrainDetails.png
-  artifactKey: Guid(3e2d7ce185de6314fa59db30e8711d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/terrainDetails.png using Guid(3e2d7ce185de6314fa59db30e8711d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2a5cb04238fed765ede2e7e141f9a97') in 0.019523 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000489 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.646 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 70.1 MB.
-System memory in use after: 70.1 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1274.
-Total: 1.502300 ms (FindLiveObjects: 0.108200 ms CreateObjectMapping: 0.015500 ms MarkObjects: 1.367200 ms  DeleteObjects: 0.010600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 251.051668 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/terrainDetails.png
-  artifactKey: Guid(3e2d7ce185de6314fa59db30e8711d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/terrainDetails.png using Guid(3e2d7ce185de6314fa59db30e8711d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b56a29f8399abfde3b8d68441594d095') in 0.051346 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 52.290967 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/terrainDetails.png
-  artifactKey: Guid(3e2d7ce185de6314fa59db30e8711d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/terrainDetails.png using Guid(3e2d7ce185de6314fa59db30e8711d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17861e94cdcb4459339aa423ea016b0c') in 0.018750 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000549 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.655 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.0 MB.
-System memory in use after: 71.1 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1308.
-Total: 1.592600 ms (FindLiveObjects: 0.143100 ms CreateObjectMapping: 0.015800 ms MarkObjects: 1.421400 ms  DeleteObjects: 0.011300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 163.048379 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cfb992d5b027f4f0458e11fd5585b99') in 0.115565 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 125.695732 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6958437502c9f209b10562eea5e54259') in 0.078035 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 210.689378 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38a1ea6d761ae9a56b919c7d17d7830c') in 0.078840 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000513 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.652 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 72.3 MB.
-System memory in use after: 72.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1354.
-Total: 1.670500 ms (FindLiveObjects: 0.152400 ms CreateObjectMapping: 0.016100 ms MarkObjects: 1.488700 ms  DeleteObjects: 0.012300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 564.333335 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '699588e237e510f3537dea727a0e1b9a') in 0.111486 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 63.547085 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '923ff1b698f197ca8965af4d6b22d5e9') in 0.079519 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000601 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.636 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.0 MB.
-System memory in use after: 73.1 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1388.
-Total: 2.046100 ms (FindLiveObjects: 0.213200 ms CreateObjectMapping: 0.021300 ms MarkObjects: 1.794000 ms  DeleteObjects: 0.016000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 49.541113 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78920bf7d8df619b1479adda596e3658') in 0.106815 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000529 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.645 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.5 MB.
-System memory in use after: 73.5 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1406.
-Total: 1.823400 ms (FindLiveObjects: 0.150800 ms CreateObjectMapping: 0.015000 ms MarkObjects: 1.644400 ms  DeleteObjects: 0.012000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 62.006130 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6783a04c302962e1e71492fa98883bb') in 0.112243 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 118.464285 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Spritesheet.png
-  artifactKey: Guid(2b415366de07e0941a469c1b57d5b0a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Spritesheet.png using Guid(2b415366de07e0941a469c1b57d5b0a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab3bb149ded9a332f3309733fa78a150') in 0.387770 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.919323 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Spritesheet.png
-  artifactKey: Guid(2b415366de07e0941a469c1b57d5b0a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Spritesheet.png using Guid(2b415366de07e0941a469c1b57d5b0a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a25c92cb24c4d410bc70452daa9fd6ea') in 0.392259 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.378847 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10902676939bbb9260eff6403da6b484') in 0.075004 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.606033 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95fac0e85e6c390fdc98e755b6ff7758') in 0.077178 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000464 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.660 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 616 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 81.8 MB.
-System memory in use after: 81.8 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1484.
-Total: 1.781700 ms (FindLiveObjects: 0.174700 ms CreateObjectMapping: 0.018200 ms MarkObjects: 1.575400 ms  DeleteObjects: 0.012600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000526 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.640 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 81.8 MB.
-System memory in use after: 81.8 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1487.
-Total: 1.755200 ms (FindLiveObjects: 0.179800 ms CreateObjectMapping: 0.020500 ms MarkObjects: 1.543400 ms  DeleteObjects: 0.010800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000514 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.627 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 81.8 MB.
-System memory in use after: 81.8 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1490.
-Total: 1.769300 ms (FindLiveObjects: 0.176600 ms CreateObjectMapping: 0.019700 ms MarkObjects: 1.560700 ms  DeleteObjects: 0.011500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 625.705507 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ae46ee90c2a51e864179c7fc3b2191c') in 0.110293 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 67.173051 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39c2fa424a2009f73ddc63700f2e8735') in 0.091837 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000460 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.653 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 82.6 MB.
-System memory in use after: 82.7 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1522.
-Total: 1.660600 ms (FindLiveObjects: 0.164800 ms CreateObjectMapping: 0.020500 ms MarkObjects: 1.464800 ms  DeleteObjects: 0.009700 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 119.870525 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e43002b6a50d667c02e0565e1383df6') in 0.109652 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000472 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.638 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.0 MB.
-System memory in use after: 83.1 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1540.
-Total: 1.789000 ms (FindLiveObjects: 0.161800 ms CreateObjectMapping: 0.019400 ms MarkObjects: 1.597100 ms  DeleteObjects: 0.010000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 697.660930 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4115b5b45e6febdeaa99b1adb94e3b73') in 0.112007 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000513 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.636 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.6 MB.
-System memory in use after: 83.7 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1558.
-Total: 1.687900 ms (FindLiveObjects: 0.157900 ms CreateObjectMapping: 0.025400 ms MarkObjects: 1.493000 ms  DeleteObjects: 0.010800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 157.902012 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de83b5851d25cae3354de5d94417d330') in 0.114734 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000603 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.647 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 84.0 MB.
-System memory in use after: 84.1 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1576.
-Total: 1.740300 ms (FindLiveObjects: 0.182200 ms CreateObjectMapping: 0.020300 ms MarkObjects: 1.525300 ms  DeleteObjects: 0.011500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 58.372969 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43e53fc33bd568e74a7f161922265a81') in 0.113651 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.923275 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9be7e92fcdcc6e0480f51893d8e6302') in 0.081572 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.906009 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26e97b33759b54604fd771dcb060347d') in 0.081136 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 27.073723 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0aa8d91155be623f79fc46173b75bd32') in 0.082575 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 36.859049 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c7974c561578ffdd1dfa1b0019accb9') in 0.082273 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 55.162572 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '225700f5625b7644854964c5e966574c') in 0.080070 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.815322 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da1478e62852f42bf6c93441e7c9686f') in 0.080656 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 31.003691 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '482d19877425eac9ad69ff3a9136ec76') in 0.078274 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 680.496006 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04b44b384913a91113ca934178036aae') in 0.078639 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 33.377851 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7a9a2f4be2d918711c53dc8ba0c7ef2') in 0.077445 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 181.702868 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b1871bd6f538a3f50a70c04325238a8') in 0.082241 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000489 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.634 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.4 MB.
-System memory in use after: 88.5 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1738.
-Total: 1.799700 ms (FindLiveObjects: 0.166100 ms CreateObjectMapping: 0.024200 ms MarkObjects: 1.597100 ms  DeleteObjects: 0.011500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 165.320609 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4a715e56d65fd431f84837f7121b1e9') in 0.118013 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000459 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.648 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.7 MB.
-System memory in use after: 88.8 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1756.
-Total: 2.034200 ms (FindLiveObjects: 0.187000 ms CreateObjectMapping: 0.021300 ms MarkObjects: 1.810600 ms  DeleteObjects: 0.014100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000570 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.646 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.9 MB.
-System memory in use after: 89.0 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1759.
-Total: 1.706800 ms (FindLiveObjects: 0.194500 ms CreateObjectMapping: 0.020500 ms MarkObjects: 1.479800 ms  DeleteObjects: 0.011000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 279.240592 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ef73c1f38fe9e250ddd5aaac137ecd2') in 0.122667 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000539 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.648 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 89.2 MB.
-System memory in use after: 89.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1777.
-Total: 1.869300 ms (FindLiveObjects: 0.198000 ms CreateObjectMapping: 0.020200 ms MarkObjects: 1.633300 ms  DeleteObjects: 0.016800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000532 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.666 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 89.2 MB.
-System memory in use after: 89.3 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1780.
-Total: 1.727100 ms (FindLiveObjects: 0.225000 ms CreateObjectMapping: 0.019200 ms MarkObjects: 1.472000 ms  DeleteObjects: 0.009800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 1123.440098 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '377ba32f3cf31e07f05657cfa8107824') in 0.117841 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000601 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.661 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 615 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 89.6 MB.
-System memory in use after: 89.7 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1798.
-Total: 1.730900 ms (FindLiveObjects: 0.190200 ms CreateObjectMapping: 0.020700 ms MarkObjects: 1.508500 ms  DeleteObjects: 0.010600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 368.137282 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '002c6847eb4104234fa15692dbc93943') in 0.115558 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 105.412996 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a991991c6777e95b13596c2eb4b668fe') in 0.084034 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 39.191519 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62177ded982a92bd0ee0440de8071cba') in 0.086115 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 33.444729 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9431a880fe62cb9056dd3957765c8d14') in 0.084052 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 71.448557 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe9a813b92678fc168015e1ae7c02213') in 0.085406 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.783673 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4e81bf82f7f2d4a667eb2d295653941') in 0.081420 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 191.337362 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '158e7491603993576cea4b8631d2a17c') in 0.084196 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 56.406676 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7347c160d3bd37f017c80037587ec37b') in 0.083262 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 109.773956 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73e1a2438df4b4d6bd4b1d1f9763a6ea') in 0.084807 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 72.312659 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea2de0a38f9a4424c4e4d6ebc36638b7') in 0.083124 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 71.594089 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '809cc007ca3df7e41ce1faa21c55aad6') in 0.086798 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 62.944227 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea2a768b3127667113f011c00226086') in 0.088962 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 75.153404 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '609cd9702d7bb84562a2372067ef24d9') in 0.088679 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 45.178090 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd85ec9ccc04aa1c1ad1f3cd4f532fbfd') in 0.085044 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 44.837099 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '566a31b6780da9483a0234984175c3d7') in 0.087008 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 47.965396 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '688567992fb4073af9aa06d828061a00') in 0.082927 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 80.274039 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6180fb36635d5d22828e6d9bc9829cb') in 0.085933 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 46.435620 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9392121d5a8cf501ade72f547c325fef') in 0.083527 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 55.645719 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2261c0cbf4ae99376f2fadb4eca80ec9') in 0.086763 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 42.859077 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3be1023f2216360488fc7cd6f20efd5') in 0.083959 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 29.023710 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '072c1dd493481780094ed3c52c5de393') in 0.082155 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 28.033533 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '378c1ff9eebbd0d839e1d22866d64733') in 0.088077 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 30.722113 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1262f3a272b91657f4c9dc2aaa6f0964') in 0.081891 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 54.413648 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6060760414184263c05700c79315a281') in 0.087822 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 73.983547 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75d1da7cc2e67026d86d0deb60a5a160') in 0.087608 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 61.197023 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e43931707cdca5ee0a35f19ee9a0a9b9') in 0.085966 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 99.593746 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0772611e38ccd08a31c3cf0fc9896c1e') in 0.085411 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 198.884893 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bbeaf86c5212ef235779386ec6edd22') in 0.087478 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 73.897530 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1784a81426afbcc08b499a977816af2') in 0.084696 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 25.041269 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8251b216b201c0164ec99d6c6f2f834') in 0.086578 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 53.456564 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5603f6b87aa687a6f49f5e6d0089c12') in 0.084159 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.807742 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98dccee6c38a32a885ced74d01a9d3fb') in 0.084978 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.746741 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '849a653bbe686265a9544f3a24b1edd6') in 0.083671 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.924502 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baad7702a1f23b26492105b45077cab0') in 0.084162 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 32.621960 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6108ad4886151b69e34d52b722de413') in 0.085180 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 35.733065 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d9c0c174257af449748a99ee890f4d4') in 0.085403 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.694202 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a57d4cebd97800825c658a1f1c667a1') in 0.084740 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 55.856938 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e190bc71e20c456f0c9071b28894e34') in 0.086868 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 26.354218 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03de5ab3835c101d69c4033b225230c2') in 0.087861 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 47.509152 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '694d2db2a6166ba4d97c14e899568021') in 0.084771 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 58.797510 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e902a97b435fda118b10f5609f015a7') in 0.085348 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 20.184188 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '916af0fbbaeca93de72ddc2299ccf526') in 0.081637 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 56.330026 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49c9f04ee00f2017aeba4350c7e0c66f') in 0.082466 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 40.098633 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f7849ee0e2f96f4eab94194439fd9e3') in 0.087013 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.996697 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c39e5c3d208038b6fa6605b981333fa') in 0.078482 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 235.014482 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52e7bd80e0e051dd6b829c68fc07720a') in 0.084113 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 73.856342 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9912c3cc6afb209678338454f543bc49') in 0.088266 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.888121 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f55ac75de5152f18b19c0e7444fe6181') in 0.080339 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 98.853074 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '279044e1947c48bb2a6eb366fa444820') in 0.081390 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 26.654920 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f4c7303a719cb745aa8916d7b305cae') in 0.087728 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 53.332257 seconds.
-  path: Assets/Resources/Sprites/Enviroment/Terrain/Template2.png
-  artifactKey: Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Sprites/Enviroment/Terrain/Template2.png using Guid(b3b2e0dfa24c8a14e985be00920728c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a88a4d370345c32875a4577239509f63') in 0.082211 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

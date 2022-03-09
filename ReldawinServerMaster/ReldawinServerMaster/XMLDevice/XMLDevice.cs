@@ -74,11 +74,9 @@ namespace ReldawinServerMaster
             if ( result )
             {
                 Console.WriteLine( "[XMLDevice] Loading " + tileList.list.Count + " doodads." );
-                foreach ( DEDoodad doodad in doodadList.list )
+                foreach ( IEItem item in itemList.list )
                 {
-                    doodadinfo.Add( doodad.id, doodad );
-
-                    doodad.Setup();
+                    iteminfo.Add( item.id, item );
                 }
             }
 

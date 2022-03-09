@@ -55,76 +55,47 @@ namespace LowCloud.Reldawin
 
         public static void Setup()
         {
-            bool result = false;
-
-            result = LoadTiles();
-            if ( result )
+            LoadTiles();
+            foreach ( TETile tile in tileList.list )
             {
-                foreach ( TETile tile in tileList.list )
-                {
-                    tileinfo.Add( tile.id, tile );
-                }
+                tileinfo.Add( tile.id, tile );
             }
 
-            result = LoadItems();
-            if ( result )
+            LoadDoodads();
+            foreach ( DEDoodad doodad in doodadList.list )
             {
-                foreach ( IEItem item in itemList.list )
-                {
-                    iteminfo.Add( item.id, item );
-                }
+                doodadinfo.Add( doodad.id, doodad );
             }
 
-            result = LoadDoodads();
-            if ( result )
-            {
-                foreach ( DEDoodad doodad in doodadList.list )
-                {
-                    doodadinfo.Add( doodad.id, doodad );
-                }
-            }
-        }
-
-        private static bool LoadTiles()
-        {
-            //if ( Directory.Exists( Application.streamingAssetsPath + "/tiles.xml" ) )
+            //LoadItems();
+            //foreach ( IEItem item in itemList.list )
             //{
-                XmlSerializer serializer = new XmlSerializer( typeof( TETileList ) );
-                FileStream stream = new FileStream( Application.streamingAssetsPath + "/tiles.xml", FileMode.Open );
-                tileList = serializer.Deserialize( stream ) as TETileList;
-                stream.Close();
-                return true;
+            //    iteminfo.Add( item.id, item );
             //}
-            //else
-            //    return false;
         }
 
-        private static bool LoadItems()
+        private static void LoadTiles()
         {
-            if ( Directory.Exists( Application.streamingAssetsPath + "/items.xml" ) )
-            {
-                XmlSerializer serializer = new XmlSerializer( typeof( IEItemList ) );
-                FileStream stream = new FileStream( Application.streamingAssetsPath + "/items.xml", FileMode.Open );
-                itemList = serializer.Deserialize( stream ) as IEItemList;
-                stream.Close();
-                return true;
-            }
-            else
-                return false;
+            XmlSerializer serializer = new XmlSerializer( typeof( TETileList ) );
+            FileStream stream = new FileStream( Application.streamingAssetsPath + "/tiles.xml", FileMode.Open );
+            tileList = serializer.Deserialize( stream ) as TETileList;
+            stream.Close();
         }
 
-        private static bool LoadDoodads()
+        private static void LoadItems()
         {
-            if ( Directory.Exists( Application.streamingAssetsPath + "/doodads.xml" ) )
-            {
-                XmlSerializer serializer = new XmlSerializer( typeof( DEDoodadList ) );
-                FileStream stream = new FileStream( Application.streamingAssetsPath + "/doodads.xml", FileMode.Open );
-                doodadList = serializer.Deserialize( stream ) as DEDoodadList;
-                stream.Close();
-                return true;
-            }
-            else
-                return false;
+            XmlSerializer serializer = new XmlSerializer( typeof( IEItemList ) );
+            FileStream stream = new FileStream( Application.streamingAssetsPath + "/items.xml", FileMode.Open );
+            itemList = serializer.Deserialize( stream ) as IEItemList;
+            stream.Close();
+        }
+
+        private static void LoadDoodads()
+        {
+            XmlSerializer serializer = new XmlSerializer( typeof( DEDoodadList ) );
+            FileStream stream = new FileStream( Application.streamingAssetsPath + "/doodads.xml", FileMode.Open );
+            doodadList = serializer.Deserialize( stream ) as DEDoodadList;
+            stream.Close();
         }
     }
 }

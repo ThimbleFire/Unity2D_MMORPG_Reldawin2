@@ -54,8 +54,6 @@ namespace ReldawinServerMaster
 				DestinationImage = image
 			};
 
-			//renderer.BuildTerrainGradient();
-
 			renderer.AddGradientPoint( 0.025d, new Color( 57, 89, 179, 255 ) );  //water
 			renderer.AddGradientPoint( 0.075d, new Color( 188, 188, 128, 255 ) );//sand
 			renderer.AddGradientPoint( 0.15d, new Color( 168, 120, 47, 255 ) );	//dirt

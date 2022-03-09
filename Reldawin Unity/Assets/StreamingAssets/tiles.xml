@@ -3,35 +3,11 @@
   <list>
     <TETile>
       <Droprates />
-      <name>Dirt</name>
-      <id>3</id>
-      <minHeight>0.125</minHeight>
-      <maxHeight>0.175</maxHeight>
-      <layerIndex>4</layerIndex>
-    </TETile>
-    <TETile>
-      <Droprates />
       <name>Sand</name>
       <id>4</id>
       <minHeight>0.05</minHeight>
       <maxHeight>0.125</maxHeight>
       <layerIndex>2</layerIndex>
-    </TETile>
-    <TETile>
-      <Droprates />
-      <name>Shallow_Water</name>
-      <id>5</id>
-      <minHeight>0</minHeight>
-      <maxHeight>0.05</maxHeight>
-      <layerIndex>1</layerIndex>
-    </TETile>
-    <TETile>
-      <Droprates />
-      <name>Grass</name>
-      <id>2</id>
-      <minHeight>0.175</minHeight>
-      <maxHeight>1</maxHeight>
-      <layerIndex>3</layerIndex>
     </TETile>
     <TETile>
       <Droprates />
@@ -48,6 +24,72 @@
       <minHeight>1</minHeight>
       <maxHeight>1</maxHeight>
       <layerIndex>0</layerIndex>
+    </TETile>
+    <TETile>
+      <Droprates>
+        <Droprate>
+          <id>0</id>
+          <percent>50</percent>
+        </Droprate>
+        <Droprate>
+          <id>1</id>
+          <percent>25</percent>
+        </Droprate>
+        <Droprate>
+          <id>2</id>
+          <percent>5</percent>
+        </Droprate>
+        <Droprate>
+          <id>3</id>
+          <percent>5</percent>
+        </Droprate>
+        <Droprate>
+          <id>4</id>
+          <percent>5</percent>
+        </Droprate>
+        <Droprate>
+          <id>8</id>
+          <percent>10</percent>
+        </Droprate>
+      </Droprates>
+      <name>Grass</name>
+      <id>2</id>
+      <minHeight>0.175</minHeight>
+      <maxHeight>1</maxHeight>
+      <layerIndex>3</layerIndex>
+    </TETile>
+    <TETile>
+      <Droprates>
+        <Droprate>
+          <id>6</id>
+          <percent>18</percent>
+        </Droprate>
+        <Droprate>
+          <id>3</id>
+          <percent>17</percent>
+        </Droprate>
+        <Droprate>
+          <id>4</id>
+          <percent>5</percent>
+        </Droprate>
+        <Droprate>
+          <id>7</id>
+          <percent>1</percent>
+        </Droprate>
+      </Droprates>
+      <name>Dirt</name>
+      <id>3</id>
+      <minHeight>0.125</minHeight>
+      <maxHeight>0.175</maxHeight>
+      <layerIndex>9</layerIndex>
+    </TETile>
+    <TETile>
+      <Droprates />
+      <name>Shallow_Water</name>
+      <id>5</id>
+      <minHeight>0</minHeight>
+      <maxHeight>0.05</maxHeight>
+      <layerIndex>8</layerIndex>
     </TETile>
   </list>
 </Tiles>
