@@ -11,16 +11,17 @@ namespace ReldawinServerMaster
         {
             for ( byte i = 0; i < XMLDevice.tileinfo.Count; i++ )
             {
-                TETile tile = XMLDevice.tileinfo[i];
+                TETile tile = XMLDevice.GetTile( i );
 
                 if ( tile == null )
                     continue;
 
-                if ( height > tile.minHeight && height <= tile.maxHeight )
-                    return tile.id;
+                if ( tile.minHeight <= height && tile.maxHeight > height )
+                    return (byte)tile.id;
             }
 
-            return 0;
+            Debug.LogError( "No tile with height " + height );
+            return 255;
         }
     }
 
@@ -156,7 +157,7 @@ namespace ReldawinServerMaster
                         y = World.random.Next( yStart, yLim );
                     }
 
-                    Doodad doodad = (Doodad)XMLDevice.tileinfo[tiles[x, y]].GetDoodad;
+                    Doodad doodad = (Doodad)XMLDevice.GetTile(tiles[x, y]).GetDoodad;
 
                     if ( doodad == null )
                         continue;

@@ -38,7 +38,7 @@ namespace ReldawinServerMaster
         {
             bool resourceDepleted = World.random.Next( 100 ) > 90;
 
-            int yieldItemID = XMLDevice.doodadinfo[properties.type].GetYieldRoll;
+            int yieldItemID = XMLDevice.GetDoodad(properties.type).GetYieldRoll;
 
             // if yieldItemID is empty, we either failed a yield roll, or the ID is invalid.            
             if ( yieldItemID == -1 )

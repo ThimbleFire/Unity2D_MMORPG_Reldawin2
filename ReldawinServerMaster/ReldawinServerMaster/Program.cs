@@ -70,18 +70,18 @@ namespace ReldawinServerMaster
 
         private static void CommandGenerate(int length, string input)
         {
-            try
+            if ( length == 8 )
+            {
+                MapGen.Generate( World.Width, World.Height, World.Scale, false, World.random.Next() );
+                Console.WriteLine( "\n[Program] Operation TRUE" );
+            }
+            else
             {
                 int.TryParse( input.Substring( length, input.Length - length ), out int seed );
                 MapGen.Generate( World.Width, World.Height, World.Scale, false, seed );
                 World.Seed = seed;
                 Console.WriteLine( "\n[Program] Operation TRUE" );
-            }
-            catch ( Exception )
-            {
-                MapGen.Generate( World.Width, World.Height, World.Scale, false );
-                Console.WriteLine( "\n[Program] Operation TRUE" );
-            }
+            }           
         }
 
         private static void CommandSetSize( int length, string input )

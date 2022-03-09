@@ -23,7 +23,7 @@ public class TileEditor : EditorWindow
     private float _minHeight;
     private float _maxHeight;
     private int _layerIndex = 0;
-    private List<Spawns> _probabilities = new List<Spawns>();
+    private List<Droprate> _probabilities = new List<Droprate>();
 
     [MenuItem( "Window/Tile Editor" )]
     public static void ShowWindow()
@@ -70,7 +70,7 @@ public class TileEditor : EditorWindow
             _minHeight = activeList.list[loadIndex].minHeight;
             _maxHeight = activeList.list[loadIndex].maxHeight;
             _layerIndex = activeList.list[loadIndex].layerIndex;
-            _probabilities = new List<Spawns>(activeList.list[loadIndex]._doodadSpawnsAndProbabilities);
+            _probabilities = new List<Droprate>(activeList.list[loadIndex].droprates );
             
             return;
         }
@@ -97,10 +97,10 @@ public class TileEditor : EditorWindow
 
     private void PaintProbabilities()
     {
-        foreach ( Spawns prob in _probabilities )
+        foreach ( Droprate prob in _probabilities )
         {
             EditorGUI.LabelField( new Rect( 4, y, position.width - 12, 20 ), doodadList.GetNames[prob.id].ToString() + " (" + prob.id.ToString() + ")" );
-            EditorGUI.LabelField( new Rect( position.width / 2, y, position.width / 2, 20 ), prob.rate.ToString() + " %" ); 
+            EditorGUI.LabelField( new Rect( position.width / 2, y, position.width / 2, 20 ), prob.percent.ToString() + " %" ); 
             // we need a button to remove probabilities
             //if (GUILayout.Button("x")) { _probabilities.Remove(prob); return; }
             y += 22;
@@ -127,7 +127,7 @@ public class TileEditor : EditorWindow
         GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ), "Dicks" ); y += 22;
         if ( GUILayout.Button( "Add probability" ) )
         {
-            _probabilities.Add( new Spawns() { id = tempProbabilityOptionIndex, rate = tempProbabilitySpawnRate } );
+            _probabilities.Add( new Droprate() { id = tempProbabilityOptionIndex, percent = tempProbabilitySpawnRate } );
             tempProbabilityOptionIndex = 0;
             tempProbabilitySpawnRate = 0;
         }
@@ -190,7 +190,7 @@ public class TileEditor : EditorWindow
                 maxHeight = _maxHeight,
                 minHeight = _minHeight,
                 name = _tileName,
-                _doodadSpawnsAndProbabilities = _probabilities.ToArray()
+                droprates = _probabilities.ToArray()
             };
 
             if ( activeList != null )

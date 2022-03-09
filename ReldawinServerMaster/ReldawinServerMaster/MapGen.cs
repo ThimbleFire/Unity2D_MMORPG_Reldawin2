@@ -27,17 +27,11 @@ namespace ReldawinServerMaster
 			return tiles;
         }
 
-		public static NoiseMap Generate( int width, int height, double scale, bool getNoiseMap, int seed = 0 )
+		public static NoiseMap Generate( int width, int height, double scale, bool getNoiseMap, int seed )
 		{
-			// The noise source - a simple Perlin noise generator will do for this sample
-			var noiseSource = new Perlin
-			{
-				Seed = seed == 0 ? new Random(World.RNGSeed).Next() : seed
-			};
+			var noiseSource = CreateDefinition(seed);
 
-			Console.WriteLine( "Generating {0}, {1}, with seed: {2}", width, height, noiseSource.Seed );
-
-			var noiseMap = new NoiseMap();
+			var noiseMap = new NoiseMap { };
 			var noiseMapBuilder = new PlaneNoiseMapBuilder
 			{
 				DestNoiseMap = noiseMap,
@@ -68,7 +62,7 @@ namespace ReldawinServerMaster
 			renderer.AddGradientPoint( 0.20d, new Color( 21, 192, 0, 255 ) );	//grass
 
 			renderer.Render();
-			using ( var fs = File.OpenWrite( string.Format( "{1}x{2}_{0}.png", noiseSource.Seed, width, height ) ) )
+			using ( var fs = File.OpenWrite( string.Format( "{1}x{2}_{0}.png", seed, width, height ) ) )
 			{
 				image.SaveGdiBitmap( fs, ImageFormat.Png );
 			}
@@ -82,5 +76,24 @@ namespace ReldawinServerMaster
 			
 			return null;
 		}
+
+		private static Module CreateDefinition(int seed)
+        {
+			var cac = new Cache
+			{
+				Source0 = new Clamp
+				{
+					LowerBound = 0,
+					UpperBound = 1,
+
+					Source0 = new Perlin
+					{
+						Seed = seed
+					},
+				}
+			};
+
+			return cac;
+        }
 	}
 }

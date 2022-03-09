@@ -18,7 +18,7 @@ public class DoodadEditor : EditorWindow
     //doodad properties
     private string _doodadName = string.Empty;
     private int _ID = 0;
-    private List<Yield> yieldRates = new List<Yield>();
+    private List<Droprate> yieldRates = new List<Droprate>();
     private int tempProbabilityOptionIndex = 0;
     private int tempProbabilitySpawnRate = 0;
 
@@ -65,7 +65,7 @@ public class DoodadEditor : EditorWindow
 
             _doodadName = activeList.list[loadIndex].name;
             _ID = activeList.list[loadIndex].id;
-            yieldRates = new List<Yield>( activeList.list[loadIndex]._yieldProbabilities );
+            yieldRates = new List<Droprate>( activeList.list[loadIndex].droprates );
 
             return;
         }
@@ -101,7 +101,7 @@ public class DoodadEditor : EditorWindow
         GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ), "Dicks" ); y += 22;
         if ( GUILayout.Button( "Add probability" ) )
         {
-            yieldRates.Add( new Yield() { id = itemList.list[tempProbabilityOptionIndex].id, rate = tempProbabilitySpawnRate } );
+            yieldRates.Add( new Droprate() { id = itemList.list[tempProbabilityOptionIndex].id, percent = tempProbabilitySpawnRate } );
             tempProbabilityOptionIndex = 0;
             tempProbabilitySpawnRate = 0;
         }
@@ -135,7 +135,7 @@ public class DoodadEditor : EditorWindow
             {
                 id = _ID,
                 name = _doodadName,
-                _yieldProbabilities = yieldRates.ToArray()
+                droprates = yieldRates.ToArray()
             };
 
             if ( activeList != null )
@@ -163,10 +163,10 @@ public class DoodadEditor : EditorWindow
 
     private void PaintProbabilities()
     {
-        foreach ( Yield yields in yieldRates )
+        foreach ( Droprate yields in yieldRates )
         {
             EditorGUI.LabelField( new Rect( 4, y, position.width - 12, 20 ), yields.id.ToString() );
-            EditorGUI.LabelField( new Rect( position.width - 40, y, position.width / 2, 20 ), ( yields.rate ).ToString() + " %" );
+            EditorGUI.LabelField( new Rect( position.width - 40, y, position.width / 2, 20 ), ( yields.percent ).ToString() + " %" );
             y += 22;
         }
     }

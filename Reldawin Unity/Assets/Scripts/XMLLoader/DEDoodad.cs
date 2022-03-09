@@ -7,5 +7,5 @@ public class DEDoodad
     public int id { get; set; }
 
     [XmlArray( "Droprate" )]
-    public Droprate[] droprateProbabilities;
+    public Droprate[] droprates;
 }
