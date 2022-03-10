@@ -155,10 +155,10 @@ namespace ReldawinServerMaster
         /// Returns all tile types in the database between the coordinates of x and xLim and y and yLim
         public static List<object> GetChunkTiles( int chunkX, int chunkY )
         {
-            int x = chunkX * 15;
-            int y = chunkY * 15;
-            int xLim = x + 17;
-            int yLim = y + 17;
+            int x = chunkX * 16;
+            int y = chunkY * 16;
+            int xLim = x + 16;
+            int yLim = y + 16;
 
             SQLReader.Parameter[] parameters = new SQLReader.Parameter[] {
                 new SQLReader.Parameter("?x", x),
@@ -208,10 +208,10 @@ namespace ReldawinServerMaster
 
         public static List<object> GetChunkDoodads(int chunkX, int chunkY)
         {
-            int x = chunkX * 15;
-            int y = chunkY * 15;
-            int xLim = x + 15;
-            int yLim = y + 15;
+            int x = chunkX * 16;
+            int y = chunkY * 16;
+            int xLim = x + 16;
+            int yLim = y + 16;
 
             SQLReader.Parameter[] parameters = new SQLReader.Parameter[] {
                 new SQLReader.Parameter("?x", x),

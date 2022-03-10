@@ -45,7 +45,7 @@ namespace LowCloud.Reldawin
 
             if ( chunksToLoad <= 0 )
             {
-                Pathfinder.Populate();
+                //Pathfinder.Populate();
             }
 
         }

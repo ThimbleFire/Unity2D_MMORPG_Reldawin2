@@ -11,7 +11,7 @@ namespace LowCloud.Reldawin
             public Data( int type, Vector2Int tilePos, Vector2Int chunkIndex )
             {
                 this.tilePositionInWorld = tilePos;
-                this.tilePositionInChunk = new Vector2Int( tilePos.x % 15, tilePos.y % 15 );
+                this.tilePositionInChunk = new Vector2Int( tilePos.x % Chunk.Size, tilePos.y % Chunk.Size );
                 this.chunkIndex = chunkIndex;
                 this.type = type;
             }

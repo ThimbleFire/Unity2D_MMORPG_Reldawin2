@@ -15,16 +15,15 @@ namespace LowCloud.Reldawin
 
         public void CreateTiles( Vector2Int chunkIndex, string data )
         {
-            Vector2 position = MyMath.CellToIsometric( chunkIndex )* Chunk.Size;
-            transform.position = position ;
+            transform.position = MyMath.CellToIsometric( chunkIndex ) * Chunk.Size;
             this.ChunkIndex = chunkIndex;
-            Tiles = new Tile[Chunk.Size + 2, Chunk.Size + 2];
+            Tiles = new Tile[Chunk.Size, Chunk.Size];
             Nodes = new Node[Chunk.Size, Chunk.Size];
 
             int index = 0;
 
-            for ( ushort _y = 0; _y < Chunk.Size + 2; _y++ )
-                for ( ushort _x = 0; _x < Chunk.Size + 2; _x++ )
+            for ( ushort _y = 0; _y < Chunk.Size; _y++ )
+                for ( ushort _x = 0; _x < Chunk.Size; _x++ )
                 {
                     Vector2Int cellPosition = new Vector2Int( _x, _y );
 
@@ -43,7 +42,7 @@ namespace LowCloud.Reldawin
                 }
 
             SetUVChannel( 0 );  //regular tiles
-            SetUVChannel( 1 ); //corners that overlap
+            //SetUVChannel( 1 ); //corners that overlap
 
             gameObject.name = "Enabled Chunk";
             gameObject.SetActive( true );
@@ -56,33 +55,24 @@ namespace LowCloud.Reldawin
             List<Vector2> uvs = new List<Vector2>();
             Mesh.GetUVs( 0, uvs ); // Get layer zero as its uvs are preset
 
-            for ( int _x = 1; _x < Chunk.Size + 1; _x++ )
-                for ( int _y = 1; _y < Chunk.Size + 1; _y++ )
+            for ( int _x = 1; _x < Chunk.Size-2; _x++ )
+                for ( int _y = 1; _y < Chunk.Size-2; _y++ )
                 {
                     Tile[] neighbours = GetNeighbours( _x, _y );
 
                     Vector2[] quad1UVs = null;
-                    Vector2[] quad2UVs = null;
-                    Vector2[] quad3UVs = null;
-                    Vector2[] quad4UVs = null;
 
                     switch ( channel )
                     {
                         case 0:
-                            quad1UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType, 1 );
-                            quad2UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType, 2 );
-                            quad3UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType, 3 );
-                            quad4UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType, 4 );
+                            quad1UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType);
                             foreach ( Tile neighbour in neighbours )
                             {
                                 // If it has a neighbour that is below it of a different type
                                 if ( neighbour.TileType != Tiles[_x, _y].TileType && neighbour.GetLayer > Tiles[_x, _y].GetLayer )
                                 {
                                     //Set the tile base to appear as part of its neighbour
-                                    quad1UVs = SpriteLoader.GetQuadrantUVs( neighbour.TileType, 1 );
-                                    quad2UVs = SpriteLoader.GetQuadrantUVs( neighbour.TileType, 2 );
-                                    quad3UVs = SpriteLoader.GetQuadrantUVs( neighbour.TileType, 3 );
-                                    quad4UVs = SpriteLoader.GetQuadrantUVs( neighbour.TileType, 4 );
+                                    quad1UVs = SpriteLoader.GetQuadrantUVs( neighbour.TileType);
                                     break;
                                 }
                             }
@@ -91,35 +81,28 @@ namespace LowCloud.Reldawin
                         case 1:
                             //
                             quad1UVs = SpriteLoader.GetEmpty;
-                            quad2UVs = SpriteLoader.GetEmpty;
-                            quad3UVs = SpriteLoader.GetEmpty;
-                            quad4UVs = SpriteLoader.GetEmpty;
                             foreach ( Tile neighbour in neighbours )
                             {
                                 // If it has a neighbour that is below it of a different type
                                 if ( neighbour.TileType != Tiles[_x, _y].TileType && neighbour.GetLayer > Tiles[_x, _y].GetLayer )
                                 {
-                                    quad1UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType, 1, neighbours );
-                                    quad2UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType, 2, neighbours );
-                                    quad3UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType, 3, neighbours );
-                                    quad4UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType, 4, neighbours );
+                                    quad1UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType, neighbours );
                                     break;
                                 }
                             }
                             break;
                     }
 
-                    int quad1 = ( ( ( ( _x - 1 ) * 2 ) + 1 ) * ( Chunk.Size * 2 ) + ( ( ( _y - 1 ) * 2 ) + 1 ) ) * 4;
-                    int quad2 = ( ( ( ( _x - 1 ) * 2 ) + 1 ) * ( Chunk.Size * 2 ) + ( ( ( _y - 1 ) * 2 ) + 0 ) ) * 4;
-                    int quad3 = ( ( ( ( _x - 1 ) * 2 ) + 0 ) * ( Chunk.Size * 2 ) + ( ( ( _y - 1 ) * 2 ) + 0 ) ) * 4;
-                    int quad4 = ( ( ( ( _x - 1 ) * 2 ) + 0 ) * ( Chunk.Size * 2 ) + ( ( ( _y - 1 ) * 2 ) + 1 ) ) * 4;
+                    int quad1 =  (_x  *  Chunk.Size  + _y) * 4;
 
                     for ( int index = 0; index < 4; index++ )
                     {
+                        Debug.Log( quad1 + index );
+
+                        if ( quad1 + index > uvs.Count )
+                            continue;
+
                         uvs[quad1 + index] = quad1UVs[index];
-                        uvs[quad2 + index] = quad2UVs[index];
-                        uvs[quad3 + index] = quad3UVs[index];
-                        uvs[quad4 + index] = quad4UVs[index];
                     }
                 }
 
@@ -194,7 +177,7 @@ namespace LowCloud.Reldawin
             activeDoodads.Clear();
         }
 
-        public const ushort Size = 15;
+        public const ushort Size = 16;
 
         public static event ClickAction OnClicked;
 

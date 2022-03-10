@@ -29,6 +29,8 @@ namespace ReldawinServerMaster
 
 		public static NoiseMap Generate( int width, int height, double scale, bool getNoiseMap, int seed )
 		{
+			Console.WriteLine( "Generating " + seed );
+
 			var noiseSource = CreateDefinition(seed);
 
 			var noiseMap = new NoiseMap { };
