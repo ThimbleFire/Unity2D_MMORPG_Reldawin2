@@ -79,8 +79,6 @@ namespace LowCloud.Reldawin
 
         public static Vector2[] GetQuadrantUVs( int type, Tile[] neighbours = null )
         {
-            return GetTile( "Grass_1" );
-
             if ( type == 0 )
                 return GetEmpty;
 
@@ -88,10 +86,40 @@ namespace LowCloud.Reldawin
                 return GetTile( XMLLoader.GetTile( type ).name + "_" + Random.Range( 1, 5 ) );
 
             string key = XMLLoader.GetTile( type ).name;
-
-            if ( !IsSameType( type, neighbours[0] ) && !IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[4] ) )
+            
+            if ( !IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
             {
-                key += "_Corner";
+                key += "_SW_Corner";
+                return GetTile( key );
+            }
+            if ( IsSameType( type, neighbours[2] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
+            {
+                key += "_SW";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[2] ) )
+            {
+                key += "_SE_Corner";
+                return GetTile( key );
+            }
+            if ( IsSameType( type, neighbours[1] ) && IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[5] ) )
+            {
+                key += "_SE";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[0] ) )
+            {
+                key += "_NW_Corner";
+                return GetTile( key );
+            }
+            if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[7] ) )
+            {
+                key += "_NW";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[0] ) && !IsSameType( type, neighbours[1] ) )
+            {
+                key += "_NE_Corner";
                 return GetTile( key );
             }
             if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[4] ) )
@@ -109,36 +137,6 @@ namespace LowCloud.Reldawin
                 key += "_E";
                 return GetTile( key );
             }
-            if ( !IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[5] ) )
-            {
-                key += "_Corner";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[1] ) && IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[5] ) )
-            {
-                key += "_SE";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[1] ) )
-            {
-                key += "_E";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[2] ) )
-            {
-                key += "_S";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
-            {
-                key += "_Corner";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[2] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
-            {
-                key += "_SW";
-                return GetTile( key );
-            }
             if ( !IsSameType( type, neighbours[2] ) )
             {
                 key += "_S";
@@ -147,26 +145,6 @@ namespace LowCloud.Reldawin
             if ( !IsSameType( type, neighbours[3] ) )
             {
                 key += "_W";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[0] ) && !IsSameType( type, neighbours[7] ) )
-            {
-                key += "_Corner";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[7] ) )
-            {
-                key += "_NW";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[3] ) )
-            {
-                key += "_W";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[0] ) )
-            {
-                key += "_N";
                 return GetTile( key );
             }
 

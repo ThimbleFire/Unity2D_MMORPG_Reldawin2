@@ -22,7 +22,7 @@ namespace LowCloud.Reldawin
 
         private void HandleSendChunksFinishedLoading( params object[] args )
         {
-            //Pathfinder.Populate();
+            Pathfinder.Populate();
         }
 
         private void HandleDoodadData( object[] obj )
@@ -45,7 +45,7 @@ namespace LowCloud.Reldawin
 
             if ( chunksToLoad <= 0 )
             {
-                //Pathfinder.Populate();
+                Pathfinder.Populate();
             }
 
         }

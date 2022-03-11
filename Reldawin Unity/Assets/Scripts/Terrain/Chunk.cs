@@ -17,13 +17,13 @@ namespace LowCloud.Reldawin
         {
             transform.position = MyMath.CellToIsometric( chunkIndex ) * Chunk.Size;
             this.ChunkIndex = chunkIndex;
-            Tiles = new Tile[Chunk.Size, Chunk.Size];
+            Tiles = new Tile[Chunk.Size + 2, Chunk.Size + 2];
             Nodes = new Node[Chunk.Size, Chunk.Size];
 
             int index = 0;
 
-            for ( ushort _y = 0; _y < Chunk.Size; _y++ )
-                for ( ushort _x = 0; _x < Chunk.Size; _x++ )
+            for ( ushort _y = 0; _y < Chunk.Size + 2; _y++ )
+                for ( ushort _x = 0; _x < Chunk.Size + 2; _x++ )
                 {
                     Vector2Int cellPosition = new Vector2Int( _x, _y );
 
@@ -31,7 +31,7 @@ namespace LowCloud.Reldawin
                     Tiles[_x, _y].CellPositionInWorld = ( chunkIndex * Chunk.Size + cellPosition );
                     Tiles[_x, _y].CellPositionInChunk = cellPosition;
 
-                    if(_x < Chunk.Size && _y < Chunk.Size)
+                    if ( _x < Chunk.Size && _y < Chunk.Size )
                     {
                         Nodes[_x, _y] = new Node()
                         {
@@ -42,7 +42,7 @@ namespace LowCloud.Reldawin
                 }
 
             SetUVChannel( 0 );  //regular tiles
-            //SetUVChannel( 1 ); //corners that overlap
+            SetUVChannel( 1 ); //corners that overlap
 
             gameObject.name = "Enabled Chunk";
             gameObject.SetActive( true );
@@ -55,8 +55,8 @@ namespace LowCloud.Reldawin
             List<Vector2> uvs = new List<Vector2>();
             Mesh.GetUVs( 0, uvs ); // Get layer zero as its uvs are preset
 
-            for ( int _x = 1; _x < Chunk.Size-2; _x++ )
-                for ( int _y = 1; _y < Chunk.Size-2; _y++ )
+            for ( int _x = 1; _x < Chunk.Size + 1; _x++ )
+                for ( int _y = 1; _y < Chunk.Size + 1; _y++ )
                 {
                     Tile[] neighbours = GetNeighbours( _x, _y );
 
@@ -65,14 +65,14 @@ namespace LowCloud.Reldawin
                     switch ( channel )
                     {
                         case 0:
-                            quad1UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType);
+                            quad1UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType );
                             foreach ( Tile neighbour in neighbours )
                             {
                                 // If it has a neighbour that is below it of a different type
                                 if ( neighbour.TileType != Tiles[_x, _y].TileType && neighbour.GetLayer > Tiles[_x, _y].GetLayer )
                                 {
                                     //Set the tile base to appear as part of its neighbour
-                                    quad1UVs = SpriteLoader.GetQuadrantUVs( neighbour.TileType);
+                                    quad1UVs = SpriteLoader.GetQuadrantUVs( neighbour.TileType );
                                     break;
                                 }
                             }
@@ -93,16 +93,12 @@ namespace LowCloud.Reldawin
                             break;
                     }
 
-                    int quad1 =  (_x  *  Chunk.Size  + _y) * 4;
+                    //_x and _y are decreased by 1 because the nested for loops above do shit. 
+                    int r = ( ( _x - 1 ) * Chunk.Size + ( _y - 1 ) ) * 4;
 
                     for ( int index = 0; index < 4; index++ )
                     {
-                        Debug.Log( quad1 + index );
-
-                        if ( quad1 + index > uvs.Count )
-                            continue;
-
-                        uvs[quad1 + index] = quad1UVs[index];
+                        uvs[r + index] = quad1UVs[index];
                     }
                 }
 
@@ -119,7 +115,7 @@ namespace LowCloud.Reldawin
 
                 if ( Input.GetMouseButtonDown( 0 ) )
                 {
-                    if ( EventSystem.current.IsPointerOverGameObject())
+                    if ( EventSystem.current.IsPointerOverGameObject() )
                     {
 
                     }
@@ -130,17 +126,17 @@ namespace LowCloud.Reldawin
                 }
             }
         }
-        
-        public void SetDoodads(List<Doodad.Data> doodads, List<Doodad> inactiveDoodads)
-        {        
-            foreach ( Doodad.Data data in doodads)
+
+        public void SetDoodads( List<Doodad.Data> doodads, List<Doodad> inactiveDoodads )
+        {
+            foreach ( Doodad.Data data in doodads )
             {
-                inactiveDoodads[0].Setup(data);
-                inactiveDoodads[0].transform.SetParent(transform); // something like this
+                inactiveDoodads[0].Setup( data );
+                inactiveDoodads[0].transform.SetParent( transform ); // something like this
                 activeDoodads.Add( inactiveDoodads[0] );
                 int x = data.tilePositionInChunk.x;
                 int y = data.tilePositionInChunk.y;
-                inactiveDoodads.RemoveAt(0);
+                inactiveDoodads.RemoveAt( 0 );
 
                 Nodes[x, y].type = data.type;
             }
@@ -148,8 +144,11 @@ namespace LowCloud.Reldawin
 
         public Tile[] GetNeighbours( int x, int y )
         {
-            Tile[] neighbors = new Tile[8]
+            try
             {
+
+                Tile[] neighbors = new Tile[8]
+                {
                  Tiles[x + 0, y + 1], //forward
                  Tiles[x + 1, y + 0], //right
                  Tiles[x + 0, y - 1], //down
@@ -158,26 +157,33 @@ namespace LowCloud.Reldawin
                  Tiles[x + 1, y - 1], //back-right
                  Tiles[x - 1, y - 1], //back-left
                  Tiles[x - 1, y + 1]  //forward-left
-            };
+                };
+                return neighbors;
 
-            return neighbors;
+            }
+            catch ( System.Exception )
+            {
+                Debug.LogError( string.Format( "{0} , {1}", x, y ) );
+            }
+
+            return null;
         }
 
         public void Disable()
         {
             gameObject.name = "Disabled Chunk";
             gameObject.SetActive( false );
-            
+
             foreach ( Doodad doodad in activeDoodads )
             {
-                doodad.gameObject.SetActive(false);
-            }            
-            
+                doodad.gameObject.SetActive( false );
+            }
+
             OnChunkDestroyed?.Invoke( ChunkIndex, activeDoodads );
             activeDoodads.Clear();
         }
 
-        public const ushort Size = 16;
+        public const ushort Size = 30;
 
         public static event ClickAction OnClicked;
 

@@ -152,37 +152,6 @@ namespace ReldawinServerMaster
                         , parameters );
         }
 
-        /// Returns all tile types in the database between the coordinates of x and xLim and y and yLim
-        public static List<object> GetChunkTiles( int chunkX, int chunkY )
-        {
-            int x = chunkX * 16;
-            int y = chunkY * 16;
-            int xLim = x + 16;
-            int yLim = y + 16;
-
-            SQLReader.Parameter[] parameters = new SQLReader.Parameter[] {
-                new SQLReader.Parameter("?x", x),
-                new SQLReader.Parameter( "?xLim", xLim ),
-                new SQLReader.Parameter( "?y", y ),
-                new SQLReader.Parameter( "?yLim", yLim )
-            };
-
-            List<object> result = SQLReader.RunQuery( @"SELECT * 
-                                                          FROM terrain 
-                                                         WHERE TileX >= ?x AND TileX < ?xLim 
-                                                           AND TileY >= ?y AND TileY < ?yLim
-                                                      
-                                                      ;"
-                                                     
-                                                    , out bool executed
-                                                    , SQLReader.Stream.OUTPUT
-                                                    , parameters
-                                                    , "Type"
-                                                    );
-           
-            return result;
-        }
-
         public static List<object> GetDoodad( int tileX, int tileY )
         {
             SQLReader.Parameter[] parameters = new SQLReader.Parameter[] {
@@ -208,10 +177,10 @@ namespace ReldawinServerMaster
 
         public static List<object> GetChunkDoodads(int chunkX, int chunkY)
         {
-            int x = chunkX * 16;
-            int y = chunkY * 16;
-            int xLim = x + 16;
-            int yLim = y + 16;
+            int x = chunkX * Chunk.Size;
+            int y = chunkY * Chunk.Size;
+            int xLim = x + Chunk.Size;
+            int yLim = y + Chunk.Size;
 
             SQLReader.Parameter[] parameters = new SQLReader.Parameter[] {
                 new SQLReader.Parameter("?x", x),

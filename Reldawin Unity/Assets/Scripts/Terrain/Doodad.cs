@@ -34,7 +34,7 @@ namespace LowCloud.Reldawin
             renderer.sortingOrder = data.tilePositionInWorld.x * Chunk.Size + data.tilePositionInWorld.y;
 
             // setup world position
-            transform.position = MyMath.CellToIsometric( d.tilePositionInWorld ) + Vector2.right * Tile.WorldSpaceHalfWidth;
+            transform.position = MyMath.CellToIsometric( d.tilePositionInWorld );
 
             // setup sprite
             renderer.sprite = SpriteLoader.GetDoodad(XMLLoader.GetDoodad(data.type).name);

@@ -18,7 +18,7 @@ namespace LowCloud.Reldawin
             int tileClickedX = Mathf.FloorToInt( (int)width  );
             int tileClickedY = Mathf.FloorToInt( (int)height  );
 
-            return new Vector2Int( tileClickedX, tileClickedY );
+            return new Vector2Int( tileClickedX, tileClickedY ) * 1;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace LowCloud.Reldawin
             float ofsX = ( y * Tile.WorldSpaceHeight ) + ( x * Tile.WorldSpaceHeight );
             float ofsY = ( y * Tile.WorldSpaceHeight / 2 ) - ( x * Tile.WorldSpaceHeight / 2 );
 
-            return new Vector2( ofsX, ofsY );// * 2;
+            return new Vector2( ofsX, ofsY ) * 1;
         }
 
         public static Vector2 CellToIsometric( Vector2Int chunkIndex )

@@ -48,7 +48,7 @@ namespace LowCloud.Reldawin
         /// </summary>
         public static void Populate()
         {
-            nodes = new Node[45, 45];
+            nodes = new Node[Chunk.Size * 3, Chunk.Size * 3];
                         
             Chunk[,] chunks = ChunkLoader.Instance.GetChunkMap();
            

@@ -119,7 +119,7 @@ namespace LowCloud.Reldawin
                 }
                 else
                 {
-                    SetTargetPosition( pointClicked, true );
+                    SetTargetPosition( pointClicked );
                 }
             }
 
@@ -167,9 +167,9 @@ namespace LowCloud.Reldawin
             animationConroller.FaceDirection( worldDirection );
         }
 
-        public void SetTargetPosition( Vector2 worldPosition, bool precise = false )
+        public void SetTargetPosition( Vector2 worldPosition )
         {
-            MovingToward = precise ? worldPosition : worldPosition + (Vector2.right * Tile.WorldSpaceHalfWidth);
+            MovingToward = worldPosition;
 
             animationConroller.SetAnimationMoveDirection( (Vector2)transform.position - MovingToward );
         }

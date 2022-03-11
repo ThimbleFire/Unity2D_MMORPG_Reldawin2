@@ -13,26 +13,40 @@ namespace LowCloud.Reldawin
         int[] triangles;
         Vector2[] uvs;
 
-        int width = 16;
-        int height = 16;
+        int width = 2;
+        int height = 1;
+
+        public List<int> indexes;
 
         void Start()
         {
             SpriteLoader.Setup( 512, 1024 );
 
+            indexes = new List<int>( 4 ) { 1, 3, 0, 2 };
+
             mesh = new Mesh();
             GetComponent<MeshFilter>().mesh = mesh;
 
             CreateShape();
-            UpdateMesh();
         }
 
         private void Update()
         {
-
+            SetUVs();
         }
 
         private void CreateShape()
+        {
+            SetVertices();
+            SetTriangles();
+            //SetUVs();
+
+            mesh.RecalculateNormals();
+            mesh.RecalculateBounds();
+            mesh.RecalculateTangents();
+        }
+
+        private void SetVertices()
         {
             vertices = new Vector3[( width + 1 ) * ( height + 1 )];
 
@@ -40,11 +54,17 @@ namespace LowCloud.Reldawin
             {
                 for ( int x = 0; x <= width; x++ )
                 {
-                    vertices[i++] = new Vector3( x, y, 0 );
-                    //MyMath.CellToIsometric( x, y );
+                    vertices[i++] = //new Vector3( x, y, 0 );
+                                    MyMath.CellToIsometric( x, y );
                 }
             }
 
+            mesh.vertices = vertices;
+
+        }
+
+        private void SetTriangles()
+        {
             triangles = new int[width * height * 6];
 
             int vert = 0, tris = 0;
@@ -65,35 +85,30 @@ namespace LowCloud.Reldawin
                 vert++;
             }
 
-            Vector2[] empty = SpriteLoader.GetEmpty;
-            Vector2[] grass = SpriteLoader.GetQuadrantUVs( 0 );
-
-            uvs = new Vector2[vertices.Length];
-            for ( int i = 0; i < uvs.Length - 1; )
-            {
-                uvs[i++] = empty[0];
-                uvs[i++] = empty[1];
-                uvs[i++] = empty[2];
-                uvs[i++] = empty[3];
-            }
-
-            uvs[1] = grass[0];
-            uvs[2] = grass[1];
-            uvs[3] = grass[2];
-            uvs[4] = grass[3];
+            mesh.triangles = triangles;
         }
 
-        private void UpdateMesh()
+        private void SetUVs()
         {
-            mesh.Clear();
+            Vector2[] grassUV = SpriteLoader.GetQuadrantUVs( 0 );
+            uvs = new Vector2[( width + 1 ) * ( height + 1 )];
 
-            mesh.vertices = vertices;
-            mesh.triangles = triangles;
-            mesh.uv = uvs;
+            for ( int y = 0; y < height; y++ )
+            for ( int x = 0; x < width; x++ )
+            {
+                int r = (x * height + y) * 2;
 
-            //mesh.RecalculateNormals();
-            //mesh.RecalculateBounds();
-            //mesh.RecalculateTangents();
+                    Debug.Log( r );
+
+                    //vertical orientation
+                        uvs[r + 1] = grassUV[0];
+                        uvs[r + 2] = grassUV[3];
+                    //horizontal orientation
+                        uvs[r + 0] = grassUV[2];
+                        uvs[r + 3] = grassUV[1];
+            }
+
+            mesh.SetUVs( 0, uvs );
         }
     }
 }

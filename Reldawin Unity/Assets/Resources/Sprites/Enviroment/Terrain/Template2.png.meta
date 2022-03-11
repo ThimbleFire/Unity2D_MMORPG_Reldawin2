@@ -22,7 +22,7 @@ TextureImporter:
     second: TileW
   - first:
       213: 21300012
-    second: Grass_3_Corner
+    second: Grass_SW_Corner
   - first:
       213: 21300014
     second: Grass_3
@@ -31,7 +31,7 @@ TextureImporter:
     second: Grass_1
   - first:
       213: 21300018
-    second: Grass_Corner
+    second: Grass_NE_Corner
   - first:
       213: 21300020
     second: Grass_S
@@ -49,7 +49,7 @@ TextureImporter:
     second: Grass_E_2
   - first:
       213: 21300030
-    second: Grass_4_Corner
+    second: Grass_NW_Corner
   - first:
       213: 21300032
     second: Grass_W_2
@@ -67,7 +67,7 @@ TextureImporter:
     second: Grass_N_2
   - first:
       213: 21300042
-    second: Grass__Corner
+    second: Grass_SE_Corner
   - first:
       213: 21300044
     second: Dirt_1
@@ -124,16 +124,16 @@ TextureImporter:
     second: Dirt_NW
   - first:
       213: 21300080
-    second: Dirt_Corner
+    second: Dirt_NE_Corner
   - first:
       213: 21300082
-    second: Dirt_2Corner
+    second: Dirt_SE_Corner
   - first:
       213: 21300084
-    second: Dirt_3Corner
+    second: Dirt_SW_Corner
   - first:
       213: 21300086
-    second: Dirt__Corner
+    second: Dirt_NW_Corner
   - first:
       213: 21300088
     second: Dirt_W
@@ -187,16 +187,16 @@ TextureImporter:
     second: Sand_NW
   - first:
       213: 21300122
-    second: Sand_Corner
+    second: Sand_NE_Corner
   - first:
       213: 21300124
-    second: Sand_2Corner
+    second: Sand_SE_Corner
   - first:
       213: 21300126
-    second: Sand__Corner
+    second: Sand_SW_Corner
   - first:
       213: 21300128
-    second: Sand_4Corner
+    second: Sand_NW_Corner
   - first:
       213: 21300130
     second: Sand_W
@@ -247,16 +247,16 @@ TextureImporter:
     second: Shallow_Water_NW
   - first:
       213: 21300162
-    second: Shallow_Water_Corner
+    second: Shallow_Water_NE_Corner
   - first:
       213: 21300164
-    second: Shallow_Water2_Corner
+    second: Shallow_Water_SE_Corner
   - first:
       213: 21300166
-    second: Shallow_Water3_Corner
+    second: Shallow_Water_SW_Corner
   - first:
       213: 21300168
-    second: Shallow_Water4_Corner
+    second: Shallow_Water_NW_Corner
   - first:
       213: 21300170
     second: Shallow_Water_W
@@ -356,7 +356,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -368,7 +368,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -380,7 +380,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -392,7 +392,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -406,7 +406,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grass_4_Corner
+      name: Grass_NW_Corner
       rect:
         serializedVersion: 2
         x: 448
@@ -532,7 +532,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_3_Corner
+      name: Grass_SW_Corner
       rect:
         serializedVersion: 2
         x: 384
@@ -595,7 +595,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_Corner
+      name: Grass_NE_Corner
       rect:
         serializedVersion: 2
         x: 256
@@ -721,7 +721,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass__Corner
+      name: Grass_SE_Corner
       rect:
         serializedVersion: 2
         x: 320
@@ -1036,7 +1036,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_Corner
+      name: Dirt_NE_Corner
       rect:
         serializedVersion: 2
         x: 256
@@ -1057,7 +1057,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_2Corner
+      name: Dirt_SE_Corner
       rect:
         serializedVersion: 2
         x: 320
@@ -1078,7 +1078,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_3Corner
+      name: Dirt_SW_Corner
       rect:
         serializedVersion: 2
         x: 384
@@ -1099,7 +1099,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt__Corner
+      name: Dirt_NW_Corner
       rect:
         serializedVersion: 2
         x: 448
@@ -1456,7 +1456,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_Corner
+      name: Sand_NE_Corner
       rect:
         serializedVersion: 2
         x: 256
@@ -1477,7 +1477,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_2Corner
+      name: Sand_SE_Corner
       rect:
         serializedVersion: 2
         x: 320
@@ -1498,7 +1498,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand__Corner
+      name: Sand_SW_Corner
       rect:
         serializedVersion: 2
         x: 384
@@ -1519,7 +1519,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_4Corner
+      name: Sand_NW_Corner
       rect:
         serializedVersion: 2
         x: 448
@@ -1876,7 +1876,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_Corner
+      name: Shallow_Water_NE_Corner
       rect:
         serializedVersion: 2
         x: 256
@@ -1897,7 +1897,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water2_Corner
+      name: Shallow_Water_SE_Corner
       rect:
         serializedVersion: 2
         x: 320
@@ -1918,7 +1918,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water3_Corner
+      name: Shallow_Water_SW_Corner
       rect:
         serializedVersion: 2
         x: 384
@@ -1939,7 +1939,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water4_Corner
+      name: Shallow_Water_NW_Corner
       rect:
         serializedVersion: 2
         x: 448

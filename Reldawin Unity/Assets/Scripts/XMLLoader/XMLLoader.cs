@@ -49,53 +49,47 @@ namespace LowCloud.Reldawin
             }
         }
 
-        private static TETileList tileList;
-        private static IEItemList itemList;
-        private static DEDoodadList doodadList;
-
         public static void Setup()
         {
             LoadTiles();
-            foreach ( TETile tile in tileList.list )
-            {
-                tileinfo.Add( tile.id, tile );
-            }
-
             LoadDoodads();
-            foreach ( DEDoodad doodad in doodadList.list )
-            {
-                doodadinfo.Add( doodad.id, doodad );
-            }
-
-            //LoadItems();
-            //foreach ( IEItem item in itemList.list )
-            //{
-            //    iteminfo.Add( item.id, item );
-            //}
+            LoadItems();
         }
 
         private static void LoadTiles()
         {
             XmlSerializer serializer = new XmlSerializer( typeof( TETileList ) );
             FileStream stream = new FileStream( Application.streamingAssetsPath + "/tiles.xml", FileMode.Open );
-            tileList = serializer.Deserialize( stream ) as TETileList;
+            var tileList = serializer.Deserialize( stream ) as TETileList;
             stream.Close();
+
+            foreach ( TETile tile in tileList.list ) {
+                tileinfo.Add( tile.id, tile );
+            }
         }
 
         private static void LoadItems()
         {
             XmlSerializer serializer = new XmlSerializer( typeof( IEItemList ) );
             FileStream stream = new FileStream( Application.streamingAssetsPath + "/items.xml", FileMode.Open );
-            itemList = serializer.Deserialize( stream ) as IEItemList;
+            var itemList = serializer.Deserialize( stream ) as IEItemList;
             stream.Close();
+
+            foreach ( IEItem item in itemList.list ) {
+                iteminfo.Add( item.id, item );
+            }
         }
 
         private static void LoadDoodads()
         {
             XmlSerializer serializer = new XmlSerializer( typeof( DEDoodadList ) );
             FileStream stream = new FileStream( Application.streamingAssetsPath + "/doodads.xml", FileMode.Open );
-            doodadList = serializer.Deserialize( stream ) as DEDoodadList;
+            var doodadList = serializer.Deserialize( stream ) as DEDoodadList;
             stream.Close();
+
+            foreach ( DEDoodad doodad in doodadList.list ) {
+                doodadinfo.Add( doodad.id, doodad );
+            }
         }
     }
 }
