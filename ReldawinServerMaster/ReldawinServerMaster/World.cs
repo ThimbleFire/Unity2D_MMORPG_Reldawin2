@@ -108,10 +108,10 @@ namespace ReldawinServerMaster
         public static string GetChunkData( int chunkX, int chunkY )
         {
             // get tile range of tiles
-            int xStart = chunkX * 15;
-            int yStart = chunkY * 15;
-            int xLim = xStart + 17;
-            int yLim = yStart + 17;
+            int xStart = chunkX * Chunk.Size;
+            int yStart = chunkY * Chunk.Size;
+            int xLim = xStart + Chunk.Size + 2;
+            int yLim = yStart + Chunk.Size + 2;
 
             string data = string.Empty;
 
@@ -139,10 +139,10 @@ namespace ReldawinServerMaster
             if ( doodadsInChunk == null )
             {
                 // get tile range of tiles
-                int xStart = chunkX * 15;
-                int yStart = chunkY * 15;
-                int xLim = xStart + 15;
-                int yLim = yStart + 15;
+                int xStart = chunkX * Chunk.Size;
+                int yStart = chunkY * Chunk.Size;
+                int xLim = xStart + Chunk.Size;
+                int yLim = yStart + Chunk.Size;
 
                 int doodadCountInThisChunk = rand.Next( 0, World.DoodadsPerChunk );
 

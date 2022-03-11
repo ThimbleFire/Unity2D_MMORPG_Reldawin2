@@ -15,10 +15,10 @@ namespace LowCloud.Reldawin
             float height = ( position.x / Tile.WorldSpaceWidth ) + ( position.y / Tile.WorldSpaceHeight );
             float width = ( position.x / Tile.WorldSpaceWidth ) + ( -position.y / Tile.WorldSpaceHeight );
 
-            int tileClickedX = Mathf.FloorToInt( (int)width / 2 );
-            int tileClickedY = Mathf.FloorToInt( (int)height / 2 );
+            int tileClickedX = Mathf.FloorToInt( (int)width  );
+            int tileClickedY = Mathf.FloorToInt( (int)height  );
 
-            return new Vector2Int( tileClickedX, tileClickedY );
+            return new Vector2Int( tileClickedX, tileClickedY ) * 1;
         }
 
         /// <summary>
@@ -29,9 +29,7 @@ namespace LowCloud.Reldawin
             float ofsX = ( y * Tile.WorldSpaceHeight ) + ( x * Tile.WorldSpaceHeight );
             float ofsY = ( y * Tile.WorldSpaceHeight / 2 ) - ( x * Tile.WorldSpaceHeight / 2 );
 
-            //Since we've removed scale, Tile.WorldSpaceHeight and Width have halved.
-            //However our chunk meshes are still 2x scale
-            return new Vector2( ofsX, ofsY ) * 2;
+            return new Vector2( ofsX, ofsY ) * 1;
         }
 
         public static Vector2 CellToIsometric( Vector2Int chunkIndex )

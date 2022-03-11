@@ -22,7 +22,7 @@ TextureImporter:
     second: TileW
   - first:
       213: 21300012
-    second: Grass_3_Corner
+    second: Grass_SW_Corner
   - first:
       213: 21300014
     second: Grass_3
@@ -31,43 +31,43 @@ TextureImporter:
     second: Grass_1
   - first:
       213: 21300018
-    second: Grass_1_Corner
+    second: Grass_NE_Corner
   - first:
       213: 21300020
-    second: Grass_3_S
+    second: Grass_S
   - first:
       213: 21300022
     second: Grass_2
   - first:
       213: 21300024
-    second: Grass_1_E
+    second: Grass_E
   - first:
       213: 21300026
-    second: Grass_2_S
+    second: Grass_S_2
   - first:
       213: 21300028
-    second: Grass_2_E
+    second: Grass_E_2
   - first:
       213: 21300030
-    second: Grass_4_Corner
+    second: Grass_NW_Corner
   - first:
       213: 21300032
-    second: Grass_4_W
+    second: Grass_W_2
   - first:
       213: 21300034
-    second: Grass_4_N
+    second: Grass_N
   - first:
       213: 21300036
-    second: Grass_3_W
+    second: Grass_W
   - first:
       213: 21300038
     second: Grass_4
   - first:
       213: 21300040
-    second: Grass_1_N
+    second: Grass_N_2
   - first:
       213: 21300042
-    second: Grass_2_Corner
+    second: Grass_SE_Corner
   - first:
       213: 21300044
     second: Dirt_1
@@ -79,16 +79,16 @@ TextureImporter:
     second: Empty
   - first:
       213: 21300050
-    second: Grass_4_NW
+    second: Grass_NW
   - first:
       213: 21300052
-    second: Grass_2_SE
+    second: Grass_SE
   - first:
       213: 21300054
-    second: Grass_1_NE
+    second: Grass_NE
   - first:
       213: 21300056
-    second: Grass_3_SW
+    second: Grass_SW
   - first:
       213: 21300058
     second: Dirt_2
@@ -112,52 +112,52 @@ TextureImporter:
     second: Dirt_4
   - first:
       213: 21300072
-    second: Dirt_1_NE
+    second: Dirt_NE
   - first:
       213: 21300074
-    second: Dirt_2_SE
+    second: Dirt_SE
   - first:
       213: 21300076
-    second: Dirt_3_SW
+    second: Dirt_SW
   - first:
       213: 21300078
-    second: Dirt_4_NW
+    second: Dirt_NW
   - first:
       213: 21300080
-    second: Dirt_1_Corner
+    second: Dirt_NE_Corner
   - first:
       213: 21300082
-    second: Dirt_2_Corner
+    second: Dirt_SE_Corner
   - first:
       213: 21300084
-    second: Dirt_3_Corner
+    second: Dirt_SW_Corner
   - first:
       213: 21300086
-    second: Dirt_4_Corner
+    second: Dirt_NW_Corner
   - first:
       213: 21300088
-    second: Dirt_3_W
+    second: Dirt_W
   - first:
       213: 21300090
-    second: Dirt_4_W
+    second: Dirt_W_2
   - first:
       213: 21300092
-    second: Dirt_4_N
+    second: Dirt_N
   - first:
       213: 21300094
-    second: Dirt_1_N
+    second: Dirt_N_2
   - first:
       213: 21300096
-    second: Dirt_1_E
+    second: Dirt_E
   - first:
       213: 21300098
-    second: Dirt_2_E
+    second: Dirt_E_2
   - first:
       213: 21300100
-    second: Dirt_3_S
+    second: Dirt_S
   - first:
       213: 21300102
-    second: Dirt_2_S
+    second: Dirt_S_2
   - first:
       213: 21300104
     second: Sand
@@ -175,52 +175,52 @@ TextureImporter:
     second: Sand_4
   - first:
       213: 21300114
-    second: Sand_1_NE
+    second: Sand_NE
   - first:
       213: 21300116
-    second: Sand_2_SE
+    second: Sand_SE
   - first:
       213: 21300118
-    second: Sand_3_SW
+    second: Sand_SW
   - first:
       213: 21300120
-    second: Sand_4_NW
+    second: Sand_NW
   - first:
       213: 21300122
-    second: Sand_1_Corner
+    second: Sand_NE_Corner
   - first:
       213: 21300124
-    second: Sand_2_Corner
+    second: Sand_SE_Corner
   - first:
       213: 21300126
-    second: Sand_3_Corner
+    second: Sand_SW_Corner
   - first:
       213: 21300128
-    second: Sand_4_Corner
+    second: Sand_NW_Corner
   - first:
       213: 21300130
-    second: Sand_3_W
+    second: Sand_W
   - first:
       213: 21300132
-    second: Sand_4_W
+    second: Sand_W_2
   - first:
       213: 21300134
-    second: Sand_4_N
+    second: Sand_N
   - first:
       213: 21300136
-    second: Sand_1_N
+    second: Sand_N_2
   - first:
       213: 21300138
-    second: Sand_1_E
+    second: Sand_E
   - first:
       213: 21300140
-    second: Sand_2_E
+    second: Sand_E_2
   - first:
       213: 21300142
-    second: Sand_3_S
+    second: Sand_S
   - first:
       213: 21300144
-    second: Sand_2_S
+    second: Sand_S_2
   - first:
       213: 21300146
     second: Shallow_Water_1
@@ -235,40 +235,40 @@ TextureImporter:
     second: Shallow_Water_4
   - first:
       213: 21300154
-    second: Shallow_Water_1_NE
+    second: Shallow_Water_NE
   - first:
       213: 21300156
-    second: Shallow_Water_2_SE
+    second: Shallow_Water_SE
   - first:
       213: 21300158
-    second: Shallow_Water_3_SW
+    second: Shallow_Water_SW
   - first:
       213: 21300160
-    second: Shallow_Water_4_NW
+    second: Shallow_Water_NW
   - first:
       213: 21300162
-    second: Shallow_Water_1_Corner
+    second: Shallow_Water_NE_Corner
   - first:
       213: 21300164
-    second: Shallow_Water_2_Corner
+    second: Shallow_Water_SE_Corner
   - first:
       213: 21300166
-    second: Shallow_Water_3_Corner
+    second: Shallow_Water_SW_Corner
   - first:
       213: 21300168
-    second: Shallow_Water_4_Corner
+    second: Shallow_Water_NW_Corner
   - first:
       213: 21300170
-    second: Shallow_Water_3_W
+    second: Shallow_Water_W
   - first:
       213: 21300172
-    second: Shallow_Water_4_W
+    second: Shallow_Water_W_2
   - first:
       213: 21300174
-    second: Shallow_Water_4_N
+    second: Shallow_Water_N
   - first:
       213: 21300176
-    second: Shallow_Water_1_N
+    second: Shallow_Water_N_2
   - first:
       213: 21300178
     second: Template2_16
@@ -283,16 +283,16 @@ TextureImporter:
     second: Template2_19
   - first:
       213: 21300186
-    second: Shallow_Water_1_E
+    second: Shallow_Water_E_2
   - first:
       213: 21300188
-    second: Shallow_Water_2_E
+    second: Shallow_Water_E
   - first:
       213: 21300190
-    second: Shallow_Water_3_S
+    second: Shallow_Water_S
   - first:
       213: 21300192
-    second: Shallow_Water_2_S
+    second: Shallow_Water_S_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -356,7 +356,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -368,7 +368,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -380,7 +380,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -392,7 +392,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -406,7 +406,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grass_4_Corner
+      name: Grass_NW_Corner
       rect:
         serializedVersion: 2
         x: 448
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_4_W
+      name: Grass_W_2
       rect:
         serializedVersion: 2
         x: 64
@@ -448,7 +448,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_4_N
+      name: Grass_N
       rect:
         serializedVersion: 2
         x: 128
@@ -469,7 +469,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_3_W
+      name: Grass_W
       rect:
         serializedVersion: 2
         x: 0
@@ -511,7 +511,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_1_N
+      name: Grass_N_2
       rect:
         serializedVersion: 2
         x: 192
@@ -532,7 +532,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_3_Corner
+      name: Grass_SW_Corner
       rect:
         serializedVersion: 2
         x: 384
@@ -595,7 +595,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_1_Corner
+      name: Grass_NE_Corner
       rect:
         serializedVersion: 2
         x: 256
@@ -616,7 +616,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_3_S
+      name: Grass_S
       rect:
         serializedVersion: 2
         x: 384
@@ -658,7 +658,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_1_E
+      name: Grass_E
       rect:
         serializedVersion: 2
         x: 256
@@ -679,7 +679,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_2_S
+      name: Grass_S_2
       rect:
         serializedVersion: 2
         x: 448
@@ -700,7 +700,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_2_E
+      name: Grass_E_2
       rect:
         serializedVersion: 2
         x: 320
@@ -721,7 +721,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_2_Corner
+      name: Grass_SE_Corner
       rect:
         serializedVersion: 2
         x: 320
@@ -746,9 +746,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 32
-        height: 16
+        y: 96
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -766,10 +766,10 @@ TextureImporter:
       name: Empty
       rect:
         serializedVersion: 2
-        x: 224
-        y: 16
-        width: 32
-        height: 16
+        x: 64
+        y: 96
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -784,7 +784,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_4_NW
+      name: Grass_NW
       rect:
         serializedVersion: 2
         x: 192
@@ -805,7 +805,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_2_SE
+      name: Grass_SE
       rect:
         serializedVersion: 2
         x: 64
@@ -826,7 +826,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_1_NE
+      name: Grass_NE
       rect:
         serializedVersion: 2
         x: 0
@@ -847,7 +847,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_3_SW
+      name: Grass_SW
       rect:
         serializedVersion: 2
         x: 128
@@ -952,7 +952,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_1_NE
+      name: Dirt_NE
       rect:
         serializedVersion: 2
         x: 0
@@ -973,7 +973,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_2_SE
+      name: Dirt_SE
       rect:
         serializedVersion: 2
         x: 64
@@ -994,7 +994,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_3_SW
+      name: Dirt_SW
       rect:
         serializedVersion: 2
         x: 128
@@ -1015,7 +1015,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_4_NW
+      name: Dirt_NW
       rect:
         serializedVersion: 2
         x: 192
@@ -1036,7 +1036,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_1_Corner
+      name: Dirt_NE_Corner
       rect:
         serializedVersion: 2
         x: 256
@@ -1057,7 +1057,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_2_Corner
+      name: Dirt_SE_Corner
       rect:
         serializedVersion: 2
         x: 320
@@ -1078,7 +1078,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_3_Corner
+      name: Dirt_SW_Corner
       rect:
         serializedVersion: 2
         x: 384
@@ -1099,7 +1099,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_4_Corner
+      name: Dirt_NW_Corner
       rect:
         serializedVersion: 2
         x: 448
@@ -1120,7 +1120,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_3_W
+      name: Dirt_W
       rect:
         serializedVersion: 2
         x: 0
@@ -1141,7 +1141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_4_W
+      name: Dirt_W_2
       rect:
         serializedVersion: 2
         x: 64
@@ -1162,7 +1162,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_4_N
+      name: Dirt_N
       rect:
         serializedVersion: 2
         x: 128
@@ -1183,7 +1183,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_1_N
+      name: Dirt_N_2
       rect:
         serializedVersion: 2
         x: 192
@@ -1204,7 +1204,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_1_E
+      name: Dirt_E
       rect:
         serializedVersion: 2
         x: 256
@@ -1225,7 +1225,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_2_E
+      name: Dirt_E_2
       rect:
         serializedVersion: 2
         x: 320
@@ -1246,7 +1246,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_3_S
+      name: Dirt_S
       rect:
         serializedVersion: 2
         x: 384
@@ -1267,7 +1267,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_2_S
+      name: Dirt_S_2
       rect:
         serializedVersion: 2
         x: 448
@@ -1372,7 +1372,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_1_NE
+      name: Sand_NE
       rect:
         serializedVersion: 2
         x: 0
@@ -1393,7 +1393,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_2_SE
+      name: Sand_SE
       rect:
         serializedVersion: 2
         x: 64
@@ -1414,7 +1414,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_3_SW
+      name: Sand_SW
       rect:
         serializedVersion: 2
         x: 128
@@ -1435,7 +1435,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_4_NW
+      name: Sand_NW
       rect:
         serializedVersion: 2
         x: 192
@@ -1456,7 +1456,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_1_Corner
+      name: Sand_NE_Corner
       rect:
         serializedVersion: 2
         x: 256
@@ -1477,7 +1477,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_2_Corner
+      name: Sand_SE_Corner
       rect:
         serializedVersion: 2
         x: 320
@@ -1498,7 +1498,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_3_Corner
+      name: Sand_SW_Corner
       rect:
         serializedVersion: 2
         x: 384
@@ -1519,7 +1519,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_4_Corner
+      name: Sand_NW_Corner
       rect:
         serializedVersion: 2
         x: 448
@@ -1540,7 +1540,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_3_W
+      name: Sand_W
       rect:
         serializedVersion: 2
         x: 0
@@ -1561,7 +1561,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_4_W
+      name: Sand_W_2
       rect:
         serializedVersion: 2
         x: 64
@@ -1582,7 +1582,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_4_N
+      name: Sand_N
       rect:
         serializedVersion: 2
         x: 128
@@ -1603,7 +1603,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_1_N
+      name: Sand_N_2
       rect:
         serializedVersion: 2
         x: 192
@@ -1624,7 +1624,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_1_E
+      name: Sand_E
       rect:
         serializedVersion: 2
         x: 256
@@ -1645,7 +1645,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_2_E
+      name: Sand_E_2
       rect:
         serializedVersion: 2
         x: 320
@@ -1666,7 +1666,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_3_S
+      name: Sand_S
       rect:
         serializedVersion: 2
         x: 384
@@ -1687,7 +1687,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_2_S
+      name: Sand_S_2
       rect:
         serializedVersion: 2
         x: 448
@@ -1711,10 +1711,10 @@ TextureImporter:
       name: Shallow_Water_1
       rect:
         serializedVersion: 2
-        x: 15
-        y: 205
-        width: 32
-        height: 16
+        x: 0
+        y: 192
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1732,10 +1732,10 @@ TextureImporter:
       name: Shallow_Water_2
       rect:
         serializedVersion: 2
-        x: 80
-        y: 204
-        width: 32
-        height: 16
+        x: 64
+        y: 192
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1753,10 +1753,10 @@ TextureImporter:
       name: Shallow_Water_3
       rect:
         serializedVersion: 2
-        x: 143
-        y: 204
-        width: 32
-        height: 16
+        x: 128
+        y: 192
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1774,10 +1774,10 @@ TextureImporter:
       name: Shallow_Water_4
       rect:
         serializedVersion: 2
-        x: 208
-        y: 203
-        width: 32
-        height: 16
+        x: 192
+        y: 192
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1792,13 +1792,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_1_NE
+      name: Shallow_Water_NE
       rect:
         serializedVersion: 2
-        x: 17
-        y: 168
-        width: 32
-        height: 16
+        x: 0
+        y: 160
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1813,13 +1813,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_2_SE
+      name: Shallow_Water_SE
       rect:
         serializedVersion: 2
-        x: 84
-        y: 171
-        width: 32
-        height: 16
+        x: 64
+        y: 160
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1834,13 +1834,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_3_SW
+      name: Shallow_Water_SW
       rect:
         serializedVersion: 2
-        x: 142
-        y: 170
-        width: 32
-        height: 16
+        x: 128
+        y: 160
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1855,13 +1855,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_4_NW
+      name: Shallow_Water_NW
       rect:
         serializedVersion: 2
-        x: 210
-        y: 170
-        width: 32
-        height: 16
+        x: 192
+        y: 160
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1876,13 +1876,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_1_Corner
+      name: Shallow_Water_NE_Corner
       rect:
         serializedVersion: 2
-        x: 268
-        y: 166
-        width: 32
-        height: 16
+        x: 256
+        y: 160
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1897,13 +1897,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_2_Corner
+      name: Shallow_Water_SE_Corner
       rect:
         serializedVersion: 2
-        x: 340
-        y: 169
-        width: 32
-        height: 16
+        x: 320
+        y: 160
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1918,13 +1918,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_3_Corner
+      name: Shallow_Water_SW_Corner
       rect:
         serializedVersion: 2
-        x: 402
-        y: 164
-        width: 32
-        height: 16
+        x: 384
+        y: 160
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1939,13 +1939,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_4_Corner
+      name: Shallow_Water_NW_Corner
       rect:
         serializedVersion: 2
-        x: 460
-        y: 168
-        width: 32
-        height: 16
+        x: 448
+        y: 160
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1960,7 +1960,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_3_W
+      name: Shallow_Water_W
       rect:
         serializedVersion: 2
         x: 0
@@ -1981,7 +1981,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_4_W
+      name: Shallow_Water_W_2
       rect:
         serializedVersion: 2
         x: 64
@@ -2002,7 +2002,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_4_N
+      name: Shallow_Water_N
       rect:
         serializedVersion: 2
         x: 128
@@ -2023,7 +2023,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_1_N
+      name: Shallow_Water_N_2
       rect:
         serializedVersion: 2
         x: 192
@@ -2044,7 +2044,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_1_E
+      name: Shallow_Water_E_2
       rect:
         serializedVersion: 2
         x: 320
@@ -2065,7 +2065,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_2_E
+      name: Shallow_Water_E
       rect:
         serializedVersion: 2
         x: 255
@@ -2086,7 +2086,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_3_S
+      name: Shallow_Water_S
       rect:
         serializedVersion: 2
         x: 384
@@ -2107,7 +2107,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_2_S
+      name: Shallow_Water_S_2
       rect:
         serializedVersion: 2
         x: 448

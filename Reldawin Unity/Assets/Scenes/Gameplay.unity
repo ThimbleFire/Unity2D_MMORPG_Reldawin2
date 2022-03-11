@@ -3943,7 +3943,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -3973,17 +3978,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -33491,7 +33496,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -33521,17 +33531,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -40377,7 +40387,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -40407,17 +40422,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -43387,7 +43402,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -43417,17 +43437,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -43721,7 +43741,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -43751,17 +43776,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -45465,7 +45490,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -45495,17 +45525,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -46243,7 +46273,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -46273,17 +46308,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -46431,7 +46466,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -46461,17 +46501,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -46579,7 +46619,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -46609,17 +46654,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -47360,7 +47405,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -47390,17 +47440,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -50118,7 +50168,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -50148,17 +50203,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -55816,7 +55871,12 @@ PrefabInstance:
     - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152224734187561282, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
@@ -55846,17 +55906,17 @@ PrefabInstance:
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5266917313237103441, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}

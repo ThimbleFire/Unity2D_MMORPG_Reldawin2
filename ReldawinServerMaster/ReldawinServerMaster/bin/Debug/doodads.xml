@@ -12,11 +12,6 @@
       <id>6</id>
     </DEDoodad>
     <DEDoodad>
-      <Droprate />
-      <name>Tree2</name>
-      <id>7</id>
-    </DEDoodad>
-    <DEDoodad>
       <Droprate>
         <Droprate>
           <id>1</id>
@@ -75,6 +70,16 @@
       </Droprate>
       <name>MorePebbles</name>
       <id>4</id>
+    </DEDoodad>
+    <DEDoodad>
+      <Droprate>
+        <Droprate>
+          <id>0</id>
+          <percent>50</percent>
+        </Droprate>
+      </Droprate>
+      <name>Tree2</name>
+      <id>7</id>
     </DEDoodad>
   </list>
 </Doodads>

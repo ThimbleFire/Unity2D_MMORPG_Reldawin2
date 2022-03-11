@@ -77,109 +77,75 @@ namespace LowCloud.Reldawin
             }
         }
 
-        public static Vector2[] GetQuadrantUVs( int type, int quadrant, Tile[] neighbours = null )
+        public static Vector2[] GetQuadrantUVs( int type, Tile[] neighbours = null )
         {
             if ( type == 0 )
                 return GetEmpty;
 
             if ( neighbours == null )
-                return GetTile( XMLLoader.GetTile(type).name + "_" + Random.Range( 1, 5 ) );
+                return GetTile( XMLLoader.GetTile( type ).name + "_" + Random.Range( 1, 5 ) );
 
-            string key = XMLLoader.GetTile(type).name + "_" + quadrant.ToString();
-
-            switch ( quadrant )
+            string key = XMLLoader.GetTile( type ).name;
+            
+            if ( !IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
             {
-                case 1:
-                    if ( !IsSameType( type, neighbours[0] ) && !IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[4] ) )
-                    {
-                        key += "_Corner";
-                        break;
-                    }
-                    if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[4] ) )
-                    {
-                        key += "_NE";
-                        break;
-                    }
-                    if ( !IsSameType( type, neighbours[0] ) )
-                    {
-                        key += "_N";
-                        break;
-                    }
-                    if ( !IsSameType( type, neighbours[1] ) )
-                    {
-                        key += "_E";
-                        break;
-                    }
-                    break;
-
-                case 2:
-                    if ( !IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[5] ) )
-                    {
-                        key += "_Corner";
-                        break;
-                    }
-                    if ( IsSameType( type, neighbours[1] ) && IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[5] ) )
-                    {
-                        key += "_SE";
-                        break;
-                    }
-                    if ( !IsSameType( type, neighbours[1] ) )
-                    {
-                        key += "_E";
-                        break;
-                    }
-                    if ( !IsSameType( type, neighbours[2] ) )
-                    {
-                        key += "_S";
-                        break;
-                    }
-                    break;
-
-                case 3:
-                    if ( !IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
-                    {
-                        key += "_Corner";
-                        break;
-                    }
-                    if ( IsSameType( type, neighbours[2] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
-                    {
-                        key += "_SW";
-                        break;
-                    }
-                    if ( !IsSameType( type, neighbours[2] ) )
-                    {
-                        key += "_S";
-                        break;
-                    }
-                    if ( !IsSameType( type, neighbours[3] ) )
-                    {
-                        key += "_W";
-                        break;
-                    }
-                    break;
-
-                case 4:
-                    if ( !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[0] ) && !IsSameType( type, neighbours[7] ) )
-                    {
-                        key += "_Corner";
-                        break;
-                    }
-                    if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[7] ) )
-                    {
-                        key += "_NW";
-                        break;
-                    }
-                    if ( !IsSameType( type, neighbours[3] ) )
-                    {
-                        key += "_W";
-                        break;
-                    }
-                    if ( !IsSameType( type, neighbours[0] ) )
-                    {
-                        key += "_N";
-                        break;
-                    }
-                    break;
+                key += "_SW_Corner";
+                return GetTile( key );
+            }
+            if ( IsSameType( type, neighbours[2] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
+            {
+                key += "_SW";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[2] ) )
+            {
+                key += "_SE_Corner";
+                return GetTile( key );
+            }
+            if ( IsSameType( type, neighbours[1] ) && IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[5] ) )
+            {
+                key += "_SE";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[0] ) )
+            {
+                key += "_NW_Corner";
+                return GetTile( key );
+            }
+            if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[7] ) )
+            {
+                key += "_NW";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[0] ) && !IsSameType( type, neighbours[1] ) )
+            {
+                key += "_NE_Corner";
+                return GetTile( key );
+            }
+            if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[4] ) )
+            {
+                key += "_NE";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[0] ) )
+            {
+                key += "_N";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[1] ) )
+            {
+                key += "_E";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[2] ) )
+            {
+                key += "_S";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[3] ) )
+            {
+                key += "_W";
+                return GetTile( key );
             }
 
             return GetTile( key );

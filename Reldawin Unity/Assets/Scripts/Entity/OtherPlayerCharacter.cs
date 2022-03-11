@@ -45,7 +45,7 @@ namespace LowCloud.Reldawin
 
             if ( path == null )
             {
-                SetTargetPosition( pointClicked, true );
+                SetTargetPosition( pointClicked );
 
                 return;
             }

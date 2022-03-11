@@ -11,7 +11,7 @@ namespace LowCloud.Reldawin
             public Data( int type, Vector2Int tilePos, Vector2Int chunkIndex )
             {
                 this.tilePositionInWorld = tilePos;
-                this.tilePositionInChunk = new Vector2Int( tilePos.x % 15, tilePos.y % 15 );
+                this.tilePositionInChunk = new Vector2Int( tilePos.x % Chunk.Size, tilePos.y % Chunk.Size );
                 this.chunkIndex = chunkIndex;
                 this.type = type;
             }
@@ -34,7 +34,7 @@ namespace LowCloud.Reldawin
             renderer.sortingOrder = data.tilePositionInWorld.x * Chunk.Size + data.tilePositionInWorld.y;
 
             // setup world position
-            transform.position = MyMath.CellToIsometric( d.tilePositionInWorld ) + Vector2.right * Tile.WorldSpaceHalfWidth;
+            transform.position = MyMath.CellToIsometric( d.tilePositionInWorld );
 
             // setup sprite
             renderer.sprite = SpriteLoader.GetDoodad(XMLLoader.GetDoodad(data.type).name);
