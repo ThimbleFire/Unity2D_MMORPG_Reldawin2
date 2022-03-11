@@ -11,12 +11,15 @@ namespace LowCloud.Reldawin
 
         Vector3[] vertices;
         int[] triangles;
+        Vector2[] uvs;
 
         int width = 16;
         int height = 16;
 
         void Start()
         {
+            SpriteLoader.Setup( 512, 1024 );
+
             mesh = new Mesh();
             GetComponent<MeshFilter>().mesh = mesh;
 
@@ -37,7 +40,8 @@ namespace LowCloud.Reldawin
             {
                 for ( int x = 0; x <= width; x++ )
                 {
-                    vertices[i++] = MyMath.CellToIsometric( x, y );
+                    vertices[i++] = new Vector3( x, y, 0 );
+                    //MyMath.CellToIsometric( x, y );
                 }
             }
 
@@ -60,6 +64,23 @@ namespace LowCloud.Reldawin
                 }
                 vert++;
             }
+
+            Vector2[] empty = SpriteLoader.GetEmpty;
+            Vector2[] grass = SpriteLoader.GetQuadrantUVs( 0 );
+
+            uvs = new Vector2[vertices.Length];
+            for ( int i = 0; i < uvs.Length - 1; )
+            {
+                uvs[i++] = empty[0];
+                uvs[i++] = empty[1];
+                uvs[i++] = empty[2];
+                uvs[i++] = empty[3];
+            }
+
+            uvs[1] = grass[0];
+            uvs[2] = grass[1];
+            uvs[3] = grass[2];
+            uvs[4] = grass[3];
         }
 
         private void UpdateMesh()
@@ -68,8 +89,11 @@ namespace LowCloud.Reldawin
 
             mesh.vertices = vertices;
             mesh.triangles = triangles;
+            mesh.uv = uvs;
 
-            mesh.RecalculateNormals();
+            //mesh.RecalculateNormals();
+            //mesh.RecalculateBounds();
+            //mesh.RecalculateTangents();
         }
     }
 }
