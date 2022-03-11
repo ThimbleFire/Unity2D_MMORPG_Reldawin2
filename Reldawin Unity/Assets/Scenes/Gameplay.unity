@@ -3638,7 +3638,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -8, y: -4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114941194
 MonoBehaviour:
@@ -3664,7 +3664,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: c73d6746eebd6cb42b1d6c7e9e7fbf30, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 116
     m_Alignment: 4
@@ -24518,7 +24518,6 @@ GameObject:
   - component: {fileID: 864755428}
   - component: {fileID: 864755427}
   - component: {fileID: 864755431}
-  - component: {fileID: 864755432}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -24649,19 +24648,6 @@ MonoBehaviour:
   outlineShaderMaterial: {fileID: 0}
   renderTexture: {fileID: 0}
   extraRenderTexture: {fileID: 0}
---- !u!114 &864755432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864755426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24242aeac11cbf441bf4fa1610421e5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tooltip: {fileID: 0}
 --- !u!1 &877419848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4109207059547000217, guid: 41524c520959b8f4f9ca37a1208dfd4d,
@@ -37819,7 +37805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1372197736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37852,7 +37838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24242aeac11cbf441bf4fa1610421e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 114941194}
+  offset: {x: 0, y: 0, z: 0}
+  textComponent: {fileID: 114941194}
 --- !u!114 &1372197738
 MonoBehaviour:
   m_ObjectHideFlags: 0

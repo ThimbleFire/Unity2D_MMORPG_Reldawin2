@@ -47,7 +47,7 @@ namespace ReldawinServerMaster
     {
         public static int Width = 64;
         public static int Height = 64;
-        public static int Seed = 1596423667;
+        public static int Seed = 0;
         public static double Scale = 0.5d;
         public static int RNGSeed = int.MinValue;
         public static byte[,] tiles;

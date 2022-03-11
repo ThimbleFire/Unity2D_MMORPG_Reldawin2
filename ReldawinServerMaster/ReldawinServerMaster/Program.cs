@@ -104,6 +104,7 @@ namespace ReldawinServerMaster
                 int.TryParse( input.Substring( length, input.Length - length ), out int seed );
                 World.Seed = seed;
                 World.LoadNewMap();
+                SQLReader.RunQuery( string.Format( @"UPDATE mapdefaults SET Seed = {0};", seed ), out bool executed );
                 Console.WriteLine( "\n[Program] Operation TRUE" );
                 CommonSQL.EmptyTable( "doodads" );
             }

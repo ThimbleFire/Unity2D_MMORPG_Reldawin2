@@ -54,12 +54,15 @@ namespace LowCloud.Reldawin
 
         private void OnMouseEnter()
         {
-            GetComponent<Outline>().enabled = true;
+            Tooltip.p.gameObject.SetActive( true );
+            Tooltip.p.MouseOver( "Cut " + XMLLoader.GetDoodad( data.type ).name );
+            //GetComponent<Outline>().enabled = true;
         }
 
         private void OnMouseExit()
         {
-            GetComponent<Outline>().enabled = false;
+            Tooltip.p.gameObject.SetActive( false );
+            //GetComponent<Outline>().enabled = false;
         }
     }
 }
