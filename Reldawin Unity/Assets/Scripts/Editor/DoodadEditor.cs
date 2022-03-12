@@ -3,6 +3,7 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
+using System;
 
 public class DoodadEditor : EditorWindow
 {
@@ -21,6 +22,7 @@ public class DoodadEditor : EditorWindow
     private List<Droprate> yieldRates = new List<Droprate>();
     private int tempProbabilityOptionIndex = 0;
     private int tempProbabilitySpawnRate = 0;
+    DEDoodad.Interact _interact = DEDoodad.Interact.NONE;
 
     [MenuItem( "Window/Doodad Editor" )]
 
@@ -57,6 +59,11 @@ public class DoodadEditor : EditorWindow
         {
             windowState = WindowState.Create;
 
+            _doodadName = string.Empty;
+            _ID = 0;
+            yieldRates.Clear();
+            _interact = DEDoodad.Interact.NONE;
+
             return;
         }
         if ( GUILayout.Button( "Load Selected" ) )
@@ -66,6 +73,7 @@ public class DoodadEditor : EditorWindow
             _doodadName = activeList.list[loadIndex].name;
             _ID = activeList.list[loadIndex].id;
             yieldRates = new List<Droprate>( activeList.list[loadIndex].droprates );
+            _interact = activeList.list[loadIndex].interact;
 
             return;
         }
@@ -77,6 +85,7 @@ public class DoodadEditor : EditorWindow
 
         PaintTileName();
         PaintID();
+        PaintInteractType();
         PaintHorizontalLine();
         if(itemList.GetNames.Length > 0)
             ResourceYieldProbability();
@@ -85,6 +94,11 @@ public class DoodadEditor : EditorWindow
 
         PaintSaveButton();
         PaintBackButton();
+    }
+
+    private void PaintInteractType()
+    {
+        _interact = (DEDoodad.Interact)EditorGUI.Popup( new Rect( 4, y, position.width - 8, 20 ), (int)_interact, Enum.GetNames( typeof( DEDoodad.Interact ) ) ); y += 22;
     }
 
     private void ResourceYieldProbability()
@@ -135,7 +149,8 @@ public class DoodadEditor : EditorWindow
             {
                 id = _ID,
                 name = _doodadName,
-                droprates = yieldRates.ToArray()
+                droprates = yieldRates.ToArray(),
+                interact = _interact
             };
 
             if ( activeList != null )
@@ -157,6 +172,9 @@ public class DoodadEditor : EditorWindow
             Save();
 
             yieldRates.Clear();
+
+            windowState = WindowState.Main;
+            loaded = false;
         }
         GUILayout.EndArea();
     }
