@@ -13,7 +13,7 @@ public class UI_Container_DragHandler : MonoBehaviour, IBeginDragHandler, IDragH
 
     public void OnDrag( PointerEventData eventData )
     {
-        rTransform.position = Input.mousePosition + new Vector3(rTransform.rect.size.x / 2, -rTransform.rect.size.y);
+        rTransform.position = Input.mousePosition + new Vector3( rTransform.rect.size.x / 2, -rTransform.rect.size.y );
     }
 
     public void OnEndDrag( PointerEventData eventData )

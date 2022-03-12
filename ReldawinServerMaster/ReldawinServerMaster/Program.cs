@@ -218,7 +218,6 @@ namespace ReldawinServerMaster
             for ( int i = count; i > 0; i-- )
             {
                 Thread.Sleep( 1000 );
-
             }
 
             return;

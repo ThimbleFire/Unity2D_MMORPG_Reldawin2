@@ -3,30 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace LowCloud.Reldawin
+public class UI_Slot : MonoBehaviour, IDropHandler
 {
-    public class UI_Slot : MonoBehaviour, IDropHandler
+    public GameObject item
     {
-        public GameObject item
+        get
         {
-            get
-            {
-                if ( transform.childCount > 0 )
-                    return transform.GetChild( 0 ).gameObject;
-                return null;
-            }
+            if ( transform.childCount > 0 )
+                return transform.GetChild( 0 ).gameObject;
+            return null;
         }
+    }
 
-        public bool IsEmpty { get { return transform.childCount == 0; } }
-        public Item GetItem { get { return GetComponentInChildren<Item>(); } }
+    public bool IsEmpty { get { return transform.childCount == 0; } }
+    public LowCloud.Reldawin.Item GetItem { get { return GetComponentInChildren<LowCloud.Reldawin.Item>(); } }
 
-        public void OnDrop( PointerEventData eventData )
+    public void OnDrop( PointerEventData eventData )
+    {
+        if ( !item )
         {
-            if ( !item )
-            {
-                UI_Item_DragHandler.itemBeingDragged.transform.SetParent( transform );
-                ExecuteEvents.ExecuteHierarchy<IHasChanged>( gameObject, null, ( x, y ) => x.HasChanged() );
-            }
+            UI_Item_DragHandler.itemBeingDragged.transform.SetParent( transform );
+            ExecuteEvents.ExecuteHierarchy<IHasChanged>( gameObject, null, ( x, y ) => x.HasChanged() );
         }
     }
 }

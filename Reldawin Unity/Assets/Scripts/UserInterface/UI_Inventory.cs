@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -27,12 +25,12 @@ public class UI_Inventory : MonoBehaviour, IHasChanged
         //}
     }
 
-    public void ToggleActive(Button btn)
+    public void ToggleActive( Button btn )
     {
         gameObject.SetActive( !gameObject.activeSelf );
 
-        btn.image.sprite = gameObject.activeSelf ? LowCloud.Reldawin.SpriteLoader.GetDoodad("btnPressed") :
-                                                   LowCloud.Reldawin.SpriteLoader.GetDoodad( "btnNotPressed");
+        btn.image.sprite = gameObject.activeSelf ? LowCloud.Reldawin.SpriteLoader.GetDoodad( "btnPressed" ) :
+                                                   LowCloud.Reldawin.SpriteLoader.GetDoodad( "btnNotPressed" );
     }
 }
 

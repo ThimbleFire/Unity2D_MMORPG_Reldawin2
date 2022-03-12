@@ -15,35 +15,45 @@ namespace LowCloud.Reldawin
             offset = Vector3.zero;
         }
 
-        // text.text = "Gather <color=#07F8E0>" + resource.ToString() + "</color>";
-
         public Text textComponent;
+        public Image imageComponent;
+        public RectTransform rectTransform;
 
-        public void MouseOver(string text)
+        public void MouseOver( string action, string name, string color)
         {
-            GetComponent<Image>().enabled = true;
+            int width = CalculateCharacterWidth( action, name );
+
+            imageComponent.rectTransform.sizeDelta = new Vector2( width, 20 );
+            textComponent.text = string.Format( "{0} {1}{2}{3}", 
+                action, 
+                color, 
+                name, 
+                color == string.Empty ? string.Empty : "</color>" );
+
+            offset = new Vector2( width / 2, 12 );
+
+            imageComponent.enabled = true;
             textComponent.enabled = true;
+        }
 
+        private int CalculateCharacterWidth(string action, string name)
+        {
             int characterWidth = 12;
-
-            for ( int i = 0; i < text.Length; i++ )
+            string message = string.Format( "{0} {1}", action, name );
+            for ( int i = 0; i < message.Length; i++ )
             {
-                textComponent.font.GetCharacterInfo( text[i], out CharacterInfo info, textComponent.fontSize );
+                textComponent.font.GetCharacterInfo( message[i], out CharacterInfo info, textComponent.fontSize );
                 characterWidth += info.advance;
             }
-
-            GetComponent<Image>().rectTransform.sizeDelta = new Vector2( characterWidth, 24 );            
-            textComponent.text = text;
-
-            offset = new Vector2( characterWidth / 2, 12 );
+            return characterWidth;
         }
 
         public void MouseOff()
         {
-            GetComponent<Image>().enabled = false;
-            textComponent.enabled = false;
-
             textComponent.text = string.Empty;
+
+            imageComponent.enabled = false;
+            textComponent.enabled = false;
         }
 
         private void Update()

@@ -54,8 +54,34 @@ namespace LowCloud.Reldawin
 
         private void OnMouseEnter()
         {
+            string color = string.Empty;
+            string action = string.Empty;
+
+            DEDoodad d = XMLLoader.GetDoodad( data.type );
+
+            switch ( d.interact )
+            {
+                case DEDoodad.Interact.NONE:
+                    break;
+                case DEDoodad.Interact.WOODCUTTING:
+                    color = "<color=#FFFF00>";
+                    action = "Cut down";
+                    break;
+                case DEDoodad.Interact.MINING:
+                    color = "<color=#FFFF00>";
+                    action = "Mine";
+                    break;
+                case DEDoodad.Interact.HANDS:
+                    color = "<color=#FFFF00>";
+                    action = "Gather";
+                    break;
+                case DEDoodad.Interact.DOOR:
+                    color = "<color=#07F8E0>";
+                    action = "Enter";
+                    break;
+            }
+            Tooltip.p.MouseOver( action, d.name, color );
             Tooltip.p.gameObject.SetActive( true );
-            Tooltip.p.MouseOver( "Cut " + XMLLoader.GetDoodad( data.type ).name );
             //GetComponent<Outline>().enabled = true;
         }
 

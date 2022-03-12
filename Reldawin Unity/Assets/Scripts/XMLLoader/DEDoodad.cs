@@ -8,7 +8,8 @@ public class DEDoodad
         NONE,
         WOODCUTTING,
         MINING,
-        HANDS
+        HANDS,
+        DOOR
     };
 
     public string name { get; set; }
