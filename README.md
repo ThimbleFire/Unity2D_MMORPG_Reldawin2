@@ -5,7 +5,10 @@ Reldawin is a multiplayer 2d isometric RPG. The player character starts in a wil
 
 ## TODO List
 
-- [ ] [Fix] Moving items in the inventory.
+- [ ] [Add] Crafting
+
+You activate an item in the inventory and use it with another item. The two items are used to query existing recipes featuring those two items. Returned recipes are presented as buttons that can be clicked in order to craft these items. XMLDevice.GetRecipesContaining(itemA, itemB);
+
 - [ ] [Add] Doodad destruction  
 - [ ] [Add] Mining animation 
 - [ ] [Add] Item database
