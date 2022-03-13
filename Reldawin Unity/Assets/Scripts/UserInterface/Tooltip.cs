@@ -21,14 +21,15 @@ namespace LowCloud.Reldawin
 
         public void MouseOver( string action, string name, string color)
         {
-            int width = CalculateCharacterWidth( action, name );
-
-            imageComponent.rectTransform.sizeDelta = new Vector2( width, 20 );
             textComponent.text = string.Format( "{0} {1}{2}{3}", 
                 action, 
                 color, 
                 name, 
                 color == string.Empty ? string.Empty : "</color>" );
+
+            int width = CalculateCharacterWidth( action, name );
+
+            imageComponent.rectTransform.sizeDelta = new Vector2( width, 20 );
 
             offset = new Vector2( width / 2, 12 );
 
@@ -38,20 +39,20 @@ namespace LowCloud.Reldawin
 
         private int CalculateCharacterWidth(string action, string name)
         {
-            int characterWidth = 12;
+            int width = 14;
             string message = string.Format( "{0} {1}", action, name );
+            textComponent.font.RequestCharactersInTexture( message );
             for ( int i = 0; i < message.Length; i++ )
             {
-                textComponent.font.GetCharacterInfo( message[i], out CharacterInfo info, textComponent.fontSize );
-                characterWidth += info.advance;
+                textComponent.font.GetCharacterInfo( message[i], out CharacterInfo info, 16 );
+                width += info.advance;
             }
-            return characterWidth;
+
+            return width;
         }
 
         public void MouseOff()
         {
-            textComponent.text = string.Empty;
-
             imageComponent.enabled = false;
             textComponent.enabled = false;
         }
