@@ -2,61 +2,6 @@ using System;
 
 public class EditorBase : EditorWindow
 {
-    protected interface IXMLStream < T >
-    {
-        T Load(string path);
-        void Save(T obj, string path);
-    }
-
-    protected XMLStream < T > : IXMLStream < T >
-    {
-        public T Load(string FileName)
-        {
-            private const string ServerDir = "C:/Users/Retri/Documents/GitHub/Reldawin/ReldawinServerMaster/ReldawinServerMaster/bin/Debug";
-
-            T obj;
-
-            try
-            {
-                XmlSerializer serializer = new XmlSerializer( typeof( T ) );
-                FileStream stream = new FileStream( Application.streamingAssetsPath + FileName, FileMode.Open );
-                obj = serializer.Deserialize( stream ) as T;
-                stream.Close();
-            }
-            catch
-            {
-                Debug.LogWarning( "Could not open " + FileName );
-            }
-
-            return obj;
-        }
-
-        public void Save(T obj, string FileName)
-        {       
-            try
-            {
-                using(XmlSerializer serializer = new XmlSerializer( typeof( T ) ) )
-                {                 
-                    using(FileStream stream = new FileStream( Application.streamingAssetsPath + FileName, FileMode.Create ) )
-                    {
-                        serializer.Serialize( stream, obj );
-                        stream.Close();
-                    }
-
-                    using(FileStream stream = new FileStream( ServerDir + FileName, FileMode.Create ) )
-                    {
-                        serializer.Serialize( stream, obj );
-                        stream.Close();
-                    }
-                }
-            }
-            catch
-            {
-                Debug.LogWarning( "Could not save " + FileName );
-            }
-        }
-    }
-
     protected enum WindowState { Main, Create }
     
     protected WindowState windowState { get; set; }
@@ -195,6 +140,36 @@ public class EditorBase : EditorWindow
             EditorGUI.LabelField(new Rect(4, y, position.width - 12, 20), droprate.id.ToString());
             EditorGUI.LabelField(new Rect(position.width - 40, y, position.width - 12, 20), (droprate.percent).ToString() + " %");
             AddRow();            
+        }
+    }
+    
+    //new keyword hides inheriting classes from overriding Load
+    protected new T Load<T>()
+    {	            
+        XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+        using (TextReader reader = new StreamReader(Application.streamingAssetsPath + FileName))
+        {
+            return (T)xmlSerializer.Deserialize(reader);
+        }
+    }
+    
+    //new keyword hides inheriting classes from overriding Save
+    protected new void Save<T>(T dataToSerialize)
+    {
+        string ServerDir = "C:/Users/Retri/Documents/GitHub/Reldawin/ReldawinServerMaster/ReldawinServerMaster/bin/Debug";
+        
+        using(XmlSerializer serializer = new XmlSerializer( typeof( T ) ) )
+        {                 
+            using(FileStream stream = new FileStream( Application.streamingAssetsPath + FileName, FileMode.Create ) )
+            {
+                serializer.Serialize( stream, dataToSerialize );
+                stream.Close();
+            }
+            using(FileStream stream = new FileStream( ServerDir + FileName, FileMode.Create ) )
+            {
+                serializer.Serialize( stream, dataToSerialize );
+                stream.Close();
+            }
         }
     }
 }
