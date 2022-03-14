@@ -4,19 +4,13 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
 
-public class TileEditor : EditorWindow
+public class TileEditor : BaseWindow
 {
-    private enum WindowState { Main, Create }
-    private WindowState windowState = WindowState.Main;
-    private const string ServerDir = "C:/Users/Retri/Documents/GitHub/Reldawin/ReldawinServerMaster/ReldawinServerMaster/bin/Debug/";
-    private bool loaded = false;
     private static TETileList activeList;
-    private DEDoodadList doodadList;
-    private int loadIndex = 0;
-    private int y = 0;
+    private DEDoodadList doodadList;;
     private int tempProbabilityOptionIndex = 0;
     private int tempProbabilitySpawnRate = 0;
-
+    
     //tile properties
     private string _tileName;
     private int _ID;
