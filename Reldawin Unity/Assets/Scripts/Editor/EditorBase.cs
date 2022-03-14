@@ -1,49 +1,74 @@
 using System;
 
-public interface ILoader < T >
-{
-    T Load(string path);
-}
-
-public XMLReader < T > : ILoader < T >
-{
-    public T Load(string path)
-    {
-        T obj;
-
-        try
-        {
-            XmlSerializer serializer = new XmlSerializer( typeof( T ) );
-            FileStream stream = new FileStream( path, FileMode.Open );
-            obj = serializer.Deserialize( stream ) as T;
-            stream.Close();
-        }
-        catch
-        {
-            Debug.LogWarning( "Could not open " + FileName );
-        }
-        
-        return obj;
-    }
-}
-
 public class EditorBase : EditorWindow
 {
-    protected enum WindowState { Main, Create }
-    protected const string ServerDir = "C:/Users/Retri/Documents/GitHub/Reldawin/ReldawinServerMaster/ReldawinServerMaster/bin/Debug";
-
-    protected WindowState windowState { get; set; }
-    protected int loadIndex { get; set; }    
-    protected string FileName { get; set; }
-    protected bool loaded { get; set; }
-    
-    protected T 
-    
-    private int y { get; set; }
-    protected void AddRow()
+    protected interface IXMLStream < T >
     {
-        y += 22;
+        T Load(string path);
+        void Save(T obj, string path);
     }
+
+    protected XMLStream < T > : IXMLStream < T >
+    {
+        public T Load(string FileName)
+        {
+            private const string ServerDir = "C:/Users/Retri/Documents/GitHub/Reldawin/ReldawinServerMaster/ReldawinServerMaster/bin/Debug";
+
+            T obj;
+
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer( typeof( T ) );
+                FileStream stream = new FileStream( Application.streamingAssetsPath + FileName, FileMode.Open );
+                obj = serializer.Deserialize( stream ) as T;
+                stream.Close();
+            }
+            catch
+            {
+                Debug.LogWarning( "Could not open " + FileName );
+            }
+
+            return obj;
+        }
+
+        public void Save(T obj, string FileName)
+        {       
+            try
+            {
+                using(XmlSerializer serializer = new XmlSerializer( typeof( T ) ) )
+                {                 
+                    using(FileStream stream = new FileStream( Application.streamingAssetsPath + FileName, FileMode.Create ) )
+                    {
+                        serializer.Serialize( stream, obj );
+                        stream.Close();
+                    }
+
+                    using(FileStream stream = new FileStream( ServerDir + FileName, FileMode.Create ) )
+                    {
+                        serializer.Serialize( stream, obj );
+                        stream.Close();
+                    }
+                }
+            }
+            catch
+            {
+                Debug.LogWarning( "Could not save " + FileName );
+            }
+        }
+    }
+
+    protected enum WindowState { Main, Create }
+    
+    protected WindowState windowState { get; set; }
+    protected int LoadIndex { get; set; }    
+    protected string FileName { get; set; }
+    protected bool Loaded { get; set; }
+        
+    private int y { get; set; }
+    protected void AddRow() { y += 20; }
+    
+    protected void LoadProperties() { }
+    protected void SaveProperties() { }
     
     protected static void ShowWindow()
     {
@@ -54,7 +79,7 @@ public class EditorBase : EditorWindow
     {
         focusedWindow.minSize = new Vector2( 400, 100 );
         
-        if ( !loaded )
+        if ( !Loaded )
         {
             Load();
         }
@@ -92,30 +117,25 @@ public class EditorBase : EditorWindow
         PaintBackButton();
     }
     
-    protected void LoadProperties()
-    {
-    
-    }
-    
-    protected void PaintIntField(string label, int out value)
+    protected void PaintIntField(string label, ref int value)
     {
         value = EditorGUI.IntField(new Rect(4, y, position.width - 12, 20), label, value);
         AddRow();
     }
     
-    protected void PaintFloatField(string label, float out value)
+    protected void PaintFloatField(string label, ref float value)
     {
         value = EditorGUI.FloatField(new Rect(4, y, position.width - 12, 20), label, value);
         AddRow();
     }
     
-    protected void PaintTextField(string label, string out value)
+    protected void PaintTextField(string label, ref string value)
     {
         value = EditorGUI.TextField(new Rect(4, y, position.width - 12, 20), label, value);
         AddRow();
     }
     
-    protected void PaintFloatRange(string label, float out min, float out max, float minRange, float maxRange)
+    protected void PaintFloatRange(string label, ref float min, ref float max, float minRange, float maxRange)
     {
         EditorGUIUtility.wideMode = true;
         {
@@ -139,9 +159,32 @@ public class EditorBase : EditorWindow
         AddRow();
     }
     
-    protected void PaintPopup(string label, string[] options, int out value)
+    protected void PaintPopup(string label, string[] options, ref int value)
     {
         value = EditorGUI.Popup(new Rect(4, y, position.width - 8, 20, value, options);
-        AddRows();
+        AddRow();
+    }
+    
+    protected void PaintSpriteField(string label, ref Sprite sprite, ref string fileName)
+    {
+        sprite (Sprite)EditorGUI.ObjectField(new Rect(4, y, 64, 64), sprite, typeof(Sprite), false);
+        
+        if(sprite != null)
+        {
+            fileName = sprite.Name;
+            EditorGUI.LabelField(new Rect(74, y, position.width - 86, 20, label);
+            AddRow();
+            EditorGUI.LabelField(new Rect(74, y, position.width - 86, 20, label);
+            AddRow();
+            AddRow();
+            AddRow();
+        }
+        else
+        {
+            AddRow();
+            AddRow();
+            AddRow();
+            AddRow();
+        }
     }
 }
