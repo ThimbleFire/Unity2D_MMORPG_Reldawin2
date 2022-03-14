@@ -3,16 +3,8 @@ using UnityEditor;
 using System.Xml.Serialization;
 using System.IO;
 
-public class ItemEditor : EditorWindow
+public class ItemEditor : EditorBase
 {
-    private enum WindowState { Main, Create }
-    private WindowState windowState = WindowState.Main;
-    private const byte BaseTwo = 2;
-    private int loadIndex = 0;
-    private bool loaded = false; int y = 0;
-    private static IEItemList activeList;
-    private const string ServerDir = "C:/Users/Retri/Documents/GitHub/Reldawin/ReldawinServerMaster/ReldawinServerMaster/bin/Debug/";
-
     //item properties
     private string _itemName = string.Empty;
     private string _itemSpriteFileName16x16 = string.Empty;
