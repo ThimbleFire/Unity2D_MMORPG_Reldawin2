@@ -5,17 +5,10 @@ using System.Xml.Serialization;
 using System.IO;
 using System;
 
-public class DoodadEditor : EditorWindow
+public class DoodadEditor : BaseWindow
 {
-    private enum WindowState { Main, Create }
-    private WindowState windowState = WindowState.Main;
-    private const string ServerDir = "C:/Users/Retri/Documents/GitHub/Reldawin/ReldawinServerMaster/ReldawinServerMaster/bin/Debug/";
     private static DEDoodadList activeList;
     private static IEItemList itemList;
-    private bool loaded = false;
-    private int loadIndex = 0;
-    private int y = 0;
-
     //doodad properties
     private string _doodadName = string.Empty;
     private int _ID = 0;
