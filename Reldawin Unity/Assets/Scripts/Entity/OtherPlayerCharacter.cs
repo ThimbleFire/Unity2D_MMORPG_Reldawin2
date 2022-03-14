@@ -25,7 +25,14 @@ namespace LowCloud.Reldawin
             MovingToward = transform.position;
             InLastChunk = InCurrentChunk;
             DatabaseID = (ushort)opc.ID;
+
+            //set movement mode
             Running = opc.Running;
+            Swimming = opc.Swimming;
+
+            //set movement speed
+            MovementSpeed = opc.Running ? RunSpeed : WalkSpeed;
+            MovementSpeed = opc.Swimming ? WalkSpeed : MovementSpeed;
 
             animationConroller.ToggleRun(Running);
         }
@@ -58,11 +65,9 @@ namespace LowCloud.Reldawin
             MoveToNextNode();
         }
 
-        public override void ToggleRunning()
+        public void Destroy()
         {
-            base.ToggleRunning();
-
-            animationConroller.ToggleRun( Running );
+            Destroy( gameObject );
         }
     }
 }

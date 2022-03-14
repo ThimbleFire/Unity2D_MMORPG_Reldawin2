@@ -15,6 +15,7 @@ namespace LowCloud.Reldawin
         private readonly int moveYHash = Animator.StringToHash( "MoveY" );
         private readonly int movingHash = Animator.StringToHash( "Moving" );
         private readonly int runningHash = Animator.StringToHash( "Running" );
+        private readonly int swimmingHash = Animator.StringToHash( "Swimming" );
 
         private readonly int woodcuttingHash = Animator.StringToHash( "Woodcutting" );
         private readonly int miningHash = Animator.StringToHash( "Mining" );
@@ -24,12 +25,20 @@ namespace LowCloud.Reldawin
         private Vector2 MoveDirection { get; set; }
 
         public bool Running { get; set; }
+        public bool Swimming { get; set; }
                 
         public void ToggleRun(bool running)
         {
             Running = running;
 
             Animator.SetBool( runningHash, running );
+        }
+
+        public void ToggleSwimming(bool swimming)
+        {
+            Swimming = swimming;
+
+            Animator.SetBool( swimmingHash, swimming );
         }
 
         public void Interrupt()

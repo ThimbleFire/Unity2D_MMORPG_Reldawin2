@@ -30,237 +30,218 @@ namespace LowCloud.Reldawin
                 { (int)Packet.YieldInteract, HandleYieldInteract },
                 { (int)Packet.StopInteract, HandleStopInteract },
                 { (int)Packet.ToggleRunning, HandleToggleRunning },
-                { (int)Packet.StartInteract, HandleConfirmStartInteract }
+                { (int)Packet.StartInteract, HandleConfirmStartInteract },
+                { (int)Packet.ToggleSwimming, HandleToggleSwimming },
+                { (int)Packet.Disconnect, HandleDisconnect }
             };
         }
 
         private static void HandleConfirmStartInteract(byte[] data)
         {
-            using ( PacketBuffer buffer = new PacketBuffer(data) )
-            {
-                int cpIndex = buffer.ReadInteger();
-                int id = buffer.ReadInteger();
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            int id = buffer.ReadInteger();
+            eventProcessor.QueueEvent( (Packet)cpIndex, id );
+        }
 
-                eventProcessor.QueueEvent( (Packet)cpIndex, id );
-            }
+        private static void HandleToggleSwimming( byte[] data )
+        {
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            int entityID = buffer.ReadInteger();
+
+            eventProcessor.QueueEvent( (Packet)cpIndex, entityID );
         }
 
         private static void HandleToggleRunning( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int cpIndex = buffer.ReadInteger();
-                int entityID = buffer.ReadInteger();
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            int entityID = buffer.ReadInteger();
 
-                eventProcessor.QueueEvent( (Packet)cpIndex, entityID );
-            }
+            eventProcessor.QueueEvent( (Packet)cpIndex, entityID );
+        }
+
+        private static void HandleDisconnect(byte[] data)
+        {
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            int entityID = buffer.ReadInteger();
+
+            eventProcessor.QueueEvent( (Packet)cpIndex, entityID );
         }
 
         private static void HandleStopInteract( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int packetNum = buffer.ReadInteger();
-                int ID = buffer.ReadInteger();
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int packetNum = buffer.ReadInteger();
+            int ID = buffer.ReadInteger();
 
-                eventProcessor.QueueEvent( (Packet)packetNum, ID );
-            }
+            eventProcessor.QueueEvent( (Packet)packetNum, ID );
         }
 
         private static void HandleYieldInteract( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int packetNum = buffer.ReadInteger();
-                int itemID = buffer.ReadInteger();
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int packetNum = buffer.ReadInteger();
+            int itemID = buffer.ReadInteger();
 
-                eventProcessor.QueueEvent( (Packet)packetNum, itemID );
-            }
+            eventProcessor.QueueEvent( (Packet)packetNum, itemID );
         }
 
         public static void HandleNetworkInformation( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int packetNum = buffer.ReadInteger();
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int packetNum = buffer.ReadInteger();
 
-                if ( packets.TryGetValue( packetNum, out Packet_ packet ) )
-                {
-                    packet.Invoke( data );
-                }
+            if ( packets.TryGetValue( packetNum, out Packet_ packet ) )
+            {
+                packet.Invoke( data );
             }
         }
 
         private static void HandleConnectionOK( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int cpIndex = buffer.ReadInteger();
-                ClientTCP.SendConfirmRecieve();
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            ClientTCP.SendConfirmRecieve();
 
-                eventProcessor.QueueEvent( (Packet)cpIndex );
-            }
+            eventProcessor.QueueEvent( (Packet)cpIndex );
         }
 
         private static void HandleAccountCreateSuccess( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int cpIndex = buffer.ReadInteger();
-                string message = buffer.ReadString();
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            string message = buffer.ReadString();
 
-                eventProcessor.QueueEvent( (Packet)cpIndex, message );
-            }
+            eventProcessor.QueueEvent( (Packet)cpIndex, message );
         }
 
         private static void HandleLoginFail( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int cpIndex = buffer.ReadInteger();
-                string message = buffer.ReadString();
-             
-                eventProcessor.QueueEvent( (Packet)cpIndex, message );
-            }
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            string message = buffer.ReadString();
+
+            eventProcessor.QueueEvent( (Packet)cpIndex, message );
         }
 
         private static void HandleLoginSuccess( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int cpIndex = buffer.ReadInteger();
-                Game.dbID = (ushort)buffer.ReadInteger();
-             
-                eventProcessor.QueueEvent( (Packet)cpIndex );
-            }
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            Game.dbID = (ushort)buffer.ReadInteger();
+
+            eventProcessor.QueueEvent( (Packet)cpIndex );
         }
 
         private static void HandleSeedRequest( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int cpIndex = buffer.ReadInteger();
-                int map_seed = buffer.ReadInteger();
-                int map_width = buffer.ReadInteger();
-                int map_height = buffer.ReadInteger();
-                int cellPosX = buffer.ReadInteger();
-                int cellPosY = buffer.ReadInteger();
-                int internalGameClockTime = buffer.ReadInteger();
-
-                eventProcessor.QueueEvent( (Packet)cpIndex, map_seed, map_width, map_height, cellPosX, cellPosY, internalGameClockTime );
-            }
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            int map_seed = buffer.ReadInteger();
+            int map_width = buffer.ReadInteger();
+            int map_height = buffer.ReadInteger();
+            int cellPosX = buffer.ReadInteger();
+            int cellPosY = buffer.ReadInteger();
+            int internalGameClockTime = buffer.ReadInteger();
+            eventProcessor.QueueEvent( (Packet)cpIndex, map_seed, map_width, map_height, cellPosX, cellPosY, internalGameClockTime );
         }
 
         private static void HandlePingTest( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int cpIndex = buffer.ReadInteger();
-
-                eventProcessor.QueueEvent( (Packet)cpIndex );
-            }
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            eventProcessor.QueueEvent( (Packet)cpIndex );
         }
 
         private static void HandleDoesUserExist( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int cpIndex = buffer.ReadInteger();
-                byte result = buffer.ReadByte();
-
-                eventProcessor.QueueEvent( (Packet)cpIndex, result == 1 );
-            }
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            byte result = buffer.ReadByte();
+            eventProcessor.QueueEvent( (Packet)cpIndex, result == 1 );
         }
 
+        /// <summary>Fired when another player character logs in</summary>
         private static void HandleOtherPlayerCharacterLogin( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int cpIndex = buffer.ReadInteger();
-                string otherPCUsername = buffer.ReadString();
-                int cellPosX = buffer.ReadInteger();
-                int cellPosY = buffer.ReadInteger();
-                int otherPCID = buffer.ReadInteger();
-
-                ClientParams clientParams = new ClientParams( otherPCUsername, cellPosX, cellPosY, otherPCID, false );
-
-                eventProcessor.QueueEvent( (Packet)cpIndex, clientParams );
-            }
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            string otherPCUsername = buffer.ReadString();
+            int cellPosX = buffer.ReadInteger();
+            int cellPosY = buffer.ReadInteger();
+            int otherPCID = buffer.ReadInteger();
+            ClientParams clientParams = new ClientParams( otherPCUsername, cellPosX, cellPosY, otherPCID, false, false );
+            eventProcessor.QueueEvent( (Packet)cpIndex, clientParams );
         }
 
+        /// <summary>Fired when the local player character logs in</summary>
         private static void HandleOtherPlayerCharacterListResponse( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
+            using PacketBuffer buffer = new PacketBuffer( data );
+            List<ClientParams> clientParams = new List<ClientParams>();
+            int cpIndex = buffer.ReadInteger();
+            int playerCount = buffer.ReadInteger();
+
+            for ( int i = 0; i < playerCount; i++ )
             {
-                List<ClientParams> clientParams = new List<ClientParams>();
-                int cpIndex = buffer.ReadInteger();
-                int playerCount = buffer.ReadInteger();
-
-                for ( int i = 0; i < playerCount; i++ )
+                ClientParams p = new ClientParams
                 {
-                    ClientParams p = new ClientParams
-                    {
-                        username = buffer.ReadString(),
-                        cellPosX = buffer.ReadInteger(),
-                        cellPosY = buffer.ReadInteger(),
-                        ID = buffer.ReadInteger(),
-                        Running = buffer.ReadBoolean()
-                    };
+                    username = buffer.ReadString(),
+                    cellPosX = buffer.ReadInteger(),
+                    cellPosY = buffer.ReadInteger(),
+                    ID = buffer.ReadInteger(),
+                    Running = buffer.ReadBoolean()
+                };
 
-                    clientParams.Add( p );
-                }
-
-                eventProcessor.QueueEvent( (Packet)cpIndex, clientParams );
+                clientParams.Add( p );
             }
+
+            eventProcessor.QueueEvent( (Packet)cpIndex, clientParams );
         }
 
+        /// <summary>Fired when the local player character clicks to move</summary>
         private static void HandleEntityMoveQuery( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int cpIndex = buffer.ReadInteger();
-                int entityID = buffer.ReadInteger();
-                float worldPosX = buffer.ReadFloat();
-                float worldPosY = buffer.ReadFloat();
-                bool hasInventorySpace = buffer.ReadBoolean();
-
-                eventProcessor.QueueEvent( (Packet)cpIndex, entityID, worldPosX, worldPosY, hasInventorySpace );
-            }
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            int entityID = buffer.ReadInteger();
+            float worldPosX = buffer.ReadFloat();
+            float worldPosY = buffer.ReadFloat();
+            bool hasInventorySpace = buffer.ReadBoolean();
+            eventProcessor.QueueEvent( (Packet)cpIndex, entityID, worldPosX, worldPosY, hasInventorySpace );
         }
 
+        /// <summary>Fires when the local player character's position exceeds their current chunks border</summary>
         private static void HandleLoadChunkQuery( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
-            {
-                int cpIndex = buffer.ReadInteger();
-                int chunkX = buffer.ReadInteger();
-                int chunkY = buffer.ReadInteger();
-                string chunkData = buffer.ReadString();
-                eventProcessor.QueueEvent( (Packet)cpIndex, chunkX, chunkY, chunkData );
-            }
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            int chunkX = buffer.ReadInteger();
+            int chunkY = buffer.ReadInteger();
+            string chunkData = buffer.ReadString();
+            eventProcessor.QueueEvent( (Packet)cpIndex, chunkX, chunkY, chunkData );
         }
 
+        /// <summary>Fires when a chunk has finished loading and is ready to be populated by objects</summary>
         private static void HandleLoadChunkDoodadQuery( byte[] data )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( data ) )
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            Vector2Int chunkIndex = new Vector2Int( buffer.ReadInteger(), buffer.ReadInteger() );
+            int count = buffer.ReadInteger();
+            List<Doodad.Data> doodads = new List<Doodad.Data>();
+            for ( int i = 0; i < count; i++ )
             {
-                int cpIndex = buffer.ReadInteger();
-                Vector2Int chunkIndex = new Vector2Int( buffer.ReadInteger(), buffer.ReadInteger() );
-                int count = buffer.ReadInteger();
-
-                List<Doodad.Data> doodads = new List<Doodad.Data>();
-
-                for ( int i = 0; i < count; i++ )
-                {
-                    int doodadType = buffer.ReadByte();
-                    int tileX = buffer.ReadInteger();
-                    int tileY = buffer.ReadInteger();
-                    Vector2Int tilePos = new Vector2Int( tileX, tileY );
-
-                    doodads.Add( new Doodad.Data( doodadType, tilePos, chunkIndex ) );
-                }
-                eventProcessor.QueueEvent( (Packet)cpIndex, chunkIndex, doodads );
+                int doodadType = buffer.ReadByte();
+                int tileX = buffer.ReadInteger();
+                int tileY = buffer.ReadInteger();
+                Vector2Int tilePos = new Vector2Int( tileX, tileY );
+                doodads.Add( new Doodad.Data( doodadType, tilePos, chunkIndex ) );
             }
+            eventProcessor.QueueEvent( (Packet)cpIndex, chunkIndex, doodads );
         }
 
         private void Awake()

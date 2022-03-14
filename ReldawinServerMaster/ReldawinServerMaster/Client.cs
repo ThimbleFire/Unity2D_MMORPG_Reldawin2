@@ -83,6 +83,7 @@ namespace ReldawinServerMaster
 
         private void CloseClient( int index )
         {
+            ServerTCP.AnnounceDisconnect(index, properties.ID);
             World.OnTick -= OnTick;
             closing = true;
             Console.WriteLine( properties.Username + " safely disconnected." );

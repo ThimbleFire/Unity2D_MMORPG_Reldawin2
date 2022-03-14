@@ -40,6 +40,8 @@
         YieldInteract,
         StopInteract,
 
-        ToggleRunning
+        ToggleRunning,
+        ToggleSwimming,
+        Disconnect
     };
 }

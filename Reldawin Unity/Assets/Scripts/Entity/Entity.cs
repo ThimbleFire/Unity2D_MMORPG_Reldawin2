@@ -17,6 +17,7 @@ namespace LowCloud.Reldawin
         public const float RunSpeed = 0.025f;
         public const float WalkSpeed = 0.010f;
         protected bool Running { get; set; }
+        protected bool Swimming { get; set; }
         public Vector2Int InCurrentChunk
         {
             get
@@ -154,7 +155,16 @@ namespace LowCloud.Reldawin
         {
             Running = !Running;
 
-            MovementSpeed = Running ? RunSpeed : WalkSpeed;
+            MovementSpeed = Running ? RunSpeed : WalkSpeed; 
+            
+            animationConroller.ToggleRun( Running );
+        }
+
+        public virtual void ToggleSwimming()
+        {
+            Swimming = !Swimming;
+
+            animationConroller.ToggleSwimming( Swimming );
         }
 
         private void OnAnimationDestinationMet()

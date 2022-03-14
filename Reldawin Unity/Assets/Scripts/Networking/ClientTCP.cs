@@ -128,120 +128,92 @@ namespace LowCloud.Reldawin
 
         public static void SendConfirmRecieve()
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.ConnectionOK ) )
-            {
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.ConnectionOK );
+            SendData( buffer.ToArray() );
         }
         public static void SavePositionToServer( Vector2Int newPosition )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.SavePositionToServer ) )
-            {
-                buffer.WriteInteger( newPosition.x );
-                buffer.WriteInteger( newPosition.y );
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.SavePositionToServer );
+            buffer.WriteInteger( newPosition.x );
+            buffer.WriteInteger( newPosition.y );
+            SendData( buffer.ToArray() );
         }
         public static void SendPing()
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.PingTest ) )
-            {
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.PingTest );
+            SendData( buffer.ToArray() );
         }
         public static void RequestMapDetails()
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.RequestSeed ) )
-            {
-                buffer.WriteInteger( Game.dbID );
-                SendData( buffer.ToArray() );
-            } 
+            using PacketBuffer buffer = new PacketBuffer( Packet.RequestSeed );
+            buffer.WriteInteger( Game.dbID );
+            SendData( buffer.ToArray() );
         }
         public static void ToggleRunning()
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.ToggleRunning ) )
-            {
-                buffer.WriteInteger( Game.dbID );
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.ToggleRunning );
+            buffer.WriteInteger( Game.dbID );
+            SendData( buffer.ToArray() );
         }
-        public static void SendInteractDoodad(Vector2Int doodadWorldCellPosition)
+        public static void SendInteractDoodad( Vector2Int doodadWorldCellPosition )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.StartInteract ) )
-            {
-                buffer.WriteInteger( (int)doodadWorldCellPosition.x );
-                buffer.WriteInteger( (int)doodadWorldCellPosition.y );
-                buffer.WriteInteger( Game.dbID );
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.StartInteract );
+            buffer.WriteInteger( (int)doodadWorldCellPosition.x );
+            buffer.WriteInteger( (int)doodadWorldCellPosition.y );
+            buffer.WriteInteger( Game.dbID );
+            SendData( buffer.ToArray() );
         }
         public static void SendLoginAttemptQuery( string username, string password )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.Account_Login_Query ) )
-            {
-                buffer.WriteString( username );
-                buffer.WriteString( password );
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.Account_Login_Query );
+            buffer.WriteString( username );
+            buffer.WriteString( password );
+            SendData( buffer.ToArray() );
         }
         public static void SendChunkDataQuery( Vector2Int chunkPosition )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.Load_Chunk ) )
-            {
-                buffer.WriteInteger( chunkPosition.x );
-                buffer.WriteInteger( chunkPosition.y );
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.Load_Chunk );
+            buffer.WriteInteger( chunkPosition.x );
+            buffer.WriteInteger( chunkPosition.y );
+            SendData( buffer.ToArray() );
         }
         public static void SendChunkDoodadQuery( Vector2Int chunkPosition )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.Load_Doodads ) )
-            {
-                buffer.WriteInteger( chunkPosition.x );
-                buffer.WriteInteger( chunkPosition.y );
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.Load_Doodads );
+            buffer.WriteInteger( chunkPosition.x );
+            buffer.WriteInteger( chunkPosition.y );
+            SendData( buffer.ToArray() );
         }
         public static void SendInterrupt()
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.StopInteract ) )
-            {
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.StopInteract );
+            SendData( buffer.ToArray() );
         }
         public static void SendUsernameQuery( string text )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.DoesUserExist ) )
-            {
-                buffer.WriteString( text );
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.DoesUserExist );
+            buffer.WriteString( text );
+            SendData( buffer.ToArray() );
         }
         public static void AnnounceMovementToNearbyPlayers( int ID, Vector2 position, bool hasInventorySpace )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.AnnounceMovementToNearbyPlayers ) )
-            {
-                buffer.WriteFloat( position.x );
-                buffer.WriteFloat( position.y );
-                buffer.WriteInteger( ID );
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.AnnounceMovementToNearbyPlayers );
+            buffer.WriteFloat( position.x );
+            buffer.WriteFloat( position.y );
+            buffer.WriteInteger( ID );
+            SendData( buffer.ToArray() );
         }
         public static void SendCreateAccountQuery( string username, string password )
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.Account_Create_Query ) )
-            {
-                buffer.WriteString( username );
-                buffer.WriteString( password );
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.Account_Create_Query );
+            buffer.WriteString( username );
+            buffer.WriteString( password );
+            SendData( buffer.ToArray() );
         }
         public static void OtherPlayerCharacterListRequest()
         {
-            using ( PacketBuffer buffer = new PacketBuffer( Packet.OtherPlayerCharacterListRequest ) )
-            {
-                SendData( buffer.ToArray() );
-            }
+            using PacketBuffer buffer = new PacketBuffer( Packet.OtherPlayerCharacterListRequest );
+            SendData( buffer.ToArray() );
         }
 
         public static Socket clientSocket = new Socket( AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp );

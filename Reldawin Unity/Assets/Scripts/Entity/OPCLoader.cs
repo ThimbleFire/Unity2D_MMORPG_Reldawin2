@@ -20,8 +20,10 @@ namespace LowCloud.Reldawin
             EventProcessor.AddInstructionParams( Packet.OtherPlayerCharacterLoggedIn, OnOtherPlayerCharacterLogin );
             EventProcessor.AddInstructionParams( Packet.OtherPlayerCharacterListRequest, HandleOtherPlayerList );
             EventProcessor.AddInstructionParams( Packet.ToggleRunning, OnOPCToggleRun );
+            EventProcessor.AddInstructionParams( Packet.ToggleSwimming, OnOPCToggleSwimming );
             EventProcessor.AddInstructionParams( Packet.StopInteract, BroadcastActionInterruption );
             EventProcessor.AddInstructionParams( Packet.StartInteract, BroadcastActionBegin );
+            EventProcessor.AddInstructionParams( Packet.Disconnect, OnOPCDisconnect );
         }
 
         private void BroadcastActionInterruption( params object[] args )
@@ -47,14 +49,28 @@ namespace LowCloud.Reldawin
             Vector2 worldPosition = new Vector2( (float)args[1], (float)args[2] );
             GetPlayer(ID).SetPath( worldPosition, (bool)args[3] );
         }
-        
+
+        private void OnOPCDisconnect(params object[] args)
+        {
+            int ID = (int)args[0];
+            OtherPlayerCharacter opc = GetPlayer( ID );
+            otherPlayerCharacters.Remove( opc );
+            opc.Destroy();
+        }
+
         // when an OPC toggles run
         private void OnOPCToggleRun( params object[] args )
         {
             int ID = (int)args[0];
             GetPlayer(ID).ToggleRunning();
         }
-        
+
+        private void OnOPCToggleSwimming(params object[] args)
+        {
+            int ID = (int)args[0];
+            GetPlayer( ID ).ToggleSwimming();
+        }
+
         // when an OPC connects
         private void OnOtherPlayerCharacterLogin( params object[] args )
         {
@@ -83,7 +99,7 @@ namespace LowCloud.Reldawin
         
         private OtherPlayerCharacter GetPlayer(int ID)
         {
-            return otherPlayerCharacters.Find( c=> c.DatabaseID == ID );
+            return otherPlayerCharacters.Find( c => c.DatabaseID == ID );
         }
     }
 }

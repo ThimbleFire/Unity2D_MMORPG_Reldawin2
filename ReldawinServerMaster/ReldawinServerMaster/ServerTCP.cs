@@ -86,6 +86,22 @@ namespace ReldawinServerMaster
             }
         }
 
+        public static void AnnounceDisconnect(int index, int ID)
+        {
+            List<Client> clientList = FetchOtherClients( index );
+
+            if ( clientList.Count == 0 )
+                return;
+
+            using ( PacketBuffer buffer = new PacketBuffer( Packet.Disconnect ) )
+            {
+                buffer.WriteInteger( ID );
+
+                foreach ( Client client in clientList )
+                    SendDataTo( client.index, buffer.ToArray() );
+            }
+        }
+
         public static void Interrupt(int index, bool includeSender)
         {
             using ( new DebugTimer( clients[index].properties.Username + " Interrupt" ) )
@@ -113,7 +129,27 @@ namespace ReldawinServerMaster
         {
             clients[index].MovePosition( x, y );
             CommonSQL.SetEntityCoodinates( x, y, clients[index].properties.ID );
+
+            // if the tile being walked on is water and we're not already swimming
+            if ( World.tiles[x, y] == 5 && clients[index].properties.Swimming == false )
+            {
+                clients[index].properties.Swimming = !clients[index].properties.Swimming;
+
+                List<Client> clientList = FetchOtherClients( index );
+
+                if ( clientList.Count == 0 )
+                    return;
+
+                using ( PacketBuffer buffer = new PacketBuffer( Packet.ToggleSwimming ) )
+                {
+                    buffer.WriteInteger( clients[index].properties.ID );
+
+                    foreach ( Client client in clientList )
+                        SendDataTo( client.index, buffer.ToArray() );
+                }
+            }
         }
+
         
         public static void SendToggleRunningToAllPlayers(int index, int ID)
         {
