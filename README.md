@@ -5,7 +5,6 @@ Reldawin is a multiplayer 2d isometric RPG. The player character starts in a wil
 
 ## TODO List
 
-- [Add] Base class for Editor Windows that feature methods for rendering components in the editor
 - [Add] Swimming
 - [Add] Crafting
 
