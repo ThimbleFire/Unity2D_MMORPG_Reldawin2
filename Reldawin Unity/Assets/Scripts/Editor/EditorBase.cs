@@ -1,3 +1,31 @@
+using System;
+
+public interface ILoader < T >
+{
+    T Load(string path);
+}
+
+public XMLReader < T > : ILoader < T >
+{
+    public T Load(string path)
+    {
+        T obj;
+
+        try
+        {
+            XmlSerializer serializer = new XmlSerializer( typeof( T ) );
+            FileStream stream = new FileStream( path, FileMode.Open );
+            obj = serializer.Deserialize( stream ) as T;
+            stream.Close();
+        }
+        catch
+        {
+            Debug.LogWarning( "Could not open " + FileName );
+        }
+        
+        return obj;
+    }
+}
 
 public class EditorBase : EditorWindow
 {
@@ -115,23 +143,5 @@ public class EditorBase : EditorWindow
     {
         value = EditorGUI.Popup(new Rect(4, y, position.width - 8, 20, value, options);
         AddRows();
-    }
-    
-    protected void Load<T>
-    {
-        loaded = true;
-        
-        try
-        {
-            XmlSerializer serializer = new XmlSerializer( typeof( T ) );
-            FileStream stream = new FileStream( Application.streamingAssetsPath + FileName, FileMode.Open );
-            obj = serializer.Deserialize( stream ) as T;
-            stream.Close();
-        }
-        catch
-        {
-            Debug.LogWarning( "Could not open " + FileName );
-        }
-       
     }
 }
