@@ -122,19 +122,16 @@ public class EditorBase : EditorWindow
         value = EditorGUI.IntField(new Rect(4, y, position.width - 12, 20), label, value);
         AddRow();
     }
-    
     protected void PaintFloatField(string label, ref float value)
     {
         value = EditorGUI.FloatField(new Rect(4, y, position.width - 12, 20), label, value);
         AddRow();
     }
-    
     protected void PaintTextField(string label, ref string value)
     {
         value = EditorGUI.TextField(new Rect(4, y, position.width - 12, 20), label, value);
         AddRow();
     }
-    
     protected void PaintFloatRange(string label, ref float min, ref float max, float minRange, float maxRange)
     {
         EditorGUIUtility.wideMode = true;
@@ -151,20 +148,17 @@ public class EditorBase : EditorWindow
         EditorGUIUtility.wideMode = false;
         AddRow();
     }
-    
     protected void PaintHorizontalLine()
     {
         Handles.color = Color.gray;
         Handles.DrawLine( new Vector3( 4, y + 11 ), new Vector3( position.width - 8, y + 11 ) );
         AddRow();
     }
-    
     protected void PaintPopup(string label, string[] options, ref int value)
     {
         value = EditorGUI.Popup(new Rect(4, y, position.width - 8, 20, value, options);
         AddRow();
     }
-    
     protected void PaintSpriteField(string label, ref Sprite sprite, ref string fileName)
     {
         sprite (Sprite)EditorGUI.ObjectField(new Rect(4, y, 64, 64), sprite, typeof(Sprite), false);
@@ -185,6 +179,22 @@ public class EditorBase : EditorWindow
             AddRow();
             AddRow();
             AddRow();
+        }
+    }
+    protected void PaintIntSlider(string label, ref int value, int min, int max)
+    {
+        value = EditorGUI.IntSlider(new Rect(4, y, position.width - 12, 20), label, value, min, max);
+        AddRow();
+    }
+    protected void PaintDroprates(Droprates droprates)
+    {
+        if(droprates != null)
+        if(droprates.Count > 0)
+        foreach(Droprate droprate in droprates)
+        {
+            EditorGUI.LabelField(new Rect(4, y, position.width - 12, 20), droprate.id.ToString());
+            EditorGUI.LabelField(new Rect(position.width - 40, y, position.width - 12, 20), (droprate.percent).ToString() + " %");
+            AddRow();            
         }
     }
 }
