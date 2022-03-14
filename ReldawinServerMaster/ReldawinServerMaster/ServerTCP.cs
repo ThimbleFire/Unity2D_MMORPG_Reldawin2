@@ -133,12 +133,25 @@ namespace ReldawinServerMaster
             // if the tile being walked on is water and we're not already swimming
             if ( World.tiles[x, y] == 5 && clients[index].properties.Swimming == false )
             {
-                clients[index].properties.Swimming = !clients[index].properties.Swimming;
+                clients[index].properties.Swimming = true;
 
                 List<Client> clientList = FetchOtherClients( index );
+                clientList.Add( clients[index] );
 
-                if ( clientList.Count == 0 )
-                    return;
+                using ( PacketBuffer buffer = new PacketBuffer( Packet.ToggleSwimming ) )
+                {
+                    buffer.WriteInteger( clients[index].properties.ID );
+
+                    foreach ( Client client in clientList )
+                        SendDataTo( client.index, buffer.ToArray() );
+                }
+            }
+            if(World.tiles[x, y] != 5 && clients[index].properties.Swimming == true)
+            {
+                clients[index].properties.Swimming = false;
+
+                List<Client> clientList = FetchOtherClients( index );
+                clientList.Add( clients[index] );
 
                 using ( PacketBuffer buffer = new PacketBuffer( Packet.ToggleSwimming ) )
                 {

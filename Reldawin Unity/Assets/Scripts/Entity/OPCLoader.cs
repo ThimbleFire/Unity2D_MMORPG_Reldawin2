@@ -68,7 +68,10 @@ namespace LowCloud.Reldawin
         private void OnOPCToggleSwimming(params object[] args)
         {
             int ID = (int)args[0];
-            GetPlayer( ID ).ToggleSwimming();
+            if ( Game.dbID == ID )
+                localPlayerCharacter.ToggleSwimming();
+            else
+                GetPlayer( ID ).ToggleSwimming();
         }
 
         // when an OPC connects
