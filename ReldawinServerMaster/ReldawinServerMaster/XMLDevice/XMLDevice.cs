@@ -7,13 +7,13 @@ namespace ReldawinServerMaster
 {
     class XMLDevice
     {
-        public static Dictionary<int, TETile> tileinfo = new Dictionary<int, TETile>();
-        public static Dictionary<int, DEDoodad> doodadinfo = new Dictionary<int, DEDoodad>();
-        public static Dictionary<int, IEItem> iteminfo = new Dictionary<int, IEItem>();
+        private static Dictionary<int, TETile> tileinfo = new Dictionary<int, TETile>();
+        private static Dictionary<int, DEDoodad> doodadinfo = new Dictionary<int, DEDoodad>();
+        private static Dictionary<int, IEItem> iteminfo = new Dictionary<int, IEItem>();
 
-        private static TETileList tileList;
-        private static IEItemList itemList;
-        private static DEDoodadList doodadList;
+        public static int GetTileCount { get { return tileinfo.Count; } }
+        public static int GetDoodadCount { get { return doodadinfo.Count; } }
+        public static int GetItemCount { get { return iteminfo.Count; } }
 
         public static TETile GetTile( int key )
         {
@@ -54,93 +54,33 @@ namespace ReldawinServerMaster
 
         public static void Setup()
         {
-            bool result = false;
-
-            result = LoadTiles();
-
-            if ( result )
+            TETileList tileList = Load<TETileList>( "tiles.xml" );
+            foreach ( TETile tile in tileList.list )
             {
-                Console.WriteLine( "[XMLDevice] Loading " + tileList.list.Count + " tiles." );
-                foreach ( TETile tile in tileList.list )
-                {
-                    tileinfo.Add( tile.id, tile );
-
-                    tile.Setup();
-                }
+                tileinfo.Add( tile.id, tile );
+                tile.Setup();
             }
 
-            result = LoadItems();
-
-            if ( result )
+            IEItemList itemList = Load<IEItemList>( "items.xml" );
+            foreach ( IEItem item in itemList.list )
             {
-                Console.WriteLine( "[XMLDevice] Loading " + tileList.list.Count + " doodads." );
-                foreach ( IEItem item in itemList.list )
-                {
-                    iteminfo.Add( item.id, item );
-                }
+                iteminfo.Add( item.id, item );
             }
 
-            result = LoadDoodads();
-
-            if ( result )
+            DEDoodadList doodadList = Load<DEDoodadList>( "doodad.xml" );
+            foreach ( DEDoodad doodad in doodadList.list )
             {
-                Console.WriteLine( "[XMLDevice] Loading " + tileList.list.Count + " doodads." );
-                foreach ( DEDoodad doodad in doodadList.list )
-                {
-                    doodadinfo.Add( doodad.id, doodad );
-
-                    doodad.Setup();
-                }
+                doodadinfo.Add( doodad.id, doodad );
+                doodad.Setup();
             }
         }
 
-        private static bool LoadTiles()
+        /// <summary>Called by Load in inheriting class</summary>
+        private static T Load<T>( string filename )
         {
-            if ( File.Exists( "tiles.xml" ) )
-            {
-                XmlSerializer serializer = new XmlSerializer( typeof( TETileList ) );
-                FileStream stream = new FileStream( "tiles.xml", FileMode.Open );
-                tileList = serializer.Deserialize( stream ) as TETileList;
-                stream.Close();
-                return true;
-            }
-            else
-            {
-                Debug.LogWarning( "[XMLDevice] tiles.xml could not be found." );
-                return false;
-            }
-        }
-        private static bool LoadItems()
-        {
-            if ( File.Exists( "items.xml" ) )
-            {
-                XmlSerializer serializer = new XmlSerializer( typeof( IEItemList ) );
-                FileStream stream = new FileStream( "items.xml", FileMode.Open );
-                itemList = serializer.Deserialize( stream ) as IEItemList;
-                stream.Close();
-                return true;
-            }
-            else
-            {
-                Debug.LogWarning( "[XMLDevice] items.xml could not be found." );
-                return false;
-            }
-        }
-        private static bool LoadDoodads()
-        {
-            if ( File.Exists( "doodads.xml" ) )
-            {
-                XmlSerializer serializer = new XmlSerializer( typeof( DEDoodadList ) );
-                FileStream stream = new FileStream( "doodads.xml", FileMode.Open );
-                doodadList = serializer.Deserialize( stream ) as DEDoodadList;
-                stream.Close();
-                return true;
-            }
-            else
-            {
-                Debug.LogWarning( "[XMLDevice] doodads.xml could not be found." );
-                return false;
-            }
+            XmlSerializer xmlSerializer = new XmlSerializer( typeof( T ) );
+            TextReader reader = new StreamReader( filename );
+            return (T)xmlSerializer.Deserialize( reader );
         }
     }
 }

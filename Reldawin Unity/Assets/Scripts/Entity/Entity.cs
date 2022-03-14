@@ -170,20 +170,6 @@ namespace LowCloud.Reldawin
             if ( Running )
                 ToggleRunning();
 
-            //Swimming and Running cannot be true at the same time
-            //I know that doesn't make sense because the code below
-            //says swimming == false but think. Running must be false
-            //because Swimming and Running control animation states.
-            //As you exit water swimming becomes false. 
-            //We can't automatically assume running is true
-            //unless we store a separate record of it before 
-            //swimming begins.
-
-            //if ( Swimming == false && Running == true)
-            //    MovementSpeed = RunSpeed;
-
-            Debug.Log( "Swimming " + Swimming );
-
             animationConroller.ToggleSwimming( Swimming );
         }
 

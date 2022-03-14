@@ -9,7 +9,7 @@ namespace ReldawinServerMaster
     {
         public static byte GetTypeByHeight( float height )
         {
-            for ( byte i = 0; i < XMLDevice.tileinfo.Count; i++ )
+            for ( byte i = 0; i < XMLDevice.GetTileCount; i++ )
             {
                 TETile tile = XMLDevice.GetTile( i );
 
