@@ -58,8 +58,10 @@ namespace ReldawinServerMaster
 
         public static void HandlePlayerCharacterMovedPosition( int index, PacketBuffer buffer )
         {
-            int newPosX = buffer.ReadInteger();
-            int newPosY = buffer.ReadInteger();
+            //we increase position by 1 because 0,0 is out of bounds and adding 1 fixes a pathfinding bug
+
+            int newPosX = buffer.ReadInteger() + 1;
+            int newPosY = buffer.ReadInteger() + 1;
 
             ServerTCP.ChangeClientPosition( index, newPosX, newPosY );
         }

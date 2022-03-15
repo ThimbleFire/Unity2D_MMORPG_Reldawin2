@@ -12,4 +12,7 @@ public class TETile
 
     [XmlArray( "Droprates" )]
     public Droprate[] droprates;
+
+    [XmlArray( "Maps" )]
+    public AEAtlas[] maps;
 }

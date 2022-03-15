@@ -23,6 +23,11 @@ public class DoodadEditor : EditorBase
         GetWindow( typeof( DoodadEditor ) );
     }
 
+    protected override void MainWindow()
+    {
+        IncludeLoadList = true;
+        base.MainWindow();
+    }
     protected override void CreationWindow()
     {
 
@@ -41,7 +46,8 @@ public class DoodadEditor : EditorBase
         activeList = Load<DEDoodadList>("/doodads.xml");
         LoadOptions = activeList.GetNames;
 
-        itemList = Load<IEItemList>("/items.xml");
+        if ( File.Exists( Application.streamingAssetsPath + "/items.xml" ) )
+            itemList = Load<IEItemList>("/items.xml");
     }
     protected override void OnClick_SaveButton()
     {
