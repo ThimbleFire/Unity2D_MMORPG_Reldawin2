@@ -77,7 +77,7 @@ namespace LowCloud.Reldawin
             }
         }
 
-        public static Vector2[] GetQuadrantUVs( int type, Tile[] neighbours = null )
+        public static Vector2[] GetTileUVs( int type, Tile[] neighbours = null )
         {
             if ( type == 0 )
                 return GetEmpty;

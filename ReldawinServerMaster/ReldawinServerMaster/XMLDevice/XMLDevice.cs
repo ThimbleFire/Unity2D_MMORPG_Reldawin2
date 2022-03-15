@@ -67,7 +67,7 @@ namespace ReldawinServerMaster
                 iteminfo.Add( item.id, item );
             }
 
-            DEDoodadList doodadList = Load<DEDoodadList>( "doodad.xml" );
+            DEDoodadList doodadList = Load<DEDoodadList>( "doodads.xml" );
             foreach ( DEDoodad doodad in doodadList.list )
             {
                 doodadinfo.Add( doodad.id, doodad );

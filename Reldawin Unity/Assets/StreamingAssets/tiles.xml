@@ -3,14 +3,6 @@
   <list>
     <TETile>
       <Droprates />
-      <name>Sand</name>
-      <id>4</id>
-      <minHeight>0.05</minHeight>
-      <maxHeight>0.125</maxHeight>
-      <layerIndex>2</layerIndex>
-    </TETile>
-    <TETile>
-      <Droprates />
       <name>Empty</name>
       <id>0</id>
       <minHeight>1</minHeight>
@@ -24,6 +16,14 @@
       <minHeight>1</minHeight>
       <maxHeight>1</maxHeight>
       <layerIndex>0</layerIndex>
+    </TETile>
+    <TETile>
+      <Droprates />
+      <name>Shallow_Water</name>
+      <id>5</id>
+      <minHeight>0</minHeight>
+      <maxHeight>0.05</maxHeight>
+      <layerIndex>9</layerIndex>
     </TETile>
     <TETile>
       <Droprates>
@@ -56,7 +56,7 @@
       <id>2</id>
       <minHeight>0.175</minHeight>
       <maxHeight>1</maxHeight>
-      <layerIndex>3</layerIndex>
+      <layerIndex>6</layerIndex>
     </TETile>
     <TETile>
       <Droprates>
@@ -81,15 +81,15 @@
       <id>3</id>
       <minHeight>0.125</minHeight>
       <maxHeight>0.175</maxHeight>
-      <layerIndex>9</layerIndex>
+      <layerIndex>8</layerIndex>
     </TETile>
     <TETile>
       <Droprates />
-      <name>Shallow_Water</name>
-      <id>5</id>
-      <minHeight>0</minHeight>
-      <maxHeight>0.05</maxHeight>
-      <layerIndex>8</layerIndex>
+      <name>Sand</name>
+      <id>4</id>
+      <minHeight>0.05</minHeight>
+      <maxHeight>0.125</maxHeight>
+      <layerIndex>7</layerIndex>
     </TETile>
   </list>
 </Tiles>

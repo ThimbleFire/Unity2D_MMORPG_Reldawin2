@@ -13,6 +13,8 @@ namespace LowCloud.Reldawin
         {
             p = this;
             offset = Vector3.zero;
+
+            MouseOff();
         }
 
         public Text textComponent;

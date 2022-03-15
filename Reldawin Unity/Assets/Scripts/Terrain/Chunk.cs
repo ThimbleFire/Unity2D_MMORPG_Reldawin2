@@ -23,23 +23,24 @@ namespace LowCloud.Reldawin
             int index = 0;
 
             for ( ushort _y = 0; _y < Chunk.Size + 2; _y++ )
-                for ( ushort _x = 0; _x < Chunk.Size + 2; _x++ )
+            for ( ushort _x = 0; _x < Chunk.Size + 2; _x++ )
+            {
+                Vector2Int cellPosition = new Vector2Int( _x, _y );
+
+                Tiles[_x, _y] = Tile.GetTileByIndex( data[index++] );
+                Tiles[_x, _y].CellPositionInWorld = ( chunkIndex * Chunk.Size + cellPosition );
+                Tiles[_x, _y].CellPositionInChunk = cellPosition;
+            }
+
+            for ( ushort _y = 0; _y < Chunk.Size; _y++ )
+            for ( ushort _x = 0; _x < Chunk.Size; _x++ )
+            {
+                Nodes[_x, _y] = new Node()
                 {
-                    Vector2Int cellPosition = new Vector2Int( _x, _y );
-
-                    Tiles[_x, _y] = Tile.GetTileByIndex( data[index++] );
-                    Tiles[_x, _y].CellPositionInWorld = ( chunkIndex * Chunk.Size + cellPosition );
-                    Tiles[_x, _y].CellPositionInChunk = cellPosition;
-
-                    if ( _x < Chunk.Size && _y < Chunk.Size )
-                    {
-                        Nodes[_x, _y] = new Node()
-                        {
-                            type = -1,
-                            CellPositionInWorld = Tiles[_x, _y].CellPositionInWorld
-                        };
-                    }
-                }
+                    type = -1,
+                    CellPositionInWorld = Tiles[_x+1, _y+1].CellPositionInWorld
+                };
+            }
 
             SetUVChannel( 0 );  //regular tiles
             SetUVChannel( 1 ); //corners that overlap
@@ -60,19 +61,19 @@ namespace LowCloud.Reldawin
                 {
                     Tile[] neighbours = GetNeighbours( _x, _y );
 
-                    Vector2[] quad1UVs = null;
+                    Vector2[] UVs = null;
 
                     switch ( channel )
                     {
                         case 0:
-                            quad1UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType );
+                            UVs = SpriteLoader.GetTileUVs( Tiles[_x, _y].TileType );
                             foreach ( Tile neighbour in neighbours )
                             {
                                 // If it has a neighbour that is below it of a different type
                                 if ( neighbour.TileType != Tiles[_x, _y].TileType && neighbour.GetLayer > Tiles[_x, _y].GetLayer )
                                 {
                                     //Set the tile base to appear as part of its neighbour
-                                    quad1UVs = SpriteLoader.GetQuadrantUVs( neighbour.TileType );
+                                    UVs = SpriteLoader.GetTileUVs( neighbour.TileType );
                                     break;
                                 }
                             }
@@ -80,13 +81,13 @@ namespace LowCloud.Reldawin
 
                         case 1:
                             //
-                            quad1UVs = SpriteLoader.GetEmpty;
+                            UVs = SpriteLoader.GetEmpty;
                             foreach ( Tile neighbour in neighbours )
                             {
                                 // If it has a neighbour that is below it of a different type
                                 if ( neighbour.TileType != Tiles[_x, _y].TileType && neighbour.GetLayer > Tiles[_x, _y].GetLayer )
                                 {
-                                    quad1UVs = SpriteLoader.GetQuadrantUVs( Tiles[_x, _y].TileType, neighbours );
+                                    UVs = SpriteLoader.GetTileUVs( Tiles[_x, _y].TileType, neighbours );
                                     break;
                                 }
                             }
@@ -98,7 +99,7 @@ namespace LowCloud.Reldawin
 
                     for ( int index = 0; index < 4; index++ )
                     {
-                        uvs[r + index] = quad1UVs[index];
+                        uvs[r + index] = UVs[index];
                     }
                 }
 
