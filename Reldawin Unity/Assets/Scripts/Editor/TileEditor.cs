@@ -94,6 +94,10 @@ public class TileEditor : EditorBase
 
         doodadList = Load<DEDoodadList>( "/doodads.xml" );
 
+        IncludeLoadList = true;
+        IncludeSaveBtn = true;
+        IncludeBackBtn = true;
+
         base.Load();
     }
     protected override void LoadProperties()

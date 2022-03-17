@@ -4012,9 +4012,14 @@ PrefabInstance:
       objectReference: {fileID: 1594308696}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh
@@ -33592,9 +33597,14 @@ PrefabInstance:
       objectReference: {fileID: 1594308696}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh
@@ -40500,9 +40510,14 @@ PrefabInstance:
       objectReference: {fileID: 1594308696}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh
@@ -43515,9 +43530,14 @@ PrefabInstance:
       objectReference: {fileID: 1594308696}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh
@@ -43954,9 +43974,14 @@ PrefabInstance:
       objectReference: {fileID: 1594308696}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh
@@ -45703,9 +45728,14 @@ PrefabInstance:
       objectReference: {fileID: 1594308696}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh
@@ -46486,9 +46516,14 @@ PrefabInstance:
       objectReference: {fileID: 1594308696}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh
@@ -46679,9 +46714,14 @@ PrefabInstance:
       objectReference: {fileID: 1594308696}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh
@@ -46837,9 +46877,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh
@@ -47618,9 +47663,14 @@ PrefabInstance:
       objectReference: {fileID: 1594308696}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh
@@ -50381,9 +50431,14 @@ PrefabInstance:
       objectReference: {fileID: 1594308696}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh
@@ -56084,9 +56139,14 @@ PrefabInstance:
       objectReference: {fileID: 1594308696}
     - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621273992523534979, guid: db618fef0bfb49d43bb9261a0577022d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bed4448e7910b3b4ab5168879cf792bd, type: 2}
+      objectReference: {fileID: 2100000, guid: a7392c4a529ab9047b0a45afc97dd1b9, type: 2}
     - target: {fileID: 9023650423255559389, guid: db618fef0bfb49d43bb9261a0577022d,
         type: 3}
       propertyPath: m_Mesh

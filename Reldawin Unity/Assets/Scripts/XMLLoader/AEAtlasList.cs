@@ -4,6 +4,7 @@ using System.Xml.Serialization;
 [XmlRoot( "Atlas" )]
 public class AEAtlasList
 {
+    [XmlArray("List")]
     public List<AEAtlas> list = new List<AEAtlas>();
 
     public string[] GetNames

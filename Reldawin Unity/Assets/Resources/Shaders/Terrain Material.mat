@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Terrain Material
+  m_Shader: {fileID: 4800000, guid: f14ac51875871e346b6d648b05de1ab3, type: 3}
+  m_ShaderKeywords: PIXELSNAP_ON PREMULTIPLIED_ALPHA_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Textures:
+        m_Texture: {fileID: 2800000, guid: f6304ef51c829c2428a790ee03b6558f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Textures_Dirt:
+        m_Texture: {fileID: 2800000, guid: e4590bf5f387e0b4bb07ca1d122f02be, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Textures_Grass:
+        m_Texture: {fileID: 2800000, guid: fa27aa458ada0d14382e1bfad93f8132, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Textures_Sand:
+        m_Texture: {fileID: 2800000, guid: f6304ef51c829c2428a790ee03b6558f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Textures_Shallow_Water:
+        m_Texture: {fileID: 2800000, guid: d14b5c40ebb0bc54f8717d8e0470da45, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 1
+    - Premultiplied_Alpha: 1
+    - _TextureIndex: 2
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

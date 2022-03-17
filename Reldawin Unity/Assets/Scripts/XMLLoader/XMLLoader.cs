@@ -11,6 +11,7 @@ namespace LowCloud.Reldawin
         public static Dictionary<int, TETile> tileinfo = new Dictionary<int, TETile>();
         public static Dictionary<int, DEDoodad> doodadinfo = new Dictionary<int, DEDoodad>();
         public static Dictionary<int, IEItem> iteminfo = new Dictionary<int, IEItem>();
+        public static List<AEAtlas> atlas = new List<AEAtlas>();
 
         public static TETile GetTile( int key )
         {
@@ -48,12 +49,34 @@ namespace LowCloud.Reldawin
                 return iteminfo[0];
             }
         }
+        public static string GetAtlas(int tileType, Tile[] neighbours)
+        {
+            List<AEAtlas> tempAtlas = new List<AEAtlas>( atlas );
+
+            for ( int i = 0; i < 8; i++ )
+            {
+                foreach ( AEAtlas a in atlas )
+                {
+                    if ( a.state[i] == 2 )
+                    {
+                        if ( neighbours[i].TileType == tileType )
+                        {
+                            tempAtlas.Remove( a );
+                            continue;
+                        }
+                    }
+                }
+            }
+
+            return tempAtlas[0].name;
+        }
 
         public static void Setup()
         {
             LoadTiles();
             LoadDoodads();
             LoadItems();
+            LoadAtlas();
         }
 
         private static void LoadTiles()
@@ -90,6 +113,16 @@ namespace LowCloud.Reldawin
             foreach ( DEDoodad doodad in doodadList.list ) {
                 doodadinfo.Add( doodad.id, doodad );
             }
+        }
+
+
+        private static void LoadAtlas ()
+        {
+            XmlSerializer serializer = new XmlSerializer( typeof( AEAtlasList ) );
+            FileStream stream = new FileStream( Application.streamingAssetsPath + "/atlas.xml", FileMode.Open );
+            AEAtlasList aeatlaslist = serializer.Deserialize( stream ) as AEAtlasList;
+            atlas = aeatlaslist.list;
+            stream.Close();
         }
     }
 }

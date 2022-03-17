@@ -6,15 +6,6 @@ namespace LowCloud.Reldawin
 {
     public class Item : MonoBehaviour
     {
-        public enum Type
-        {
-            Log, 
-            Grass, 
-            Stone, 
-            Flint, 
-            Knife
-        }
-
         private UI_Slot uiSlot;
         string _itemName = string.Empty;
         string _itemSpriteFileName16x16 = string.Empty;

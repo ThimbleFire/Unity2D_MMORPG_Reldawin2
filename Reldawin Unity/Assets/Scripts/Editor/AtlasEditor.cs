@@ -24,6 +24,15 @@ public class AtlasEditor : EditorBase
 
     protected override void CreationWindow()
     {
+        PaintLabel( "Tiles[x + 0, y + 1], //forward" );
+        PaintLabel( "Tiles[x + 1, y + 0], //right" );
+        PaintLabel( "Tiles[x + 0, y - 1], //down" );
+        PaintLabel( "Tiles[x - 1, y + 0], //left" );
+        PaintLabel( "Tiles[x + 1, y + 1], //forard-right" );
+        PaintLabel( "Tiles[x + 1, y - 1], //back-right" );
+        PaintLabel( "Tiles[x - 1, y - 1], //back-left" );
+        PaintLabel( "Tiles[x - 1, y + 1]  //forward-left" );
+
         for ( int i = 0; i < activeList.list.Count; i++ )
             PaintSpriteAtlasKey( sprites[i], ref activeList.list[i].state );
     }
@@ -35,16 +44,24 @@ public class AtlasEditor : EditorBase
         if ( File.Exists( Application.streamingAssetsPath + "/atlas.xml" ) )
         {
             activeList = Load<AEAtlasList>( "/atlas.xml" );
+            for ( int i = 0; i < sprites.Length; i++ )
+            {
+                activeList.list[i].name = sprites[i].name.Remove( 0, "TileTemplate".Length );
+            }
             LoadOptions = activeList.GetNames;
-            IncludeLoadList = false;
         }
         else
         {
             for ( int i = 0; i < sprites.Length; i++ )
             {
                 activeList.list.Add( new AEAtlas() );
+                activeList.list[i].name = sprites[i].name.Remove( 0, "TileTemplate".Length );
             }
         }
+
+        IncludeLoadList = false;
+        IncludeSaveBtn = true;
+        IncludeBackBtn = false;
 
         base.Load();
 
