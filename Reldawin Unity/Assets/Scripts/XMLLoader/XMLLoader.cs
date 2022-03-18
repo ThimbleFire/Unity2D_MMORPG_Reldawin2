@@ -51,14 +51,21 @@ namespace LowCloud.Reldawin
         }
         public static string GetAtlas(int tileType, Tile[] neighbours)
         {
+            //Create a copy of the tiles and their states (<short>s)
             List<AEAtlas> tempAtlas = new List<AEAtlas>( atlas );
 
+            //Go through all the states
             for ( int i = 0; i < 8; i++ )
             {
+                //Go through each atlas
                 foreach ( AEAtlas a in atlas )
                 {
+                    //If the atlas' short is 'cannot connect'...
                     if ( a.state[i] == 2 )
                     {
+                        //if the neighbour's tile type is equal to the tile being assessed.
+                        //basically if the neighbour says it can't connect and the adjacent tile is of the same type..
+                        //it should connect, but the neighbour's state says it doesn't, so remove it
                         if ( neighbours[i].TileType == tileType )
                         {
                             tempAtlas.Remove( a );
@@ -68,6 +75,8 @@ namespace LowCloud.Reldawin
                 }
             }
 
+            //once all adjacent tiles that can't connect and are of the same type are removed, return the first atlas' name
+            //this'll be something like _0, _1, _2 etc, which is the auto generated part of the tile name in the sprite texture 
             return tempAtlas[0].name;
         }
 
