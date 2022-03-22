@@ -427,27 +427,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_W_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 416
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ed5f3a1d23ea614da44f882a0774056
-      internalID: 21300032
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Grass_N
       rect:
         serializedVersion: 2
@@ -506,27 +485,6 @@ TextureImporter:
       bones: []
       spriteID: 7f75630e0645093419cd1c3891197444
       internalID: 21300038
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass_N_2
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 416
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1c20cd6eb9ebe14181ae4e581177c2d
-      internalID: 21300040
       vertices: []
       indices: 
       edges: []
@@ -679,48 +637,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_S_2
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 416
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc66e83bcb435ae4083bc12901aa243f
-      internalID: 21300026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass_E_2
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 416
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c5e304e6cbe23a4a9e41526314786c2
-      internalID: 21300028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Grass_SE_Corner
       rect:
         serializedVersion: 2
@@ -766,7 +682,7 @@ TextureImporter:
       name: Empty
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 96
         width: 64
         height: 32
@@ -1141,27 +1057,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_W_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 320
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39641ffb0e017474cbce6294903d4694
-      internalID: 21300090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Dirt_N
       rect:
         serializedVersion: 2
@@ -1178,27 +1073,6 @@ TextureImporter:
       bones: []
       spriteID: 49fea0cd6cecaa44a9c8351b69b49101
       internalID: 21300092
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dirt_N_2
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 320
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a71a10e5c8594b64ea63245371578648
-      internalID: 21300094
       vertices: []
       indices: 
       edges: []
@@ -1225,27 +1099,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_E_2
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 320
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e22046b81b6988944a05965fb9dedb44
-      internalID: 21300098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Dirt_S
       rect:
         serializedVersion: 2
@@ -1262,27 +1115,6 @@ TextureImporter:
       bones: []
       spriteID: b1a34511299c99e4b8d59237eb842a10
       internalID: 21300100
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dirt_S_2
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 320
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ba5bbe856f8e214db8517a0f276124b
-      internalID: 21300102
       vertices: []
       indices: 
       edges: []
@@ -1561,27 +1393,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_W_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 224
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efd4ee34280346b4da1df9cff80937d1
-      internalID: 21300132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Sand_N
       rect:
         serializedVersion: 2
@@ -1598,27 +1409,6 @@ TextureImporter:
       bones: []
       spriteID: 0421803420160024fa67127b92058487
       internalID: 21300134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sand_N_2
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 224
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d92d1ad26541ad944b4bc471ffbbf23e
-      internalID: 21300136
       vertices: []
       indices: 
       edges: []
@@ -1645,27 +1435,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sand_E_2
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 224
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a668bd40d23d3bc48800d58ea742340d
-      internalID: 21300140
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Sand_S
       rect:
         serializedVersion: 2
@@ -1682,27 +1451,6 @@ TextureImporter:
       bones: []
       spriteID: 43cf3e32f9e50d248890bd47ddf0d029
       internalID: 21300142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sand_S_2
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 224
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61c1c0cb51977b542aa5ec62d06eb4ed
-      internalID: 21300144
       vertices: []
       indices: 
       edges: []
@@ -1981,27 +1729,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shallow_Water_W_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d73827a4957296846bf7e4e4c744e552
-      internalID: 21300172
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Shallow_Water_N
       rect:
         serializedVersion: 2
@@ -2018,48 +1745,6 @@ TextureImporter:
       bones: []
       spriteID: 80ed4f6f8d32d354f8c95b8efe06c5be
       internalID: 21300174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shallow_Water_N_2
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 63
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf3bf3e276d032d4cbac14e4f642c7a4
-      internalID: 21300176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shallow_Water_E_2
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 128
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 834b618ed71dacd4da659f06b2a6dcbc
-      internalID: 21300186
       vertices: []
       indices: 
       edges: []
@@ -2102,27 +1787,6 @@ TextureImporter:
       bones: []
       spriteID: 7cb328e3d8fef3e40a9b12e3812d2bd7
       internalID: 21300190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shallow_Water_S_2
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 128
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87c2a2f44afb7f849b2251a3f925b0b4
-      internalID: 21300192
       vertices: []
       indices: 
       edges: []

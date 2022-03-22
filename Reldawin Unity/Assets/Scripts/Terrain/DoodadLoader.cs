@@ -29,25 +29,27 @@ namespace LowCloud.Reldawin
         {
             // get the chunk index
             Vector2Int chunkIndex = (Vector2Int)obj[0];
-            
-            // get the doodads
-            List<Doodad.Data> doodads = (List<Doodad.Data>)obj[1];
-            
-            Chunk chunk = chunkLoader.GetChunk( chunkIndex );
-            
-            // pass the doodads and a range of inactive doodads (gameobjects) to the chunk
-            chunk.SetDoodads(doodads, inactiveDoodads.GetRange(0, doodads.Count));
-            
-            // remove the range of doodads given to chunk
-            inactiveDoodads.RemoveRange(0, doodads.Count);
 
-            chunksToLoad--;
-
-            if ( chunksToLoad <= 0 )
+            using ( DebugTimer timer = new DebugTimer( string.Format( "Loading Dooads in chunk {0}, {1}", chunkIndex.x, chunkIndex.y ) ) )
             {
-                Pathfinder.Populate();
-            }
+                // get the doodads
+                List<Doodad.Data> doodads = (List<Doodad.Data>)obj[1];
 
+                Chunk chunk = chunkLoader.GetChunk( chunkIndex );
+
+                // pass the doodads and a range of inactive doodads (gameobjects) to the chunk
+                chunk.SetDoodads( doodads, inactiveDoodads.GetRange( 0, doodads.Count ) );
+
+                // remove the range of doodads given to chunk
+                inactiveDoodads.RemoveRange( 0, doodads.Count );
+
+                chunksToLoad--;
+
+                if ( chunksToLoad <= 0 )
+                {
+                    Pathfinder.Populate();
+                }
+            }
         }
 
         private void Chunk_OnChunkDestroyed( Vector2Int chunkIndex, List<Doodad> doodadsToRecycle )

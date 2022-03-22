@@ -52,7 +52,7 @@
           <percent>10</percent>
         </Droprate>
       </Droprates>
-      <name>Grass</name>
+      <name>Tile</name>
       <id>2</id>
       <minHeight>0.175</minHeight>
       <maxHeight>1</maxHeight>

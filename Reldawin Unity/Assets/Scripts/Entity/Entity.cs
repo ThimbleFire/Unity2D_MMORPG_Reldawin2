@@ -85,53 +85,50 @@ namespace LowCloud.Reldawin
 
         protected void MoveToNextNode()
         {
-            using ( DebugTimer debugTimer = new DebugTimer( "MoveToNextNode" ) )
+            if ( path == null )
             {
-                if ( path == null )
-                {
-                    OnAnimationDestinationMet();
-                    return;
-                }
-
-                if ( path.Count == 0 )
-                {
-                    OnAnimationDestinationMet();
-                    return;
-                }
-
-                Vector2 worldPosition = path.Peek().WorldPosition;
-
-                if ( path.Count > 1 )
-                {
-                    SetTargetPosition( worldPosition );
-                }
-                else if ( path.Count == 1 )
-                {
-                    if ( lastNodeOccupied )
-                    {
-                        Vector2Int worldCell = path.Peek().CellPositionInWorld;
-                        interactingWith = path.Peek().type;
-
-                        path.Clear();
-                        FaceDirection( worldPosition );
-                        MovingToward = transform.position;
-                        interactingWithCell = worldCell;
-
-                        if ( HasInventorySpace )
-                            Interact();
-
-                        return;
-                    }
-                    else
-                    {
-                        SetTargetPosition( pointClicked );
-                    }
-                }
-
-                path.Dequeue();
+                OnAnimationDestinationMet();
+                return;
             }
+
+            if ( path.Count == 0 )
+            {
+                OnAnimationDestinationMet();
+                return;
+            }
+
+            Vector2 worldPosition = path.Peek().WorldPosition;
+
+            if ( path.Count > 1 )
+            {
+                SetTargetPosition( worldPosition );
+            }
+            else if ( path.Count == 1 )
+            {
+                if ( lastNodeOccupied )
+                {
+                    Vector2Int worldCell = path.Peek().CellPositionInWorld;
+                    interactingWith = path.Peek().type;
+
+                    path.Clear();
+                    FaceDirection( worldPosition );
+                    MovingToward = transform.position;
+                    interactingWithCell = worldCell;
+
+                    if ( HasInventorySpace )
+                        Interact();
+
+                    return;
+                }
+                else
+                {
+                    SetTargetPosition( pointClicked );
+                }
+            }
+
+            path.Dequeue();
         }
-        
+       
         protected virtual void OnMovedTile( Vector2Int newPoint, Vector2Int lastTile )
         {
             CellPositionInWorld = newPoint;
