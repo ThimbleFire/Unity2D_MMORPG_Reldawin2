@@ -1,154 +1,154 @@
 fileFormatVersion: 2
-guid: e4590bf5f387e0b4bb07ca1d122f02be
+guid: 6483858289090154a8878f3948142704
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8275502208090371910
-    second: Dirt_0
+      213: 21300000
+    second: template_c1_r1_0
   - first:
-      213: 1412778643854539469
-    second: Dirt_1
+      213: 21300002
+    second: template_c2_r1
   - first:
-      213: -1278900557311105747
-    second: Dirt_2
+      213: 21300004
+    second: template_c3_r1
   - first:
-      213: 8641727722977497643
-    second: Dirt_3
+      213: 21300006
+    second: template_c4_r1
   - first:
-      213: -5696172171868935861
-    second: Dirt_4
+      213: 21300008
+    second: template_c1_r2
   - first:
-      213: 6680675988988378581
-    second: Dirt_5
+      213: 21300010
+    second: template_c2_r2
   - first:
-      213: 7824842593332555073
-    second: Dirt_6
+      213: 21300012
+    second: template_c3_r2
   - first:
-      213: -4410089191414829743
-    second: Dirt_7
+      213: 21300014
+    second: template_c4_r2
   - first:
-      213: -2411247445559563415
-    second: Dirt_8
+      213: 21300016
+    second: template_c1_r3
   - first:
-      213: -4685391132033899694
-    second: Dirt_9
+      213: 21300018
+    second: template_c2_r3
   - first:
-      213: 1018790119610574547
-    second: Dirt_10
+      213: 21300020
+    second: template_c3_r3
   - first:
-      213: 3489988067640147366
-    second: Dirt_11
+      213: 21300022
+    second: template_c4_r3
   - first:
-      213: 3561750101690788383
-    second: Dirt_12
+      213: 21300024
+    second: template_c1_r4
   - first:
-      213: 1229114862393131176
-    second: Dirt_13
+      213: 21300026
+    second: template_c2_r4
   - first:
-      213: -978763445766528800
-    second: Dirt_14
+      213: 21300028
+    second: template_c3_r4
   - first:
-      213: -3066017647951802806
-    second: Dirt_15
+      213: 21300030
+    second: template_c4_r4
   - first:
-      213: 8726226466006397682
-    second: Dirt_16
+      213: 21300032
+    second: template_c1_r5
   - first:
-      213: -5387267457780789414
-    second: Dirt_17
+      213: 21300034
+    second: template_c2_r5
   - first:
-      213: 8972266080312304738
-    second: Dirt_18
+      213: 21300036
+    second: template_c3_r5
   - first:
-      213: -3071992410999177559
-    second: Dirt_19
+      213: 21300038
+    second: template_c4_r5
   - first:
-      213: -329186006420133163
-    second: Dirt_20
+      213: 21300040
+    second: template_c1_r6
   - first:
-      213: -7099920346614072531
-    second: Dirt_21
+      213: 21300042
+    second: template_c2_r6
   - first:
-      213: 8333583983154711278
-    second: Dirt_22
+      213: 21300044
+    second: template_c3_r6
   - first:
-      213: -1916558277864012105
-    second: Dirt_23
+      213: 21300046
+    second: template_c4_r6
   - first:
-      213: -8972780422745546122
-    second: Dirt_24
+      213: 21300048
+    second: template_c1_r7
   - first:
-      213: -1670184776608596971
-    second: Dirt_25
+      213: 21300050
+    second: template_c1_r8
   - first:
-      213: 5304468202700130158
-    second: Dirt_26
+      213: 21300052
+    second: template_c2_r8
   - first:
-      213: -100650439650701342
-    second: Dirt_27
+      213: 21300054
+    second: template_c3_r8
   - first:
-      213: -1493924337810474605
-    second: Dirt_28
+      213: 21300056
+    second: template_c4_r8
   - first:
-      213: -8173476621990768519
-    second: Dirt_29
+      213: 21300058
+    second: template_c1_r9
   - first:
-      213: -6654649799325933732
-    second: Dirt_30
+      213: 21300060
+    second: template_c2_r9
   - first:
-      213: 4281628574541242889
-    second: Dirt_31
+      213: 21300062
+    second: template_c3_r9
   - first:
-      213: 7312558682318650687
-    second: Dirt_32
+      213: 21300064
+    second: template_c4_r9
   - first:
-      213: 4221926327540320791
-    second: Dirt_33
+      213: 21300066
+    second: template_c1_r10
   - first:
-      213: -8906193853502881614
-    second: Dirt_34
+      213: 21300068
+    second: template_c2_r10
   - first:
-      213: -4359417083918515256
-    second: Dirt_35
+      213: 21300070
+    second: template_c3_r10
   - first:
-      213: 2551580631017769313
-    second: Dirt_36
+      213: 21300072
+    second: template_c4_r10
   - first:
-      213: -7455671737782233068
-    second: Dirt_37
+      213: 21300074
+    second: template_c1_r11
   - first:
-      213: 5406620372250459359
-    second: Dirt_38
+      213: 21300076
+    second: template_c2_r11
   - first:
-      213: 4095832005906504532
-    second: Dirt_39
+      213: 21300078
+    second: template_c1_r12
   - first:
-      213: 5934630518746244175
-    second: Dirt_40
+      213: 21300080
+    second: template_c2_r12
   - first:
-      213: -7444516577114792320
-    second: Dirt_41
+      213: 21300082
+    second: template_c3_r12
   - first:
-      213: -7636353393611565525
-    second: Dirt_42
+      213: 21300084
+    second: template_c4_r12
   - first:
-      213: -6218864689863700793
-    second: Dirt_43
+      213: 21300086
+    second: template_c1_r13
   - first:
-      213: 701764649976998934
-    second: Dirt_44
+      213: 21300088
+    second: template_c2_r13
   - first:
-      213: -8739963106984314206
-    second: Dirt_45
+      213: 21300090
+    second: template_c3_r13
   - first:
-      213: -8152466711101364099
-    second: Dirt_46
+      213: 21300092
+    second: template_c4_r13
   - first:
-      213: 5573960283574790409
-    second: Dirt_47
+      213: 21300094
+    second: template_c1_r14
   - first:
-      213: 3375700698529307116
-    second: Dirt_48
+      213: 21300096
+    second: template_c2_r14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -208,1084 +208,1060 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 3
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 3
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 512
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 512
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dirt_0
+      name: template_c1_r1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 288
+        x: 1
+        y: 469
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab800d45692872d80800000000000000
-      internalID: -8275502208090371910
+      spriteID: e0f6d80738ad984469db9d5f8dab7b6b
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_1
+      name: template_c2_r1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 288
+        x: 69
+        y: 469
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dca353df0b23b9310800000000000000
-      internalID: 1412778643854539469
+      spriteID: 58208795b57c4ad4684c00436550d5a8
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_2
+      name: template_c3_r1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 288
+        x: 137
+        y: 469
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d252c6218be604ee0800000000000000
-      internalID: -1278900557311105747
+      spriteID: edcd5598b32bb1649ac3b124b716aaf5
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_3
+      name: template_c4_r1
       rect:
         serializedVersion: 2
-        x: 192
-        y: 288
+        x: 205
+        y: 469
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2218b504959de770800000000000000
-      internalID: 8641727722977497643
+      spriteID: 41daa18dda16d7642b469d7213d1db36
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_4
+      name: template_c1_r2
       rect:
         serializedVersion: 2
-        x: 256
-        y: 288
+        x: 1
+        y: 433
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b49694cd69123f0b0800000000000000
-      internalID: -5696172171868935861
+      spriteID: 49dca3685dadbcd43bd5955fe3485db4
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_5
+      name: template_c2_r2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
+        x: 69
+        y: 433
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dd322f8a6786bc50800000000000000
-      internalID: 6680675988988378581
+      spriteID: 11f9ced1664f09c4c9952a1074c9d028
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_6
+      name: template_c3_r2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 256
+        x: 137
+        y: 433
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14deeee71ec679c60800000000000000
-      internalID: 7824842593332555073
+      spriteID: a431f4c1ad565a44e9d40be76b552024
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_7
+      name: template_c4_r2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
+        x: 205
+        y: 433
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15dededfe373cc2c0800000000000000
-      internalID: -4410089191414829743
+      spriteID: 0ec7036414c983c4ea38231d8b8a3256
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_8
+      name: template_c1_r3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 256
+        x: 1
+        y: 397
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96baadd3937898ed0800000000000000
-      internalID: -2411247445559563415
+      spriteID: 57e2659361310fc4090a2e4338ecf503
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_9
+      name: template_c2_r3
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
+        x: 69
+        y: 397
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 253aa55f6952afeb0800000000000000
-      internalID: -4685391132033899694
+      spriteID: 302e673e946888342a472d765b295a95
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_10
+      name: template_c3_r3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 224
+        x: 137
+        y: 397
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d6e01c4738732e00800000000000000
-      internalID: 1018790119610574547
+      spriteID: b1c5f34d0ed2bf041aefb32b835fbcca
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_11
+      name: template_c4_r3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 224
+        x: 205
+        y: 397
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6adfa0228adee6030800000000000000
-      internalID: 3489988067640147366
+      spriteID: bd7252ce5b4f835428e30595605c09fd
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_12
+      name: template_c1_r4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 224
+        x: 1
+        y: 361
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1aadf5b8d0ed6130800000000000000
-      internalID: 3561750101690788383
+      spriteID: dc95837646dbf18448ca3d20776a4bb4
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_13
+      name: template_c2_r4
       rect:
         serializedVersion: 2
-        x: 192
-        y: 224
+        x: 69
+        y: 361
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a088198471be0110800000000000000
-      internalID: 1229114862393131176
+      spriteID: 35c1713bff462954fab44645fe733aec
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_14
+      name: template_c3_r4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 224
+        x: 137
+        y: 361
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e0e2ffe4dbba62f0800000000000000
-      internalID: -978763445766528800
+      spriteID: 3d2b6f31f0647c347bfde5051c439402
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_15
+      name: template_c4_r4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 205
+        y: 361
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4e01c291315375d0800000000000000
-      internalID: -3066017647951802806
+      spriteID: d0e0c6530718d164c82ca3281cd889c2
+      internalID: 21300030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_16
+      name: template_c1_r5
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
+        x: 1
+        y: 325
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f27cefbcb8c91970800000000000000
-      internalID: 8726226466006397682
+      spriteID: daa741e9324d9d045afb1d32849cebe2
+      internalID: 21300032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_17
+      name: template_c2_r5
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
+        x: 69
+        y: 325
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5f44f44ac49c35b0800000000000000
-      internalID: -5387267457780789414
+      spriteID: 29c5e32fda4ba5c4c8f0edfd55a53467
+      internalID: 21300034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_18
+      name: template_c3_r5
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
+        x: 137
+        y: 325
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2642d438674e38c70800000000000000
-      internalID: 8972266080312304738
+      spriteID: e6d2360c9fee8e14eb5faf06cfbb0848
+      internalID: 21300036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_19
+      name: template_c4_r5
       rect:
         serializedVersion: 2
-        x: 256
-        y: 192
+        x: 205
+        y: 325
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aeb2b5ad271e55d0800000000000000
-      internalID: -3071992410999177559
+      spriteID: d9fe98e929a04b74ca1bb4f6a74b9f81
+      internalID: 21300038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_20
+      name: template_c1_r6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 160
+        x: 1
+        y: 289
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5da6c4e321f7e6bf0800000000000000
-      internalID: -329186006420133163
+      spriteID: 57cfd07f50075424f8a9fdc0240425ad
+      internalID: 21300040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_21
+      name: template_c2_r6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 160
+        x: 69
+        y: 289
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2bff7ecf04087d90800000000000000
-      internalID: -7099920346614072531
+      spriteID: 8332fca45b5c3174a8ab96892cbb088b
+      internalID: 21300042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_22
+      name: template_c3_r6
       rect:
         serializedVersion: 2
-        x: 128
-        y: 160
+        x: 137
+        y: 289
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eea42ddba76d6a370800000000000000
-      internalID: 8333583983154711278
+      spriteID: cc9b01e7a6ab87d48a549d5584a49c23
+      internalID: 21300044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_23
+      name: template_c4_r6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 160
+        x: 205
+        y: 289
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b6c49096640765e0800000000000000
-      internalID: -1916558277864012105
+      spriteID: 279afb7c880d1964f9abcebf198edc8f
+      internalID: 21300046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_24
+      name: template_c1_r7
       rect:
         serializedVersion: 2
-        x: 256
-        y: 160
+        x: 1
+        y: 253
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6722caeceb74a7380800000000000000
-      internalID: -8972780422745546122
+      spriteID: 9edaa6f0dcd5238499b6b3c1dad90d69
+      internalID: 21300048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_25
+      name: template_c1_r8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 1
+        y: 217
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51cbaf07bcf42d8e0800000000000000
-      internalID: -1670184776608596971
+      spriteID: e3941dd46f20b8c42890980565f5710e
+      internalID: 21300050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_26
+      name: template_c2_r8
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
+        x: 69
+        y: 217
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e67cb40e9b14d9940800000000000000
-      internalID: 5304468202700130158
+      spriteID: 49791985b6ecad842b4a4cc77b8582e0
+      internalID: 21300052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_27
+      name: template_c3_r8
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 137
+        y: 217
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ef022a55fa6a9ef0800000000000000
-      internalID: -100650439650701342
+      spriteID: 9a69e56417c859c4bb2adde0f7298825
+      internalID: 21300054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_28
+      name: template_c4_r8
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
+        x: 205
+        y: 217
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 399fe7bdab3844be0800000000000000
-      internalID: -1493924337810474605
+      spriteID: f8de37719f47fde44802d869b15402c5
+      internalID: 21300056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_29
+      name: template_c1_r9
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
+        x: 1
+        y: 181
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 970d746315af19e80800000000000000
-      internalID: -8173476621990768519
+      spriteID: b8bc59b728cdc21448dee17082ae8aff
+      internalID: 21300058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_30
+      name: template_c2_r9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 69
+        y: 181
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5f9d8ee34fe5a3a0800000000000000
-      internalID: -6654649799325933732
+      spriteID: 69815d3f11484df43853098dfc0ed990
+      internalID: 21300060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_31
+      name: template_c3_r9
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
+        x: 137
+        y: 181
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90261b5e0866b6b30800000000000000
-      internalID: 4281628574541242889
+      spriteID: 6771593ebe0be0f40b883678b0fefeac
+      internalID: 21300062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_32
+      name: template_c4_r9
       rect:
         serializedVersion: 2
-        x: 128
-        y: 96
+        x: 205
+        y: 181
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3d3dc2c06d6b7560800000000000000
-      internalID: 7312558682318650687
+      spriteID: e5b1fbc8b9278774c837ca3f2841f451
+      internalID: 21300064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_33
+      name: template_c1_r10
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
+        x: 1
+        y: 145
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71a09ec40ab479a30800000000000000
-      internalID: 4221926327540320791
+      spriteID: 88c286f8c240cce44b7e00137488a11d
+      internalID: 21300066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_34
+      name: template_c2_r10
       rect:
         serializedVersion: 2
-        x: 256
-        y: 96
+        x: 69
+        y: 145
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b0813590e7d66480800000000000000
-      internalID: -8906193853502881614
+      spriteID: caa623b92ac67f6459ce618cb1a32d3a
+      internalID: 21300068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_35
+      name: template_c3_r10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 137
+        y: 145
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c38445624d3083c0800000000000000
-      internalID: -4359417083918515256
+      spriteID: 4dae969be1ff54a4c8efc10c4e6459b8
+      internalID: 21300070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_36
+      name: template_c4_r10
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 205
+        y: 145
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 169c497a019096320800000000000000
-      internalID: 2551580631017769313
+      spriteID: 9c1934f47742497448c41a7e12a8e471
+      internalID: 21300072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_37
+      name: template_c1_r11
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
+        x: 1
+        y: 109
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 418129b6e02288890800000000000000
-      internalID: -7455671737782233068
+      spriteID: 0d830d3f60106b442a20ac4c61f58355
+      internalID: 21300074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_38
+      name: template_c2_r11
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
+        x: 69
+        y: 109
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdcf063459c280b40800000000000000
-      internalID: 5406620372250459359
+      spriteID: edc4dde2a8ad1324980ca9df7c809368
+      internalID: 21300076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_39
+      name: template_c1_r12
       rect:
         serializedVersion: 2
-        x: 256
-        y: 64
+        x: 1
+        y: 73
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45b9bbb328157d830800000000000000
-      internalID: 4095832005906504532
+      spriteID: e4bcfe4663a6798418ee3536f6258437
+      internalID: 21300078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_40
+      name: template_c2_r12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 69
+        y: 73
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f44ef07830b0c5250800000000000000
-      internalID: 5934630518746244175
+      spriteID: f1fd6bef6e41de043bff66faf7311196
+      internalID: 21300080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_41
+      name: template_c3_r12
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 137
+        y: 73
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08ed098ad93cfa890800000000000000
-      internalID: -7444516577114792320
+      spriteID: 7614f0aaf5b3e3f47ba6c8abf151dde4
+      internalID: 21300082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_42
+      name: template_c4_r12
       rect:
         serializedVersion: 2
-        x: 128
-        y: 32
+        x: 205
+        y: 73
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b261f623c09360690800000000000000
-      internalID: -7636353393611565525
+      spriteID: 25a9f1cf76bf1724a912bc074c910581
+      internalID: 21300084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_43
+      name: template_c1_r13
       rect:
         serializedVersion: 2
-        x: 192
-        y: 32
+        x: 1
+        y: 37
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ce4476738722b9a0800000000000000
-      internalID: -6218864689863700793
+      spriteID: a3b1770a11652a542aafd7a51b33a454
+      internalID: 21300086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_44
+      name: template_c2_r13
       rect:
         serializedVersion: 2
-        x: 256
-        y: 32
+        x: 69
+        y: 37
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61c2ec52b3b2db900800000000000000
-      internalID: 701764649976998934
+      spriteID: b4ebaac713055dd41bf55c4f7d8c95b2
+      internalID: 21300088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_45
+      name: template_c3_r13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 137
+        y: 37
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2aa3e2a4cd965b680800000000000000
-      internalID: -8739963106984314206
+      spriteID: 72163d0680650a7438a6707aa67074ad
+      internalID: 21300090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_46
+      name: template_c4_r13
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 205
+        y: 37
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d782b9948be9cde80800000000000000
-      internalID: -8152466711101364099
+      spriteID: e32957654751c58489a32cedb492c801
+      internalID: 21300092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_47
+      name: template_c1_r14
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
+        x: 1
+        y: 1
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9096c96885faa5d40800000000000000
-      internalID: 5573960283574790409
+      spriteID: f0069868a5a0c774493a8ba0cba0e15d
+      internalID: 21300094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_48
+      name: template_c2_r14
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
+        x: 69
+        y: 1
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce990eb66e5e8de20800000000000000
-      internalID: 3375700698529307116
+      spriteID: 77b930ab14abbb744a4708d49bcf0521
+      internalID: 21300096
       vertices: []
       indices: 
       edges: []
@@ -1293,7 +1269,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 606c651475f57e44883787eb57f1e341
     internalID: 0
     vertices: []
     indices: 

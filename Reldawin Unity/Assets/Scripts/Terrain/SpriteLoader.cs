@@ -19,18 +19,41 @@ namespace LowCloud.Reldawin
         }
 
         /// Width and Height specify the dimensions of Template2.png
-        public static void Setup( )
+        public static void Setup( int spriteMapWidth, int spriteMapHeight )
         {
-            Sprite[] sprites;
-
             tileUVMap = new Dictionary<string, Vector2[]>();
             doodadDictionary = new Dictionary<string, Sprite>();
             itemDictionary = new Dictionary<string, Sprite>();
 
-            Load( "Grass" );
-            Load( "Sand" );
-            Load( "Dirt" );
-            Load( "Shallow_Water" );
+            Sprite[] sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/Grass" );
+
+            foreach ( Sprite s in sprites )
+            {
+                float left = s.rect.x / spriteMapWidth;
+                float right = ( s.rect.x + s.rect.width ) / spriteMapWidth;
+
+                float top = s.rect.y / spriteMapHeight;
+                float bot = ( s.rect.y + s.rect.height ) / spriteMapHeight;
+
+                float middleX = ( s.rect.x + ( s.rect.width / 2 ) ) / spriteMapWidth;
+                float middleY = ( s.rect.y + ( s.rect.height / 2 ) ) / spriteMapHeight;
+
+                Vector2 topMiddle = new Vector2( middleX, top );
+                Vector2 botMiddle = new Vector2( middleX, bot );
+
+                Vector2 rightMiddle = new Vector2( right, middleY );
+                Vector2 leftMiddle = new Vector2( left, middleY );
+
+                Vector2[] uvs = new Vector2[]
+                {
+                    topMiddle,
+                    rightMiddle,
+                    leftMiddle,
+                    botMiddle
+                };
+
+                tileUVMap.Add( s.name, uvs );
+            }
 
             sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/terrainDetails" );
 
@@ -54,47 +77,76 @@ namespace LowCloud.Reldawin
             }
         }
 
-        private static void Load(string filename)
-        {
-            Sprite[] sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/" + filename );
-
-            foreach ( Sprite s in sprites )
-            {
-                float left = s.rect.x / 320;
-                float right = ( s.rect.x + s.rect.width ) / 320;
-
-                float top = s.rect.y / 320;
-                float bot = ( s.rect.y + s.rect.height ) / 320;
-
-                float middleX = ( s.rect.x + ( s.rect.width / 2 ) ) / 320;
-                float middleY = ( s.rect.y + ( s.rect.height / 2 ) ) / 320;
-
-                Vector2 topMiddle = new Vector2( middleX, top );
-                Vector2 botMiddle = new Vector2( middleX, bot );
-
-                Vector2 rightMiddle = new Vector2( right, middleY );
-                Vector2 leftMiddle = new Vector2( left, middleY );
-
-                Vector2[] uvs = new Vector2[]
-                {
-                    topMiddle,
-                    rightMiddle,
-                    leftMiddle,
-                    botMiddle
-                };
-
-                tileUVMap.Add( s.name, uvs );
-            }
-        }
-
-        public static Vector2[] GetTileUVs( int type, Tile[] neighbours )
+        public static Vector2[] GetTileUVs( int type, Tile[] neighbours = null )
         {
             if ( type == 0 )
                 return GetEmpty;
 
+            if ( neighbours == null )
+                return GetTile( XMLLoader.GetTile( type ).name + "_0" );
+
             string key = XMLLoader.GetTile( type ).name;
 
-            key += XMLLoader.GetAtlas( type, neighbours );
+            if ( !IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
+            {
+                key += "_SW_Corner";
+                return GetTile( key );
+            }
+            if ( IsSameType( type, neighbours[2] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
+            {
+                key += "_SW";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[2] ) )
+            {
+                key += "_SE_Corner";
+                return GetTile( key );
+            }
+            if ( IsSameType( type, neighbours[1] ) && IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[5] ) )
+            {
+                key += "_SE";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[0] ) )
+            {
+                key += "_NW_Corner";
+                return GetTile( key );
+            }
+            if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[7] ) )
+            {
+                key += "_NW";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[0] ) && !IsSameType( type, neighbours[1] ) )
+            {
+                key += "_NE_Corner";
+                return GetTile( key );
+            }
+            if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[4] ) )
+            {
+                key += "_NE";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[0] ) )
+            {
+                key += "_N";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[1] ) )
+            {
+                key += "_E";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[2] ) )
+            {
+                key += "_S";
+                return GetTile( key );
+            }
+            if ( !IsSameType( type, neighbours[3] ) )
+            {
+                key += "_W";
+                return GetTile( key );
+            }
 
             return GetTile( key );
         }

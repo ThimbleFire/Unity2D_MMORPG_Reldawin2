@@ -6,8 +6,6 @@ using System.IO;
 
 public class EditorBase : EditorWindow
 {
-    private const byte Right = 20;
-
     protected Sprite[] btnState;
     private Vector2 scrollPos;
 
@@ -17,10 +15,8 @@ public class EditorBase : EditorWindow
     protected bool Loaded { get; set; }
     protected string[] LoadOptions { get; set; }
     protected bool IncludeLoadList { get; set; }
-    protected bool IncludeSaveBtn { get; set; }
-    protected bool IncludeBackBtn { get; set; }
 
-    protected int Y { get; set; }
+    protected int y { get; set; }
     
 
     private void OnGUI()
@@ -42,10 +38,6 @@ public class EditorBase : EditorWindow
                 EditorGUILayout.BeginVertical();
                 scrollPos = EditorGUILayout.BeginScrollView( scrollPos, false, true );
                 {
-                if(IncludeSaveBtn)
-                    PaintSaveButton();
-                if(IncludeBackBtn)
-                    PaintBackButton();
                     CreationWindow();
                 }
                 EditorGUILayout.EndScrollView();
@@ -56,7 +48,7 @@ public class EditorBase : EditorWindow
 
     protected virtual void MainWindow()
     {
-        GUILayout.BeginArea( new Rect( 4, Y, position.width - Right, 20 ) );
+        GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ) );
         if ( GUILayout.Button( "New" ) )
         {
             ResetProperties();
@@ -68,7 +60,7 @@ public class EditorBase : EditorWindow
 
         if ( IncludeLoadList )
         {
-            GUILayout.BeginArea( new Rect( 4, Y, position.width - Right, 20 ) );
+            GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ) );
             if ( GUILayout.Button( "Load Selected" ) )
             {
                 LoadProperties();
@@ -89,35 +81,34 @@ public class EditorBase : EditorWindow
     }
     protected virtual void CreationWindow()
     {
-
+        PaintSaveButton();
+        PaintBackButton();
     }
     protected virtual void OnClick_SaveButton()
     {
         //override me
     }
-    private void AddRow() { Y += 22; EditorGUILayout.Space( 22, true ); }
-    private void ResetRow() { Y = 4; }
+    private void AddRow() { y += 22; EditorGUILayout.Space( 22, true ); }
+    private void ResetRow() { y = 4; }
 
     private void   PaintSaveButton()
     {
-        GUILayout.BeginArea( new Rect( 4, Y, position.width - Right, 21 ) );
+        GUILayout.BeginArea( new Rect( 32, position.height - 70, position.width - 70, 20 ) );
         if ( GUILayout.Button( string.Format( "Save" ) ) )
         {
             OnClick_SaveButton();
         }
         GUILayout.EndArea();
-        AddRow();
     }
     private void   PaintBackButton()
     {
-        GUILayout.BeginArea( new Rect( 4, Y, position.width - Right, 21 ) );
+        GUILayout.BeginArea( new Rect( 32, position.height - 40, position.width - 70, 20 ) );
         if ( GUILayout.Button( "Back" ) )
         {
             WindowState = WindowStates.Main;
             Loaded = false;
         }
         GUILayout.EndArea();
-        AddRow();
     }
     protected void PaintLoadList()
     {
@@ -125,17 +116,17 @@ public class EditorBase : EditorWindow
     }
     protected void PaintIntField( ref int value, string label = "" )
     {
-        value = EditorGUI.IntField( new Rect( 4, Y, position.width - Right, 20 ), label, value );
+        value = EditorGUI.IntField( new Rect( 4, y, position.width - 12, 20 ), label, value );
         AddRow();
     }
     protected void PaintFloatField( ref float value, string label = "" )
     {
-        value = EditorGUI.FloatField( new Rect( 4, Y, position.width - Right, 20 ), label, value );
+        value = EditorGUI.FloatField( new Rect( 4, y, position.width - 12, 20 ), label, value );
         AddRow();
     }
     protected void PaintTextField( ref string value, string label = "" )
     {
-        value = EditorGUI.TextField( new Rect( 4, Y, position.width - Right, 20 ), label, value );
+        value = EditorGUI.TextField( new Rect( 4, y, position.width - 12, 20 ), label, value );
         AddRow();
     }
     protected void PaintFloatRange( ref float min, ref float max, float minRange, float maxRange, string label = "" )
@@ -143,7 +134,7 @@ public class EditorBase : EditorWindow
         EditorGUIUtility.wideMode = true;
         {
             EditorGUI.MinMaxSlider(
-                new Rect( 4, Y, position.width - Right, 20 ),
+                new Rect( 4, y, position.width - 12, 20 ),
                 new GUIContent( label ),
                 ref min,
                 ref max,
@@ -161,13 +152,13 @@ public class EditorBase : EditorWindow
         if ( container.list == null )
             return 0;
 
-        int v = EditorGUI.Popup( new Rect( 4, Y, position.width - Right, 20 ), "Item", value, container.GetNames );
+        int v = EditorGUI.Popup( new Rect( 4, y, position.width - 8, 20 ), "Item", value, container.GetNames );
         AddRow();
 
         PaintIntSlider( ref probability, 0, 100, "Probability" );
 
         EditorGUI.BeginDisabledGroup( probability == 0 );
-        GUILayout.BeginArea( new Rect( 4, Y, position.width - Right, 20 ) );
+        GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ) );
         AddRow();
         if ( GUILayout.Button( "Add probability" ) )
         {
@@ -187,13 +178,13 @@ public class EditorBase : EditorWindow
         if ( container.list == null )
             return 0;
 
-        int v = EditorGUI.Popup( new Rect( 4, Y, position.width - Right, 20 ), "Item", value, container.GetNames );
+        int v = EditorGUI.Popup( new Rect( 4, y, position.width - 8, 20 ), "Item", value, container.GetNames );
         AddRow();
 
         PaintIntSlider( ref probability, 0, 100, "Probability" );
 
         EditorGUI.BeginDisabledGroup( probability == 0 );
-        GUILayout.BeginArea( new Rect( 4, Y, position.width - Right, 20 ) );
+        GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ) );
         AddRow();
         if ( GUILayout.Button( "Add probability" ) )
         {
@@ -209,25 +200,25 @@ public class EditorBase : EditorWindow
     protected void PaintHorizontalLine()
     {
         Handles.color = Color.gray;
-        Handles.DrawLine( new Vector3( 4, Y + 11 ), new Vector3( position.width - Right, Y + 11 ) );
+        Handles.DrawLine( new Vector3( 4, y + 11 ), new Vector3( position.width - 8, y + 11 ) );
         AddRow();
     }
     protected int  PaintPopup( string[] options, int value, string label = "" )
     {
-        int v = EditorGUI.Popup( new Rect( 4, Y, position.width - Right, 20 ), value, options );
+        int v = EditorGUI.Popup( new Rect( 4, y, position.width - 8, 20 ), value, options );
         AddRow();
         return v;
     }
     protected void PaintSpriteField( ref Sprite sprite, ref string fileName, string label = "" )
     {
-        sprite = (Sprite)EditorGUI.ObjectField( new Rect( 4, Y, 64, 64 ), sprite, typeof( Sprite ), false );
+        sprite = (Sprite)EditorGUI.ObjectField( new Rect( 4, y, 64, 64 ), sprite, typeof( Sprite ), false );
 
         if ( sprite != null )
         {
             fileName = sprite.name;
-            EditorGUI.LabelField( new Rect( 74, Y, position.width - 86, 20 ), label );
+            EditorGUI.LabelField( new Rect( 74, y, position.width - 86, 20 ), label );
             AddRow();
-            EditorGUI.LabelField( new Rect( 74, Y, position.width - 86, 20 ), label );
+            EditorGUI.LabelField( new Rect( 74, y, position.width - 86, 20 ), label );
             AddRow();
             AddRow();
             AddRow();
@@ -242,7 +233,7 @@ public class EditorBase : EditorWindow
     }
     protected void PaintIntSlider( ref int value, int min, int max, string label = "" )
     {
-        value = EditorGUI.IntSlider( new Rect( 4, Y, position.width - Right, 20 ), label, value, min, max );
+        value = EditorGUI.IntSlider( new Rect( 4, y, position.width - 12, 20 ), label, value, min, max );
         AddRow();
     }
     protected void PaintDroprates( List<Droprate> droprates, DEDoodadList doodadList )
@@ -251,8 +242,8 @@ public class EditorBase : EditorWindow
             if ( droprates.Count > 0 )
                 foreach ( Droprate droprate in droprates )
                 {
-                    EditorGUI.LabelField( new Rect( 4, Y, position.width - Right, 20 ), doodadList.list.Find( x => x.id == droprate.id ).name );
-                    EditorGUI.LabelField( new Rect( position.width - 40, Y, position.width - Right, 20 ), ( droprate.percent ).ToString() + " %" );
+                    EditorGUI.LabelField( new Rect( 4, y, position.width - 12, 20 ), doodadList.list.Find( x => x.id == droprate.id ).name );
+                    EditorGUI.LabelField( new Rect( position.width - 40, y, position.width - 12, 20 ), ( droprate.percent ).ToString() + " %" );
                     AddRow();
                 }
     }   
@@ -262,49 +253,39 @@ public class EditorBase : EditorWindow
             if ( droprates.Count > 0 )
                 foreach ( Droprate droprate in droprates )
                 {
-                    EditorGUI.LabelField( new Rect( 4, Y, position.width - Right, 20 ), itemList.list.Find( x => x.id == droprate.id ).name );
-                    EditorGUI.LabelField( new Rect( position.width - 40, Y, position.width - Right, 20 ), ( droprate.percent ).ToString() + " %" );
+                    EditorGUI.LabelField( new Rect( 4, y, position.width - 12, 20 ), itemList.list.Find( x => x.id == droprate.id ).name );
+                    EditorGUI.LabelField( new Rect( position.width - 40, y, position.width - 12, 20 ), ( droprate.percent ).ToString() + " %" );
                     AddRow();
                 }
     }
     protected void PaintSpriteAtlasKey( Sprite sprite, ref short[] state )
     {
-        short[] orderOfNeighbours = new short[8] { 7, 0, 4, 3, 1, 6, 2, 5 };
-        EditorGUI.ObjectField( new Rect( 4, Y, 64, 32 ), sprite, typeof( Sprite ), false  );
+        EditorGUI.ObjectField( new Rect( 4, y, 64, 32 ), sprite, typeof( Sprite ), false  );
 
         for ( int counter = 0, z = 0; z < 3; z++ )
         {
             for ( int x = 0; x < 3; x++ )
             {
-                if ( x == 1 && z == 1 )
+                GUILayout.BeginArea( new Rect( 72 + x * 24, y + z * 24, 24, 24 ) );
+
+                // tried using a for-loop for this but it broke, so, idk, try again later, past-you is an idiot <3
+
+                switch ( state[counter] )
                 {
-                    x=2;
+                    case 0:
+                        if ( GUILayout.Button( new GUIContent( string.Empty, btnState[0].texture ) ) )
+                            state[counter] = 1;
+                        break;
+                    case 1:
+                        if ( GUILayout.Button( new GUIContent( string.Empty, btnState[1].texture ) ) )
+                            state[counter] = 2;
+                        break;
+                    case 2:
+                        if ( GUILayout.Button( new GUIContent( string.Empty, btnState[2].texture ) ) )
+                            state[counter] = 0;
+                        break;
                 }
 
-                GUILayout.BeginArea( new Rect( 72 + x * 24, Y + z * 24, 24, 24 ) );
-                {
-                    switch ( state[orderOfNeighbours[counter]] )
-                    {
-                        case 0:
-                            if ( GUILayout.Button( new GUIContent( string.Empty, btnState[0].texture ) ) )
-                                state[orderOfNeighbours[counter]] = 1;
-                            break;
-                        case 1:
-                            if ( GUILayout.Button( new GUIContent( string.Empty, btnState[1].texture ) ) )
-                                state[orderOfNeighbours[counter]] = 2;
-                            break;
-                        case 2:
-                            if ( GUILayout.Button( new GUIContent( string.Empty, btnState[2].texture ) ) )
-                                state[orderOfNeighbours[counter]] = 0;
-                            break;
-                    }
-                }
-                GUILayout.EndArea();
-
-                GUILayout.BeginArea( new Rect( 150 + x * 24, Y + z * 24, 24, 24 ) );
-                {
-                    GUILayout.Label( orderOfNeighbours[counter].ToString() );
-                }
                 GUILayout.EndArea();
 
                 counter++;
@@ -320,7 +301,7 @@ public class EditorBase : EditorWindow
     {
         bool result = false;
 
-        GUILayout.BeginArea( new Rect( 4, Y, position.width - Right, 20 ) );
+        GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ) );
         if ( GUILayout.Button( message ) )
         {
             result = true;
@@ -330,14 +311,7 @@ public class EditorBase : EditorWindow
 
         return result;
     }
-    protected void PaintLabel( string message )
-    {
-        EditorGUI.LabelField( new Rect( 4, Y, position.width - Right, 20 ), message );
-        AddRow();
-    }
 
-
-    
     /// <summary>Called on save button click</summary>
     protected void Save<T>( T dataToSerialize, string filename )
     {
@@ -356,16 +330,8 @@ public class EditorBase : EditorWindow
     protected T Load<T>( string filename )
     {
         XmlSerializer xmlSerializer = new XmlSerializer( typeof( T ) );
-        try
-        {
-            using TextReader reader = new StreamReader( Application.streamingAssetsPath + filename );
-            return (T)xmlSerializer.Deserialize( reader );
-        }
-        catch ( System.Exception )
-        {
-            Debug.LogError( filename + " not found" );
-            return (T)default;
-        }
+        using TextReader reader = new StreamReader( Application.streamingAssetsPath + filename );
+        return (T)xmlSerializer.Deserialize( reader );
     }
 
     /// <summary>Called when opening the editor window. To be overriden</summary>

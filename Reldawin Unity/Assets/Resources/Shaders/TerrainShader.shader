@@ -2,8 +2,9 @@
 {
 	Properties
 	{
-		_MainTex("Sprite Texture", 2D) = "white" {}
+		_Textures("Sprite Texture", 2DArray) = "white" {}
 		_Color("Tint", Color) = (1,1,1,1)
+		_TextureIndex("Texture Index", Int) = 0
 		[MaterialToggle] Premultiplied_Alpha("Premultiplied Alpha", Int) = 1
 		[MaterialToggle] PixelSnap("Pixel snap", Float) = 0
 	}
@@ -11,6 +12,7 @@
 	{
 		Tags
 		{
+			//"Queue" = "Transparent" // Line removed to fix rendering outlines
 			"IgnoreProjector" = "True"
 			"RenderType" = "Transparent"
 			"PreviewType" = "Plane"
@@ -35,10 +37,10 @@
 
 			struct appdata_t
 			{
-				float4 vertex   : POSITION;
-				float4 color    : COLOR;
-				float2 uv_bottomLayer  : TEXCOORD0;
-				float2 uv_topLayer   : TEXCOORD1;
+				float4 vertex   	: POSITION;
+				float4 color    	: COLOR;
+				float2 uv_bottomLayer   : TEXCOORD0;
+				float2 uv_topLayer   	: TEXCOORD1;
 			};
 
 			struct v2f
@@ -65,15 +67,16 @@
 				return OUT;
 			}
 
-			sampler2D _MainTex;
+			sampler2D _Textures;
 			sampler2D _AlphaTex;
-
+UNITY_SAMPLE_TEX2DARRAY(name,uv)
 			fixed4 SampleSpriteTexture(float2 uv)
 			{
-				fixed4 color = tex2D(_MainTex, uv);
+				fixed4 color = tex2D(_Textures, uv);
 
 				return color;
 			}
+
 			fixed4 FragmentFunc(v2f IN) : SV_Target
 			{
 				fixed4 background = SampleSpriteTexture(IN.uv_bottomLayer) * _Color;
@@ -94,9 +97,12 @@
 					//return alpha
 					return finalColor;
 				}
+
+				//return opaque
 				return background;
 			}
+
 			ENDCG
-		}
-	}
-}
+		} // end pass
+	} //end subshader
+} // end

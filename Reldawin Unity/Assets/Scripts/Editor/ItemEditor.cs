@@ -115,11 +115,6 @@ public class ItemEditor : EditorBase
     protected override void Load()
     {
         activeList = Load<IEItemList>( "/items.xml" );
-
         LoadOptions = activeList.GetNames;
-
-        IncludeLoadList = true;
-        IncludeSaveBtn = true;
-        IncludeBackBtn = true;
     }
 }

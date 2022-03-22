@@ -48,10 +48,6 @@ public class DoodadEditor : EditorBase
 
         if ( File.Exists( Application.streamingAssetsPath + "/items.xml" ) )
             itemList = Load<IEItemList>("/items.xml");
-
-        IncludeLoadList = true;
-        IncludeSaveBtn = true;
-        IncludeBackBtn = true;
     }
     protected override void OnClick_SaveButton()
     {
