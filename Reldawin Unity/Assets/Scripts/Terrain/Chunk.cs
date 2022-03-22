@@ -38,7 +38,7 @@ namespace LowCloud.Reldawin
                 Nodes[_x, _y] = new Node()
                 {
                     type = -1,
-                    CellPositionInWorld = Tiles[_x+1, _y+1].CellPositionInWorld
+                    CellPositionInWorld = Tiles[_x, _y].CellPositionInWorld
                 };
             }
 
@@ -57,41 +57,36 @@ namespace LowCloud.Reldawin
             Mesh.GetUVs( 0, uvs ); // Get layer zero as its uvs are preset
 
             for ( int _x = 1; _x < Chunk.Size + 1; _x++ )
+            {
                 for ( int _y = 1; _y < Chunk.Size + 1; _y++ )
                 {
                     Tile[] neighbours = GetNeighbours( _x, _y );
 
-                    Vector2[] UVs = null;
+                    Vector2[] UVs = SpriteLoader.GetTileUVs( Tiles[_x, _y].TileType );
 
-                    switch ( channel )
+                    foreach ( Tile neighbour in neighbours )
                     {
-                        case 0:
-                            UVs = SpriteLoader.GetTileUVs( Tiles[_x, _y].TileType );
-                            foreach ( Tile neighbour in neighbours )
-                            {
-                                // If it has a neighbour that is below it of a different type
-                                if ( neighbour.TileType != Tiles[_x, _y].TileType && neighbour.GetLayer > Tiles[_x, _y].GetLayer )
-                                {
-                                    //Set the tile base to appear as part of its neighbour
-                                    UVs = SpriteLoader.GetTileUVs( neighbour.TileType );
-                                    break;
-                                }
-                            }
-                            break;
+                        bool isNotSameTileTypeAndNeighbourIsAbove =
+                            neighbour.TileType != Tiles[_x, _y].TileType
+                         && neighbour.GetLayer > Tiles[_x, _y].GetLayer;
 
-                        case 1:
-                            //
-                            UVs = SpriteLoader.GetEmpty;
-                            foreach ( Tile neighbour in neighbours )
+                        if ( channel == 0 )
+                        {
+                            if ( isNotSameTileTypeAndNeighbourIsAbove )
                             {
-                                // If it has a neighbour that is below it of a different type
-                                if ( neighbour.TileType != Tiles[_x, _y].TileType && neighbour.GetLayer > Tiles[_x, _y].GetLayer )
-                                {
-                                    UVs = SpriteLoader.GetTileUVs( Tiles[_x, _y].TileType, neighbours );
-                                    break;
-                                }
+                                UVs = SpriteLoader.GetTileUVs( neighbour.TileType );
+                                break;
                             }
-                            break;
+                        }
+                        if ( channel == 1 )
+                        {
+                            UVs = SpriteLoader.GetEmpty;
+                            if ( isNotSameTileTypeAndNeighbourIsAbove )
+                            {
+                                UVs = SpriteLoader.GetTileUVs( Tiles[_x, _y].TileType, neighbours );
+                                break;
+                            }
+                        }
                     }
 
                     //_x and _y are decreased by 1 because the nested for loops above do shit. 
@@ -102,6 +97,7 @@ namespace LowCloud.Reldawin
                         uvs[r + index] = UVs[index];
                     }
                 }
+            }
 
             Mesh.SetUVs( channel, uvs );
         }
@@ -150,14 +146,14 @@ namespace LowCloud.Reldawin
 
                 Tile[] neighbors = new Tile[8]
                 {
-                 Tiles[x + 0, y + 1], //forward
-                 Tiles[x + 1, y + 0], //right
-                 Tiles[x + 0, y - 1], //down
-                 Tiles[x - 1, y + 0], //left
-                 Tiles[x + 1, y + 1], //forard-right
-                 Tiles[x + 1, y - 1], //back-right
-                 Tiles[x - 1, y - 1], //back-left
-                 Tiles[x - 1, y + 1]  //forward-left
+                    Tiles[x + 0, y + 1], //forward
+                    Tiles[x + 1, y + 0], //right
+                    Tiles[x + 0, y - 1], //down
+                    Tiles[x - 1, y + 0], //left
+                    Tiles[x + 1, y + 1], //forard-right
+                    Tiles[x + 1, y - 1], //back-right
+                    Tiles[x - 1, y - 1], //back-left
+                    Tiles[x - 1, y + 1]  //forward-left
                 };
                 return neighbors;
 

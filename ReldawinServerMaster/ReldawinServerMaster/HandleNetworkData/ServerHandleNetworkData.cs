@@ -58,8 +58,11 @@ namespace ReldawinServerMaster
 
         public static void HandlePlayerCharacterMovedPosition( int index, PacketBuffer buffer )
         {
-            int newPosX = buffer.ReadInteger();
-            int newPosY = buffer.ReadInteger();
+            //we increase this by 1 because [zero, zero] on in-game is out of bounds but needs to be defined
+            //so that tiles at the edge of the world have a tile type to blend with.
+
+            int newPosX = buffer.ReadInteger() + 1;
+            int newPosY = buffer.ReadInteger() + 1;
 
             ServerTCP.ChangeClientPosition( index, newPosX, newPosY );
         }
