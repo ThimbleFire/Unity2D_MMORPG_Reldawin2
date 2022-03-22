@@ -6,26 +6,25 @@ using System.IO;
 
 public class EditorBase : EditorWindow
 {
-    protected Sprite[] btnState;
-    private Vector2 scrollPos;
-
     protected enum WindowStates { Main, Create }
+
     protected WindowStates WindowState { get; set; }
     protected int LoadIndex { get; set; }
     protected bool Loaded { get; set; }
     protected string[] LoadOptions { get; set; }
-    protected bool IncludeLoadList { get; set; }
 
     protected int y { get; set; }
-    
+    protected void AddRow() { y += 22; }
+    protected void ResetRow() { y = 4; }
 
     private void OnGUI()
     {
+        focusedWindow.minSize = new Vector2( 400, 600 );
+
         ResetRow();
 
         if ( !Loaded )
         {
-            focusedWindow.minSize = new Vector2( 400, 600 );
             Load();
         }
 
@@ -35,18 +34,12 @@ public class EditorBase : EditorWindow
                 MainWindow();
                 break;
             case WindowStates.Create:
-                EditorGUILayout.BeginVertical();
-                scrollPos = EditorGUILayout.BeginScrollView( scrollPos, false, true );
-                {
-                    CreationWindow();
-                }
-                EditorGUILayout.EndScrollView();
-                EditorGUILayout.EndVertical();
+                CreationWindow();
                 break;
         }
     }
 
-    protected virtual void MainWindow()
+    protected void MainWindow()
     {
         GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ) );
         if ( GUILayout.Button( "New" ) )
@@ -54,31 +47,29 @@ public class EditorBase : EditorWindow
             ResetProperties();
             WindowState = WindowStates.Create;
         }
-
         GUILayout.EndArea();
         AddRow();
 
-        if ( IncludeLoadList )
+        GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ) );
+        if ( GUILayout.Button( "Load Selected" ) )
         {
-            GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ) );
-            if ( GUILayout.Button( "Load Selected" ) )
-            {
-                LoadProperties();
-                WindowState = WindowStates.Create;
-            }
-            GUILayout.EndArea();
-
-            AddRow();
-
-            PaintLoadList();
+            LoadProperties();
+            WindowState = WindowStates.Create;
         }
+        GUILayout.EndArea();
+
+        AddRow();
+
+        PaintLoadList();
     }
 
-    /// <summary>Called when clicking New button</summary>
+    /// <summary>Called when opening a new form.</summary>
     protected virtual void ResetProperties()
     {
 
     }
+
+    /// <summary>The paint method for creation window that houses paint calls</summary>
     protected virtual void CreationWindow()
     {
         PaintSaveButton();
@@ -88,32 +79,13 @@ public class EditorBase : EditorWindow
     {
         //override me
     }
-    private void AddRow() { y += 22; EditorGUILayout.Space( 22, true ); }
-    private void ResetRow() { y = 4; }
 
-    private void   PaintSaveButton()
-    {
-        GUILayout.BeginArea( new Rect( 32, position.height - 70, position.width - 70, 20 ) );
-        if ( GUILayout.Button( string.Format( "Save" ) ) )
-        {
-            OnClick_SaveButton();
-        }
-        GUILayout.EndArea();
-    }
-    private void   PaintBackButton()
-    {
-        GUILayout.BeginArea( new Rect( 32, position.height - 40, position.width - 70, 20 ) );
-        if ( GUILayout.Button( "Back" ) )
-        {
-            WindowState = WindowStates.Main;
-            Loaded = false;
-        }
-        GUILayout.EndArea();
-    }
+    ///<summary> Paints the dropdown box with all the elements </summary>
     protected void PaintLoadList()
     {
-            LoadIndex = PaintPopup( LoadOptions, LoadIndex );
+        LoadIndex = PaintPopup( LoadOptions, LoadIndex );
     }
+
     protected void PaintIntField( ref int value, string label = "" )
     {
         value = EditorGUI.IntField( new Rect( 4, y, position.width - 12, 20 ), label, value );
@@ -145,7 +117,7 @@ public class EditorBase : EditorWindow
         EditorGUIUtility.wideMode = false;
         AddRow();
     }
-    protected int  PaintAddProbability( ref int value, ref int probability, ref List<Droprate> droprates, ref IEItemList container )
+    protected int PaintAddProbability( ref int value, ref int probability, ref List<Droprate> droprates, ref IEItemList container )
     {
         if ( container == null )
             return 0;
@@ -171,7 +143,7 @@ public class EditorBase : EditorWindow
 
         return v;
     }
-    protected int  PaintAddProbability( ref int value, ref int probability, ref List<Droprate> droprates, ref DEDoodadList container )
+    protected int PaintAddProbability( ref int value, ref int probability, ref List<Droprate> droprates, ref DEDoodadList container )
     {
         if ( container == null )
             return 0;
@@ -246,7 +218,7 @@ public class EditorBase : EditorWindow
                     EditorGUI.LabelField( new Rect( position.width - 40, y, position.width - 12, 20 ), ( droprate.percent ).ToString() + " %" );
                     AddRow();
                 }
-    }   
+    }
     protected void PaintDroprates( List<Droprate> droprates, IEItemList itemList )
     {
         if ( droprates != null )
@@ -258,58 +230,25 @@ public class EditorBase : EditorWindow
                     AddRow();
                 }
     }
-    protected void PaintSpriteAtlasKey( Sprite sprite, ref short[] state )
+
+    private void   PaintSaveButton()
     {
-        EditorGUI.ObjectField( new Rect( 4, y, 64, 32 ), sprite, typeof( Sprite ), false  );
-
-        for ( int counter = 0, z = 0; z < 3; z++ )
+        GUILayout.BeginArea( new Rect( 32, position.height - 70, position.width - 70, 20 ) );
+        if ( GUILayout.Button( string.Format( "Save" ) ) )
         {
-            for ( int x = 0; x < 3; x++ )
-            {
-                GUILayout.BeginArea( new Rect( 72 + x * 24, y + z * 24, 24, 24 ) );
-
-                // tried using a for-loop for this but it broke, so, idk, try again later, past-you is an idiot <3
-
-                switch ( state[counter] )
-                {
-                    case 0:
-                        if ( GUILayout.Button( new GUIContent( string.Empty, btnState[0].texture ) ) )
-                            state[counter] = 1;
-                        break;
-                    case 1:
-                        if ( GUILayout.Button( new GUIContent( string.Empty, btnState[1].texture ) ) )
-                            state[counter] = 2;
-                        break;
-                    case 2:
-                        if ( GUILayout.Button( new GUIContent( string.Empty, btnState[2].texture ) ) )
-                            state[counter] = 0;
-                        break;
-                }
-
-                GUILayout.EndArea();
-
-                counter++;
-            }
-        }
-
-        AddRow();
-        AddRow();
-        AddRow();
-        AddRow();
-    }
-    protected bool PaintButton(string message)
-    {
-        bool result = false;
-
-        GUILayout.BeginArea( new Rect( 4, y, position.width - 12, 20 ) );
-        if ( GUILayout.Button( message ) )
-        {
-            result = true;
+            OnClick_SaveButton();
         }
         GUILayout.EndArea();
-        AddRow();
-
-        return result;
+    }
+    private void   PaintBackButton()
+    {
+        GUILayout.BeginArea( new Rect( 32, position.height - 40, position.width - 70, 20 ) );
+        if ( GUILayout.Button( "Back" ) )
+        {
+            WindowState = WindowStates.Main;
+            Loaded = false;
+        }
+        GUILayout.EndArea();
     }
 
     /// <summary>Called on save button click</summary>
@@ -325,26 +264,18 @@ public class EditorBase : EditorWindow
         using ( FileStream stream = new FileStream( ServerDir + filename, FileMode.Create ) )
         serializer.Serialize( stream, dataToSerialize );
     }
-
+    
     /// <summary>Called by Load in inheriting class</summary>
-    protected T Load<T>( string filename )
+    protected T Load<T>(string filename)
     {
         XmlSerializer xmlSerializer = new XmlSerializer( typeof( T ) );
         using TextReader reader = new StreamReader( Application.streamingAssetsPath + filename );
         return (T)xmlSerializer.Deserialize( reader );
     }
-
+    
     /// <summary>Called when opening the editor window. To be overriden</summary>
     protected virtual void Load()
     {
-        btnState = new Sprite[3]
-        {
-            Resources.Load<Sprite>( "Sprites/System/EditorButtons" ),
-            Resources.Load<Sprite>( "Sprites/System/EditorButtons2" ),
-            Resources.Load<Sprite>( "Sprites/System/EditorButtons3" )
-        };
-
-        Loaded = true;
         //override me
     }
     

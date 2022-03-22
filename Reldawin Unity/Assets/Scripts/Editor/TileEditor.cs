@@ -19,7 +19,6 @@ public class TileEditor : EditorBase
     private int _layerIndex = 0;
     private List<Droprate> _probabilities = new List<Droprate>();
 
-
     [MenuItem( "Window/Tile Editor" )]
     private static void ShowWindow()
     {
@@ -37,6 +36,7 @@ public class TileEditor : EditorBase
         tempProbabilityOptionIndex = 0;
         tempProbabilitySpawnRate = 0;
     }
+
     protected override void OnClick_SaveButton()
     {
         TETile newTile = new TETile
@@ -62,6 +62,7 @@ public class TileEditor : EditorBase
                     activeList.list.Remove( tileInList );
                     activeList.list.Add( newTile );
                 }
+
             }
         }
 
@@ -69,6 +70,7 @@ public class TileEditor : EditorBase
 
         _probabilities.Clear();
     }
+
     protected override void CreationWindow()
     {
         PaintTextField(ref _tileName, "Name");
@@ -83,19 +85,14 @@ public class TileEditor : EditorBase
 
         base.CreationWindow();
     }
+
     protected override void Load()
     {
-        if ( File.Exists( Application.streamingAssetsPath + "/tiles.xml" ) )
-        {
-            activeList = Load<TETileList>( "/tiles.xml" );
-            LoadOptions = activeList.GetNames;
-            IncludeLoadList = true;
-        }
-
+        activeList = Load<TETileList>( "/tiles.xml" );
+        LoadOptions = activeList.GetNames;
         doodadList = Load<DEDoodadList>( "/doodads.xml" );
-
-        base.Load();
     }
+
     protected override void LoadProperties()
     {
         _tileName = activeList.list[LoadIndex].name;

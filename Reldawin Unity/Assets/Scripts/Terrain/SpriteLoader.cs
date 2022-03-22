@@ -25,7 +25,7 @@ namespace LowCloud.Reldawin
             doodadDictionary = new Dictionary<string, Sprite>();
             itemDictionary = new Dictionary<string, Sprite>();
 
-            Sprite[] sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/Grass" );
+            Sprite[] sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/Template2" );
 
             foreach ( Sprite s in sprites )
             {
@@ -83,10 +83,10 @@ namespace LowCloud.Reldawin
                 return GetEmpty;
 
             if ( neighbours == null )
-                return GetTile( XMLLoader.GetTile( type ).name + "_0" );
+                return GetTile( XMLLoader.GetTile( type ).name + "_" + Random.Range( 1, 5 ) );
 
             string key = XMLLoader.GetTile( type ).name;
-
+            
             if ( !IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
             {
                 key += "_SW_Corner";

@@ -38,7 +38,7 @@ namespace LowCloud.Reldawin
                 Nodes[_x, _y] = new Node()
                 {
                     type = -1,
-                    CellPositionInWorld = Tiles[_x, _y].CellPositionInWorld
+                    CellPositionInWorld = Tiles[_x+1, _y+1].CellPositionInWorld
                 };
             }
 
