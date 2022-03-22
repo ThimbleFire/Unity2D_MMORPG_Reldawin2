@@ -30,6 +30,9 @@ namespace LowCloud.Reldawin
         {
             data = d;
 
+            string name = XMLLoader.GetDoodad( data.type ).name;
+            Sprite sprite = SpriteLoader.GetDoodad( name );
+
             // setup sorting order so entities can walk behind and around
             renderer.sortingOrder = data.tilePositionInWorld.x * Chunk.Size + data.tilePositionInWorld.y;
 
@@ -37,19 +40,23 @@ namespace LowCloud.Reldawin
             transform.position = MyMath.CellToIsometric( d.tilePositionInWorld );
 
             // setup sprite
-            renderer.sprite = SpriteLoader.GetDoodad(XMLLoader.GetDoodad(data.type).name);
+            renderer.sprite = sprite;
 
             // setup collision size
             Vector2 colliderSize = renderer.sprite.bounds.size;
             boxCollider2D.size = colliderSize;
 
+            float offsetX = -( renderer.sprite.pivot.x - renderer.sprite.rect.size.x / 2 );
+            float offsetY = renderer.sprite.rect.size.y - renderer.sprite.pivot.y * 2;
+
             // setup collision offset
-            Vector2 halfSpriteSize = renderer.sprite.rect.size / 2;
-            Vector2 offset = -( renderer.sprite.pivot - halfSpriteSize ) / 100;
+            Vector2 offset = new Vector2( offsetX, offsetY ) / 100;
             boxCollider2D.offset = offset;
 
             // enable the game object
             gameObject.SetActive( true );
+
+            gameObject.name = name;
         }
 
         private void OnMouseEnter()

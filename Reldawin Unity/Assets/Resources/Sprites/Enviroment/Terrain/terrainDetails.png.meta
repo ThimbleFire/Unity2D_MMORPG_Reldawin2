@@ -166,10 +166,10 @@ TextureImporter:
       name: Pebble
       rect:
         serializedVersion: 2
-        x: 16
-        y: 496
-        width: 16
-        height: 16
+        x: 23
+        y: 501
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,9 +209,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 496
+        y: 497
         width: 16
-        height: 16
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +271,10 @@ TextureImporter:
       name: Boulder
       rect:
         serializedVersion: 2
-        x: 193
-        y: 200
-        width: 32
-        height: 32
+        x: 195
+        y: 202
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,11 +314,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 50
-        height: 95
+        y: 2
+        width: 47
+        height: 90
       alignment: 9
-      pivot: {x: 0.5, y: 0.10526316}
+      pivot: {x: 0.4953168, y: 0.081786856}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
