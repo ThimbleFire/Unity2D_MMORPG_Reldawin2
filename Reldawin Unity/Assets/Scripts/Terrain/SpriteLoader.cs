@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
 using UnityEngine;
 
 namespace LowCloud.Reldawin
@@ -9,6 +11,8 @@ namespace LowCloud.Reldawin
         public static Dictionary<string, Vector2[]> tileUVMap;
         public static Dictionary<string, Sprite> doodadDictionary;
         public static Dictionary<string, Sprite> itemDictionary;
+
+        public static List<TRETileRule> atlas = new List<TRETileRule>();
 
         public static Vector2[] GetEmpty
         {
@@ -75,6 +79,46 @@ namespace LowCloud.Reldawin
             {
                 itemDictionary.Add( s.name, s );
             }
+
+            XmlSerializer serializer = new XmlSerializer( typeof( TRETileRuleList ) );
+            FileStream stream = new FileStream( Application.streamingAssetsPath + "/atlas.xml", FileMode.Open );
+            TRETileRuleList aeatlaslist = serializer.Deserialize( stream ) as TRETileRuleList;
+            atlas = aeatlaslist.list;
+            stream.Close();
+        }
+
+
+        public static string GetAtlas( int tileType, int height, Tile[] neighbours )
+        {
+            //Create a copy of the tiles and their states (<short>s)
+            List<TRETileRule> tempAtlas = new List<TRETileRule>( atlas );
+
+            //Go through all the states
+            for ( int i = 0; i < 8; i++ )
+            {
+                //Go through each atlas
+                foreach ( TRETileRule a in atlas )
+                {
+                    //If the atlas' short is 'cannot connect'...
+                    if ( a.state[i] == 2 )
+                    {
+                        //if the neighbour's tile type is equal to the tile being assessed.
+                        //basically if the neighbour says it can't connect and the adjacent tile is of the same type..
+                        //it should connect, but the neighbour's state says it doesn't, so remove it
+                        if ( neighbours[i].TileType == tileType )
+                        {
+                            tempAtlas.Remove( a );
+                            continue;
+                        }
+                    }
+                }
+            }
+
+            //once all adjacent tiles that can't connect and are of the same type are removed, return the first atlas' name
+            //this'll be something like _0, _1, _2 etc, which is the auto generated part of the tile name in the sprite texture 
+            int j = Random.Range( 0, tempAtlas.Count - 1 );
+
+            return tempAtlas[j].name;
         }
 
         public static Vector2[] GetTileUVs( int type, Tile[] neighbours = null )
@@ -87,6 +131,8 @@ namespace LowCloud.Reldawin
 
             string key = XMLLoader.GetTile( type ).name;
 
+            //key += GetAtlas( type, neighbours );
+
             if ( !IsSameType( type, neighbours[0] )
            && !IsSameType( type, neighbours[2] )
            && IsSameType( type, neighbours[1] )
@@ -95,7 +141,6 @@ namespace LowCloud.Reldawin
                 key += "_18";
                 return GetTile( key );
             }
-
             if ( !IsSameType( type, neighbours[0] )
            && !IsSameType( type, neighbours[1] )
            && !IsSameType( type, neighbours[2] )
@@ -112,7 +157,6 @@ namespace LowCloud.Reldawin
                 key += "_25";
                 return GetTile( key );
             }
-
             if ( IsSameType( type, neighbours[2] )
              && !IsSameType( type, neighbours[5] )
              && !IsSameType( type, neighbours[6] ) )
@@ -121,16 +165,15 @@ namespace LowCloud.Reldawin
                 return GetTile( key );
             }
             if ( IsSameType( type, neighbours[0] )
-             &&  IsSameType( type, neighbours[1] )
-             &&  IsSameType( type, neighbours[2] )
-             &&  IsSameType( type, neighbours[3] )
+             && IsSameType( type, neighbours[1] )
+             && IsSameType( type, neighbours[2] )
+             && IsSameType( type, neighbours[3] )
              && !IsSameType( type, neighbours[4] )
              && !IsSameType( type, neighbours[5] ) )
             {
                 key += "_60";
                 return GetTile( key );
             }
-
             if ( !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[0] ) )
             {
                 key += "_19";
@@ -191,7 +234,6 @@ namespace LowCloud.Reldawin
                 key += "_34";
                 return GetTile( key );
             }
-
             return GetTile( key );
         }
 
