@@ -7,7 +7,8 @@ Reldawin is a multiplayer 2d isometric RPG. The player character starts in a wil
 
 - [Code cleanup]
 
-_Code cleanup_: Trying to massively speed up the time it takes to load chunks. We're currently reworking how we get UVs.  
+_Code cleanup_: Trying to massively speed up the time it takes to load chunks. We're currently reworking how we get UVs. 
+                Through testing we've discovered it is 4 to 5 times faster to get information directly through a static dictionary than through a Get method. 
 
 - [Fix] Interact animations
 - [Add] Crafting
