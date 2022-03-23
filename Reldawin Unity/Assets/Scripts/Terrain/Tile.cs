@@ -31,11 +31,11 @@ namespace LowCloud.Reldawin
         // type
         public int TileType { get; set; }
 
-        public byte GetLayer { get { return (byte)XMLLoader.GetTile(TileType).layerIndex; } }
+        public int GetLayer { get { return XMLLoader.Tile[TileType].layerIndex; } }
 
         public static Tile GetTileByIndex( char v )
         {
-            return new Tile( XMLLoader.GetTile(v - '0').id );
+            return new Tile( XMLLoader.Tile[v - '0'].id );
         }
 
         public Tile( int type )

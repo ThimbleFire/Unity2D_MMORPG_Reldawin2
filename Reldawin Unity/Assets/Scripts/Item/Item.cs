@@ -34,7 +34,7 @@ namespace LowCloud.Reldawin
 
         public void Build( int itemID )
         {
-            IEItem item = XMLLoader.GetItem( itemID );
+            IEItem item = XMLLoader.Item[itemID];
 
             _ID = itemID;
             _itemName = item.name;
@@ -43,7 +43,7 @@ namespace LowCloud.Reldawin
             _itemSpriteOnFloorFileName = item.itemSpriteOnFloorFileName;
             _flavourText = item.flavourText;
 
-            GetComponent<Image>().sprite = SpriteLoader.GetItem(_itemSpriteFileName32x32);
+            GetComponent<Image>().sprite = SpriteLoader.itemDictionary[_itemSpriteFileName32x32];
         }
     }
 }

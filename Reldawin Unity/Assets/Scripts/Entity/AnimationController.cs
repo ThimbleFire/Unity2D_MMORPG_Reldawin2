@@ -51,7 +51,7 @@ namespace LowCloud.Reldawin
 
         public void Interact(Vector2Int doodadWorldCell, int doodadType)
         {
-            switch ( XMLLoader.GetDoodad(doodadType).interact )
+            switch ( XMLLoader.Doodad[doodadType].interact )
             {
                 case DEDoodad.Interact.WOODCUTTING:
                     activeAnimationHash = woodcuttingHash;

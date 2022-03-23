@@ -79,9 +79,9 @@ namespace LowCloud.Reldawin
                 return TileUVDictionary["Empty"];
 
             if ( neighbours == null )
-                return GetTile( XMLLoader.GetTile( type ).name + "_" + Random.Range( 0, 16 ) );
+                return TileUVDictionary[XMLLoader.Tile[type].name + "_" + Random.Range( 0, 16 )];
 
-            string key = XMLLoader.GetTile( type ).name;
+            string key = XMLLoader.Tile[type].name;
 
             // This is a fantastic solution but it will take a long time to rename each tile and we may discover tiles that
             // don't exist. Totally worth it though, should be extremely fast.
@@ -92,6 +92,11 @@ namespace LowCloud.Reldawin
             {
                 if( type == neighbours[i].TileType )
                     key += cardinalKeys[i];
+            }
+
+            if( TileUVDictionary.ContainsKey(key) == false)
+            {
+                return TileUVDictionary["Void"];
             }
             
             return TileUVDictionary[key];

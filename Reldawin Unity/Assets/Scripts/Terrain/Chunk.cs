@@ -80,7 +80,7 @@ namespace LowCloud.Reldawin
                         }
                         if ( channel == 1 )
                         {
-                            UVs = SpriteLoader.GetEmpty;
+                            UVs = SpriteLoader.TileUVDictionary["Empty"];
                             if ( isNotSameTileTypeAndNeighbourIsAbove )
                             {
                                 UVs = SpriteLoader.GetTileUVs( Tiles[_x, _y].TileType, neighbours );
