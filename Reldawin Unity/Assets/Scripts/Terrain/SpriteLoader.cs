@@ -14,14 +14,6 @@ namespace LowCloud.Reldawin
 
         public static List<TRETileRule> atlas = new List<TRETileRule>();
 
-        public static Vector2[] GetEmpty
-        {
-            get
-            {
-                return tileUVMap["Empty"];
-            }
-        }
-
         /// Width and Height specify the dimensions of Template2.png
         public static void Setup( int spriteMapWidth, int spriteMapHeight )
         {
@@ -87,165 +79,40 @@ namespace LowCloud.Reldawin
             stream.Close();
         }
 
-
-        public static string GetAtlas( int tileType, int height, Tile[] neighbours )
-        {
-            //Create a copy of the tiles and their states (<short>s)
-            List<TRETileRule> tempAtlas = new List<TRETileRule>( atlas );
-
-            //Go through all the states
-            for ( int i = 0; i < 8; i++ )
-            {
-                //Go through each atlas
-                foreach ( TRETileRule a in atlas )
-                {
-                    //If the atlas' short is 'cannot connect'...
-                    if ( a.state[i] == 2 )
-                    {
-                        //if the neighbour's tile type is equal to the tile being assessed.
-                        //basically if the neighbour says it can't connect and the adjacent tile is of the same type..
-                        //it should connect, but the neighbour's state says it doesn't, so remove it
-                        if ( neighbours[i].TileType == tileType )
-                        {
-                            tempAtlas.Remove( a );
-                            continue;
-                        }
-                    }
-                }
-            }
-
-            //once all adjacent tiles that can't connect and are of the same type are removed, return the first atlas' name
-            //this'll be something like _0, _1, _2 etc, which is the auto generated part of the tile name in the sprite texture 
-            int j = Random.Range( 0, tempAtlas.Count - 1 );
-
-            return tempAtlas[j].name;
-        }
-
+        //Eventually we shouldn't need to pass neighbours, just the key. Instead of calling GetNeighbours we can
+        //pass the tile.Type and if the neighbour shares the same type we can return a bool and add _N, _E, _S, etc. Great work!
         public static Vector2[] GetTileUVs( int type, Tile[] neighbours = null )
         {
             if ( type == 0 )
-                return GetEmpty;
+                return tileUVMap["Empty"];
 
             if ( neighbours == null )
                 return GetTile( XMLLoader.GetTile( type ).name + "_" + Random.Range( 0, 16 ) );
 
             string key = XMLLoader.GetTile( type ).name;
 
-            //key += GetAtlas( type, neighbours );
-
-            if ( !IsSameType( type, neighbours[0] )
-           && !IsSameType( type, neighbours[2] )
-           && IsSameType( type, neighbours[1] )
-           && IsSameType( type, neighbours[3] ) )
+            // This is a fantastic solution but it will take a long time to rename each tile and we may discover tiles that
+            // don't exist. Totally worth it though, should be extremely fast.
+            
+            string[] cardinalKeys = new string[8]
             {
-                key += "_18";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[0] )
-           && !IsSameType( type, neighbours[1] )
-           && !IsSameType( type, neighbours[2] )
-           && IsSameType( type, neighbours[3] ) )
+                "_N",
+                "_E",
+                "_S",
+                "_W",
+                "_NE",
+                "_SE",
+                "_SW",
+                "_NW"
+            };
+            
+            for(int i = 0; i < 8; i++)
             {
-                key += "_24";
-                return GetTile( key );
+                if( type == neighbours[i].TileType )
+                    key += cardinalKeys[i];
             }
-            if ( IsSameType( type, neighbours[0] )
-           && !IsSameType( type, neighbours[1] )
-           && !IsSameType( type, neighbours[2] )
-           && !IsSameType( type, neighbours[3] ) )
-            {
-                key += "_25";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[2] )
-             && !IsSameType( type, neighbours[5] )
-             && !IsSameType( type, neighbours[6] ) )
-            {
-                key += "_59";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[0] )
-             && IsSameType( type, neighbours[1] )
-             && IsSameType( type, neighbours[2] )
-             && IsSameType( type, neighbours[3] )
-             && !IsSameType( type, neighbours[4] )
-             && !IsSameType( type, neighbours[5] ) )
-            {
-                key += "_60";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[0] ) )
-            {
-                key += "_19";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
-            {
-                key += "_20";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[2] ) )
-            {
-                key += "_21";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[0] ) && !IsSameType( type, neighbours[1] ) )
-            {
-                key += "_22";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[2] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
-            {
-                key += "_57";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[1] ) && IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[5] ) )
-            {
-                key += "_56";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[7] ) )
-            {
-                key += "_54";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[4] ) )
-            {
-                key += "_55";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[3] ) )
-            {
-                key += "_31";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[0] ) )
-            {
-                key += "_32";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[1] ) )
-            {
-                key += "_33";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[2] ) )
-            {
-                key += "_34";
-                return GetTile( key );
-            }
+            
             return GetTile( key );
-        }
-
-        private static bool IsSameType( int type, Tile neightbour )
-        {
-            if ( neightbour == null )
-                return false;
-
-            if ( neightbour.TileType == type )
-                return true;
-
-            return false;
         }
 
         private static Vector2[] GetTile( string key )
