@@ -83,22 +83,108 @@ namespace LowCloud.Reldawin
 
             string key = XMLLoader.Tile[type].name;
 
-            // This is a fantastic solution but it will take a long time to rename each tile and we may discover tiles that
-            // don't exist. Totally worth it though, should be extremely fast.
-            
-            string[] cardinalKeys = new string[8] { "_N", "_E", "_S", "_W", "_NE", "_SE", "_SW", "_NW" };
-            
-            for(int i = 0; i < 8; i++)
+            if ( type != neighbours[0].TileType
+              && type != neighbours[2].TileType
+              && type != neighbours[1].TileType
+              && type != neighbours[3].TileType )
             {
-                if( type == neighbours[i].TileType )
-                    key += cardinalKeys[i];
+                key += "_18";
+                return TileUVDictionary[key];
+            }
+            if ( type != neighbours[0].TileType
+              && type != neighbours[1].TileType
+              && type != neighbours[2].TileType
+              && type == neighbours[3].TileType )
+            {
+                key += "_24";
+                return TileUVDictionary[key];
+            }
+            if ( type == neighbours[0].TileType
+           && type != neighbours[1].TileType
+           && type != neighbours[2].TileType
+           && type != neighbours[3].TileType )
+            {
+                key += "_25";
+                return TileUVDictionary[key];
+            }
+            if ( type == neighbours[2].TileType
+             && type != neighbours[5].TileType
+             && type != neighbours[6].TileType )
+            {
+                key += "_59";
+                return TileUVDictionary[key];
+            }
+            if ( type == neighbours[0].TileType
+             && type == neighbours[1].TileType
+             && type == neighbours[2].TileType
+             && type == neighbours[3].TileType
+             && type != neighbours[4].TileType
+             && type != neighbours[5].TileType )
+            {
+                key += "_60";
+                return TileUVDictionary[key];
+            }
+            if ( type != neighbours[3].TileType && type != neighbours[0].TileType )
+            {
+                key += "_19";
+                return TileUVDictionary[key];
+            }
+            if ( type != neighbours[2].TileType && type != neighbours[3].TileType && type != neighbours[6].TileType )
+            {
+                key += "_20";
+                return TileUVDictionary[key];
+            }
+            if ( type != neighbours[1].TileType && type != neighbours[2].TileType )
+            {
+                key += "_21";
+                return TileUVDictionary[key];
+            }
+            if ( type != neighbours[0].TileType && type != neighbours[1].TileType )
+            {
+                key += "_22";
+                return TileUVDictionary[key];
+            }
+            if ( type == neighbours[2].TileType && type == neighbours[3].TileType && type != neighbours[6].TileType )
+            {
+                key += "_57";
+                return TileUVDictionary[key];
+            }
+            if ( type == neighbours[1].TileType && type == neighbours[2].TileType && type != neighbours[5].TileType )
+            {
+                key += "_56";
+                return TileUVDictionary[key];
+            }
+            if ( type == neighbours[0].TileType && type == neighbours[3].TileType && type != neighbours[7].TileType )
+            {
+                key += "_54";
+                return TileUVDictionary[key];
+            }
+            if ( type == neighbours[0].TileType && type == neighbours[1].TileType && type != neighbours[4].TileType )
+            {
+                key += "_55";
+                return TileUVDictionary[key];
+            }
+            if ( type != neighbours[3].TileType )
+            {
+                key += "_31";
+                return TileUVDictionary[key];
+            }
+            if ( type != neighbours[0].TileType )
+            {
+                key += "_32";
+                return TileUVDictionary[key];
+            }
+            if ( type != neighbours[1].TileType )
+            {
+                key += "_33";
+                return TileUVDictionary[key];
+            }
+            if ( type != neighbours[2].TileType )
+            {
+                key += "_34";
+                return TileUVDictionary[key];
             }
 
-            if( TileUVDictionary.ContainsKey(key) == false)
-            {
-                return TileUVDictionary["Void"];
-            }
-            
             return TileUVDictionary[key];
         }
     }
