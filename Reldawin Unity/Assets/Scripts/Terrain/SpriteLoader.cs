@@ -8,16 +8,14 @@ namespace LowCloud.Reldawin
     public class SpriteLoader
     {
         // remember to rename doodads after sprite names in atlas.
-        public static Dictionary<string, Vector2[]> tileUVMap;
+        public static Dictionary<string, Vector2[]> TileUVDictionary;
         public static Dictionary<string, Sprite> doodadDictionary;
         public static Dictionary<string, Sprite> itemDictionary;
-
-        public static List<TRETileRule> atlas = new List<TRETileRule>();
 
         /// Width and Height specify the dimensions of Template2.png
         public static void Setup( int spriteMapWidth, int spriteMapHeight )
         {
-            tileUVMap = new Dictionary<string, Vector2[]>();
+            TileUVDictionary = new Dictionary<string, Vector2[]>();
             doodadDictionary = new Dictionary<string, Sprite>();
             itemDictionary = new Dictionary<string, Sprite>();
 
@@ -48,7 +46,7 @@ namespace LowCloud.Reldawin
                     botMiddle
                 };
 
-                tileUVMap.Add( s.name, uvs );
+                TileUVDictionary.Add( s.name, uvs );
             }
 
             sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/terrainDetails" );
@@ -71,12 +69,6 @@ namespace LowCloud.Reldawin
             {
                 itemDictionary.Add( s.name, s );
             }
-
-            XmlSerializer serializer = new XmlSerializer( typeof( TRETileRuleList ) );
-            FileStream stream = new FileStream( Application.streamingAssetsPath + "/atlas.xml", FileMode.Open );
-            TRETileRuleList aeatlaslist = serializer.Deserialize( stream ) as TRETileRuleList;
-            atlas = aeatlaslist.list;
-            stream.Close();
         }
 
         //Eventually we shouldn't need to pass neighbours, just the key. Instead of calling GetNeighbours we can
@@ -84,7 +76,7 @@ namespace LowCloud.Reldawin
         public static Vector2[] GetTileUVs( int type, Tile[] neighbours = null )
         {
             if ( type == 0 )
-                return tileUVMap["Empty"];
+                return TileUVDictionary["Empty"];
 
             if ( neighbours == null )
                 return GetTile( XMLLoader.GetTile( type ).name + "_" + Random.Range( 0, 16 ) );
@@ -94,17 +86,7 @@ namespace LowCloud.Reldawin
             // This is a fantastic solution but it will take a long time to rename each tile and we may discover tiles that
             // don't exist. Totally worth it though, should be extremely fast.
             
-            string[] cardinalKeys = new string[8]
-            {
-                "_N",
-                "_E",
-                "_S",
-                "_W",
-                "_NE",
-                "_SE",
-                "_SW",
-                "_NW"
-            };
+            string[] cardinalKeys = new string[8] { "_N", "_E", "_S", "_W", "_NE", "_SE", "_SW", "_NW" };
             
             for(int i = 0; i < 8; i++)
             {
@@ -112,46 +94,7 @@ namespace LowCloud.Reldawin
                     key += cardinalKeys[i];
             }
             
-            return GetTile( key );
-        }
-
-        private static Vector2[] GetTile( string key )
-        {
-            if ( tileUVMap.ContainsKey( key ) )
-            {
-                return tileUVMap[key];
-            }
-            else
-            {
-                Debug.LogError( key + " isn't in the tileUVMap dictionary" );
-                return tileUVMap["Void"];
-            }
-        }
-
-        public static Sprite GetDoodad( string key )
-        {
-            if ( doodadDictionary.ContainsKey( key ) )
-            {
-                return doodadDictionary[key];
-            }
-            else
-            {
-                Debug.LogError( key + " isn't in the SpriteLoader Doodad Dictionary" );
-                return doodadDictionary["Empty"];
-            }
-        }
-
-        public static Sprite GetItem( string key )
-        {
-            if ( itemDictionary.ContainsKey( key ) )
-            {
-                return itemDictionary[key];
-            }
-            else
-            {
-                Debug.LogError( key + " isn't in the SpriteLoader Item Dictionary" );
-                return itemDictionary["FlintKnife"];
-            }
+            return TileUVDictionary[key];
         }
     }
 }
