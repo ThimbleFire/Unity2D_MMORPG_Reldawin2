@@ -100,6 +100,189 @@ namespace LowCloud.Reldawin
               && type != nType[Due.NW] )
                 
                 return TileUVDirectory[key + "_16"];
+                        
+            if ( type == nType[Due.N]
+              && type == nType[Due.S] )
+                
+                return TileUVDirectory[key + "_17"];
+                        
+            if ( type == nType[Due.E]
+              && type == nType[Due.W] )
+                
+                return TileUVDirectory[key + "_18"];
+                        
+            if ( type == nType[Due.E]
+              && type == nType[Due.S]
+              && type == nType[Due.SE] )
+                
+                return TileUVDirectory[key + "_19"];
+                        
+            if ( type == nType[Due.N]
+              && type == nType[Due.E]
+              && type == nType[Due.NE] )
+                
+                return TileUVDirectory[key + "_20"];
+                        
+            if ( type == nType[Due.N]
+              && type == nType[Due.W]
+              && type == nType[Due.NW] )
+                
+                return TileUVDirectory[key + "_21"];
+                        
+            if ( type == nType[Due.S]
+              && type == nType[Due.W]
+              && type == nType[Due.SW] )
+                
+                return TileUVDirectory[key + "_22"];
+                        
+            if ( type == nType[Due.S]
+              && type != nType[Due.E]
+              && type != nType[Due.W] )
+                
+                return TileUVDirectory[key + "_23"];
+                        
+            if ( type == nType[Due.W]
+              && type != nType[Due.N]
+              && type != nType[Due.S] )
+                
+                return TileUVDirectory[key + "_24"];
+                        
+            if ( type == nType[Due.N]
+              && type != nType[Due.E]
+              && type != nType[Due.W] )
+                
+                return TileUVDirectory[key + "_25"];
+                        
+            if ( type == nType[Due.E]
+              && type != nType[Due.N]
+              && type != nType[Due.S] )
+                
+                return TileUVDirectory[key + "_26"];
+                        
+            if ( type == nType[Due.N]
+              && type == nType[Due.W]
+              && type != nType[Due.E]
+              && type != nType[Due.S]
+              && type != nType[Due.NW] )
+                
+                return TileUVDirectory[key + "_27"];
+                        
+            if ( type == nType[Due.E]
+              && type == nType[Due.S]
+              && type != nType[Due.N]
+              && type != nType[Due.W]
+              && type != nType[Due.SE] )
+                
+                return TileUVDirectory[key + "_28"];
+                        
+            if ( type == nType[Due.W]
+              && type == nType[Due.S]
+              && type != nType[Due.N]
+              && type != nType[Due.E]
+              && type != nType[Due.SW] )
+                
+                return TileUVDirectory[key + "_29"];
+                        
+            if ( type == nType[Due.N]
+              && type == nType[Due.E]
+              && type != nType[Due.S]
+              && type != nType[Due.W]
+              && type != nType[Due.NE] )
+                
+                return TileUVDirectory[key + "_30"];
+                        
+            if ( type == nType[Due.N]
+              && type == nType[Due.E]
+              && type == nType[Due.S]
+              && type != nType[Due.W] )
+                
+                return TileUVDirectory[key + "_31"];
+                        
+            if ( type == nType[Due.E]
+              && type == nType[Due.S]
+              && type == nType[Due.W]
+              && type != nType[Due.N] )
+                
+                return TileUVDirectory[key + "_32"];
+                        
+            if ( type == nType[Due.N]
+              && type == nType[Due.S]
+              && type == nType[Due.W]
+              && type != nType[Due.E] )
+                
+                return TileUVDirectory[key + "_33"];
+                        
+            if ( type == nType[Due.N]
+              && type == nType[Due.E]
+              && type == nType[Due.W]
+              && type != nType[Due.S] )
+                
+                return TileUVDirectory[key + "_34"];
+                        
+            if ( type == nType[Due.N]
+              && type == nType[Due.E]
+              && type == nType[Due.S]
+              && type != nType[Due.NE]
+              && type != nType[Due.NE]
+              && type != nType[Due.W] )
+                
+                return TileUVDirectory[key + "_35"];
+                        
+            if ( type == nType[Due.N]
+              && type == nType[Due.W]
+              && type == nType[Due.S]
+              && type != nType[Due.NW]
+              && type != nType[Due.SW]
+              && type != nType[Due.E] )
+                
+                return TileUVDirectory[key + "_36"];
+                        
+            if ( type == nType[Due.N]
+              && type == nType[Due.W]
+              && type == nType[Due.E]
+              && type != nType[Due.NE]
+              && type != nType[Due.NW]
+              && type != nType[Due.S] )
+                
+                return TileUVDirectory[key + "_37"];
+                        
+            if ( type == nType[Due.E]
+              && type == nType[Due.S]
+              && type == nType[Due.W]
+              && type != nType[Due.SE]
+              && type != nType[Due.SW]
+              && type != nType[Due.N] )
+                
+                return TileUVDirectory[key + "_38"];
+            
+            if ( type == nType[Due.N]
+              && type == nType[Due.E]
+              && type == nType[Due.S]
+              && type == nType[Due.W]
+              && type != nType[Due.NE]
+              && type != nType[Due.SE]
+              && type != nType[Due.SW]
+              && type != nType[Due.NW] )
+                
+                return TileUVDirectory[key + "_39"];
+            
+            if ( type == nType[Due.N]
+              && type == nType[Due.E]
+              && type == nType[Due.S]
+              && type != nType[Due.W]
+              && type == nType[Due.NE]
+              && type != nType[Due.SE] )
+                
+                return TileUVDirectory[key + "_40"];
+            
+            if ( type != nType[Due.N]
+              && type == nType[Due.E]
+              && type == nType[Due.S]
+              && type == nType[Due.W]
+              && type == nType[Due.SW]
+              && type != nType[Due.SE] )
+                
+                return TileUVDirectory[key + "_41"];
             
             return TileUVDictionary[key];
         }
