@@ -18,14 +18,6 @@
       <layerIndex>0</layerIndex>
     </TETile>
     <TETile>
-      <Droprates />
-      <name>Shallow_Water</name>
-      <id>5</id>
-      <minHeight>0</minHeight>
-      <maxHeight>0.05</maxHeight>
-      <layerIndex>9</layerIndex>
-    </TETile>
-    <TETile>
       <Droprates>
         <Droprate>
           <id>0</id>
@@ -90,6 +82,14 @@
       <minHeight>0.05</minHeight>
       <maxHeight>0.125</maxHeight>
       <layerIndex>7</layerIndex>
+    </TETile>
+    <TETile>
+      <Droprates />
+      <name>Shallow_Water</name>
+      <id>5</id>
+      <minHeight>0</minHeight>
+      <maxHeight>0.05</maxHeight>
+      <layerIndex>6</layerIndex>
     </TETile>
   </list>
 </Tiles>
