@@ -41,7 +41,7 @@ public class TileEditor : EditorBase
     {
         TETile newTile = new TETile
         {
-            id = _ID,
+            id = (byte)_ID,
             layerIndex = _layerIndex,
             maxHeight = _maxHeight,
             minHeight = _minHeight,

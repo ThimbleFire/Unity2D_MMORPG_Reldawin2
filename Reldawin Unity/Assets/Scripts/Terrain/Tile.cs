@@ -29,7 +29,7 @@ namespace LowCloud.Reldawin
         }
 
         // type
-        public int TileType { get; set; }
+        public byte TileType { get; set; }
 
         public int GetLayer { get { return XMLLoader.Tile[TileType].layerIndex; } }
 
@@ -38,7 +38,7 @@ namespace LowCloud.Reldawin
             return new Tile( XMLLoader.Tile[v - '0'].id );
         }
 
-        public Tile( int type )
+        public Tile( byte type )
         {
             this.TileType = type;
         }
