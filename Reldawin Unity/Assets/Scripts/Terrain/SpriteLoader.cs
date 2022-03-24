@@ -1,24 +1,59 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Xml.Serialization;
 using UnityEngine;
 
 namespace LowCloud.Reldawin
 {
     public class SpriteLoader
     {
-        // remember to rename doodads after sprite names in atlas.
+        private Enum Due { N, E, S, W, NE, SE, SW, NW };
+        
         public static Dictionary<string, Vector2[]> TileUVDictionary;
         public static Dictionary<string, Sprite> doodadDictionary;
         public static Dictionary<string, Sprite> itemDictionary;
 
-        /// Width and Height specify the dimensions of Template2.png
-        public static void Setup( int spriteMapWidth, int spriteMapHeight )
+        public static void Setup()
+        {
+            SetupItems();
+            SetupDoodads();
+            SetupTileUVs();
+        }
+        
+        private static void SetupItems()
+        {
+            itemDictionary = new Dictionary<string, Sprite>();
+            sprites = Resources.LoadAll<Sprite>( "Sprites/Interface/Items/items_32x32" );
+
+            foreach ( Sprite s in sprites )
+            {
+                itemDictionary.Add( s.name, s );
+            }            
+        }
+        
+        private static void SetupDoodads()
+        {
+            doodadDictionary = new Dictionary<string, Sprite>();
+            sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/terrainDetails" );
+
+            foreach ( Sprite s in sprites )
+            {
+                doodadDictionary.Add( s.name, s );
+            }
+
+            sprites = Resources.LoadAll<Sprite>( "Sprites/Interface/Buttons/icon_selected" );
+
+            foreach ( Sprite s in sprites )
+            {
+                doodadDictionary.Add( s.name, s );
+            }            
+        }
+        
+        private static void SetupTileUVs()
         {
             TileUVDictionary = new Dictionary<string, Vector2[]>();
-            doodadDictionary = new Dictionary<string, Sprite>();
-            itemDictionary = new Dictionary<string, Sprite>();
-
+            int spriteMapWidth = 1024;
+            int spriteMapHeight = 1024;
+            
             Sprite[] sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/Tile" );
 
             foreach ( Sprite s in sprites )
@@ -48,143 +83,24 @@ namespace LowCloud.Reldawin
 
                 TileUVDictionary.Add( s.name, uvs );
             }
-
-            sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/terrainDetails" );
-
-            foreach ( Sprite s in sprites )
-            {
-                doodadDictionary.Add( s.name, s );
-            }
-
-            sprites = Resources.LoadAll<Sprite>( "Sprites/Interface/Buttons/icon_selected" );
-
-            foreach ( Sprite s in sprites )
-            {
-                doodadDictionary.Add( s.name, s );
-            }
-
-            sprites = Resources.LoadAll<Sprite>( "Sprites/Interface/Items/items_32x32" );
-
-            foreach ( Sprite s in sprites )
-            {
-                itemDictionary.Add( s.name, s );
-            }
         }
 
-        //Eventually we shouldn't need to pass neighbours, just the key. Instead of calling GetNeighbours we can
-        //pass the tile.Type and if the neighbour shares the same type we can return a bool and add _N, _E, _S, etc. Great work!
-        public static Vector2[] GetTileUVs( int type, Tile[] neighbours = null )
+        ///<summary>Get the appropriate tile UV. If neighbours are provided it'll take them into consideration. Type is the tile type and nType is an int array of neighbour types</summary>
+        public static Vector2[] GetTileUVs( int type, int[] nType = null )
         {
-            if ( type == 0 )
-                return TileUVDictionary["Empty"];
-
-            if ( neighbours == null )
-                return TileUVDictionary[XMLLoader.Tile[type].name + "_" + Random.Range( 0, 16 )];
-
             string key = XMLLoader.Tile[type].name;
-
-            if ( type != neighbours[0].TileType
-              && type != neighbours[2].TileType
-              && type != neighbours[1].TileType
-              && type != neighbours[3].TileType )
-            {
-                key += "_18";
-                return TileUVDictionary[key];
-            }
-            if ( type != neighbours[0].TileType
-              && type != neighbours[1].TileType
-              && type != neighbours[2].TileType
-              && type == neighbours[3].TileType )
-            {
-                key += "_24";
-                return TileUVDictionary[key];
-            }
-            if ( type == neighbours[0].TileType
-           && type != neighbours[1].TileType
-           && type != neighbours[2].TileType
-           && type != neighbours[3].TileType )
-            {
-                key += "_25";
-                return TileUVDictionary[key];
-            }
-            if ( type == neighbours[2].TileType
-             && type != neighbours[5].TileType
-             && type != neighbours[6].TileType )
-            {
-                key += "_59";
-                return TileUVDictionary[key];
-            }
-            if ( type == neighbours[0].TileType
-             && type == neighbours[1].TileType
-             && type == neighbours[2].TileType
-             && type == neighbours[3].TileType
-             && type != neighbours[4].TileType
-             && type != neighbours[5].TileType )
-            {
-                key += "_60";
-                return TileUVDictionary[key];
-            }
-            if ( type != neighbours[3].TileType && type != neighbours[0].TileType )
-            {
-                key += "_19";
-                return TileUVDictionary[key];
-            }
-            if ( type != neighbours[2].TileType && type != neighbours[3].TileType && type != neighbours[6].TileType )
-            {
-                key += "_20";
-                return TileUVDictionary[key];
-            }
-            if ( type != neighbours[1].TileType && type != neighbours[2].TileType )
-            {
-                key += "_21";
-                return TileUVDictionary[key];
-            }
-            if ( type != neighbours[0].TileType && type != neighbours[1].TileType )
-            {
-                key += "_22";
-                return TileUVDictionary[key];
-            }
-            if ( type == neighbours[2].TileType && type == neighbours[3].TileType && type != neighbours[6].TileType )
-            {
-                key += "_57";
-                return TileUVDictionary[key];
-            }
-            if ( type == neighbours[1].TileType && type == neighbours[2].TileType && type != neighbours[5].TileType )
-            {
-                key += "_56";
-                return TileUVDictionary[key];
-            }
-            if ( type == neighbours[0].TileType && type == neighbours[3].TileType && type != neighbours[7].TileType )
-            {
-                key += "_54";
-                return TileUVDictionary[key];
-            }
-            if ( type == neighbours[0].TileType && type == neighbours[1].TileType && type != neighbours[4].TileType )
-            {
-                key += "_55";
-                return TileUVDictionary[key];
-            }
-            if ( type != neighbours[3].TileType )
-            {
-                key += "_31";
-                return TileUVDictionary[key];
-            }
-            if ( type != neighbours[0].TileType )
-            {
-                key += "_32";
-                return TileUVDictionary[key];
-            }
-            if ( type != neighbours[1].TileType )
-            {
-                key += "_33";
-                return TileUVDictionary[key];
-            }
-            if ( type != neighbours[2].TileType )
-            {
-                key += "_34";
-                return TileUVDictionary[key];
-            }
-
+                        
+            if ( type != nType[Due.N]
+              && type != nType[Due.E]
+              && type != nType[Due.S]
+              && type != nType[Due.W]
+              && type != nType[Due.NE]
+              && type != nType[Due.SE]
+              && type != nType[Due.SW]
+              && type != nType[Due.NW] )
+                
+                return TileUVDirectory[key + "_16"];
+            
             return TileUVDictionary[key];
         }
     }
