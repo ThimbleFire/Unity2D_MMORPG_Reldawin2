@@ -73,14 +73,6 @@
       <id>3</id>
       <minHeight>0.125</minHeight>
       <maxHeight>0.175</maxHeight>
-      <layerIndex>8</layerIndex>
-    </TETile>
-    <TETile>
-      <Droprates />
-      <name>Sand</name>
-      <id>4</id>
-      <minHeight>0.05</minHeight>
-      <maxHeight>0.125</maxHeight>
       <layerIndex>7</layerIndex>
     </TETile>
     <TETile>
@@ -89,7 +81,15 @@
       <id>5</id>
       <minHeight>0</minHeight>
       <maxHeight>0.05</maxHeight>
-      <layerIndex>6</layerIndex>
+      <layerIndex>1</layerIndex>
+    </TETile>
+    <TETile>
+      <Droprates />
+      <name>Sand</name>
+      <id>4</id>
+      <minHeight>0.05</minHeight>
+      <maxHeight>0.125</maxHeight>
+      <layerIndex>5</layerIndex>
     </TETile>
   </list>
 </Tiles>
