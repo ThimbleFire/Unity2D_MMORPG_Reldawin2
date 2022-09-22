@@ -23,12 +23,17 @@ public class DoodadEditor : EditorBase
         GetWindow( typeof( DoodadEditor ) );
     }
 
+    protected override void MainWindow()
+    {
+        IncludeLoadList = true;
+        base.MainWindow();
+    }
     protected override void CreationWindow()
     {
 
         PaintTextField( ref _doodadName, "Name" );
         PaintIntField( ref _ID, "ID" );
-        _interact = (DEDoodad.Interact)PaintPopup(Enum.GetNames( typeof( DEDoodad.Interact ) ), (int)_interact );
+        _interact = (DEDoodad.Interact)PaintPopup( Enum.GetNames( typeof( DEDoodad.Interact ) ), (int)_interact );
         PaintHorizontalLine();
         tempProbabilityOptionIndex = PaintAddProbability( ref tempProbabilityOptionIndex, ref tempProbabilitySpawnRate, ref yieldRates, ref itemList );
         PaintHorizontalLine();
@@ -38,10 +43,15 @@ public class DoodadEditor : EditorBase
     }
     protected override void Load()
     {
-        activeList = Load<DEDoodadList>("/doodads.xml");
+        activeList = Load<DEDoodadList>( "/doodads.xml" );
         LoadOptions = activeList.GetNames;
 
-        itemList = Load<IEItemList>("/items.xml");
+        if ( File.Exists( Application.streamingAssetsPath + "/items.xml" ) )
+            itemList = Load<IEItemList>( "/items.xml" );
+
+        IncludeLoadList = true;
+        IncludeSaveBtn = true;
+        IncludeBackBtn = true;
     }
     protected override void OnClick_SaveButton()
     {
@@ -58,7 +68,7 @@ public class DoodadEditor : EditorBase
 
         if ( activeList.list == null )
             return;
-            
+
         DEDoodad doodadInList = activeList.list.Find( x => x.id == _ID );
 
         if ( doodadInList == null )

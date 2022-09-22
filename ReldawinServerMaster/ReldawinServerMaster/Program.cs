@@ -45,7 +45,7 @@ namespace ReldawinServerMaster
                         CommandSetWidth( "setwidth".Length, input );
 
                     if ( input.Contains( "setheight" ) )
-                        CommandSetHeight("setheight".Length, input );
+                        CommandSetHeight( "setheight".Length, input );
 
                     if ( input.Contains( "setsize" ) )
                         CommandSetSize( "setsize".Length, input );

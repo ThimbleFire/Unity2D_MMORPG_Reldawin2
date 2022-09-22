@@ -61,29 +61,40 @@ namespace LowCloud.Reldawin
                 for ( int _y = 1; _y < Chunk.Size + 1; _y++ )
                 {
                     Tile[] neighbours = GetNeighbours( _x, _y );
+                    Vector2[] UVs = SpriteLoader.TileUVDictionary["Empty"];
 
-                    Vector2[] UVs = SpriteLoader.GetTileUVs( Tiles[_x, _y].TileType );
-
-                    foreach ( Tile neighbour in neighbours )
+                    if ( channel == 0 )
                     {
-                        bool isNotSameTileTypeAndNeighbourIsAbove =
-                            neighbour.TileType != Tiles[_x, _y].TileType
-                         && neighbour.GetLayer > Tiles[_x, _y].GetLayer;
-
-                        if ( channel == 0 )
+                        UVs = SpriteLoader.TileUVDictionary[XMLLoader.Tile[Tiles[_x, _y].TileType].name + "_" + Random.Range( 0, 16 )];
+                        foreach ( Tile neighbour in neighbours )
                         {
-                            if ( isNotSameTileTypeAndNeighbourIsAbove )
+                            if ( neighbour.TileType != Tiles[_x, _y].TileType && neighbour.GetLayer > Tiles[_x, _y].GetLayer )
                             {
-                                UVs = SpriteLoader.GetTileUVs( neighbour.TileType );
+                                UVs = SpriteLoader.TileUVDictionary[XMLLoader.Tile[neighbour.TileType].name + "_" + Random.Range( 0, 16 )];
                                 break;
                             }
                         }
-                        if ( channel == 1 )
+                    }
+                    if ( channel == 1 )
+                    {
+                        UVs = SpriteLoader.TileUVDictionary["Empty"];
+                        foreach ( Tile neighbour in neighbours )
                         {
-                            UVs = SpriteLoader.GetEmpty;
-                            if ( isNotSameTileTypeAndNeighbourIsAbove )
+                            if ( neighbour.TileType != Tiles[_x, _y].TileType && neighbour.GetLayer > Tiles[_x, _y].GetLayer )
                             {
-                                UVs = SpriteLoader.GetTileUVs( Tiles[_x, _y].TileType, neighbours );
+                                byte[] nType = new byte[8]
+                                {
+                                    neighbours[0].TileType,
+                                    neighbours[1].TileType,
+                                    neighbours[2].TileType,
+                                    neighbours[3].TileType,
+                                    neighbours[4].TileType,
+                                    neighbours[5].TileType,
+                                    neighbours[6].TileType,
+                                    neighbours[7].TileType
+                                };
+
+                                UVs = SpriteLoader.GetTileUVs( Tiles[_x, _y].TileType, nType );
                                 break;
                             }
                         }

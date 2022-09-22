@@ -24,6 +24,11 @@ public class ItemEditor : EditorBase
         GetWindow( typeof( ItemEditor ) );
     }
 
+    protected override void MainWindow()
+    {
+        IncludeLoadList = true;
+        base.MainWindow();
+    }
     protected override void ResetProperties()
     {
         _itemName = string.Empty;
@@ -36,7 +41,6 @@ public class ItemEditor : EditorBase
         _flavourText = string.Empty;
         _ID = 0;
     }
-
     protected override void LoadProperties()
     {
         _itemName = activeList.list[LoadIndex].name;
@@ -68,7 +72,6 @@ public class ItemEditor : EditorBase
             }
         }
     }
-
     protected override void CreationWindow()
     {
         PaintTextField( ref _itemName, "Name" );
@@ -79,9 +82,8 @@ public class ItemEditor : EditorBase
 
         base.CreationWindow();
     }
-
     protected override void OnClick_SaveButton()
-    { 
+    {
         IEItem newItem = new IEItem
         {
             id = _ID,
@@ -110,10 +112,14 @@ public class ItemEditor : EditorBase
 
         Save( activeList, "/items.xml" );
     }
-
     protected override void Load()
     {
         activeList = Load<IEItemList>( "/items.xml" );
+
         LoadOptions = activeList.GetNames;
+
+        IncludeLoadList = true;
+        IncludeSaveBtn = true;
+        IncludeBackBtn = true;
     }
 }

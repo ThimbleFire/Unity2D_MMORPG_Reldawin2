@@ -1,31 +1,60 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 namespace LowCloud.Reldawin
 {
     public class SpriteLoader
     {
-        // remember to rename doodads after sprite names in atlas.
-        public static Dictionary<string, Vector2[]> tileUVMap;
+        private enum Due { N, E, S, W, NE, SE, SW, NW };
+        
+        public static Dictionary<string, Vector2[]> TileUVDictionary;
         public static Dictionary<string, Sprite> doodadDictionary;
         public static Dictionary<string, Sprite> itemDictionary;
 
-        public static Vector2[] GetEmpty
+        public static void Setup()
         {
-            get
-            {
-                return tileUVMap["Empty"];
-            }
+            SetupItems();
+            SetupDoodads();
+            SetupTileUVs();
         }
-
-        /// Width and Height specify the dimensions of Template2.png
-        public static void Setup( int spriteMapWidth, int spriteMapHeight )
+        
+        private static void SetupItems()
         {
-            tileUVMap = new Dictionary<string, Vector2[]>();
-            doodadDictionary = new Dictionary<string, Sprite>();
             itemDictionary = new Dictionary<string, Sprite>();
+            Sprite[] sprites = Resources.LoadAll<Sprite>( "Sprites/Interface/Items/items_32x32" );
 
-            Sprite[] sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/Template2" );
+            foreach ( Sprite s in sprites )
+            {
+                itemDictionary.Add( s.name, s );
+            }            
+        }
+        
+        private static void SetupDoodads()
+        {
+            doodadDictionary = new Dictionary<string, Sprite>();
+            Sprite[] sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/terrainDetails" );
+
+            foreach ( Sprite s in sprites )
+            {
+                doodadDictionary.Add( s.name, s );
+            }
+
+            sprites = Resources.LoadAll<Sprite>( "Sprites/Interface/Buttons/icon_selected" );
+
+            foreach ( Sprite s in sprites )
+            {
+                doodadDictionary.Add( s.name, s );
+            }            
+        }
+        
+        private static void SetupTileUVs()
+        {
+            TileUVDictionary = new Dictionary<string, Vector2[]>();
+            int spriteMapWidth = 1024;
+            int spriteMapHeight = 1024;
+            
+            Sprite[] sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/Tile" );
 
             foreach ( Sprite s in sprites )
             {
@@ -52,153 +81,418 @@ namespace LowCloud.Reldawin
                     botMiddle
                 };
 
-                tileUVMap.Add( s.name, uvs );
-            }
-
-            sprites = Resources.LoadAll<Sprite>( "Sprites/Enviroment/Terrain/terrainDetails" );
-
-            foreach ( Sprite s in sprites )
-            {
-                doodadDictionary.Add( s.name, s );
-            }
-
-            sprites = Resources.LoadAll<Sprite>( "Sprites/Interface/Buttons/icon_selected" );
-
-            foreach ( Sprite s in sprites )
-            {
-                doodadDictionary.Add( s.name, s );
-            }
-
-            sprites = Resources.LoadAll<Sprite>( "Sprites/Interface/Items/items_32x32" );
-
-            foreach ( Sprite s in sprites )
-            {
-                itemDictionary.Add( s.name, s );
+                TileUVDictionary.Add( s.name, uvs );
             }
         }
 
-        public static Vector2[] GetTileUVs( int type, Tile[] neighbours = null )
+        ///<summary>Get the appropriate tile UV. If neighbours are provided it'll take them into consideration. Type is the tile type and nType is an int array of neighbour types</summary>
+        public static Vector2[] GetTileUVs( int type, byte[] nType = null )
         {
-            if ( type == 0 )
-                return GetEmpty;
+            string key = XMLLoader.Tile[type].name;
 
-            if ( neighbours == null )
-                return GetTile( XMLLoader.GetTile( type ).name + "_" + Random.Range( 1, 5 ) );
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.NE]
+              && type == nType[(byte)Due.SE]
+              && type != nType[(byte)Due.NW]
+              && type != nType[(byte)Due.SW] )
 
-            string key = XMLLoader.GetTile( type ).name;
-            
-            if ( !IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
-            {
-                key += "_SW_Corner";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[2] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[6] ) )
-            {
-                key += "_SW";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[2] ) )
-            {
-                key += "_SE_Corner";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[1] ) && IsSameType( type, neighbours[2] ) && !IsSameType( type, neighbours[5] ) )
-            {
-                key += "_SE";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[0] ) )
-            {
-                key += "_NW_Corner";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[3] ) && !IsSameType( type, neighbours[7] ) )
-            {
-                key += "_NW";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[0] ) && !IsSameType( type, neighbours[1] ) )
-            {
-                key += "_NE_Corner";
-                return GetTile( key );
-            }
-            if ( IsSameType( type, neighbours[0] ) && IsSameType( type, neighbours[1] ) && !IsSameType( type, neighbours[4] ) )
-            {
-                key += "_NE";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[0] ) )
-            {
-                key += "_N";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[1] ) )
-            {
-                key += "_E";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[2] ) )
-            {
-                key += "_S";
-                return GetTile( key );
-            }
-            if ( !IsSameType( type, neighbours[3] ) )
-            {
-                key += "_W";
-                return GetTile( key );
-            }
+                return TileUVDictionary[key + "_58"];
 
-            return GetTile( key );
-        }
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.NE]
+              && type != nType[(byte)Due.SE]
+              && type == nType[(byte)Due.NW]
+              && type != nType[(byte)Due.SW] )
 
-        private static bool IsSameType( int type, Tile neightbour )
-        {
-            if ( neightbour == null )
-                return false;
+                return TileUVDictionary[key + "_59"];
 
-            if ( neightbour.TileType == type )
-                return true;
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.NE]
+              && type != nType[(byte)Due.SE]
+              && type == nType[(byte)Due.NW]
+              && type == nType[(byte)Due.SW] )
 
-            return false;
-        }
+                return TileUVDictionary[key + "_60"];
 
-        private static Vector2[] GetTile( string key )
-        {
-            if ( tileUVMap.ContainsKey( key ) )
-            {
-                return tileUVMap[key];
-            }
-            else
-            {
-                Debug.LogError( key + " isn't in the tileUVMap dictionary" );
-                return tileUVMap["Void"];
-            }
-        }
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.NE]
+              && type == nType[(byte)Due.SE]
+              && type != nType[(byte)Due.NW]
+              && type == nType[(byte)Due.SW] )
 
-        public static Sprite GetDoodad( string key )
-        {
-            if ( doodadDictionary.ContainsKey( key ) )
-            {
-                return doodadDictionary[key];
-            }
-            else
-            {
-                Debug.LogError( key + " isn't in the SpriteLoader Doodad Dictionary" );
-                return doodadDictionary["Empty"];
-            }
-        }
+                return TileUVDictionary[key + "_61"];
 
-        public static Sprite GetItem( string key )
-        {
-            if ( itemDictionary.ContainsKey( key ) )
-            {
-                return itemDictionary[key];
-            }
-            else
-            {
-                Debug.LogError( key + " isn't in the SpriteLoader Item Dictionary" );
-                return itemDictionary["FlintKnife"];
-            }
+            if ( type != nType[(byte)Due.N]
+              && type != nType[(byte)Due.E]
+              && type != nType[(byte)Due.S]
+              && type != nType[(byte)Due.W]
+              && type != nType[(byte)Due.NE]
+              && type != nType[(byte)Due.SE]
+              && type != nType[(byte)Due.SW]
+              && type != nType[(byte)Due.NW] )
+                
+                return TileUVDictionary[key + "_16"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type != nType[(byte)Due.NE]
+              && type != nType[(byte)Due.NE]
+              && type != nType[(byte)Due.W] )
+
+                return TileUVDictionary[key + "_35"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.S]
+              && type != nType[(byte)Due.NW]
+              && type != nType[(byte)Due.SW]
+              && type != nType[(byte)Due.E] )
+
+                return TileUVDictionary[key + "_36"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.E]
+              && type != nType[(byte)Due.NE]
+              && type != nType[(byte)Due.NW]
+              && type != nType[(byte)Due.S] )
+
+                return TileUVDictionary[key + "_37"];
+
+            if ( type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.SE]
+              && type != nType[(byte)Due.SW]
+              && type != nType[(byte)Due.N] )
+
+                return TileUVDictionary[key + "_38"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.NE]
+              && type != nType[(byte)Due.SE]
+              && type != nType[(byte)Due.SW]
+              && type != nType[(byte)Due.NW] )
+
+                return TileUVDictionary[key + "_39"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type != nType[(byte)Due.W]
+              && type == nType[(byte)Due.NE]
+              && type != nType[(byte)Due.SE] )
+
+                return TileUVDictionary[key + "_40"];
+
+            if ( type != nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.SW]
+              && type != nType[(byte)Due.SE] )
+
+                return TileUVDictionary[key + "_41"];
+
+            if ( type != nType[(byte)Due.E]
+              && type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.SW]
+              && type != nType[(byte)Due.NW] )
+
+                return TileUVDictionary[key + "_42"];
+
+            if ( type != nType[(byte)Due.S]
+              && type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.NE]
+              && type != nType[(byte)Due.NW] )
+
+                return TileUVDictionary[key + "_43"];
+
+            if ( type != nType[(byte)Due.S]
+              && type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.NW]
+              && type != nType[(byte)Due.NE] )
+
+                return TileUVDictionary[key + "_44"];
+
+            if ( type != nType[(byte)Due.N]
+              && type != nType[(byte)Due.SW]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.SE] )
+
+                return TileUVDictionary[key + "_45"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.SE]
+              && type != nType[(byte)Due.W]
+              && type != nType[(byte)Due.NE] )
+
+                return TileUVDictionary[key + "_46"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.NW]
+              && type != nType[(byte)Due.E]
+              && type != nType[(byte)Due.SW] )
+
+                return TileUVDictionary[key + "_47"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.S]
+              && type != nType[(byte)Due.E]
+              && type != nType[(byte)Due.W] )
+                
+                return TileUVDictionary[key + "_17"];
+                        
+            if ( type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.N]
+              && type != nType[(byte)Due.S] )
+                
+                return TileUVDictionary[key + "_18"];
+                        
+            if ( type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.SE]
+              && type != nType[(byte)Due.N]
+              && type != nType[(byte)Due.W] )
+                
+                return TileUVDictionary[key + "_19"];
+                        
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.NE]
+              && type != nType[(byte)Due.W]
+              && type != nType[(byte)Due.S] )
+                
+                return TileUVDictionary[key + "_20"];
+                        
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.NW]
+              && type != nType[(byte)Due.S]
+              && type != nType[(byte)Due.E] )
+                
+                return TileUVDictionary[key + "_21"];
+                        
+            if ( type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.SW]
+              && type != nType[(byte)Due.N]
+              && type != nType[(byte)Due.E] )
+                
+                return TileUVDictionary[key + "_22"];
+                        
+            if ( type == nType[(byte)Due.S]
+              && type != nType[(byte)Due.E]
+              && type != nType[(byte)Due.W] )
+                
+                return TileUVDictionary[key + "_23"];
+                        
+            if ( type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.N]
+              && type != nType[(byte)Due.S] )
+                
+                return TileUVDictionary[key + "_24"];
+                        
+            if ( type == nType[(byte)Due.N]
+              && type != nType[(byte)Due.E]
+              && type != nType[(byte)Due.W] )
+                
+                return TileUVDictionary[key + "_25"];
+                        
+            if ( type == nType[(byte)Due.E]
+              && type != nType[(byte)Due.N]
+              && type != nType[(byte)Due.S] )
+                
+                return TileUVDictionary[key + "_26"];
+                        
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.E]
+              && type != nType[(byte)Due.S]
+              && type != nType[(byte)Due.NW] )
+                
+                return TileUVDictionary[key + "_27"];
+                        
+            if ( type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type != nType[(byte)Due.N]
+              && type != nType[(byte)Due.W]
+              && type != nType[(byte)Due.SE] )
+                
+                return TileUVDictionary[key + "_28"];
+                        
+            if ( type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.S]
+              && type != nType[(byte)Due.N]
+              && type != nType[(byte)Due.E]
+              && type != nType[(byte)Due.SW] )
+                
+                return TileUVDictionary[key + "_29"];
+                        
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type != nType[(byte)Due.S]
+              && type != nType[(byte)Due.W]
+              && type != nType[(byte)Due.NE] )
+                
+                return TileUVDictionary[key + "_30"];
+                        
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type != nType[(byte)Due.W] )
+                
+                return TileUVDictionary[key + "_31"];
+                        
+            if ( type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.N] )
+                
+                return TileUVDictionary[key + "_32"];
+                        
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.E] )
+                
+                return TileUVDictionary[key + "_33"];
+                        
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.S] )
+                
+                return TileUVDictionary[key + "_34"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.NE]
+              && type != nType[(byte)Due.SE]
+              && type != nType[(byte)Due.SW]
+              && type != nType[(byte)Due.NW] )
+
+                return TileUVDictionary[key + "_48"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.NE]
+              && type != nType[(byte)Due.SE]
+              && type == nType[(byte)Due.SW]
+              && type != nType[(byte)Due.NW] )
+
+                return TileUVDictionary[key + "_49"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.NE]
+              && type != nType[(byte)Due.SE]
+              && type != nType[(byte)Due.SW]
+              && type == nType[(byte)Due.NW] )
+
+                return TileUVDictionary[key + "_50"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.NE]
+              && type == nType[(byte)Due.SE]
+              && type != nType[(byte)Due.SW]
+              && type != nType[(byte)Due.NW] )
+
+                return TileUVDictionary[key + "_51"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.NW] )
+
+                return TileUVDictionary[key + "_54"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.NE] )
+
+                return TileUVDictionary[key + "_55"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.SE] )
+
+                return TileUVDictionary[key + "_56"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type != nType[(byte)Due.SW])
+
+                return TileUVDictionary[key + "_57"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.NE]
+              && type != nType[(byte)Due.SE]
+              && type == nType[(byte)Due.SW]
+              && type != nType[(byte)Due.NW] )
+
+                return TileUVDictionary[key + "_52"];
+
+            if ( type == nType[(byte)Due.N]
+              && type == nType[(byte)Due.E]
+              && type == nType[(byte)Due.S]
+              && type == nType[(byte)Due.W]
+              && type == nType[(byte)Due.NW]
+              && type == nType[(byte)Due.SE]
+              && type != nType[(byte)Due.SW]
+              && type != nType[(byte)Due.NE] )
+
+                return TileUVDictionary[key + "_53"];
+
+            return TileUVDictionary["Void"];
         }
     }
 }

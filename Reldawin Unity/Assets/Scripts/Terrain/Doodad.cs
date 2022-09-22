@@ -30,8 +30,8 @@ namespace LowCloud.Reldawin
         {
             data = d;
 
-            string name = XMLLoader.GetDoodad( data.type ).name;
-            Sprite sprite = SpriteLoader.GetDoodad( name );
+            string name = XMLLoader.Doodad[data.type].name;
+            Sprite sprite = SpriteLoader.doodadDictionary[name];
 
             // setup sorting order so entities can walk behind and around
             renderer.sortingOrder = data.tilePositionInWorld.x * Chunk.Size + data.tilePositionInWorld.y;
@@ -64,7 +64,7 @@ namespace LowCloud.Reldawin
             string color = string.Empty;
             string action = string.Empty;
 
-            DEDoodad d = XMLLoader.GetDoodad( data.type );
+            DEDoodad d = XMLLoader.Doodad[data.type];
 
             switch ( d.interact )
             {

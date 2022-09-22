@@ -5,10 +5,12 @@ Reldawin is a multiplayer 2d isometric RPG. The player character starts in a wil
 
 ## TODO List
 
-- [Fix] Interact animations
-
 - [Code cleanup]
 
+_Code cleanup_: Trying to massively speed up the time it takes to load chunks. We're currently reworking how we get UVs. 
+                Through testing we've discovered it is 4 to 5 times faster to get information directly through a static dictionary than through a Get method. 
+
+- [Fix] Interact animations
 - [Add] Crafting
 
 You activate an item in the inventory and use it with another item. The two items are used to query existing recipes featuring those two items. Returned recipes are presented as buttons that can be clicked in order to craft these items. XMLDevice.GetRecipesContaining(itemA, itemB);

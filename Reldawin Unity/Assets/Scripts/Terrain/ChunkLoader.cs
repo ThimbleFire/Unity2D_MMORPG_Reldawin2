@@ -92,12 +92,15 @@ namespace LowCloud.Reldawin
             Vector2Int chunkIndex = new Vector2Int( (int)args[0], (int)args[1] );
             string data = (string)args[2];
 
-            Chunk newChunk = inactiveChunks[0];
-            inactiveChunks.Remove( inactiveChunks[0] );
-            activeChunks.Add( newChunk );
-            chunkLookup.Add( chunkIndex, newChunk );
-            doodadLoader.chunksToLoad++;
-            newChunk.CreateTiles( chunkIndex, data );
+            using ( DebugTimer timer = new DebugTimer( string.Format( "Loading Chunk {0}, {1}", chunkIndex.x, chunkIndex.y ) ) )
+            {
+                Chunk newChunk = inactiveChunks[0];
+                inactiveChunks.Remove( inactiveChunks[0] );
+                activeChunks.Add( newChunk );
+                chunkLookup.Add( chunkIndex, newChunk );
+                doodadLoader.chunksToLoad++;
+                newChunk.CreateTiles( chunkIndex, data );
+            }
         }
 
         private void Movement_OnChunkChanged( Vector2Int newChunk, Vector2Int lastChunk )
@@ -162,6 +165,5 @@ namespace LowCloud.Reldawin
             LocalPlayerCharacter.OnChunkChanged -= Movement_OnChunkChanged;
             Chunk.OnChunkDestroyed -= Chunk_OnChunkDestroyed;
         }
-
     }
 }

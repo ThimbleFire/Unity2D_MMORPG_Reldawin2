@@ -21,7 +21,7 @@ namespace LowCloud.Reldawin
 
             EventProcessor.AddInstructionParams( Packet.RequestSeed, OnNetworkRequestSeedResponse );
 
-            SpriteLoader.Setup( 512, 1024 );
+            SpriteLoader.Setup();
             XMLLoader.Setup();
         }
 
