@@ -13,7 +13,7 @@ namespace LowCloud.Reldawin
         public Tile[,] Tiles { get; set; }
         public Node[,] Nodes { get; set; }
 
-        public void CreateTiles( Vector2Int chunkIndex, string data )
+        public void CreateTiles( Vector2Int chunkIndex, string data, UnityEngine.Color[,] defaultTiles )
         {
             transform.position = MyMath.CellToIsometric( chunkIndex ) * Chunk.Size;
             this.ChunkIndex = chunkIndex;
@@ -27,7 +27,10 @@ namespace LowCloud.Reldawin
             {
                 Vector2Int cellPosition = new Vector2Int( _x, _y );
 
-                Tiles[_x, _y] = Tile.GetTileByIndex( data[index++] );
+                Tiles[_x, _y] = (data[index] == '0' || data[index] == '1') ? 
+                        Tile.GetTileByColour( defaultTiles[_x, _y]) : 
+                        Tile.GetTileByIndex( data[index] );
+                index++;
                 Tiles[_x, _y].CellPositionInWorld = ( chunkIndex * Chunk.Size + cellPosition );
                 Tiles[_x, _y].CellPositionInChunk = cellPosition;
             }

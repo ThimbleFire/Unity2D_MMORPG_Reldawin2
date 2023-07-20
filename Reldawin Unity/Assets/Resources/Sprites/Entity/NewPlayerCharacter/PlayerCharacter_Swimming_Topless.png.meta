@@ -387,7 +387,7 @@ TextureImporter:
       213: 4122879162190583622
     second: Swimming_127
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -404,10 +404,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -417,8 +419,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -446,6 +448,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -457,6 +461,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -469,6 +474,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -481,6 +487,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -493,6 +500,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -3196,9 +3230,137 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Swimming_0: -4980158165618916464
+      Swimming_1: 8751027384873743284
+      Swimming_10: -5953667396260206799
+      Swimming_100: 718165798744664664
+      Swimming_101: -5479736847194258073
+      Swimming_102: 6972998306911783189
+      Swimming_103: 1505109921875410841
+      Swimming_104: 6145820366727659396
+      Swimming_105: 5858089462505865493
+      Swimming_106: 6746365244189485927
+      Swimming_107: 6930172588078257257
+      Swimming_108: -1271387501470758351
+      Swimming_109: 4185787197838943707
+      Swimming_11: 3525361786575140882
+      Swimming_110: 6051261594680506645
+      Swimming_111: 610027120280986899
+      Swimming_112: 7840247554637018719
+      Swimming_113: -6594705669770215002
+      Swimming_114: -8762117549643024094
+      Swimming_115: -1968403208683703034
+      Swimming_116: 699644043471992352
+      Swimming_117: -243234011521633558
+      Swimming_118: 3366578731031858507
+      Swimming_119: -173956202926236128
+      Swimming_12: -4555564519611058340
+      Swimming_120: -6472909265732365246
+      Swimming_121: 7715010849862591125
+      Swimming_122: -1463139107717227013
+      Swimming_123: -1998552479510296909
+      Swimming_124: -3296708526407846244
+      Swimming_125: 5494209294699879017
+      Swimming_126: -7175102420482877867
+      Swimming_127: 4122879162190583622
+      Swimming_13: -3928470431231461953
+      Swimming_14: -102456434157755434
+      Swimming_15: -4219678755227913011
+      Swimming_16: 1539649563508148182
+      Swimming_17: 1653623131320771828
+      Swimming_18: 1022677993800151463
+      Swimming_19: 3855241474997031197
+      Swimming_2: -4930324298276872730
+      Swimming_20: -734177049973377288
+      Swimming_21: 2076988073233751985
+      Swimming_22: -7179717073731592784
+      Swimming_23: 4995639551203685702
+      Swimming_24: -228596245362130409
+      Swimming_25: 9032831895016815525
+      Swimming_26: 7089937997025799338
+      Swimming_27: -6166138750042981212
+      Swimming_28: -7930579837675027899
+      Swimming_29: 449712654544023449
+      Swimming_3: 2252529693268281113
+      Swimming_30: 1567717651849591957
+      Swimming_31: -7276067134957595288
+      Swimming_32: -3938117656411027905
+      Swimming_33: 2871334153218302645
+      Swimming_34: -2699545896136857741
+      Swimming_35: -6258767582754556259
+      Swimming_36: -4285067716557814352
+      Swimming_37: 8000426640261751626
+      Swimming_38: -2660007598030515221
+      Swimming_39: -7279136448882715015
+      Swimming_4: 8799553691358116304
+      Swimming_40: -6825901652159560417
+      Swimming_41: 6664365414976623640
+      Swimming_42: -9138075085892256457
+      Swimming_43: 5946671549460385426
+      Swimming_44: 8594813800552052184
+      Swimming_45: 6023473443804319524
+      Swimming_46: 4318489675200963851
+      Swimming_47: -2453034760019515858
+      Swimming_48: 2788285253417756963
+      Swimming_49: -8094943993933654184
+      Swimming_5: 5007987827638646515
+      Swimming_50: 5177778335566150719
+      Swimming_51: -6147227906866690133
+      Swimming_52: 3836239285201697320
+      Swimming_53: -6669484425780185454
+      Swimming_54: -2276694765977313242
+      Swimming_55: 5569429897529916917
+      Swimming_56: 5519087187597252496
+      Swimming_57: -3654464830241044540
+      Swimming_58: -2862932519896209437
+      Swimming_59: 310552037229783515
+      Swimming_6: 3226847894532240451
+      Swimming_60: -6565668289367084432
+      Swimming_61: 1477130378967123913
+      Swimming_62: -8040570109825402365
+      Swimming_63: 8495375211638158445
+      Swimming_64: 92219796194436474
+      Swimming_65: 7137555119005236935
+      Swimming_66: 3306941519407258784
+      Swimming_67: -6798730118334002613
+      Swimming_68: 7355033026679748765
+      Swimming_69: 7023210824304403520
+      Swimming_7: -4782507935983400230
+      Swimming_70: -6360507174046790449
+      Swimming_71: -1024642841529573107
+      Swimming_72: 1829489423021954058
+      Swimming_73: 7306357731198168019
+      Swimming_74: -1966513297041269760
+      Swimming_75: -1457729574142087882
+      Swimming_76: -1903344559252863194
+      Swimming_77: 1824925456528898292
+      Swimming_78: -1839653702534878281
+      Swimming_79: 4663731597261642663
+      Swimming_8: 8873954347459310934
+      Swimming_80: 7656849206345877055
+      Swimming_81: -7697329558789304867
+      Swimming_82: 2432245001987616416
+      Swimming_83: 3329496909164201820
+      Swimming_84: -617791981588372622
+      Swimming_85: 2399780640664266335
+      Swimming_86: 4513359622951429357
+      Swimming_87: -1357645633064988788
+      Swimming_88: 449570302592987936
+      Swimming_89: -3973027554952353406
+      Swimming_9: -217732247090789224
+      Swimming_90: 7622487944522760999
+      Swimming_91: -5845210394284664030
+      Swimming_92: 5243121555140624599
+      Swimming_93: 7082093625631147664
+      Swimming_94: -2531646426916985448
+      Swimming_95: 1103625457693514223
+      Swimming_96: -3448622619552492447
+      Swimming_97: 5440663297292964030
+      Swimming_98: -7257497658491379262
+      Swimming_99: -78241470777601064
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

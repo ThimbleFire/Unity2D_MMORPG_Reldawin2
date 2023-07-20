@@ -1155,7 +1155,7 @@ TextureImporter:
       213: -8759315091635794639
     second: PlayerCharacter_Walking_Topless_383
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -1172,10 +1172,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1185,8 +1187,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -1214,6 +1216,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1225,6 +1229,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -1237,6 +1242,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -1249,6 +1255,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -1261,6 +1268,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -9340,9 +9374,393 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      PlayerCharacter_Walking_Topless_0: 2299419326221589763
+      PlayerCharacter_Walking_Topless_1: -3216545078465263878
+      PlayerCharacter_Walking_Topless_10: -7507195284768593799
+      PlayerCharacter_Walking_Topless_100: 8921488738364066147
+      PlayerCharacter_Walking_Topless_101: -2947300450926370576
+      PlayerCharacter_Walking_Topless_102: 1695966575202918980
+      PlayerCharacter_Walking_Topless_103: -1402968574583982392
+      PlayerCharacter_Walking_Topless_104: 3449546779774701411
+      PlayerCharacter_Walking_Topless_105: 5171837746730567694
+      PlayerCharacter_Walking_Topless_106: 380218337944378512
+      PlayerCharacter_Walking_Topless_107: -7599959693043364362
+      PlayerCharacter_Walking_Topless_108: 7460668246999263839
+      PlayerCharacter_Walking_Topless_109: -636792337857134112
+      PlayerCharacter_Walking_Topless_11: 3532647872455403720
+      PlayerCharacter_Walking_Topless_110: 5750099009403459501
+      PlayerCharacter_Walking_Topless_111: 122059837371642888
+      PlayerCharacter_Walking_Topless_112: 3397546174787625802
+      PlayerCharacter_Walking_Topless_113: 1673378070350912063
+      PlayerCharacter_Walking_Topless_114: -6247951604312031495
+      PlayerCharacter_Walking_Topless_115: 1023376823172558075
+      PlayerCharacter_Walking_Topless_116: -6066823696127884147
+      PlayerCharacter_Walking_Topless_117: -2624682175758174417
+      PlayerCharacter_Walking_Topless_118: -326860183397883094
+      PlayerCharacter_Walking_Topless_119: 9014883463305506216
+      PlayerCharacter_Walking_Topless_12: 3853936872176055705
+      PlayerCharacter_Walking_Topless_120: -7705445271990788732
+      PlayerCharacter_Walking_Topless_121: 4974864060844363768
+      PlayerCharacter_Walking_Topless_122: -3202602597819369503
+      PlayerCharacter_Walking_Topless_123: 5300692128239747145
+      PlayerCharacter_Walking_Topless_124: 6611413777668874579
+      PlayerCharacter_Walking_Topless_125: -1042369433601292040
+      PlayerCharacter_Walking_Topless_126: -5838033790265809083
+      PlayerCharacter_Walking_Topless_127: 5422253182983850317
+      PlayerCharacter_Walking_Topless_128: 4833371378004848885
+      PlayerCharacter_Walking_Topless_129: -4351129971565897153
+      PlayerCharacter_Walking_Topless_13: -9202940386081251421
+      PlayerCharacter_Walking_Topless_130: 7199061956999047792
+      PlayerCharacter_Walking_Topless_131: 1684538279269268038
+      PlayerCharacter_Walking_Topless_132: -8345394792944527713
+      PlayerCharacter_Walking_Topless_133: 8497500305152921675
+      PlayerCharacter_Walking_Topless_134: -5263521904896996711
+      PlayerCharacter_Walking_Topless_135: -1294141299953435462
+      PlayerCharacter_Walking_Topless_136: -8175768098004710202
+      PlayerCharacter_Walking_Topless_137: -2101473271439592151
+      PlayerCharacter_Walking_Topless_138: -2478433221739978196
+      PlayerCharacter_Walking_Topless_139: 6865093256491143114
+      PlayerCharacter_Walking_Topless_14: 8807098545625403503
+      PlayerCharacter_Walking_Topless_140: 6169515934112965237
+      PlayerCharacter_Walking_Topless_141: 5053410846315391809
+      PlayerCharacter_Walking_Topless_142: 2536536551730696166
+      PlayerCharacter_Walking_Topless_143: 1319354402517759403
+      PlayerCharacter_Walking_Topless_144: -730737566371612196
+      PlayerCharacter_Walking_Topless_145: -681467683267114804
+      PlayerCharacter_Walking_Topless_146: -1801074450615349252
+      PlayerCharacter_Walking_Topless_147: -933936862127286640
+      PlayerCharacter_Walking_Topless_148: 2174576259140156007
+      PlayerCharacter_Walking_Topless_149: 2189913130950811474
+      PlayerCharacter_Walking_Topless_15: -1747433518070589349
+      PlayerCharacter_Walking_Topless_150: -2639752115033747819
+      PlayerCharacter_Walking_Topless_151: 7704164159520618699
+      PlayerCharacter_Walking_Topless_152: 3089280649092135300
+      PlayerCharacter_Walking_Topless_153: -6099958268594692599
+      PlayerCharacter_Walking_Topless_154: -5014115776647097515
+      PlayerCharacter_Walking_Topless_155: 226438582992573180
+      PlayerCharacter_Walking_Topless_156: -9159980401740233107
+      PlayerCharacter_Walking_Topless_157: -8051241276432365264
+      PlayerCharacter_Walking_Topless_158: 845469786366952476
+      PlayerCharacter_Walking_Topless_159: -8352593546253536738
+      PlayerCharacter_Walking_Topless_16: -3917595528755067480
+      PlayerCharacter_Walking_Topless_160: -185467674984775559
+      PlayerCharacter_Walking_Topless_161: -8208025797634526921
+      PlayerCharacter_Walking_Topless_162: -1300990043217893258
+      PlayerCharacter_Walking_Topless_163: -5895766681436860950
+      PlayerCharacter_Walking_Topless_164: 2437023976069459161
+      PlayerCharacter_Walking_Topless_165: 4293032019933417427
+      PlayerCharacter_Walking_Topless_166: 2246250398222537097
+      PlayerCharacter_Walking_Topless_167: -554628108491336357
+      PlayerCharacter_Walking_Topless_168: 3267996259137654428
+      PlayerCharacter_Walking_Topless_169: 6455706040963250434
+      PlayerCharacter_Walking_Topless_17: -5340705470127933117
+      PlayerCharacter_Walking_Topless_170: -8450537530443926396
+      PlayerCharacter_Walking_Topless_171: 9131239611085207314
+      PlayerCharacter_Walking_Topless_172: 837587553041933142
+      PlayerCharacter_Walking_Topless_173: 4143623199062212219
+      PlayerCharacter_Walking_Topless_174: -1317502367347324764
+      PlayerCharacter_Walking_Topless_175: -2144953790494365298
+      PlayerCharacter_Walking_Topless_176: 6022491691281574385
+      PlayerCharacter_Walking_Topless_177: 5932586259871609702
+      PlayerCharacter_Walking_Topless_178: -5676319728350835361
+      PlayerCharacter_Walking_Topless_179: -7595085452834613484
+      PlayerCharacter_Walking_Topless_18: 4978470722934548155
+      PlayerCharacter_Walking_Topless_180: -5038147579232514834
+      PlayerCharacter_Walking_Topless_181: -2004181679223258000
+      PlayerCharacter_Walking_Topless_182: -3824458791157199478
+      PlayerCharacter_Walking_Topless_183: 4834194484583594792
+      PlayerCharacter_Walking_Topless_184: -5625759479159323369
+      PlayerCharacter_Walking_Topless_185: 6918756509226223084
+      PlayerCharacter_Walking_Topless_186: -4081947346291469089
+      PlayerCharacter_Walking_Topless_187: 787486566058051444
+      PlayerCharacter_Walking_Topless_188: 5164254724858594428
+      PlayerCharacter_Walking_Topless_189: 3229986622712193292
+      PlayerCharacter_Walking_Topless_19: 7392432278667451624
+      PlayerCharacter_Walking_Topless_190: -712563885280294406
+      PlayerCharacter_Walking_Topless_191: -2323169367535240991
+      PlayerCharacter_Walking_Topless_192: 98268928881947020
+      PlayerCharacter_Walking_Topless_193: 8843621708435174924
+      PlayerCharacter_Walking_Topless_194: -5269088318358998746
+      PlayerCharacter_Walking_Topless_195: -7406027584397230753
+      PlayerCharacter_Walking_Topless_196: 3975379636920824484
+      PlayerCharacter_Walking_Topless_197: -104963490697304618
+      PlayerCharacter_Walking_Topless_198: -5263299174021168797
+      PlayerCharacter_Walking_Topless_199: -3102169024455424124
+      PlayerCharacter_Walking_Topless_2: 5845976736592892572
+      PlayerCharacter_Walking_Topless_20: -5156918151808061000
+      PlayerCharacter_Walking_Topless_200: -1696186459795450428
+      PlayerCharacter_Walking_Topless_201: -8612914308989318451
+      PlayerCharacter_Walking_Topless_202: 3491386353661288609
+      PlayerCharacter_Walking_Topless_203: 128130171718698420
+      PlayerCharacter_Walking_Topless_204: 4853617404127889159
+      PlayerCharacter_Walking_Topless_205: 4366554594236017362
+      PlayerCharacter_Walking_Topless_206: 7895372425190968458
+      PlayerCharacter_Walking_Topless_207: -4477651716074438281
+      PlayerCharacter_Walking_Topless_208: -7787261017994412580
+      PlayerCharacter_Walking_Topless_209: -3915275273426882512
+      PlayerCharacter_Walking_Topless_21: -907142094512257290
+      PlayerCharacter_Walking_Topless_210: 2061352403431069158
+      PlayerCharacter_Walking_Topless_211: -9009101662411335101
+      PlayerCharacter_Walking_Topless_212: 2300007723052644721
+      PlayerCharacter_Walking_Topless_213: 5897786786963510812
+      PlayerCharacter_Walking_Topless_214: -4265515125654325556
+      PlayerCharacter_Walking_Topless_215: 5733540231230254619
+      PlayerCharacter_Walking_Topless_216: 8176931968619604441
+      PlayerCharacter_Walking_Topless_217: -4781804545605258828
+      PlayerCharacter_Walking_Topless_218: 5417960158137376424
+      PlayerCharacter_Walking_Topless_219: -4165778950348306583
+      PlayerCharacter_Walking_Topless_22: -7976393958981352065
+      PlayerCharacter_Walking_Topless_220: -9207731114783626794
+      PlayerCharacter_Walking_Topless_221: -8717930287091745384
+      PlayerCharacter_Walking_Topless_222: -730827295509621263
+      PlayerCharacter_Walking_Topless_223: 3363003955996208074
+      PlayerCharacter_Walking_Topless_224: 8577039040430484910
+      PlayerCharacter_Walking_Topless_225: -506424281350249701
+      PlayerCharacter_Walking_Topless_226: 7005152473328255786
+      PlayerCharacter_Walking_Topless_227: 5296151587307189210
+      PlayerCharacter_Walking_Topless_228: 5535008338634883188
+      PlayerCharacter_Walking_Topless_229: 6598278339063225249
+      PlayerCharacter_Walking_Topless_23: 8561026607449796787
+      PlayerCharacter_Walking_Topless_230: 5780702923051850752
+      PlayerCharacter_Walking_Topless_231: 8804377870251265484
+      PlayerCharacter_Walking_Topless_232: 5589651346468025718
+      PlayerCharacter_Walking_Topless_233: 482483144702699781
+      PlayerCharacter_Walking_Topless_234: 2764423753248260687
+      PlayerCharacter_Walking_Topless_235: 6866912948126097281
+      PlayerCharacter_Walking_Topless_236: 6847682107591539121
+      PlayerCharacter_Walking_Topless_237: 8276537078718828843
+      PlayerCharacter_Walking_Topless_238: -1018188523894439768
+      PlayerCharacter_Walking_Topless_239: -6746242317727929336
+      PlayerCharacter_Walking_Topless_24: -1032760359690759713
+      PlayerCharacter_Walking_Topless_240: -8333329682586883869
+      PlayerCharacter_Walking_Topless_241: 8615473724460881715
+      PlayerCharacter_Walking_Topless_242: 4461848008998049364
+      PlayerCharacter_Walking_Topless_243: 1238505372356016117
+      PlayerCharacter_Walking_Topless_244: -3524942111008425393
+      PlayerCharacter_Walking_Topless_245: -2027049673247687902
+      PlayerCharacter_Walking_Topless_246: -2416652168997124655
+      PlayerCharacter_Walking_Topless_247: 820858125580348863
+      PlayerCharacter_Walking_Topless_248: -426670453257579739
+      PlayerCharacter_Walking_Topless_249: -2010149189272346647
+      PlayerCharacter_Walking_Topless_25: -7451370001926841314
+      PlayerCharacter_Walking_Topless_250: -7923718362772378498
+      PlayerCharacter_Walking_Topless_251: -1204960788919225646
+      PlayerCharacter_Walking_Topless_252: 3127313217329153698
+      PlayerCharacter_Walking_Topless_253: 3642233692410933247
+      PlayerCharacter_Walking_Topless_254: -4437285392446527605
+      PlayerCharacter_Walking_Topless_255: 3275948400237527180
+      PlayerCharacter_Walking_Topless_256: 4292488373926056222
+      PlayerCharacter_Walking_Topless_257: -8927219986378265388
+      PlayerCharacter_Walking_Topless_258: 1642121093848266961
+      PlayerCharacter_Walking_Topless_259: -3975905139532214312
+      PlayerCharacter_Walking_Topless_26: 3223554082993945488
+      PlayerCharacter_Walking_Topless_260: 9187119481236950721
+      PlayerCharacter_Walking_Topless_261: 1169954896180738818
+      PlayerCharacter_Walking_Topless_262: -3411092394106335322
+      PlayerCharacter_Walking_Topless_263: -2012344549914727692
+      PlayerCharacter_Walking_Topless_264: -4404061275667901838
+      PlayerCharacter_Walking_Topless_265: -7190974156993508538
+      PlayerCharacter_Walking_Topless_266: -8910256467081866837
+      PlayerCharacter_Walking_Topless_267: 7931207506407783726
+      PlayerCharacter_Walking_Topless_268: 8984745766140810144
+      PlayerCharacter_Walking_Topless_269: -6624650441108929686
+      PlayerCharacter_Walking_Topless_27: 3942420185645390515
+      PlayerCharacter_Walking_Topless_270: 2103613123250686970
+      PlayerCharacter_Walking_Topless_271: -3915157299235586475
+      PlayerCharacter_Walking_Topless_272: 8148154731548021173
+      PlayerCharacter_Walking_Topless_273: -7219722457380115547
+      PlayerCharacter_Walking_Topless_274: 7213164098286451667
+      PlayerCharacter_Walking_Topless_275: -4084774765167641159
+      PlayerCharacter_Walking_Topless_276: 3930897197381649404
+      PlayerCharacter_Walking_Topless_277: -8605233416222464974
+      PlayerCharacter_Walking_Topless_278: -4908878271401535569
+      PlayerCharacter_Walking_Topless_279: -4208105489854549401
+      PlayerCharacter_Walking_Topless_28: 108467253805563994
+      PlayerCharacter_Walking_Topless_280: -7692721700613269199
+      PlayerCharacter_Walking_Topless_281: -9219350930130465625
+      PlayerCharacter_Walking_Topless_282: 3688230390621428411
+      PlayerCharacter_Walking_Topless_283: -6491515898892485661
+      PlayerCharacter_Walking_Topless_284: 3752858078903359262
+      PlayerCharacter_Walking_Topless_285: -7578578511732943657
+      PlayerCharacter_Walking_Topless_286: 5488823670237738904
+      PlayerCharacter_Walking_Topless_287: -1512757958351861763
+      PlayerCharacter_Walking_Topless_288: 834734587893044063
+      PlayerCharacter_Walking_Topless_289: 1532411430470341400
+      PlayerCharacter_Walking_Topless_29: -6215951306890509376
+      PlayerCharacter_Walking_Topless_290: 8470906971803771381
+      PlayerCharacter_Walking_Topless_291: 2128696069619254840
+      PlayerCharacter_Walking_Topless_292: 7436627146591104704
+      PlayerCharacter_Walking_Topless_293: 8221179231091262160
+      PlayerCharacter_Walking_Topless_294: -805425724494366069
+      PlayerCharacter_Walking_Topless_295: -3079579634796918853
+      PlayerCharacter_Walking_Topless_296: 8646370789020009457
+      PlayerCharacter_Walking_Topless_297: -1380815938824274229
+      PlayerCharacter_Walking_Topless_298: 7452924733680352409
+      PlayerCharacter_Walking_Topless_299: 712313298112697211
+      PlayerCharacter_Walking_Topless_3: -5619178979800530637
+      PlayerCharacter_Walking_Topless_30: 3927128327601330335
+      PlayerCharacter_Walking_Topless_300: 2526884094914542768
+      PlayerCharacter_Walking_Topless_301: -2711672132910309609
+      PlayerCharacter_Walking_Topless_302: -612022144025538275
+      PlayerCharacter_Walking_Topless_303: 1355562541490158912
+      PlayerCharacter_Walking_Topless_304: -440528093227227722
+      PlayerCharacter_Walking_Topless_305: -7832221543009320383
+      PlayerCharacter_Walking_Topless_306: 9082132232321378815
+      PlayerCharacter_Walking_Topless_307: 1561827840778955649
+      PlayerCharacter_Walking_Topless_308: -281063362116465908
+      PlayerCharacter_Walking_Topless_309: -8483625600540587314
+      PlayerCharacter_Walking_Topless_31: -4869434638424438066
+      PlayerCharacter_Walking_Topless_310: -2454892960932687982
+      PlayerCharacter_Walking_Topless_311: -1791330489011559944
+      PlayerCharacter_Walking_Topless_312: 3368903569345084474
+      PlayerCharacter_Walking_Topless_313: 8683276351793060527
+      PlayerCharacter_Walking_Topless_314: 9218506632978351812
+      PlayerCharacter_Walking_Topless_315: -49621479464098256
+      PlayerCharacter_Walking_Topless_316: 6084355682042526283
+      PlayerCharacter_Walking_Topless_317: -4368899878693996020
+      PlayerCharacter_Walking_Topless_318: 6942388149384208440
+      PlayerCharacter_Walking_Topless_319: 7033908217796083051
+      PlayerCharacter_Walking_Topless_32: -2799060585638960917
+      PlayerCharacter_Walking_Topless_320: 8229371570885666831
+      PlayerCharacter_Walking_Topless_321: -8828750686787187505
+      PlayerCharacter_Walking_Topless_322: -241363642083779071
+      PlayerCharacter_Walking_Topless_323: 5396595356242983757
+      PlayerCharacter_Walking_Topless_324: -1323714680397969421
+      PlayerCharacter_Walking_Topless_325: -4261672007197456484
+      PlayerCharacter_Walking_Topless_326: 3517154206170900985
+      PlayerCharacter_Walking_Topless_327: -7193418007540398362
+      PlayerCharacter_Walking_Topless_328: 2468570250259010453
+      PlayerCharacter_Walking_Topless_329: 4752289037373489308
+      PlayerCharacter_Walking_Topless_33: 3406204382418417928
+      PlayerCharacter_Walking_Topless_330: 8634495690328040813
+      PlayerCharacter_Walking_Topless_331: 652934038146570304
+      PlayerCharacter_Walking_Topless_332: 7299917978718640725
+      PlayerCharacter_Walking_Topless_333: 8692962165656439084
+      PlayerCharacter_Walking_Topless_334: -8687663114574976944
+      PlayerCharacter_Walking_Topless_335: 3498852056588046842
+      PlayerCharacter_Walking_Topless_336: -7071060470252272562
+      PlayerCharacter_Walking_Topless_337: 295492007180466291
+      PlayerCharacter_Walking_Topless_338: -3513869149281381805
+      PlayerCharacter_Walking_Topless_339: -7281786111774700433
+      PlayerCharacter_Walking_Topless_34: 1253963568678430356
+      PlayerCharacter_Walking_Topless_340: -9180899208882114168
+      PlayerCharacter_Walking_Topless_341: -6903590646425739748
+      PlayerCharacter_Walking_Topless_342: -7312075561568126570
+      PlayerCharacter_Walking_Topless_343: 8035686176268731068
+      PlayerCharacter_Walking_Topless_344: -1413869116997589346
+      PlayerCharacter_Walking_Topless_345: 5101587879338048086
+      PlayerCharacter_Walking_Topless_346: 2540109742000313729
+      PlayerCharacter_Walking_Topless_347: 846966259299951268
+      PlayerCharacter_Walking_Topless_348: -6998021016984760422
+      PlayerCharacter_Walking_Topless_349: -6891707467143870660
+      PlayerCharacter_Walking_Topless_35: -7607831551133243638
+      PlayerCharacter_Walking_Topless_350: -9118899612696571930
+      PlayerCharacter_Walking_Topless_351: -5043692783498938722
+      PlayerCharacter_Walking_Topless_352: -7169040681845643401
+      PlayerCharacter_Walking_Topless_353: -1697798572423758274
+      PlayerCharacter_Walking_Topless_354: 7051506746029682800
+      PlayerCharacter_Walking_Topless_355: -915288422789366874
+      PlayerCharacter_Walking_Topless_356: -5073595136152530046
+      PlayerCharacter_Walking_Topless_357: -8213625339598666654
+      PlayerCharacter_Walking_Topless_358: -5680578678584825196
+      PlayerCharacter_Walking_Topless_359: 4150634975091984539
+      PlayerCharacter_Walking_Topless_36: -232158958373694962
+      PlayerCharacter_Walking_Topless_360: 434065929291436242
+      PlayerCharacter_Walking_Topless_361: 2839464340414866264
+      PlayerCharacter_Walking_Topless_362: 8110038320012308767
+      PlayerCharacter_Walking_Topless_363: 2822044053625362475
+      PlayerCharacter_Walking_Topless_364: 2630241164818550235
+      PlayerCharacter_Walking_Topless_365: -3938258262233484718
+      PlayerCharacter_Walking_Topless_366: -1191294091694405757
+      PlayerCharacter_Walking_Topless_367: -3540456433276942510
+      PlayerCharacter_Walking_Topless_368: -7711269425488968547
+      PlayerCharacter_Walking_Topless_369: -7973353099249379123
+      PlayerCharacter_Walking_Topless_37: -8874504178553120096
+      PlayerCharacter_Walking_Topless_370: 6495044470929827112
+      PlayerCharacter_Walking_Topless_371: 6492331157798231074
+      PlayerCharacter_Walking_Topless_372: 1806067411460412367
+      PlayerCharacter_Walking_Topless_373: -7647473837414389969
+      PlayerCharacter_Walking_Topless_374: -3443158758305130759
+      PlayerCharacter_Walking_Topless_375: 6613124143559722098
+      PlayerCharacter_Walking_Topless_376: 458290010648733230
+      PlayerCharacter_Walking_Topless_377: -8059235015672995618
+      PlayerCharacter_Walking_Topless_378: 8204104224621199743
+      PlayerCharacter_Walking_Topless_379: -1119846394418021590
+      PlayerCharacter_Walking_Topless_38: 4868729998876604191
+      PlayerCharacter_Walking_Topless_380: -4965816968560266140
+      PlayerCharacter_Walking_Topless_381: 2295255051847574363
+      PlayerCharacter_Walking_Topless_382: 1406829648243393861
+      PlayerCharacter_Walking_Topless_383: -8759315091635794639
+      PlayerCharacter_Walking_Topless_39: 785555054576305849
+      PlayerCharacter_Walking_Topless_4: -7948402323111606286
+      PlayerCharacter_Walking_Topless_40: 5135667926992957803
+      PlayerCharacter_Walking_Topless_41: 8491526735107976886
+      PlayerCharacter_Walking_Topless_42: 4344344382554366912
+      PlayerCharacter_Walking_Topless_43: -3743536123084182352
+      PlayerCharacter_Walking_Topless_44: -5847234818912437569
+      PlayerCharacter_Walking_Topless_45: 3301803729865530984
+      PlayerCharacter_Walking_Topless_46: -6573295154496118934
+      PlayerCharacter_Walking_Topless_47: -3970631635298414923
+      PlayerCharacter_Walking_Topless_48: -5474052631759622424
+      PlayerCharacter_Walking_Topless_49: 4150042607324700366
+      PlayerCharacter_Walking_Topless_5: -3295640711606381232
+      PlayerCharacter_Walking_Topless_50: -1661009888514063925
+      PlayerCharacter_Walking_Topless_51: 882551277106589818
+      PlayerCharacter_Walking_Topless_52: -6744501869314339881
+      PlayerCharacter_Walking_Topless_53: -6926663386525439791
+      PlayerCharacter_Walking_Topless_54: -7906088746785591286
+      PlayerCharacter_Walking_Topless_55: -2026681734603727756
+      PlayerCharacter_Walking_Topless_56: 4579136219779287258
+      PlayerCharacter_Walking_Topless_57: -1129058971549754421
+      PlayerCharacter_Walking_Topless_58: -8216633516160727498
+      PlayerCharacter_Walking_Topless_59: -4694721500658264187
+      PlayerCharacter_Walking_Topless_6: -5231105060155899248
+      PlayerCharacter_Walking_Topless_60: -5569680113048991355
+      PlayerCharacter_Walking_Topless_61: -4966271713634449003
+      PlayerCharacter_Walking_Topless_62: -5183997587720797919
+      PlayerCharacter_Walking_Topless_63: -3731917293663903027
+      PlayerCharacter_Walking_Topless_64: 5702072108116681223
+      PlayerCharacter_Walking_Topless_65: 4096763675347783303
+      PlayerCharacter_Walking_Topless_66: 9131127736373639663
+      PlayerCharacter_Walking_Topless_67: 402826436408602587
+      PlayerCharacter_Walking_Topless_68: 3358251233522209595
+      PlayerCharacter_Walking_Topless_69: 6835177542682217202
+      PlayerCharacter_Walking_Topless_7: -3123712396604924093
+      PlayerCharacter_Walking_Topless_70: -8370286588280895441
+      PlayerCharacter_Walking_Topless_71: -5955414901139757148
+      PlayerCharacter_Walking_Topless_72: -8517710746175478234
+      PlayerCharacter_Walking_Topless_73: -4466334073235307771
+      PlayerCharacter_Walking_Topless_74: -1238379503059884485
+      PlayerCharacter_Walking_Topless_75: 6671323061280011786
+      PlayerCharacter_Walking_Topless_76: 8422255568532006968
+      PlayerCharacter_Walking_Topless_77: 6742731164709211201
+      PlayerCharacter_Walking_Topless_78: -5176983420887565488
+      PlayerCharacter_Walking_Topless_79: -5253703038079360243
+      PlayerCharacter_Walking_Topless_8: -3289332192704496885
+      PlayerCharacter_Walking_Topless_80: 684060117776798379
+      PlayerCharacter_Walking_Topless_81: 1057213791204289272
+      PlayerCharacter_Walking_Topless_82: 1819181618208642777
+      PlayerCharacter_Walking_Topless_83: 238517102966591898
+      PlayerCharacter_Walking_Topless_84: -4142774684301980240
+      PlayerCharacter_Walking_Topless_85: 5901640287192089612
+      PlayerCharacter_Walking_Topless_86: 8918639841788266345
+      PlayerCharacter_Walking_Topless_87: 1832077212724446434
+      PlayerCharacter_Walking_Topless_88: -8306663332067592327
+      PlayerCharacter_Walking_Topless_89: -5149051036116561050
+      PlayerCharacter_Walking_Topless_9: -1675948045109939741
+      PlayerCharacter_Walking_Topless_90: -3121505417765348034
+      PlayerCharacter_Walking_Topless_91: -2329025230451515366
+      PlayerCharacter_Walking_Topless_92: -5772687104835293237
+      PlayerCharacter_Walking_Topless_93: -9009878282794442626
+      PlayerCharacter_Walking_Topless_94: -8651516901755205943
+      PlayerCharacter_Walking_Topless_95: 2739487264889470548
+      PlayerCharacter_Walking_Topless_96: -2655574184961357542
+      PlayerCharacter_Walking_Topless_97: -8383915767486717088
+      PlayerCharacter_Walking_Topless_98: -1768104103844056340
+      PlayerCharacter_Walking_Topless_99: 4252635875809328672
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

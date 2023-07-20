@@ -915,7 +915,7 @@ TextureImporter:
       213: 8283283438460220306
     second: PlayerCharacter_Idle_Topless_303
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -932,10 +932,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -945,8 +947,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -974,6 +976,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -985,6 +989,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -997,6 +1002,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -1009,6 +1015,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -1021,6 +1028,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -7420,9 +7454,313 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      PlayerCharacter_Idle_Topless_0: 189338518059812483
+      PlayerCharacter_Idle_Topless_1: 4882634997095324662
+      PlayerCharacter_Idle_Topless_10: -4262098560201844372
+      PlayerCharacter_Idle_Topless_100: 8432249075166151619
+      PlayerCharacter_Idle_Topless_101: 3790482274464382043
+      PlayerCharacter_Idle_Topless_102: 7244730920663020805
+      PlayerCharacter_Idle_Topless_103: -6982726674479613469
+      PlayerCharacter_Idle_Topless_104: 5153341123748182002
+      PlayerCharacter_Idle_Topless_105: -4737664323707132647
+      PlayerCharacter_Idle_Topless_106: 6189665181987128203
+      PlayerCharacter_Idle_Topless_107: 7853829417225405126
+      PlayerCharacter_Idle_Topless_108: -7890191493883971907
+      PlayerCharacter_Idle_Topless_109: 3969874932185501818
+      PlayerCharacter_Idle_Topless_11: -4736228691339805767
+      PlayerCharacter_Idle_Topless_110: -3167011176739647763
+      PlayerCharacter_Idle_Topless_111: 5121457492507054586
+      PlayerCharacter_Idle_Topless_112: 707823086315986368
+      PlayerCharacter_Idle_Topless_113: -8740715801187044943
+      PlayerCharacter_Idle_Topless_114: 524720124903528804
+      PlayerCharacter_Idle_Topless_115: 3993811501889864759
+      PlayerCharacter_Idle_Topless_116: 6266615376651328835
+      PlayerCharacter_Idle_Topless_117: 6838874767072556239
+      PlayerCharacter_Idle_Topless_118: 4130488975876816827
+      PlayerCharacter_Idle_Topless_119: -4035567641522891581
+      PlayerCharacter_Idle_Topless_12: -8871046573436797487
+      PlayerCharacter_Idle_Topless_120: -5019966596902739139
+      PlayerCharacter_Idle_Topless_121: -4632733007486621495
+      PlayerCharacter_Idle_Topless_122: -6381725599258786591
+      PlayerCharacter_Idle_Topless_123: -2412166041514210456
+      PlayerCharacter_Idle_Topless_124: 7573047514862627527
+      PlayerCharacter_Idle_Topless_125: 1263174812082190090
+      PlayerCharacter_Idle_Topless_126: -3894344388342118328
+      PlayerCharacter_Idle_Topless_127: 3825820764198612348
+      PlayerCharacter_Idle_Topless_128: 5015215956865381958
+      PlayerCharacter_Idle_Topless_129: -6130433839603610589
+      PlayerCharacter_Idle_Topless_13: 98965539350982984
+      PlayerCharacter_Idle_Topless_130: 5770683556887822429
+      PlayerCharacter_Idle_Topless_131: -369799453410800445
+      PlayerCharacter_Idle_Topless_132: -3459770619863739751
+      PlayerCharacter_Idle_Topless_133: 6775422044459693134
+      PlayerCharacter_Idle_Topless_134: 5378768155752827817
+      PlayerCharacter_Idle_Topless_135: -3293073133803584577
+      PlayerCharacter_Idle_Topless_136: -8919835140118803286
+      PlayerCharacter_Idle_Topless_137: -6224390554009193973
+      PlayerCharacter_Idle_Topless_138: -4694617100746397101
+      PlayerCharacter_Idle_Topless_139: 1245633221243845124
+      PlayerCharacter_Idle_Topless_14: -5154995386859774999
+      PlayerCharacter_Idle_Topless_140: 3817159259672556272
+      PlayerCharacter_Idle_Topless_141: 8646164678307646814
+      PlayerCharacter_Idle_Topless_142: 8802861376817864004
+      PlayerCharacter_Idle_Topless_143: 1554207146389538271
+      PlayerCharacter_Idle_Topless_144: -4535551465889372203
+      PlayerCharacter_Idle_Topless_145: 1997337846320465046
+      PlayerCharacter_Idle_Topless_146: -2591930182231513789
+      PlayerCharacter_Idle_Topless_147: 3649293250343223053
+      PlayerCharacter_Idle_Topless_148: -2777367074573364573
+      PlayerCharacter_Idle_Topless_149: 6680251174814788004
+      PlayerCharacter_Idle_Topless_15: 2173831157746601148
+      PlayerCharacter_Idle_Topless_150: -7178558308964370306
+      PlayerCharacter_Idle_Topless_151: 4305997099039052138
+      PlayerCharacter_Idle_Topless_152: 1892565170199536894
+      PlayerCharacter_Idle_Topless_153: -7952481079650704438
+      PlayerCharacter_Idle_Topless_154: -7312149436514822215
+      PlayerCharacter_Idle_Topless_155: -3376203957937319049
+      PlayerCharacter_Idle_Topless_156: 5074322769977826920
+      PlayerCharacter_Idle_Topless_157: 4202849856093306832
+      PlayerCharacter_Idle_Topless_158: 1568530751953571151
+      PlayerCharacter_Idle_Topless_159: -2480154379521841829
+      PlayerCharacter_Idle_Topless_16: -4284800649011830550
+      PlayerCharacter_Idle_Topless_160: -1286011767282870648
+      PlayerCharacter_Idle_Topless_161: 3792129321254856179
+      PlayerCharacter_Idle_Topless_162: -6697823836035056508
+      PlayerCharacter_Idle_Topless_163: 2956705771771834820
+      PlayerCharacter_Idle_Topless_164: -6889611206593110306
+      PlayerCharacter_Idle_Topless_165: -1689757854593974045
+      PlayerCharacter_Idle_Topless_166: -4356634423768597301
+      PlayerCharacter_Idle_Topless_167: -7924050490389513393
+      PlayerCharacter_Idle_Topless_168: 1343257980795601447
+      PlayerCharacter_Idle_Topless_169: -7906782682870108765
+      PlayerCharacter_Idle_Topless_17: 4428003129217227553
+      PlayerCharacter_Idle_Topless_170: -5995901961251086525
+      PlayerCharacter_Idle_Topless_171: -8584238544622550795
+      PlayerCharacter_Idle_Topless_172: 4543024651448407428
+      PlayerCharacter_Idle_Topless_173: 849426150129325915
+      PlayerCharacter_Idle_Topless_174: 8419138575439546178
+      PlayerCharacter_Idle_Topless_175: -4654412790704652838
+      PlayerCharacter_Idle_Topless_176: -8439259596234992022
+      PlayerCharacter_Idle_Topless_177: -8010596222143284674
+      PlayerCharacter_Idle_Topless_178: 2880627521915683922
+      PlayerCharacter_Idle_Topless_179: -3934246961046696000
+      PlayerCharacter_Idle_Topless_18: -2653119917419712135
+      PlayerCharacter_Idle_Topless_180: -2070508216483062891
+      PlayerCharacter_Idle_Topless_181: -3620450332830215530
+      PlayerCharacter_Idle_Topless_182: -5891348717601988654
+      PlayerCharacter_Idle_Topless_183: 1538337978629000106
+      PlayerCharacter_Idle_Topless_184: -7155230007582632151
+      PlayerCharacter_Idle_Topless_185: 4831027437520543022
+      PlayerCharacter_Idle_Topless_186: -7969569148351717281
+      PlayerCharacter_Idle_Topless_187: -1875710241911422440
+      PlayerCharacter_Idle_Topless_188: 4601267022974587135
+      PlayerCharacter_Idle_Topless_189: -2310001616882335518
+      PlayerCharacter_Idle_Topless_19: 3015202666087639626
+      PlayerCharacter_Idle_Topless_190: -240770309260671893
+      PlayerCharacter_Idle_Topless_191: 7793114566212457909
+      PlayerCharacter_Idle_Topless_192: -4166629925343440328
+      PlayerCharacter_Idle_Topless_193: 1717163871127054849
+      PlayerCharacter_Idle_Topless_194: -8704933566528741661
+      PlayerCharacter_Idle_Topless_195: -6538544426041936758
+      PlayerCharacter_Idle_Topless_196: 911551189484079990
+      PlayerCharacter_Idle_Topless_197: -7212383727079479303
+      PlayerCharacter_Idle_Topless_198: -5417422349372732620
+      PlayerCharacter_Idle_Topless_199: 127652753462577572
+      PlayerCharacter_Idle_Topless_2: 5733145239671516742
+      PlayerCharacter_Idle_Topless_20: 6884378958765511827
+      PlayerCharacter_Idle_Topless_200: -7808118634057814665
+      PlayerCharacter_Idle_Topless_201: -7535513122574026221
+      PlayerCharacter_Idle_Topless_202: -451213674175796336
+      PlayerCharacter_Idle_Topless_203: 6969239756615052246
+      PlayerCharacter_Idle_Topless_204: -2056909786608109892
+      PlayerCharacter_Idle_Topless_205: -3386416699439748385
+      PlayerCharacter_Idle_Topless_206: 3801048387745053811
+      PlayerCharacter_Idle_Topless_207: 4768218225883376895
+      PlayerCharacter_Idle_Topless_208: -2198934049248921581
+      PlayerCharacter_Idle_Topless_209: 6104867314187333757
+      PlayerCharacter_Idle_Topless_21: 5338874484562592423
+      PlayerCharacter_Idle_Topless_210: -7087408191726530746
+      PlayerCharacter_Idle_Topless_211: -7893038022396752763
+      PlayerCharacter_Idle_Topless_212: -7854964362867855031
+      PlayerCharacter_Idle_Topless_213: 4938656337777124490
+      PlayerCharacter_Idle_Topless_214: -6589921748854517527
+      PlayerCharacter_Idle_Topless_215: 6267693633916824147
+      PlayerCharacter_Idle_Topless_216: 8217595188192351771
+      PlayerCharacter_Idle_Topless_217: 87056530123802294
+      PlayerCharacter_Idle_Topless_218: 3578416333424614091
+      PlayerCharacter_Idle_Topless_219: -3678067840849230231
+      PlayerCharacter_Idle_Topless_22: -7038919812836110230
+      PlayerCharacter_Idle_Topless_220: -3079256562027374115
+      PlayerCharacter_Idle_Topless_221: 4033261380211504743
+      PlayerCharacter_Idle_Topless_222: -3430806909248746736
+      PlayerCharacter_Idle_Topless_223: -3053778621883212044
+      PlayerCharacter_Idle_Topless_224: 3413116258496826062
+      PlayerCharacter_Idle_Topless_225: 8013430981947398011
+      PlayerCharacter_Idle_Topless_226: 9206583409543624308
+      PlayerCharacter_Idle_Topless_227: 8327363872122211714
+      PlayerCharacter_Idle_Topless_228: -8152924384990684677
+      PlayerCharacter_Idle_Topless_229: 6987333932682397961
+      PlayerCharacter_Idle_Topless_23: -7821640318171585599
+      PlayerCharacter_Idle_Topless_230: -8268200320160774350
+      PlayerCharacter_Idle_Topless_231: 7621781019333611129
+      PlayerCharacter_Idle_Topless_232: -6939047587768398393
+      PlayerCharacter_Idle_Topless_233: -6591486043929428705
+      PlayerCharacter_Idle_Topless_234: -1376578120696195007
+      PlayerCharacter_Idle_Topless_235: -1126824962314048449
+      PlayerCharacter_Idle_Topless_236: -1943612225032757058
+      PlayerCharacter_Idle_Topless_237: -5581809422733349521
+      PlayerCharacter_Idle_Topless_238: 2300252579827462864
+      PlayerCharacter_Idle_Topless_239: 1608180617499405721
+      PlayerCharacter_Idle_Topless_24: -2061326479303357128
+      PlayerCharacter_Idle_Topless_240: -6780717844088708463
+      PlayerCharacter_Idle_Topless_241: -7206528946315475443
+      PlayerCharacter_Idle_Topless_242: 1344992096574472444
+      PlayerCharacter_Idle_Topless_243: 8571886963833190274
+      PlayerCharacter_Idle_Topless_244: 2845122197598266174
+      PlayerCharacter_Idle_Topless_245: -6999918080620587512
+      PlayerCharacter_Idle_Topless_246: -2412595773689633443
+      PlayerCharacter_Idle_Topless_247: -7969738317673396828
+      PlayerCharacter_Idle_Topless_248: 8557993932476814978
+      PlayerCharacter_Idle_Topless_249: -6975227011312845345
+      PlayerCharacter_Idle_Topless_25: -2746722314109965349
+      PlayerCharacter_Idle_Topless_250: -6750944462695481059
+      PlayerCharacter_Idle_Topless_251: 4884416971186134201
+      PlayerCharacter_Idle_Topless_252: -7229705195698448476
+      PlayerCharacter_Idle_Topless_253: -3049226651760083116
+      PlayerCharacter_Idle_Topless_254: -5017569493635585616
+      PlayerCharacter_Idle_Topless_255: 849668219495713878
+      PlayerCharacter_Idle_Topless_256: 471210204589826155
+      PlayerCharacter_Idle_Topless_257: 3628749897393055506
+      PlayerCharacter_Idle_Topless_258: 3367816620883112606
+      PlayerCharacter_Idle_Topless_259: 1857220872845184876
+      PlayerCharacter_Idle_Topless_26: 7422574180129475991
+      PlayerCharacter_Idle_Topless_260: -5549791071306882361
+      PlayerCharacter_Idle_Topless_261: 5380100628565478164
+      PlayerCharacter_Idle_Topless_262: -615729220429082666
+      PlayerCharacter_Idle_Topless_263: 1880738166912661311
+      PlayerCharacter_Idle_Topless_264: -165502692382042526
+      PlayerCharacter_Idle_Topless_265: 1176683508075295371
+      PlayerCharacter_Idle_Topless_266: -6420628042658766809
+      PlayerCharacter_Idle_Topless_267: 6007747563447595517
+      PlayerCharacter_Idle_Topless_268: 6411615963038152396
+      PlayerCharacter_Idle_Topless_269: -702578802957954256
+      PlayerCharacter_Idle_Topless_27: 145832558793158673
+      PlayerCharacter_Idle_Topless_270: -5269666604396906649
+      PlayerCharacter_Idle_Topless_271: 8337989289081971957
+      PlayerCharacter_Idle_Topless_272: -2214356066921691727
+      PlayerCharacter_Idle_Topless_273: -741823925067904300
+      PlayerCharacter_Idle_Topless_274: 2952133936442380430
+      PlayerCharacter_Idle_Topless_275: 6940485244282000880
+      PlayerCharacter_Idle_Topless_276: -3453060432617985548
+      PlayerCharacter_Idle_Topless_277: 5225510649054469283
+      PlayerCharacter_Idle_Topless_278: -8122244478886621294
+      PlayerCharacter_Idle_Topless_279: 8534269455967227722
+      PlayerCharacter_Idle_Topless_28: -2301889887681120697
+      PlayerCharacter_Idle_Topless_280: 1616829398758189868
+      PlayerCharacter_Idle_Topless_281: -3175398420566214707
+      PlayerCharacter_Idle_Topless_282: -8266632651534478305
+      PlayerCharacter_Idle_Topless_283: -380749133537755366
+      PlayerCharacter_Idle_Topless_284: 6260159782829701891
+      PlayerCharacter_Idle_Topless_285: 1896930501593039728
+      PlayerCharacter_Idle_Topless_286: 412558997936030168
+      PlayerCharacter_Idle_Topless_287: -4126008134268009569
+      PlayerCharacter_Idle_Topless_288: 8268173442021447774
+      PlayerCharacter_Idle_Topless_289: 8169803525651352784
+      PlayerCharacter_Idle_Topless_29: 5580744231980809178
+      PlayerCharacter_Idle_Topless_290: 1335798131002208339
+      PlayerCharacter_Idle_Topless_291: 1167884233406922533
+      PlayerCharacter_Idle_Topless_292: -635800746267031367
+      PlayerCharacter_Idle_Topless_293: -7116985458449147641
+      PlayerCharacter_Idle_Topless_294: 6742710028520489128
+      PlayerCharacter_Idle_Topless_295: -8864079682329583716
+      PlayerCharacter_Idle_Topless_296: -4046068908107472555
+      PlayerCharacter_Idle_Topless_297: 3783505404456858128
+      PlayerCharacter_Idle_Topless_298: -7233405489899105282
+      PlayerCharacter_Idle_Topless_299: -1211506469933612035
+      PlayerCharacter_Idle_Topless_3: 1548366688680223931
+      PlayerCharacter_Idle_Topless_30: 440856171398358206
+      PlayerCharacter_Idle_Topless_300: -1447686070177889104
+      PlayerCharacter_Idle_Topless_301: 4097417618274917051
+      PlayerCharacter_Idle_Topless_302: -227074965384195274
+      PlayerCharacter_Idle_Topless_303: 8283283438460220306
+      PlayerCharacter_Idle_Topless_31: 22511383628578247
+      PlayerCharacter_Idle_Topless_32: -5852505189638872692
+      PlayerCharacter_Idle_Topless_33: -3664064499090178835
+      PlayerCharacter_Idle_Topless_34: -8893163848593368180
+      PlayerCharacter_Idle_Topless_35: 6117692087635009869
+      PlayerCharacter_Idle_Topless_36: 5868030236652378036
+      PlayerCharacter_Idle_Topless_37: 2797832610878854007
+      PlayerCharacter_Idle_Topless_38: 4353879690700217996
+      PlayerCharacter_Idle_Topless_39: 8549638426023577186
+      PlayerCharacter_Idle_Topless_4: 8655443066677887423
+      PlayerCharacter_Idle_Topless_40: 2149093165467859088
+      PlayerCharacter_Idle_Topless_41: -1997973732252888135
+      PlayerCharacter_Idle_Topless_42: -5369224541883335551
+      PlayerCharacter_Idle_Topless_43: -8669813637907049408
+      PlayerCharacter_Idle_Topless_44: -1707649587806278075
+      PlayerCharacter_Idle_Topless_45: -8670186388550439793
+      PlayerCharacter_Idle_Topless_46: 8527578376651591920
+      PlayerCharacter_Idle_Topless_47: -4670810851859093211
+      PlayerCharacter_Idle_Topless_48: -1241457624991918540
+      PlayerCharacter_Idle_Topless_49: 3098578404798173570
+      PlayerCharacter_Idle_Topless_5: -3589744825259835441
+      PlayerCharacter_Idle_Topless_50: 1514534140026182971
+      PlayerCharacter_Idle_Topless_51: 7366422998862624385
+      PlayerCharacter_Idle_Topless_52: 2791179544877298542
+      PlayerCharacter_Idle_Topless_53: 7021641541580851933
+      PlayerCharacter_Idle_Topless_54: -3348008587300071571
+      PlayerCharacter_Idle_Topless_55: -6212773786907750747
+      PlayerCharacter_Idle_Topless_56: 3624522047294908455
+      PlayerCharacter_Idle_Topless_57: -5318421417991521199
+      PlayerCharacter_Idle_Topless_58: 6806894438024084505
+      PlayerCharacter_Idle_Topless_59: -3241205468372235014
+      PlayerCharacter_Idle_Topless_6: 6473083342701088182
+      PlayerCharacter_Idle_Topless_60: -5364042807647478403
+      PlayerCharacter_Idle_Topless_61: -3440594364932084647
+      PlayerCharacter_Idle_Topless_62: -252469956075959952
+      PlayerCharacter_Idle_Topless_63: -3040260358779148486
+      PlayerCharacter_Idle_Topless_64: -8970456252985300031
+      PlayerCharacter_Idle_Topless_65: -749327012238668560
+      PlayerCharacter_Idle_Topless_66: -3558979126183124897
+      PlayerCharacter_Idle_Topless_67: -694121987916152760
+      PlayerCharacter_Idle_Topless_68: 6351389478514068586
+      PlayerCharacter_Idle_Topless_69: -5946987208339244570
+      PlayerCharacter_Idle_Topless_7: -2592880075795820089
+      PlayerCharacter_Idle_Topless_70: -8073469608437117258
+      PlayerCharacter_Idle_Topless_71: 8741225295097279726
+      PlayerCharacter_Idle_Topless_72: -1343151305286969475
+      PlayerCharacter_Idle_Topless_73: -2557401102168651450
+      PlayerCharacter_Idle_Topless_74: 3710302007324169392
+      PlayerCharacter_Idle_Topless_75: 6533410248164515282
+      PlayerCharacter_Idle_Topless_76: -6059044298572582674
+      PlayerCharacter_Idle_Topless_77: 1902225311000834055
+      PlayerCharacter_Idle_Topless_78: 368898945036246284
+      PlayerCharacter_Idle_Topless_79: -5854033467390905571
+      PlayerCharacter_Idle_Topless_8: 9104137425819609792
+      PlayerCharacter_Idle_Topless_80: 2772622542476719044
+      PlayerCharacter_Idle_Topless_81: -3365061135254006019
+      PlayerCharacter_Idle_Topless_82: -6489078508782582209
+      PlayerCharacter_Idle_Topless_83: 6339509453524219923
+      PlayerCharacter_Idle_Topless_84: 2249421810280513456
+      PlayerCharacter_Idle_Topless_85: -3623884221169008881
+      PlayerCharacter_Idle_Topless_86: -7113064105760420502
+      PlayerCharacter_Idle_Topless_87: 3662713413001884202
+      PlayerCharacter_Idle_Topless_88: -3337859869273448448
+      PlayerCharacter_Idle_Topless_89: -3406980267039004199
+      PlayerCharacter_Idle_Topless_9: -3672375400497758173
+      PlayerCharacter_Idle_Topless_90: 5583478413314229098
+      PlayerCharacter_Idle_Topless_91: -7621874316511792607
+      PlayerCharacter_Idle_Topless_92: -590740421280828506
+      PlayerCharacter_Idle_Topless_93: 7071512741276201733
+      PlayerCharacter_Idle_Topless_94: 5812958205609715946
+      PlayerCharacter_Idle_Topless_95: -7982812396508323839
+      PlayerCharacter_Idle_Topless_96: 6916076388463792166
+      PlayerCharacter_Idle_Topless_97: -9176972466090131602
+      PlayerCharacter_Idle_Topless_98: -7021755923439874236
+      PlayerCharacter_Idle_Topless_99: -3886766797894869281
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

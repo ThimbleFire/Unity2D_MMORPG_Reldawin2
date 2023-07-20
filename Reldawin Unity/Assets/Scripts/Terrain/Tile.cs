@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Drawing;
+using UnityEngine;
 
 namespace LowCloud.Reldawin
 {
@@ -36,6 +37,22 @@ namespace LowCloud.Reldawin
         public static Tile GetTileByIndex( char v )
         {
             return new Tile( XMLLoader.Tile[v - '0'].id );
+        }
+
+        public static Tile GetTileByColour(UnityEngine.Color c) {
+            if( c == UnityEngine.Color.blue ) {
+                return new Tile( XMLLoader.Tile[5].id );//water
+            }
+            if( c == new UnityEngine.Color( 160, 157, 0 ) ) {//sand
+                return new Tile( XMLLoader.Tile[4].id );
+            }
+            if( c == new UnityEngine.Color( 102, 57, 49 ) ) {//dirt
+                return new Tile( XMLLoader.Tile[3].id );
+            }
+            if( c == new UnityEngine.Color( 72, 160, 0 ) ) { //grass
+                return new Tile( XMLLoader.Tile[2].id );
+            }
+            return new Tile( XMLLoader.Tile[0].id ); //void or empty
         }
 
         public Tile( byte type )

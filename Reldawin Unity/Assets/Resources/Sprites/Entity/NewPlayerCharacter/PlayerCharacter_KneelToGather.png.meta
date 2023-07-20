@@ -387,7 +387,7 @@ TextureImporter:
       213: 2954376063316941178
     second: angle_0.0_frame_001_127
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -404,10 +404,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -417,8 +419,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -446,6 +448,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -457,6 +461,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -469,6 +474,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -481,6 +487,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -493,6 +500,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -3196,9 +3230,137 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      angle_0.0_frame_001_0: -1981155009564019257
+      angle_0.0_frame_001_1: 6999826961320815007
+      angle_0.0_frame_001_10: -2778104436400748465
+      angle_0.0_frame_001_100: 1853039616672012369
+      angle_0.0_frame_001_101: 448410084719760342
+      angle_0.0_frame_001_102: -7323502440197951729
+      angle_0.0_frame_001_103: -1254234746705770272
+      angle_0.0_frame_001_104: -7843838157285713290
+      angle_0.0_frame_001_105: 4924019001058010906
+      angle_0.0_frame_001_106: -3976880027150514492
+      angle_0.0_frame_001_107: 4802337100244713657
+      angle_0.0_frame_001_108: -2802921533459303318
+      angle_0.0_frame_001_109: -6079743092595489506
+      angle_0.0_frame_001_11: 9023735341687422196
+      angle_0.0_frame_001_110: 6228610483272802481
+      angle_0.0_frame_001_111: 6895188350636924549
+      angle_0.0_frame_001_112: 818794618532150704
+      angle_0.0_frame_001_113: -3961416119255138106
+      angle_0.0_frame_001_114: -1047402670294949199
+      angle_0.0_frame_001_115: 7518075010181746330
+      angle_0.0_frame_001_116: -6867129253069504824
+      angle_0.0_frame_001_117: 6934216347894589802
+      angle_0.0_frame_001_118: 3888547244038348484
+      angle_0.0_frame_001_119: 6262365418038379289
+      angle_0.0_frame_001_12: -7923523961217428976
+      angle_0.0_frame_001_120: 7963513333852712379
+      angle_0.0_frame_001_121: 6045909042740475455
+      angle_0.0_frame_001_122: 5525030717933231197
+      angle_0.0_frame_001_123: 3245254349795114096
+      angle_0.0_frame_001_124: -8768904261759461997
+      angle_0.0_frame_001_125: -244552042198704602
+      angle_0.0_frame_001_126: -6529854075103341227
+      angle_0.0_frame_001_127: 2954376063316941178
+      angle_0.0_frame_001_13: 2369367618052675864
+      angle_0.0_frame_001_14: -2958571408082555416
+      angle_0.0_frame_001_15: 4340506435642223270
+      angle_0.0_frame_001_16: -248192881820451322
+      angle_0.0_frame_001_17: -6072869411655100079
+      angle_0.0_frame_001_18: -7411033819455427610
+      angle_0.0_frame_001_19: -2241181618075454264
+      angle_0.0_frame_001_2: -516031485320211940
+      angle_0.0_frame_001_20: -8326965175464613556
+      angle_0.0_frame_001_21: 5134826939558219527
+      angle_0.0_frame_001_22: 2202795794339628492
+      angle_0.0_frame_001_23: -4916385155147274470
+      angle_0.0_frame_001_24: 4376091885699716418
+      angle_0.0_frame_001_25: -3007032071810698136
+      angle_0.0_frame_001_26: 5192416784662633509
+      angle_0.0_frame_001_27: 1440208563507278497
+      angle_0.0_frame_001_28: 5533164171152891204
+      angle_0.0_frame_001_29: 8457804397387396445
+      angle_0.0_frame_001_3: 2094453776593632107
+      angle_0.0_frame_001_30: 1417231754611707072
+      angle_0.0_frame_001_31: 3040894110666230794
+      angle_0.0_frame_001_32: -2415863822753213377
+      angle_0.0_frame_001_33: -4300090328578335835
+      angle_0.0_frame_001_34: 178255104237504861
+      angle_0.0_frame_001_35: -798953098541503828
+      angle_0.0_frame_001_36: -3186827560081905095
+      angle_0.0_frame_001_37: 4786331163409640729
+      angle_0.0_frame_001_38: 2174964268127583952
+      angle_0.0_frame_001_39: -5994320252983743156
+      angle_0.0_frame_001_4: 4742082117400134386
+      angle_0.0_frame_001_40: -5858803053311329709
+      angle_0.0_frame_001_41: -475103551296452522
+      angle_0.0_frame_001_42: 6678665334317204471
+      angle_0.0_frame_001_43: 2727080351376213276
+      angle_0.0_frame_001_44: 8270958802579817585
+      angle_0.0_frame_001_45: 8439213151569989608
+      angle_0.0_frame_001_46: 9089678091585885934
+      angle_0.0_frame_001_47: -5991610053175732222
+      angle_0.0_frame_001_48: 3872446103663678769
+      angle_0.0_frame_001_49: -7814749322094349471
+      angle_0.0_frame_001_5: 4847059517512928102
+      angle_0.0_frame_001_50: 3951191179762909566
+      angle_0.0_frame_001_51: -783103509341814420
+      angle_0.0_frame_001_52: 1821047743548061672
+      angle_0.0_frame_001_53: 8294871198981434563
+      angle_0.0_frame_001_54: -7368119182000540014
+      angle_0.0_frame_001_55: -5206666488276150883
+      angle_0.0_frame_001_56: -6973178741744737565
+      angle_0.0_frame_001_57: 6035591587330729698
+      angle_0.0_frame_001_58: -8380862101393948325
+      angle_0.0_frame_001_59: 8090659117899147734
+      angle_0.0_frame_001_6: 7702920679252698886
+      angle_0.0_frame_001_60: -2750886910991430220
+      angle_0.0_frame_001_61: 4411835792741853063
+      angle_0.0_frame_001_62: -1961665183740431113
+      angle_0.0_frame_001_63: 5886977248642418480
+      angle_0.0_frame_001_64: 2601483181564021188
+      angle_0.0_frame_001_65: 4348940220565799569
+      angle_0.0_frame_001_66: 3774343838272819665
+      angle_0.0_frame_001_67: -7749988626158288789
+      angle_0.0_frame_001_68: 2705808336575583020
+      angle_0.0_frame_001_69: 2161793247560193034
+      angle_0.0_frame_001_7: 3356853066885519184
+      angle_0.0_frame_001_70: 7262616063922767527
+      angle_0.0_frame_001_71: 7658727613800294261
+      angle_0.0_frame_001_72: -8039704744990936727
+      angle_0.0_frame_001_73: -9187062723524659124
+      angle_0.0_frame_001_74: -7089050257235562345
+      angle_0.0_frame_001_75: -7008833675580271672
+      angle_0.0_frame_001_76: -1162344226034453352
+      angle_0.0_frame_001_77: 3958567073730437184
+      angle_0.0_frame_001_78: 3858118950814286745
+      angle_0.0_frame_001_79: -7112460187394441714
+      angle_0.0_frame_001_8: -5069619647406333813
+      angle_0.0_frame_001_80: -2890129137504807037
+      angle_0.0_frame_001_81: -4527998529254257886
+      angle_0.0_frame_001_82: -8915809617828901565
+      angle_0.0_frame_001_83: 7813104747468639034
+      angle_0.0_frame_001_84: 6053781766831940255
+      angle_0.0_frame_001_85: -7528714155474114486
+      angle_0.0_frame_001_86: 5731647141621381111
+      angle_0.0_frame_001_87: 8265581744567560324
+      angle_0.0_frame_001_88: -7393489283804701186
+      angle_0.0_frame_001_89: 667670229598495398
+      angle_0.0_frame_001_9: 7819795217123387585
+      angle_0.0_frame_001_90: 7825632967976263059
+      angle_0.0_frame_001_91: 7925585904115480144
+      angle_0.0_frame_001_92: 572243366191519906
+      angle_0.0_frame_001_93: 5157467002363781515
+      angle_0.0_frame_001_94: -1477534624949482356
+      angle_0.0_frame_001_95: -5999933684461618945
+      angle_0.0_frame_001_96: 8953382038901193752
+      angle_0.0_frame_001_97: -6256544813258968167
+      angle_0.0_frame_001_98: -824240428045575063
+      angle_0.0_frame_001_99: 3709607795648768423
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

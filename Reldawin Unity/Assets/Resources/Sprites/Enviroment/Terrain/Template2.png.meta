@@ -294,7 +294,7 @@ TextureImporter:
       213: 21300192
     second: Shallow_Water_S_2
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -311,10 +311,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -324,8 +326,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -353,6 +355,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -364,6 +368,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -376,6 +381,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -388,6 +394,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -400,6 +407,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1801,9 +1835,75 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Dirt_1: 21300044
+      Dirt_2: 21300058
+      Dirt_3: 21300060
+      Dirt_4: 21300062
+      Dirt_E: 21300096
+      Dirt_N: 21300092
+      Dirt_NE: 21300072
+      Dirt_NE_Corner: 21300080
+      Dirt_NW: 21300078
+      Dirt_NW_Corner: 21300086
+      Dirt_S: 21300100
+      Dirt_SE: 21300074
+      Dirt_SE_Corner: 21300082
+      Dirt_SW: 21300076
+      Dirt_SW_Corner: 21300084
+      Dirt_W: 21300088
+      Empty: 21300048
+      Grass_1: 21300016
+      Grass_2: 21300022
+      Grass_3: 21300014
+      Grass_4: 21300038
+      Grass_E: 21300024
+      Grass_N: 21300034
+      Grass_NE: 21300054
+      Grass_NE_Corner: 21300018
+      Grass_NW: 21300050
+      Grass_NW_Corner: 21300030
+      Grass_S: 21300020
+      Grass_SE: 21300052
+      Grass_SE_Corner: 21300042
+      Grass_SW: 21300056
+      Grass_SW_Corner: 21300012
+      Grass_W: 21300036
+      Sand_1: 21300106
+      Sand_2: 21300108
+      Sand_3: 21300110
+      Sand_4: 21300112
+      Sand_E: 21300138
+      Sand_N: 21300134
+      Sand_NE: 21300114
+      Sand_NE_Corner: 21300122
+      Sand_NW: 21300120
+      Sand_NW_Corner: 21300128
+      Sand_S: 21300142
+      Sand_SE: 21300116
+      Sand_SE_Corner: 21300124
+      Sand_SW: 21300118
+      Sand_SW_Corner: 21300126
+      Sand_W: 21300130
+      Shallow_Water_1: 21300146
+      Shallow_Water_2: 21300148
+      Shallow_Water_3: 21300150
+      Shallow_Water_4: 21300152
+      Shallow_Water_E: 21300188
+      Shallow_Water_N: 21300174
+      Shallow_Water_NE: 21300154
+      Shallow_Water_NE_Corner: 21300162
+      Shallow_Water_NW: 21300160
+      Shallow_Water_NW_Corner: 21300168
+      Shallow_Water_S: 21300190
+      Shallow_Water_SE: 21300156
+      Shallow_Water_SE_Corner: 21300164
+      Shallow_Water_SW: 21300158
+      Shallow_Water_SW_Corner: 21300166
+      Shallow_Water_W: 21300170
+      Void: 21300046
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

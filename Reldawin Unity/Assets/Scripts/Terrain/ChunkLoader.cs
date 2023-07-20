@@ -11,6 +11,7 @@ namespace LowCloud.Reldawin
         [SerializeField] private  LocalPlayerCharacter localPlayerCharacter;
         public DoodadLoader doodadLoader;
         public static ChunkLoader Instance { get; set; }
+        public Texture2D mapDefault;
 
         private void Awake()
         {
@@ -99,7 +100,16 @@ namespace LowCloud.Reldawin
                 activeChunks.Add( newChunk );
                 chunkLookup.Add( chunkIndex, newChunk );
                 doodadLoader.chunksToLoad++;
-                newChunk.CreateTiles( chunkIndex, data );
+
+                UnityEngine.Color[,] defaultTiles = new UnityEngine.Color[32, 32];
+
+                for( int y = 0; y < 32; y++ ) {
+                    for( int x = 0; x < 32; x++ ) {
+                        defaultTiles[x, y] = mapDefault.GetPixel( chunkIndex.x * 30 + x, chunkIndex.y * 30 + y );
+                    }
+                }
+
+                newChunk.CreateTiles( chunkIndex, data, defaultTiles);
             }
         }
 

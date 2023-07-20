@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\bin",
+    "\\bin\\Debug",
+    "\\HandleNetworkData",
+    "\\HandleNetworkData\\Entity",
+    "\\HandleNetworkData\\Scenes",
+    "\\HandleNetworkData\\Terrain",
+    "\\Math",
+    "\\packages",
+    "\\Properties"
+  ],
+  "SelectedNode": "\\HandleNetworkData\\Terrain",
+  "PreviewInSolutionExplorer": false
+}

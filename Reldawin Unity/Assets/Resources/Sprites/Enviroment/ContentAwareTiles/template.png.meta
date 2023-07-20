@@ -150,7 +150,7 @@ TextureImporter:
       213: 21300096
     second: template_c2_r14
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -167,10 +167,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -180,8 +182,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -209,6 +211,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -220,6 +224,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
@@ -232,6 +237,46 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 3
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 3
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 3
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
@@ -1276,9 +1321,58 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      template_c1_r10: 21300066
+      template_c1_r11: 21300074
+      template_c1_r12: 21300078
+      template_c1_r13: 21300086
+      template_c1_r14: 21300094
+      template_c1_r1_0: 21300000
+      template_c1_r2: 21300008
+      template_c1_r3: 21300016
+      template_c1_r4: 21300024
+      template_c1_r5: 21300032
+      template_c1_r6: 21300040
+      template_c1_r7: 21300048
+      template_c1_r8: 21300050
+      template_c1_r9: 21300058
+      template_c2_r1: 21300002
+      template_c2_r10: 21300068
+      template_c2_r11: 21300076
+      template_c2_r12: 21300080
+      template_c2_r13: 21300088
+      template_c2_r14: 21300096
+      template_c2_r2: 21300010
+      template_c2_r3: 21300018
+      template_c2_r4: 21300026
+      template_c2_r5: 21300034
+      template_c2_r6: 21300042
+      template_c2_r8: 21300052
+      template_c2_r9: 21300060
+      template_c3_r1: 21300004
+      template_c3_r10: 21300070
+      template_c3_r12: 21300082
+      template_c3_r13: 21300090
+      template_c3_r2: 21300012
+      template_c3_r3: 21300020
+      template_c3_r4: 21300028
+      template_c3_r5: 21300036
+      template_c3_r6: 21300044
+      template_c3_r8: 21300054
+      template_c3_r9: 21300062
+      template_c4_r1: 21300006
+      template_c4_r10: 21300072
+      template_c4_r12: 21300084
+      template_c4_r13: 21300092
+      template_c4_r2: 21300014
+      template_c4_r3: 21300022
+      template_c4_r4: 21300030
+      template_c4_r5: 21300038
+      template_c4_r6: 21300046
+      template_c4_r8: 21300056
+      template_c4_r9: 21300064
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

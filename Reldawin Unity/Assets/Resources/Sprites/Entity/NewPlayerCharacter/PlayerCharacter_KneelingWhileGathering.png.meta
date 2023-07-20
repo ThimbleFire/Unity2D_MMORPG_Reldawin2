@@ -387,7 +387,7 @@ TextureImporter:
       213: -1890004294720091319
     second: PlayerCharacter_KneelingWhileGathering_127
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -404,10 +404,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -417,8 +419,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -446,6 +448,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -457,6 +461,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -469,6 +474,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -481,6 +487,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -493,6 +500,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -3196,9 +3230,137 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      PlayerCharacter_KneelingWhileGathering_0: -4296502341680869623
+      PlayerCharacter_KneelingWhileGathering_1: -3017974022428206116
+      PlayerCharacter_KneelingWhileGathering_10: 7122620902844600798
+      PlayerCharacter_KneelingWhileGathering_100: -6769779328445565491
+      PlayerCharacter_KneelingWhileGathering_101: -3650849318720757468
+      PlayerCharacter_KneelingWhileGathering_102: -1938818180176211779
+      PlayerCharacter_KneelingWhileGathering_103: 1179133616576939238
+      PlayerCharacter_KneelingWhileGathering_104: 8362322877045637928
+      PlayerCharacter_KneelingWhileGathering_105: 4737389010185854291
+      PlayerCharacter_KneelingWhileGathering_106: 148898811297373600
+      PlayerCharacter_KneelingWhileGathering_107: 2977330931876095865
+      PlayerCharacter_KneelingWhileGathering_108: -3338193667721315120
+      PlayerCharacter_KneelingWhileGathering_109: -2970227799691057980
+      PlayerCharacter_KneelingWhileGathering_11: -9014417339392974140
+      PlayerCharacter_KneelingWhileGathering_110: 5345386228089544119
+      PlayerCharacter_KneelingWhileGathering_111: -6305323563333208613
+      PlayerCharacter_KneelingWhileGathering_112: 7438582302428291666
+      PlayerCharacter_KneelingWhileGathering_113: 597198798626041088
+      PlayerCharacter_KneelingWhileGathering_114: 5016453800302142932
+      PlayerCharacter_KneelingWhileGathering_115: 3224799567584505557
+      PlayerCharacter_KneelingWhileGathering_116: 998791510234797133
+      PlayerCharacter_KneelingWhileGathering_117: 3933740185387732558
+      PlayerCharacter_KneelingWhileGathering_118: 2809841538366600981
+      PlayerCharacter_KneelingWhileGathering_119: -6288480370312533472
+      PlayerCharacter_KneelingWhileGathering_12: -519245830576338453
+      PlayerCharacter_KneelingWhileGathering_120: 7903127564939706781
+      PlayerCharacter_KneelingWhileGathering_121: 1295001038131207734
+      PlayerCharacter_KneelingWhileGathering_122: -3764135366465287962
+      PlayerCharacter_KneelingWhileGathering_123: 6030672293628790668
+      PlayerCharacter_KneelingWhileGathering_124: -797577063969779999
+      PlayerCharacter_KneelingWhileGathering_125: 1680803945180966384
+      PlayerCharacter_KneelingWhileGathering_126: 5586620850111594730
+      PlayerCharacter_KneelingWhileGathering_127: -1890004294720091319
+      PlayerCharacter_KneelingWhileGathering_13: -2574610824312836973
+      PlayerCharacter_KneelingWhileGathering_14: 2052153128226088551
+      PlayerCharacter_KneelingWhileGathering_15: 8166526483889061608
+      PlayerCharacter_KneelingWhileGathering_16: -7568116683539717685
+      PlayerCharacter_KneelingWhileGathering_17: -1481328141773714609
+      PlayerCharacter_KneelingWhileGathering_18: 8446101359575604621
+      PlayerCharacter_KneelingWhileGathering_19: -8224063085401484217
+      PlayerCharacter_KneelingWhileGathering_2: -5321265357868001410
+      PlayerCharacter_KneelingWhileGathering_20: -2927274688134126600
+      PlayerCharacter_KneelingWhileGathering_21: 2989195366273743428
+      PlayerCharacter_KneelingWhileGathering_22: -1937437065135960667
+      PlayerCharacter_KneelingWhileGathering_23: -5543015876228314293
+      PlayerCharacter_KneelingWhileGathering_24: 3755420962233779294
+      PlayerCharacter_KneelingWhileGathering_25: -317392963125072483
+      PlayerCharacter_KneelingWhileGathering_26: 453242049846467020
+      PlayerCharacter_KneelingWhileGathering_27: -6523138473767591120
+      PlayerCharacter_KneelingWhileGathering_28: -8744818149751004214
+      PlayerCharacter_KneelingWhileGathering_29: 6831639617578511046
+      PlayerCharacter_KneelingWhileGathering_3: 7675602661781008718
+      PlayerCharacter_KneelingWhileGathering_30: 8168282887883183870
+      PlayerCharacter_KneelingWhileGathering_31: 2648290477372305080
+      PlayerCharacter_KneelingWhileGathering_32: 1763241478900737851
+      PlayerCharacter_KneelingWhileGathering_33: 1295275836898347833
+      PlayerCharacter_KneelingWhileGathering_34: 3810195050724984155
+      PlayerCharacter_KneelingWhileGathering_35: 2731876016933537067
+      PlayerCharacter_KneelingWhileGathering_36: -6183178446718822839
+      PlayerCharacter_KneelingWhileGathering_37: -660767612249095020
+      PlayerCharacter_KneelingWhileGathering_38: -972808887307162706
+      PlayerCharacter_KneelingWhileGathering_39: -5055835796160608902
+      PlayerCharacter_KneelingWhileGathering_4: -7482284119456376394
+      PlayerCharacter_KneelingWhileGathering_40: -8670904382852235891
+      PlayerCharacter_KneelingWhileGathering_41: 1266229715510506373
+      PlayerCharacter_KneelingWhileGathering_42: -1731332689789272240
+      PlayerCharacter_KneelingWhileGathering_43: -8321315640646868659
+      PlayerCharacter_KneelingWhileGathering_44: 5304653619764102254
+      PlayerCharacter_KneelingWhileGathering_45: 8451330619949270841
+      PlayerCharacter_KneelingWhileGathering_46: 4639943610589192201
+      PlayerCharacter_KneelingWhileGathering_47: -8109441150669971404
+      PlayerCharacter_KneelingWhileGathering_48: 7035141549412334618
+      PlayerCharacter_KneelingWhileGathering_49: -6081456520615517406
+      PlayerCharacter_KneelingWhileGathering_5: -2282487293573092282
+      PlayerCharacter_KneelingWhileGathering_50: 4722919834873293047
+      PlayerCharacter_KneelingWhileGathering_51: 7981124358524382334
+      PlayerCharacter_KneelingWhileGathering_52: -9072728600081629358
+      PlayerCharacter_KneelingWhileGathering_53: -8945964319167603451
+      PlayerCharacter_KneelingWhileGathering_54: -9182094929341334953
+      PlayerCharacter_KneelingWhileGathering_55: 7412827157379108161
+      PlayerCharacter_KneelingWhileGathering_56: 3419203624900003253
+      PlayerCharacter_KneelingWhileGathering_57: -8039055743713217378
+      PlayerCharacter_KneelingWhileGathering_58: 2529341922869202647
+      PlayerCharacter_KneelingWhileGathering_59: -6237912604694928052
+      PlayerCharacter_KneelingWhileGathering_6: -7366327015788551261
+      PlayerCharacter_KneelingWhileGathering_60: -6052047175793857378
+      PlayerCharacter_KneelingWhileGathering_61: 8998160318506388675
+      PlayerCharacter_KneelingWhileGathering_62: -6525650089671467234
+      PlayerCharacter_KneelingWhileGathering_63: 7335429018979484495
+      PlayerCharacter_KneelingWhileGathering_64: -6756119981458657535
+      PlayerCharacter_KneelingWhileGathering_65: -5112854059800793502
+      PlayerCharacter_KneelingWhileGathering_66: -1593580523831110307
+      PlayerCharacter_KneelingWhileGathering_67: -5088763012835749453
+      PlayerCharacter_KneelingWhileGathering_68: -5278611263114951013
+      PlayerCharacter_KneelingWhileGathering_69: -6924305557475722441
+      PlayerCharacter_KneelingWhileGathering_7: -262628419856543976
+      PlayerCharacter_KneelingWhileGathering_70: 4166617601883600384
+      PlayerCharacter_KneelingWhileGathering_71: -6388761357303090444
+      PlayerCharacter_KneelingWhileGathering_72: -670886249093840135
+      PlayerCharacter_KneelingWhileGathering_73: 6691432319865440121
+      PlayerCharacter_KneelingWhileGathering_74: -3857124957607707574
+      PlayerCharacter_KneelingWhileGathering_75: 3346256455534089717
+      PlayerCharacter_KneelingWhileGathering_76: 6086468308210900845
+      PlayerCharacter_KneelingWhileGathering_77: 5522016225252639989
+      PlayerCharacter_KneelingWhileGathering_78: 1308103669238295033
+      PlayerCharacter_KneelingWhileGathering_79: 8068560893293970150
+      PlayerCharacter_KneelingWhileGathering_8: 2965938987554364893
+      PlayerCharacter_KneelingWhileGathering_80: 2462177112503170070
+      PlayerCharacter_KneelingWhileGathering_81: -7169492426722718481
+      PlayerCharacter_KneelingWhileGathering_82: 541368681152933312
+      PlayerCharacter_KneelingWhileGathering_83: -3895590353439441134
+      PlayerCharacter_KneelingWhileGathering_84: -3892091271949783782
+      PlayerCharacter_KneelingWhileGathering_85: -7775511542667991978
+      PlayerCharacter_KneelingWhileGathering_86: 2226561157761323657
+      PlayerCharacter_KneelingWhileGathering_87: 5137562806156685556
+      PlayerCharacter_KneelingWhileGathering_88: -7002561836614200252
+      PlayerCharacter_KneelingWhileGathering_89: -4188166004789105402
+      PlayerCharacter_KneelingWhileGathering_9: 5146676969826646881
+      PlayerCharacter_KneelingWhileGathering_90: -560878745694299614
+      PlayerCharacter_KneelingWhileGathering_91: -39769306334540091
+      PlayerCharacter_KneelingWhileGathering_92: -8504322685834427274
+      PlayerCharacter_KneelingWhileGathering_93: -1264712577489163162
+      PlayerCharacter_KneelingWhileGathering_94: -2208486806855497271
+      PlayerCharacter_KneelingWhileGathering_95: 5340399963405385269
+      PlayerCharacter_KneelingWhileGathering_96: 5662993233978063711
+      PlayerCharacter_KneelingWhileGathering_97: 5516558130375583720
+      PlayerCharacter_KneelingWhileGathering_98: -3401931052879834149
+      PlayerCharacter_KneelingWhileGathering_99: -5476310897757773685
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

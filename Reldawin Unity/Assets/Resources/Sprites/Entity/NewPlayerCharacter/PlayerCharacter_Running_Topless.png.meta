@@ -771,7 +771,7 @@ TextureImporter:
       213: -5414365907158373298
     second: PlayerCharacter_Running_Topless_255
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -788,10 +788,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -801,8 +803,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -830,6 +832,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -841,6 +845,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -853,6 +858,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -865,6 +871,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -877,6 +884,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -6268,9 +6302,265 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      PlayerCharacter_Running_Topless_0: 2840567083693516191
+      PlayerCharacter_Running_Topless_1: 1461102879285231977
+      PlayerCharacter_Running_Topless_10: 7294360246238126553
+      PlayerCharacter_Running_Topless_100: 3494060795660387502
+      PlayerCharacter_Running_Topless_101: 1025506400899785454
+      PlayerCharacter_Running_Topless_102: -5910299914307140456
+      PlayerCharacter_Running_Topless_103: -4772696931309714833
+      PlayerCharacter_Running_Topless_104: 3991228279826650150
+      PlayerCharacter_Running_Topless_105: 4923016536210902290
+      PlayerCharacter_Running_Topless_106: -3775991655162276495
+      PlayerCharacter_Running_Topless_107: -5012805423232957247
+      PlayerCharacter_Running_Topless_108: 5655563347934203285
+      PlayerCharacter_Running_Topless_109: 8706891045955077100
+      PlayerCharacter_Running_Topless_11: -7355821548271277921
+      PlayerCharacter_Running_Topless_110: -5088176299811843229
+      PlayerCharacter_Running_Topless_111: 572905248902322015
+      PlayerCharacter_Running_Topless_112: -4078316085251028137
+      PlayerCharacter_Running_Topless_113: 3056580057342704466
+      PlayerCharacter_Running_Topless_114: 3773255786314768864
+      PlayerCharacter_Running_Topless_115: -3081647225976753460
+      PlayerCharacter_Running_Topless_116: -1666444813158754901
+      PlayerCharacter_Running_Topless_117: -5773747343986858849
+      PlayerCharacter_Running_Topless_118: 8719670144377847119
+      PlayerCharacter_Running_Topless_119: -5393992288521282604
+      PlayerCharacter_Running_Topless_12: -2368709621702835809
+      PlayerCharacter_Running_Topless_120: -588380222583823670
+      PlayerCharacter_Running_Topless_121: -7754099534218535577
+      PlayerCharacter_Running_Topless_122: 2742934719086439724
+      PlayerCharacter_Running_Topless_123: -6670270858339515893
+      PlayerCharacter_Running_Topless_124: -8009675117438164305
+      PlayerCharacter_Running_Topless_125: 5636711436469281067
+      PlayerCharacter_Running_Topless_126: -2677533570275225892
+      PlayerCharacter_Running_Topless_127: 8320823684160209130
+      PlayerCharacter_Running_Topless_128: 8153435027297580387
+      PlayerCharacter_Running_Topless_129: -7119027892632083364
+      PlayerCharacter_Running_Topless_13: 3530073610092653285
+      PlayerCharacter_Running_Topless_130: 6109557976150861392
+      PlayerCharacter_Running_Topless_131: -9095144626869500636
+      PlayerCharacter_Running_Topless_132: 1791070471857077513
+      PlayerCharacter_Running_Topless_133: 3953840675806499515
+      PlayerCharacter_Running_Topless_134: 8011489239792861391
+      PlayerCharacter_Running_Topless_135: -9108426450421711171
+      PlayerCharacter_Running_Topless_136: 1183384855623717039
+      PlayerCharacter_Running_Topless_137: 4392241173674421262
+      PlayerCharacter_Running_Topless_138: 2974974644407460674
+      PlayerCharacter_Running_Topless_139: 2113730479841410043
+      PlayerCharacter_Running_Topless_14: 4037603874221286465
+      PlayerCharacter_Running_Topless_140: 3538190167463542475
+      PlayerCharacter_Running_Topless_141: -6317480064094947445
+      PlayerCharacter_Running_Topless_142: 8166638515329739337
+      PlayerCharacter_Running_Topless_143: -1383487007257855139
+      PlayerCharacter_Running_Topless_144: -780280814533124246
+      PlayerCharacter_Running_Topless_145: -6397412495363201702
+      PlayerCharacter_Running_Topless_146: -8681828926000274118
+      PlayerCharacter_Running_Topless_147: -8035758438482565537
+      PlayerCharacter_Running_Topless_148: -2024221559540959684
+      PlayerCharacter_Running_Topless_149: -2122075410085673601
+      PlayerCharacter_Running_Topless_15: -3239203277075867342
+      PlayerCharacter_Running_Topless_150: 4808432235362351565
+      PlayerCharacter_Running_Topless_151: 8251276057768109975
+      PlayerCharacter_Running_Topless_152: 5847603677648107224
+      PlayerCharacter_Running_Topless_153: -1743932671471100042
+      PlayerCharacter_Running_Topless_154: -8647729542125663176
+      PlayerCharacter_Running_Topless_155: -7236942402694324233
+      PlayerCharacter_Running_Topless_156: -7961203841350279750
+      PlayerCharacter_Running_Topless_157: -2693183605234467597
+      PlayerCharacter_Running_Topless_158: 8704974634534246791
+      PlayerCharacter_Running_Topless_159: -8873793988037701055
+      PlayerCharacter_Running_Topless_16: 9003190270118181862
+      PlayerCharacter_Running_Topless_160: 5328930381289446917
+      PlayerCharacter_Running_Topless_161: -7602944991623887841
+      PlayerCharacter_Running_Topless_162: 2779243009420873017
+      PlayerCharacter_Running_Topless_163: 3722168050765121144
+      PlayerCharacter_Running_Topless_164: -4540413210474936772
+      PlayerCharacter_Running_Topless_165: 9168761353256574419
+      PlayerCharacter_Running_Topless_166: -2597999907603463171
+      PlayerCharacter_Running_Topless_167: -6410002986644997161
+      PlayerCharacter_Running_Topless_168: -8866158465344854163
+      PlayerCharacter_Running_Topless_169: -7362925234989304716
+      PlayerCharacter_Running_Topless_17: 3889013184027906061
+      PlayerCharacter_Running_Topless_170: -1583908937051712123
+      PlayerCharacter_Running_Topless_171: 4116919051232794680
+      PlayerCharacter_Running_Topless_172: 1008277025979676019
+      PlayerCharacter_Running_Topless_173: 3615572925975266998
+      PlayerCharacter_Running_Topless_174: 6564754214861800441
+      PlayerCharacter_Running_Topless_175: -2755185588149133098
+      PlayerCharacter_Running_Topless_176: -2585374269531424629
+      PlayerCharacter_Running_Topless_177: -6776500129506377672
+      PlayerCharacter_Running_Topless_178: 4844861725152245586
+      PlayerCharacter_Running_Topless_179: -3231145081515893088
+      PlayerCharacter_Running_Topless_18: -5805748797919938541
+      PlayerCharacter_Running_Topless_180: 4902501535978040386
+      PlayerCharacter_Running_Topless_181: 1366668722487102247
+      PlayerCharacter_Running_Topless_182: 2268287251822619977
+      PlayerCharacter_Running_Topless_183: 8135255678012542584
+      PlayerCharacter_Running_Topless_184: -8484540684411979938
+      PlayerCharacter_Running_Topless_185: -3998092865199328985
+      PlayerCharacter_Running_Topless_186: -6985411907649977484
+      PlayerCharacter_Running_Topless_187: -2616631046556959713
+      PlayerCharacter_Running_Topless_188: 4504368563714135617
+      PlayerCharacter_Running_Topless_189: -8328040220013104262
+      PlayerCharacter_Running_Topless_19: -5319667396292798639
+      PlayerCharacter_Running_Topless_190: -5490253190946947060
+      PlayerCharacter_Running_Topless_191: -3964291466749007662
+      PlayerCharacter_Running_Topless_192: -2916031174922812106
+      PlayerCharacter_Running_Topless_193: -7836877105563775222
+      PlayerCharacter_Running_Topless_194: 1484769829546205517
+      PlayerCharacter_Running_Topless_195: -3460064768852652026
+      PlayerCharacter_Running_Topless_196: -8346589704000864571
+      PlayerCharacter_Running_Topless_197: 7068395428678542689
+      PlayerCharacter_Running_Topless_198: -853903981988055544
+      PlayerCharacter_Running_Topless_199: 223152068561927689
+      PlayerCharacter_Running_Topless_2: 6480968797993531286
+      PlayerCharacter_Running_Topless_20: 2157655488700302311
+      PlayerCharacter_Running_Topless_200: 2050192679358361765
+      PlayerCharacter_Running_Topless_201: -1049504057671495585
+      PlayerCharacter_Running_Topless_202: 2545143368319377972
+      PlayerCharacter_Running_Topless_203: 337159040927939268
+      PlayerCharacter_Running_Topless_204: -4545865597276745212
+      PlayerCharacter_Running_Topless_205: -1614141431176832011
+      PlayerCharacter_Running_Topless_206: 1331229489542335025
+      PlayerCharacter_Running_Topless_207: 7420303716069242252
+      PlayerCharacter_Running_Topless_208: -3047296677100674971
+      PlayerCharacter_Running_Topless_209: 2285413779664394005
+      PlayerCharacter_Running_Topless_21: -4958307771317260711
+      PlayerCharacter_Running_Topless_210: -8341591957330363578
+      PlayerCharacter_Running_Topless_211: 161441836411249635
+      PlayerCharacter_Running_Topless_212: 58074663493199719
+      PlayerCharacter_Running_Topless_213: -7685714240254538880
+      PlayerCharacter_Running_Topless_214: 6482250924067760196
+      PlayerCharacter_Running_Topless_215: -718639148729830073
+      PlayerCharacter_Running_Topless_216: -5545687393008478514
+      PlayerCharacter_Running_Topless_217: -4019275044058654886
+      PlayerCharacter_Running_Topless_218: 5361296611615664708
+      PlayerCharacter_Running_Topless_219: -4534057322863784565
+      PlayerCharacter_Running_Topless_22: -3096304780545363161
+      PlayerCharacter_Running_Topless_220: 4533940503721159411
+      PlayerCharacter_Running_Topless_221: -3701782382510832750
+      PlayerCharacter_Running_Topless_222: -7247861917628503425
+      PlayerCharacter_Running_Topless_223: 5813434961903186330
+      PlayerCharacter_Running_Topless_224: -4449340504844489216
+      PlayerCharacter_Running_Topless_225: -156133455570631185
+      PlayerCharacter_Running_Topless_226: 1408279279221617728
+      PlayerCharacter_Running_Topless_227: -2584565504490660670
+      PlayerCharacter_Running_Topless_228: 8094850034425733152
+      PlayerCharacter_Running_Topless_229: 2543765385810923942
+      PlayerCharacter_Running_Topless_23: -5632511195342907672
+      PlayerCharacter_Running_Topless_230: 9141520979375452933
+      PlayerCharacter_Running_Topless_231: -6785512182372471327
+      PlayerCharacter_Running_Topless_232: 742538313051535920
+      PlayerCharacter_Running_Topless_233: 5665421965031437655
+      PlayerCharacter_Running_Topless_234: 2261986679145584281
+      PlayerCharacter_Running_Topless_235: 3686004010994212445
+      PlayerCharacter_Running_Topless_236: -1262932958317389330
+      PlayerCharacter_Running_Topless_237: 3098456764360947849
+      PlayerCharacter_Running_Topless_238: -5817369049317584781
+      PlayerCharacter_Running_Topless_239: -2516233181098182616
+      PlayerCharacter_Running_Topless_24: 2289489943524776805
+      PlayerCharacter_Running_Topless_240: 8884277774341852281
+      PlayerCharacter_Running_Topless_241: -212363450466095644
+      PlayerCharacter_Running_Topless_242: -7164057262511307430
+      PlayerCharacter_Running_Topless_243: 636262219373494214
+      PlayerCharacter_Running_Topless_244: 7866505588312789508
+      PlayerCharacter_Running_Topless_245: -8085777692088216402
+      PlayerCharacter_Running_Topless_246: -9077146682094017979
+      PlayerCharacter_Running_Topless_247: -7709716632180903077
+      PlayerCharacter_Running_Topless_248: -8077840466060946052
+      PlayerCharacter_Running_Topless_249: 3312680656334764765
+      PlayerCharacter_Running_Topless_25: -4191423586940371509
+      PlayerCharacter_Running_Topless_250: -9150408399468025364
+      PlayerCharacter_Running_Topless_251: -5662984514618374805
+      PlayerCharacter_Running_Topless_252: 4273547102391795682
+      PlayerCharacter_Running_Topless_253: 5438096056328292020
+      PlayerCharacter_Running_Topless_254: 7272040813135595101
+      PlayerCharacter_Running_Topless_255: -5414365907158373298
+      PlayerCharacter_Running_Topless_26: 3933872528516624065
+      PlayerCharacter_Running_Topless_27: 8195223368316336853
+      PlayerCharacter_Running_Topless_28: 1242739188756594954
+      PlayerCharacter_Running_Topless_29: 6109659595826413367
+      PlayerCharacter_Running_Topless_3: 8451239868594780065
+      PlayerCharacter_Running_Topless_30: -5472209250575979815
+      PlayerCharacter_Running_Topless_31: 6383387697260721018
+      PlayerCharacter_Running_Topless_32: -5712483202887506587
+      PlayerCharacter_Running_Topless_33: 2488420234556950664
+      PlayerCharacter_Running_Topless_34: -2594785342059364937
+      PlayerCharacter_Running_Topless_35: 2682560617666051948
+      PlayerCharacter_Running_Topless_36: 4068595366758860387
+      PlayerCharacter_Running_Topless_37: 538602704098450098
+      PlayerCharacter_Running_Topless_38: 4240639496518149667
+      PlayerCharacter_Running_Topless_39: -8538334966593726552
+      PlayerCharacter_Running_Topless_4: -3416921766591277746
+      PlayerCharacter_Running_Topless_40: 2557446878349198873
+      PlayerCharacter_Running_Topless_41: 8074402005526213837
+      PlayerCharacter_Running_Topless_42: 2149985606751766504
+      PlayerCharacter_Running_Topless_43: -1837136099069364267
+      PlayerCharacter_Running_Topless_44: -8616936946311943028
+      PlayerCharacter_Running_Topless_45: -6920902556154961308
+      PlayerCharacter_Running_Topless_46: -7549580634246302665
+      PlayerCharacter_Running_Topless_47: 6403805100674540071
+      PlayerCharacter_Running_Topless_48: 6615095308511015340
+      PlayerCharacter_Running_Topless_49: -8280842755283097770
+      PlayerCharacter_Running_Topless_5: 7621177012370918045
+      PlayerCharacter_Running_Topless_50: -6885433939389257423
+      PlayerCharacter_Running_Topless_51: -6043919743373359024
+      PlayerCharacter_Running_Topless_52: -8408699869675192747
+      PlayerCharacter_Running_Topless_53: -7990384358984894641
+      PlayerCharacter_Running_Topless_54: -6358582271452944299
+      PlayerCharacter_Running_Topless_55: -5465162940267135874
+      PlayerCharacter_Running_Topless_56: 871474451375863286
+      PlayerCharacter_Running_Topless_57: 2443755463102139854
+      PlayerCharacter_Running_Topless_58: -936319097660771463
+      PlayerCharacter_Running_Topless_59: 2715471713030072916
+      PlayerCharacter_Running_Topless_6: -5962298570472313868
+      PlayerCharacter_Running_Topless_60: 3581978350991732992
+      PlayerCharacter_Running_Topless_61: -6466623331378532091
+      PlayerCharacter_Running_Topless_62: 8801069721294369420
+      PlayerCharacter_Running_Topless_63: 3881132813424125703
+      PlayerCharacter_Running_Topless_64: 7353337326257720808
+      PlayerCharacter_Running_Topless_65: -4064492159371613365
+      PlayerCharacter_Running_Topless_66: 1569073064098264621
+      PlayerCharacter_Running_Topless_67: 4425868221380360588
+      PlayerCharacter_Running_Topless_68: -2227615522822217377
+      PlayerCharacter_Running_Topless_69: 966968013753436698
+      PlayerCharacter_Running_Topless_7: 6285019510141323974
+      PlayerCharacter_Running_Topless_70: -8726492704118378382
+      PlayerCharacter_Running_Topless_71: -8074190041492918578
+      PlayerCharacter_Running_Topless_72: -5404150218705165752
+      PlayerCharacter_Running_Topless_73: -6412710245163857997
+      PlayerCharacter_Running_Topless_74: 5008058479889784176
+      PlayerCharacter_Running_Topless_75: -7400032188073880233
+      PlayerCharacter_Running_Topless_76: 7425484826381930434
+      PlayerCharacter_Running_Topless_77: 6024164117071010344
+      PlayerCharacter_Running_Topless_78: -4253441134779982736
+      PlayerCharacter_Running_Topless_79: 6590303723145251763
+      PlayerCharacter_Running_Topless_8: 4412982611163613716
+      PlayerCharacter_Running_Topless_80: -7244338204455775211
+      PlayerCharacter_Running_Topless_81: -87874491718594028
+      PlayerCharacter_Running_Topless_82: 4613183336090416718
+      PlayerCharacter_Running_Topless_83: -8940981327201278499
+      PlayerCharacter_Running_Topless_84: -454303437157686364
+      PlayerCharacter_Running_Topless_85: -187472809466167089
+      PlayerCharacter_Running_Topless_86: 9048758082887217592
+      PlayerCharacter_Running_Topless_87: -6219975408073707767
+      PlayerCharacter_Running_Topless_88: -7379953664067932960
+      PlayerCharacter_Running_Topless_89: 3039838490260125245
+      PlayerCharacter_Running_Topless_9: 5420813377947021153
+      PlayerCharacter_Running_Topless_90: 1517357271109790130
+      PlayerCharacter_Running_Topless_91: 4381318494864957226
+      PlayerCharacter_Running_Topless_92: 7999411884311981401
+      PlayerCharacter_Running_Topless_93: 216115683221472739
+      PlayerCharacter_Running_Topless_94: -3105639982348870488
+      PlayerCharacter_Running_Topless_95: -5341136077696562599
+      PlayerCharacter_Running_Topless_96: -474550531606527932
+      PlayerCharacter_Running_Topless_97: 5629248280696329525
+      PlayerCharacter_Running_Topless_98: 3366070927532408044
+      PlayerCharacter_Running_Topless_99: -2065440862261388332
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
