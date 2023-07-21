@@ -43,13 +43,13 @@ namespace LowCloud.Reldawin
             if( c == UnityEngine.Color.blue ) {
                 return new Tile( XMLLoader.Tile[5].id );//water
             }
-            if( c == new UnityEngine.Color( 160, 157, 0 ) ) {//sand
+            if( c == new UnityEngine.Color( 0.625f, 0.61f‬, 0.0f ) ) {//sand
                 return new Tile( XMLLoader.Tile[4].id );
             }
-            if( c == new UnityEngine.Color( 102, 57, 49 ) ) {//dirt
+            if( c == new UnityEngine.Color( 0.003f, 0.22f, 0.19f ) ) {//dirt
                 return new Tile( XMLLoader.Tile[3].id );
             }
-            if( c == new UnityEngine.Color( 72, 160, 0 ) ) { //grass
+            if( c == new UnityEngine.Color( 0.28f, 0.625f, 0.0f ) ) { //grass
                 return new Tile( XMLLoader.Tile[2].id );
             }
             return new Tile( XMLLoader.Tile[0].id ); //void or empty
