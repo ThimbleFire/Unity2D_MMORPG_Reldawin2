@@ -11,8 +11,7 @@ using Color = UnityEngine.Color;
 public class World : MonoBehaviour
 {
     [Serializable]
-    public class Tile
-    {
+    public class Tile {
         public Color color;
         public TileBase tileBase;
 
@@ -32,6 +31,7 @@ public class World : MonoBehaviour
     public Tile[] tiles;
 
     private Dictionary<string, TileBase> keyValuePairs = new();
+    private Dictionary<Vector2Int, Chunk> loadedChunks = new();
 
     public LocalPlayerCharacter lpc;
 
@@ -52,7 +52,7 @@ public class World : MonoBehaviour
                     y <= 0 || y >= map.height / Chunk.height )
                     continue;
                 else
-                    LoadChunk( x, y );
+                    LoadChunk( new Vector2Int(x, y) );
             }
         }
     }
@@ -73,14 +73,18 @@ public class World : MonoBehaviour
         OnClicked?.Invoke( cellCoordinates, worldPosition );
     }
 
-    private void LoadChunk(int w, int h) {
+    private void LoadChunk(Vector2Int cell) {
+        if(loadedChunks.ContainsKey(cell)) {
+            return;
+        }
+        
         // Set up the grid cell size so it accomodates the tile size
         Grid grid = GetComponent<Grid>();
         grid.cellSize = new Vector2( Tile.Width / 100, Tile.Height / 100 );
 
         // Populate the world with tiles
-        for( int y = Chunk.height * h; y < Chunk.height * ( h + 1 ); y++ ) {
-            for( int x = Chunk.width * w; x < Chunk.width * ( w + 1 ); x++ ) {
+        for( int y = Chunk.height * cell.y; y < Chunk.height * ( cell.y + 1 ); y++ ) {
+            for( int x = Chunk.width * cell.x; x < Chunk.width * ( cell.x + 1 ); x++ ) {
                 tileMap.SetTile(
                     new Vector3Int( y, -x ),
                     keyValuePairs[map.GetPixel( x, y ).ToHexString()]
@@ -93,6 +97,8 @@ public class World : MonoBehaviour
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
         collider.size = new Vector3( tileMap.size.x * grid.cellSize.x, tileMap.size.y * grid.cellSize.y );
         collider.offset = new Vector2( tileMap.size.x * grid.cellSize.x / 2, 0.0f );
+    
+        loadedChunks.Add(cell, New Chunk());
     }
 
     [SerializeField]
