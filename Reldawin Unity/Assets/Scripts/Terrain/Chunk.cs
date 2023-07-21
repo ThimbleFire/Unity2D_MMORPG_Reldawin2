@@ -59,12 +59,19 @@ namespace LowCloud.Reldawin
             List<Vector2> uvs = new List<Vector2>();
             Mesh.GetUVs( 0, uvs ); // Get layer zero as its uvs are preset
 
+            // !!!!!!!!!!!!!!!!!!!!!!! SEE _x = 1 && Chunk.Size +1 !!!!!!!!!!!!!!!!!!!!!!!
             for ( int _x = 1; _x < Chunk.Size + 1; _x++ )
             {
                 for ( int _y = 1; _y < Chunk.Size + 1; _y++ )
                 {
+                    if(Tiles[_x, _y].TileType == 0 || Tiles[_x, _y].TileType == 1)
+                    {
+                        UVs = SpriteLoader.TileUVDictionary["Empty"];
+                        continue;
+                    }
+                
                     Tile[] neighbours = GetNeighbours( _x, _y );
-                    Vector2[] UVs = SpriteLoader.TileUVDictionary["Empty"];
+                    Vector2[] UVs;
 
                     if ( channel == 0 )
                     {
