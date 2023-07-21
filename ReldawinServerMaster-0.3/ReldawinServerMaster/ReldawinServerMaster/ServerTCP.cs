@@ -8,19 +8,42 @@ namespace ReldawinServerMaster
 {
     internal class ServerTCP
     {
-        public static Client[] clients = new Client[Log.MAX_PLAYERS];
-        public static Socket serverSocket = new Socket( AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp );
-
+        public static Client[] clients;
+        public static Socket serverSocket;
+        
         public static void SetupServer()
         {
-            for ( int i = 0; i < Log.MAX_PLAYERS; i++ )
-            {
-                clients[i] = new Client();
-            }
-
+            clients = new Client[Log.MAX_PLAYERS];
+            serverSocket = new Socket( AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp );
+            
             serverSocket.Bind( new IPEndPoint( IPAddress.Any, 5555 ) );
             serverSocket.Listen( Log.BUFFER_PLAYERS );
             serverSocket.BeginAccept( new AsyncCallback( AcceptCallback ), null );
+        
+            for ( int i = 0; i < Log.MAX_PLAYERS; i++ ) {
+                clients[i] = new Client();
+            }
+        }
+
+        private static void AcceptCallback( IAsyncResult ar )
+        {
+            // Could this line below be made better?
+            Socket socket = serverSocket.EndAccept( ar );
+            serverSocket.BeginAccept( new AsyncCallback( AcceptCallback ), null );
+
+            for ( int i = 0; i < Log.MAX_PLAYERS; i++ )
+            {
+                if ( clients[i].socket == null )
+                {
+                    clients[i].socket = socket;
+                    clients[i].index = i;
+                    clients[i].ip = socket.RemoteEndPoint.ToString();
+                    clients[i].StartClient();
+                    Console.WriteLine( "[ServerTCP] " + Log.SERVER_LOBBY_JOIN, i );
+                    SendConnectionOK( i );
+                    return;
+                }
+            }
         }
 
         public static void InitializeClient( int index, int x, int y, int id )
@@ -375,27 +398,7 @@ namespace ReldawinServerMaster
                 SendDataTo( index, buffer.ToArray() );
             }
         }
-
-        private static void AcceptCallback( IAsyncResult ar )
-        {
-            Socket socket = serverSocket.EndAccept( ar );
-            serverSocket.BeginAccept( new AsyncCallback( AcceptCallback ), null );
-
-            for ( int i = 0; i < Log.MAX_PLAYERS; i++ )
-            {
-                if ( clients[i].socket == null )
-                {
-                    clients[i].socket = socket;
-                    clients[i].index = i;
-                    clients[i].ip = socket.RemoteEndPoint.ToString();
-                    clients[i].StartClient();
-                    Console.WriteLine( "[ServerTCP] " + Log.SERVER_LOBBY_JOIN, i );
-                    SendConnectionOK( i );
-                    return;
-                }
-            }
-        }
-
+        
         private static void SendDataTo( int index, byte[] data )
         {
             byte[] sizeInfo = new byte[4];
