@@ -3,6 +3,8 @@ Reldawin is a multiplayer 2d isometric RPG. The player character starts in a wil
 
 ![Reldawin](https://i.imgur.com/38DS2Wp.png)
 
+https://i.imgur.com/C8AYzRa.gif
+
 ## TODO List
 
 - [Code cleanup]
