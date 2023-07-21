@@ -269,26 +269,23 @@ namespace ReldawinServerMaster
 
         public static void SendChunkDoodadsToPlayer( int index, int chunkX, int chunkY )
         {
-            //using ( new DebugTimer( clients[index].properties.Username + " SendChunkDoodadsToPlayer" ) )
-            //{
-            //    List<Doodad> doodads = World.GetDoodads( chunkX, chunkY );
+            using( new DebugTimer( clients[index].properties.Username + " SendChunkDoodadsToPlayer" ) ) {
+                //List<Doodad> doodads = World.GetDoodads( chunkX, chunkY );
 
-            //    using ( PacketBuffer buffer = new PacketBuffer( Packet.Load_Doodads ) )
-            //    {
-            //        buffer.WriteInteger( chunkX );
-            //        buffer.WriteInteger( chunkY );
-            //        buffer.WriteInteger( doodads.Count );
+                using( PacketBuffer buffer = new PacketBuffer( Packet.Load_Doodads ) ) {
+                    buffer.WriteInteger( chunkX );
+                    buffer.WriteInteger( chunkY );
+                    buffer.WriteInteger( /*doodads.Count*/ 0 );
 
-            //        foreach ( Doodad doodad in doodads )
-            //        {
-            //            buffer.WriteByte( (byte)doodad.type );
-            //            buffer.WriteInteger( doodad.tileX );
-            //            buffer.WriteInteger( doodad.tileY );
-            //        }
+                    //foreach( Doodad doodad in doodads ) {
+                    //    buffer.WriteByte( ( byte )doodad.type );
+                    //    buffer.WriteInteger( doodad.tileX );
+                    //    buffer.WriteInteger( doodad.tileY );
+                    //}
 
-            //        SendDataTo( index, buffer.ToArray() );
-            //    }
-            //}
+                    SendDataTo( index, buffer.ToArray() );
+                }
+            }
         }
 
         public static void SendAccountCreateFail( int index, string args )

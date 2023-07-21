@@ -151,9 +151,8 @@ namespace LowCloud.Reldawin
 
             for ( int x = -1; x <= 1; x++ )
             {
-                for ( int y = -1; y <= 1; y++ )
-                {
-                    if ( x == 0 && y == 0 )
+                for( int y = -1; y <= 1; y++ ) {
+                    if( x == 0 && y == 0 )
                         continue;
 
                     int checkX = n.CellPositionInGrid.x + x;
@@ -162,13 +161,16 @@ namespace LowCloud.Reldawin
                     bool checkXInBounds = checkX >= 0 && checkX < nodes.GetLength( 0 );
                     bool checkYInBounds = checkY >= 0 && checkY < nodes.GetLength( 1 );
 
-                    if ( checkXInBounds && checkYInBounds )
-                    {
-                        if ( nodes[checkX, checkY] != null )
-                        {
-                            neighbours.Add( nodes[checkX, checkY] );
-                        }
-                    }
+                    if( !checkXInBounds || !checkYInBounds )
+                        continue;
+
+                    if( nodes[checkX, checkY] == null )
+                        continue;
+
+                    if( nodes[checkX, checkY].Occupied == true )
+                        continue;
+
+                    neighbours.Add( nodes[checkX, checkY] );
                 }
             }
 

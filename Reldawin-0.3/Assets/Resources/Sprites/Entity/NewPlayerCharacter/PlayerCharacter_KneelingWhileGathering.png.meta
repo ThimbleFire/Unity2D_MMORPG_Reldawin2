@@ -1,0 +1,3366 @@
+fileFormatVersion: 2
+guid: ba698ea84927f5a469964ca032a17b16
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4296502341680869623
+    second: PlayerCharacter_KneelingWhileGathering_0
+  - first:
+      213: -3017974022428206116
+    second: PlayerCharacter_KneelingWhileGathering_1
+  - first:
+      213: -5321265357868001410
+    second: PlayerCharacter_KneelingWhileGathering_2
+  - first:
+      213: 7675602661781008718
+    second: PlayerCharacter_KneelingWhileGathering_3
+  - first:
+      213: -7482284119456376394
+    second: PlayerCharacter_KneelingWhileGathering_4
+  - first:
+      213: -2282487293573092282
+    second: PlayerCharacter_KneelingWhileGathering_5
+  - first:
+      213: -7366327015788551261
+    second: PlayerCharacter_KneelingWhileGathering_6
+  - first:
+      213: -262628419856543976
+    second: PlayerCharacter_KneelingWhileGathering_7
+  - first:
+      213: 2965938987554364893
+    second: PlayerCharacter_KneelingWhileGathering_8
+  - first:
+      213: 5146676969826646881
+    second: PlayerCharacter_KneelingWhileGathering_9
+  - first:
+      213: 7122620902844600798
+    second: PlayerCharacter_KneelingWhileGathering_10
+  - first:
+      213: -9014417339392974140
+    second: PlayerCharacter_KneelingWhileGathering_11
+  - first:
+      213: -519245830576338453
+    second: PlayerCharacter_KneelingWhileGathering_12
+  - first:
+      213: -2574610824312836973
+    second: PlayerCharacter_KneelingWhileGathering_13
+  - first:
+      213: 2052153128226088551
+    second: PlayerCharacter_KneelingWhileGathering_14
+  - first:
+      213: 8166526483889061608
+    second: PlayerCharacter_KneelingWhileGathering_15
+  - first:
+      213: -7568116683539717685
+    second: PlayerCharacter_KneelingWhileGathering_16
+  - first:
+      213: -1481328141773714609
+    second: PlayerCharacter_KneelingWhileGathering_17
+  - first:
+      213: 8446101359575604621
+    second: PlayerCharacter_KneelingWhileGathering_18
+  - first:
+      213: -8224063085401484217
+    second: PlayerCharacter_KneelingWhileGathering_19
+  - first:
+      213: -2927274688134126600
+    second: PlayerCharacter_KneelingWhileGathering_20
+  - first:
+      213: 2989195366273743428
+    second: PlayerCharacter_KneelingWhileGathering_21
+  - first:
+      213: -1937437065135960667
+    second: PlayerCharacter_KneelingWhileGathering_22
+  - first:
+      213: -5543015876228314293
+    second: PlayerCharacter_KneelingWhileGathering_23
+  - first:
+      213: 3755420962233779294
+    second: PlayerCharacter_KneelingWhileGathering_24
+  - first:
+      213: -317392963125072483
+    second: PlayerCharacter_KneelingWhileGathering_25
+  - first:
+      213: 453242049846467020
+    second: PlayerCharacter_KneelingWhileGathering_26
+  - first:
+      213: -6523138473767591120
+    second: PlayerCharacter_KneelingWhileGathering_27
+  - first:
+      213: -8744818149751004214
+    second: PlayerCharacter_KneelingWhileGathering_28
+  - first:
+      213: 6831639617578511046
+    second: PlayerCharacter_KneelingWhileGathering_29
+  - first:
+      213: 8168282887883183870
+    second: PlayerCharacter_KneelingWhileGathering_30
+  - first:
+      213: 2648290477372305080
+    second: PlayerCharacter_KneelingWhileGathering_31
+  - first:
+      213: 1763241478900737851
+    second: PlayerCharacter_KneelingWhileGathering_32
+  - first:
+      213: 1295275836898347833
+    second: PlayerCharacter_KneelingWhileGathering_33
+  - first:
+      213: 3810195050724984155
+    second: PlayerCharacter_KneelingWhileGathering_34
+  - first:
+      213: 2731876016933537067
+    second: PlayerCharacter_KneelingWhileGathering_35
+  - first:
+      213: -6183178446718822839
+    second: PlayerCharacter_KneelingWhileGathering_36
+  - first:
+      213: -660767612249095020
+    second: PlayerCharacter_KneelingWhileGathering_37
+  - first:
+      213: -972808887307162706
+    second: PlayerCharacter_KneelingWhileGathering_38
+  - first:
+      213: -5055835796160608902
+    second: PlayerCharacter_KneelingWhileGathering_39
+  - first:
+      213: -8670904382852235891
+    second: PlayerCharacter_KneelingWhileGathering_40
+  - first:
+      213: 1266229715510506373
+    second: PlayerCharacter_KneelingWhileGathering_41
+  - first:
+      213: -1731332689789272240
+    second: PlayerCharacter_KneelingWhileGathering_42
+  - first:
+      213: -8321315640646868659
+    second: PlayerCharacter_KneelingWhileGathering_43
+  - first:
+      213: 5304653619764102254
+    second: PlayerCharacter_KneelingWhileGathering_44
+  - first:
+      213: 8451330619949270841
+    second: PlayerCharacter_KneelingWhileGathering_45
+  - first:
+      213: 4639943610589192201
+    second: PlayerCharacter_KneelingWhileGathering_46
+  - first:
+      213: -8109441150669971404
+    second: PlayerCharacter_KneelingWhileGathering_47
+  - first:
+      213: 7035141549412334618
+    second: PlayerCharacter_KneelingWhileGathering_48
+  - first:
+      213: -6081456520615517406
+    second: PlayerCharacter_KneelingWhileGathering_49
+  - first:
+      213: 4722919834873293047
+    second: PlayerCharacter_KneelingWhileGathering_50
+  - first:
+      213: 7981124358524382334
+    second: PlayerCharacter_KneelingWhileGathering_51
+  - first:
+      213: -9072728600081629358
+    second: PlayerCharacter_KneelingWhileGathering_52
+  - first:
+      213: -8945964319167603451
+    second: PlayerCharacter_KneelingWhileGathering_53
+  - first:
+      213: -9182094929341334953
+    second: PlayerCharacter_KneelingWhileGathering_54
+  - first:
+      213: 7412827157379108161
+    second: PlayerCharacter_KneelingWhileGathering_55
+  - first:
+      213: 3419203624900003253
+    second: PlayerCharacter_KneelingWhileGathering_56
+  - first:
+      213: -8039055743713217378
+    second: PlayerCharacter_KneelingWhileGathering_57
+  - first:
+      213: 2529341922869202647
+    second: PlayerCharacter_KneelingWhileGathering_58
+  - first:
+      213: -6237912604694928052
+    second: PlayerCharacter_KneelingWhileGathering_59
+  - first:
+      213: -6052047175793857378
+    second: PlayerCharacter_KneelingWhileGathering_60
+  - first:
+      213: 8998160318506388675
+    second: PlayerCharacter_KneelingWhileGathering_61
+  - first:
+      213: -6525650089671467234
+    second: PlayerCharacter_KneelingWhileGathering_62
+  - first:
+      213: 7335429018979484495
+    second: PlayerCharacter_KneelingWhileGathering_63
+  - first:
+      213: -6756119981458657535
+    second: PlayerCharacter_KneelingWhileGathering_64
+  - first:
+      213: -5112854059800793502
+    second: PlayerCharacter_KneelingWhileGathering_65
+  - first:
+      213: -1593580523831110307
+    second: PlayerCharacter_KneelingWhileGathering_66
+  - first:
+      213: -5088763012835749453
+    second: PlayerCharacter_KneelingWhileGathering_67
+  - first:
+      213: -5278611263114951013
+    second: PlayerCharacter_KneelingWhileGathering_68
+  - first:
+      213: -6924305557475722441
+    second: PlayerCharacter_KneelingWhileGathering_69
+  - first:
+      213: 4166617601883600384
+    second: PlayerCharacter_KneelingWhileGathering_70
+  - first:
+      213: -6388761357303090444
+    second: PlayerCharacter_KneelingWhileGathering_71
+  - first:
+      213: -670886249093840135
+    second: PlayerCharacter_KneelingWhileGathering_72
+  - first:
+      213: 6691432319865440121
+    second: PlayerCharacter_KneelingWhileGathering_73
+  - first:
+      213: -3857124957607707574
+    second: PlayerCharacter_KneelingWhileGathering_74
+  - first:
+      213: 3346256455534089717
+    second: PlayerCharacter_KneelingWhileGathering_75
+  - first:
+      213: 6086468308210900845
+    second: PlayerCharacter_KneelingWhileGathering_76
+  - first:
+      213: 5522016225252639989
+    second: PlayerCharacter_KneelingWhileGathering_77
+  - first:
+      213: 1308103669238295033
+    second: PlayerCharacter_KneelingWhileGathering_78
+  - first:
+      213: 8068560893293970150
+    second: PlayerCharacter_KneelingWhileGathering_79
+  - first:
+      213: 2462177112503170070
+    second: PlayerCharacter_KneelingWhileGathering_80
+  - first:
+      213: -7169492426722718481
+    second: PlayerCharacter_KneelingWhileGathering_81
+  - first:
+      213: 541368681152933312
+    second: PlayerCharacter_KneelingWhileGathering_82
+  - first:
+      213: -3895590353439441134
+    second: PlayerCharacter_KneelingWhileGathering_83
+  - first:
+      213: -3892091271949783782
+    second: PlayerCharacter_KneelingWhileGathering_84
+  - first:
+      213: -7775511542667991978
+    second: PlayerCharacter_KneelingWhileGathering_85
+  - first:
+      213: 2226561157761323657
+    second: PlayerCharacter_KneelingWhileGathering_86
+  - first:
+      213: 5137562806156685556
+    second: PlayerCharacter_KneelingWhileGathering_87
+  - first:
+      213: -7002561836614200252
+    second: PlayerCharacter_KneelingWhileGathering_88
+  - first:
+      213: -4188166004789105402
+    second: PlayerCharacter_KneelingWhileGathering_89
+  - first:
+      213: -560878745694299614
+    second: PlayerCharacter_KneelingWhileGathering_90
+  - first:
+      213: -39769306334540091
+    second: PlayerCharacter_KneelingWhileGathering_91
+  - first:
+      213: -8504322685834427274
+    second: PlayerCharacter_KneelingWhileGathering_92
+  - first:
+      213: -1264712577489163162
+    second: PlayerCharacter_KneelingWhileGathering_93
+  - first:
+      213: -2208486806855497271
+    second: PlayerCharacter_KneelingWhileGathering_94
+  - first:
+      213: 5340399963405385269
+    second: PlayerCharacter_KneelingWhileGathering_95
+  - first:
+      213: 5662993233978063711
+    second: PlayerCharacter_KneelingWhileGathering_96
+  - first:
+      213: 5516558130375583720
+    second: PlayerCharacter_KneelingWhileGathering_97
+  - first:
+      213: -3401931052879834149
+    second: PlayerCharacter_KneelingWhileGathering_98
+  - first:
+      213: -5476310897757773685
+    second: PlayerCharacter_KneelingWhileGathering_99
+  - first:
+      213: -6769779328445565491
+    second: PlayerCharacter_KneelingWhileGathering_100
+  - first:
+      213: -3650849318720757468
+    second: PlayerCharacter_KneelingWhileGathering_101
+  - first:
+      213: -1938818180176211779
+    second: PlayerCharacter_KneelingWhileGathering_102
+  - first:
+      213: 1179133616576939238
+    second: PlayerCharacter_KneelingWhileGathering_103
+  - first:
+      213: 8362322877045637928
+    second: PlayerCharacter_KneelingWhileGathering_104
+  - first:
+      213: 4737389010185854291
+    second: PlayerCharacter_KneelingWhileGathering_105
+  - first:
+      213: 148898811297373600
+    second: PlayerCharacter_KneelingWhileGathering_106
+  - first:
+      213: 2977330931876095865
+    second: PlayerCharacter_KneelingWhileGathering_107
+  - first:
+      213: -3338193667721315120
+    second: PlayerCharacter_KneelingWhileGathering_108
+  - first:
+      213: -2970227799691057980
+    second: PlayerCharacter_KneelingWhileGathering_109
+  - first:
+      213: 5345386228089544119
+    second: PlayerCharacter_KneelingWhileGathering_110
+  - first:
+      213: -6305323563333208613
+    second: PlayerCharacter_KneelingWhileGathering_111
+  - first:
+      213: 7438582302428291666
+    second: PlayerCharacter_KneelingWhileGathering_112
+  - first:
+      213: 597198798626041088
+    second: PlayerCharacter_KneelingWhileGathering_113
+  - first:
+      213: 5016453800302142932
+    second: PlayerCharacter_KneelingWhileGathering_114
+  - first:
+      213: 3224799567584505557
+    second: PlayerCharacter_KneelingWhileGathering_115
+  - first:
+      213: 998791510234797133
+    second: PlayerCharacter_KneelingWhileGathering_116
+  - first:
+      213: 3933740185387732558
+    second: PlayerCharacter_KneelingWhileGathering_117
+  - first:
+      213: 2809841538366600981
+    second: PlayerCharacter_KneelingWhileGathering_118
+  - first:
+      213: -6288480370312533472
+    second: PlayerCharacter_KneelingWhileGathering_119
+  - first:
+      213: 7903127564939706781
+    second: PlayerCharacter_KneelingWhileGathering_120
+  - first:
+      213: 1295001038131207734
+    second: PlayerCharacter_KneelingWhileGathering_121
+  - first:
+      213: -3764135366465287962
+    second: PlayerCharacter_KneelingWhileGathering_122
+  - first:
+      213: 6030672293628790668
+    second: PlayerCharacter_KneelingWhileGathering_123
+  - first:
+      213: -797577063969779999
+    second: PlayerCharacter_KneelingWhileGathering_124
+  - first:
+      213: 1680803945180966384
+    second: PlayerCharacter_KneelingWhileGathering_125
+  - first:
+      213: 5586620850111594730
+    second: PlayerCharacter_KneelingWhileGathering_126
+  - first:
+      213: -1890004294720091319
+    second: PlayerCharacter_KneelingWhileGathering_127
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f4a7352e1cf54c0800000000000000
+      internalID: -4296502341680869623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb5fc3dd900e16d0800000000000000
+      internalID: -3017974022428206116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e779faca9511726b0800000000000000
+      internalID: -5321265357868001410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41ff7c24f7358a60800000000000000
+      internalID: 7675602661781008718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b991477c36992890800000000000000
+      internalID: -7482284119456376394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cab3e46e9f250e0800000000000000
+      internalID: -2282487293573092282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a36f8c8b9c85c990800000000000000
+      internalID: -7366327015788551261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f4786f7d4fa5cf0800000000000000
+      internalID: -262628419856543976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dddd8a28bc1292920800000000000000
+      internalID: 2965938987554364893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_9
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16b73309f6bac6740800000000000000
+      internalID: 5146676969826646881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_10
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed113df49f1a8d260800000000000000
+      internalID: 7122620902844600798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_11
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c22c54b03b56e280800000000000000
+      internalID: -9014417339392974140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_12
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9056d0ba44bc8f0800000000000000
+      internalID: -519245830576338453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c25fd9815254cd0800000000000000
+      internalID: -2574610824312836973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_14
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7666f98b566ba7c10800000000000000
+      internalID: 2052153128226088551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_15
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eef609a194555170800000000000000
+      internalID: 8166526483889061608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc168e259f5a8f690800000000000000
+      internalID: -7568116683539717685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_17
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bc9c947e3417be0800000000000000
+      internalID: -1481328141773714609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_18
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d927aef64963570800000000000000
+      internalID: 8446101359575604621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_19
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744dd3062324edd80800000000000000
+      internalID: -8224063085401484217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_20
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3e5c53e2b3067d0800000000000000
+      internalID: -2927274688134126600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_21
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a7df22951cb7920800000000000000
+      internalID: 2989195366273743428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_22
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad45e51147dc15e0800000000000000
+      internalID: -1937437065135960667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_23
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b8f01cd604313b0800000000000000
+      internalID: -5543015876228314293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e540004d77fed1430800000000000000
+      internalID: 3755420962233779294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_25
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9da8ba18c4689bf0800000000000000
+      internalID: -317392963125072483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_26
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc95e523e3d3a4600800000000000000
+      internalID: 453242049846467020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_27
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03326628e182975a0800000000000000
+      internalID: -6523138473767591120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_28
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3e3be893a24a680800000000000000
+      internalID: -8744818149751004214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_29
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6caa04f590cdece50800000000000000
+      internalID: 6831639617578511046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_30
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6dd2552029b5170800000000000000
+      internalID: 8168282887883183870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_31
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be63dd682e90c420800000000000000
+      internalID: 2648290477372305080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37ec1378ca487810800000000000000
+      internalID: 1763241478900737851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_33
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b0970d28eb9f110800000000000000
+      internalID: 1295275836898347833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_34
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b550a6b163880e430800000000000000
+      internalID: 3810195050724984155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_35
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b258bb763c299e520800000000000000
+      internalID: 2731876016933537067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_36
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 946197c66ffe03aa0800000000000000
+      internalID: -6183178446718822839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_37
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4944fc88b5b74d6f0800000000000000
+      internalID: -660767612249095020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_38
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaba6bd9873ef72f0800000000000000
+      internalID: -972808887307162706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_39
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75842f512016d9b0800000000000000
+      internalID: -5055835796160608902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8df6ba7762caa780800000000000000
+      internalID: -8670904382852235891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_41
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5833c0da73d829110800000000000000
+      internalID: 1266229715510506373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_42
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05fb615771219f7e0800000000000000
+      internalID: -1731332689789272240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_43
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d416757538fb48c80800000000000000
+      internalID: -8321315640646868659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_44
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e648786ac5aed9940800000000000000
+      internalID: 5304653619764102254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_45
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9374579fb68294570800000000000000
+      internalID: 8451330619949270841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_46
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900230f5124646040800000000000000
+      internalID: 4639943610589192201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_47
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430a1673d3a757f80800000000000000
+      internalID: -8109441150669971404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c305527f7d1a160800000000000000
+      internalID: 7035141549412334618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_49
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223aab3f3835a9ba0800000000000000
+      internalID: -6081456520615517406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_50
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8e444119e2b8140800000000000000
+      internalID: 4722919834873293047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_51
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c201a7156a2ce60800000000000000
+      internalID: 7981124358524382334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_52
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f7b985861371280800000000000000
+      internalID: -9072728600081629358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_53
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d12b679dc89d380800000000000000
+      internalID: -8945964319167603451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_54
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ab1b28f45a29080800000000000000
+      internalID: -9182094929341334953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_55
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d43f85607afd660800000000000000
+      internalID: 7412827157379108161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b584e4c493737f20800000000000000
+      internalID: 3419203624900003253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_57
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94f862d4698f6090800000000000000
+      internalID: -8039055743713217378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_58
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de4f1ce3170a1320800000000000000
+      internalID: 2529341922869202647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_59
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c452a31398b7e69a0800000000000000
+      internalID: -6237912604694928052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_60
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ca6e2a82fc20ca0800000000000000
+      internalID: -6052047175793857378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_61
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ccc698a223efdc70800000000000000
+      internalID: 8998160318506388675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_62
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1fd2ac51db3075a0800000000000000
+      internalID: -6525650089671467234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_63
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f434d57f3ddacc560800000000000000
+      internalID: 7335429018979484495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10fec3d1ca07d32a0800000000000000
+      internalID: -6756119981458657535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_65
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ee829525e7b09b0800000000000000
+      internalID: -5112854059800793502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_66
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55d01ce4f672e9e0800000000000000
+      internalID: -1593580523831110307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_67
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b157c150051169b0800000000000000
+      internalID: -5088763012835749453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_68
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9648a2060b9eb6b0800000000000000
+      internalID: -5278611263114951013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_69
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b756238cce7ef90800000000000000
+      internalID: -6924305557475722441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_70
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 006792b12acc2d930800000000000000
+      internalID: 4166617601883600384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_71
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2f437056f8657a0800000000000000
+      internalID: -6388761357303090444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2411ec28880b6f0800000000000000
+      internalID: -670886249093840135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_73
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977c5200e3ebcdc50800000000000000
+      internalID: 6691432319865440121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_74
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4cbf77794db87ac0800000000000000
+      internalID: -3857124957607707574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_75
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f5977f548a407e20800000000000000
+      internalID: 3346256455534089717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_76
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f5597cdaa777450800000000000000
+      internalID: 6086468308210900845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_77
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4802eff7422ac40800000000000000
+      internalID: 5522016225252639989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_78
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f965564b51572210800000000000000
+      internalID: 1308103669238295033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_79
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e24565226949ff60800000000000000
+      internalID: 8068560893293970150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61439d4e9096b2220800000000000000
+      internalID: 2462177112503170070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_81
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fecc65d9f98d08c90800000000000000
+      internalID: -7169492426722718481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_82
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd64ac72f3538700800000000000000
+      internalID: 541368681152933312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_83
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fbdc8963510f9c0800000000000000
+      internalID: -3895590353439441134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_84
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1de80efb938cf9c0800000000000000
+      internalID: -3892091271949783782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_85
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6542358c275d71490800000000000000
+      internalID: -7775511542667991978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_86
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982db0f739556ee10800000000000000
+      internalID: 2226561157761323657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_87
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f07a38f62a4c4740800000000000000
+      internalID: 5137562806156685556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44457ea5c17e1de90800000000000000
+      internalID: -7002561836614200252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_89
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60dad206535a0e5c0800000000000000
+      internalID: -4188166004789105402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_90
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a13d0a0cb5738f0800000000000000
+      internalID: -560878745694299614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_91
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce47fec606b27ff0800000000000000
+      internalID: -39769306334540091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_92
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6740b8733939af980800000000000000
+      internalID: -8504322685834427274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_93
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c2acb8c96d27ee0800000000000000
+      internalID: -1264712577489163162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_94
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9cd3243f0e951e0800000000000000
+      internalID: -2208486806855497271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_95
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e7949d879ec1a40800000000000000
+      internalID: 5340399963405385269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5bf3bca75ef69e40800000000000000
+      internalID: 5662993233978063711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_97
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e764df3460ce8c40800000000000000
+      internalID: 5516558130375583720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_98
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd31aba4bb9e9c0d0800000000000000
+      internalID: -3401931052879834149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_99
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b802c83d04c3004b0800000000000000
+      internalID: -5476310897757773685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_100
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc538309199ec02a0800000000000000
+      internalID: -6769779328445565491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_101
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4212c2d33e3955dc0800000000000000
+      internalID: -3650849318720757468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_102
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0178e232fe715e0800000000000000
+      internalID: -1938818180176211779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_103
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e44ac6e6cf1d5010800000000000000
+      internalID: 1179133616576939238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8238d67e950fc0470800000000000000
+      internalID: 8362322877045637928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_105
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d97fa74369eb140800000000000000
+      internalID: 4737389010185854291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_106
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad9bd21eaef01200800000000000000
+      internalID: 148898811297373600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_107
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977e14d35ba915920800000000000000
+      internalID: 2977330931876095865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_108
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc3304bb8a5ca1d0800000000000000
+      internalID: -3338193667721315120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_109
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4ac699d81a7c6d0800000000000000
+      internalID: -2970227799691057980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_110
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bdda801470ae2a40800000000000000
+      internalID: 5345386228089544119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_111
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5bf9d40adfe78a0800000000000000
+      internalID: -6305323563333208613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252eeb851372b3760800000000000000
+      internalID: 7438582302428291666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_113
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d256ca42da94800800000000000000
+      internalID: 597198798626041088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_114
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5ea2f27260e9540800000000000000
+      internalID: 5016453800302142932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_115
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de25b9fe1ac0cc20800000000000000
+      internalID: 3224799567584505557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_116
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d449834369b6cdd00800000000000000
+      internalID: 998791510234797133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_117
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e07b45bd3779630800000000000000
+      internalID: 3933740185387732558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_118
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5177a71fdff8ef620800000000000000
+      internalID: 2809841538366600981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_119
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a2186cb64dab8a0800000000000000
+      internalID: -6288480370312533472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9144d2d5ac8dad60800000000000000
+      internalID: 7903127564939706781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_121
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e929d3594c8f110800000000000000
+      internalID: 1295001038131207734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_122
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e80a53d3da13cbc0800000000000000
+      internalID: -3764135366465287962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_123
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87c88acf7041b350800000000000000
+      internalID: 6030672293628790668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_124
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee0515d2ef6ee4f0800000000000000
+      internalID: -797577063969779999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_125
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd2699684a635710800000000000000
+      internalID: 1680803945180966384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_126
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae041b1601aa78d40800000000000000
+      internalID: 5586620850111594730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_KneelingWhileGathering_127
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b0f3d8b1b55c5e0800000000000000
+      internalID: -1890004294720091319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PlayerCharacter_KneelingWhileGathering_0: -4296502341680869623
+      PlayerCharacter_KneelingWhileGathering_1: -3017974022428206116
+      PlayerCharacter_KneelingWhileGathering_10: 7122620902844600798
+      PlayerCharacter_KneelingWhileGathering_100: -6769779328445565491
+      PlayerCharacter_KneelingWhileGathering_101: -3650849318720757468
+      PlayerCharacter_KneelingWhileGathering_102: -1938818180176211779
+      PlayerCharacter_KneelingWhileGathering_103: 1179133616576939238
+      PlayerCharacter_KneelingWhileGathering_104: 8362322877045637928
+      PlayerCharacter_KneelingWhileGathering_105: 4737389010185854291
+      PlayerCharacter_KneelingWhileGathering_106: 148898811297373600
+      PlayerCharacter_KneelingWhileGathering_107: 2977330931876095865
+      PlayerCharacter_KneelingWhileGathering_108: -3338193667721315120
+      PlayerCharacter_KneelingWhileGathering_109: -2970227799691057980
+      PlayerCharacter_KneelingWhileGathering_11: -9014417339392974140
+      PlayerCharacter_KneelingWhileGathering_110: 5345386228089544119
+      PlayerCharacter_KneelingWhileGathering_111: -6305323563333208613
+      PlayerCharacter_KneelingWhileGathering_112: 7438582302428291666
+      PlayerCharacter_KneelingWhileGathering_113: 597198798626041088
+      PlayerCharacter_KneelingWhileGathering_114: 5016453800302142932
+      PlayerCharacter_KneelingWhileGathering_115: 3224799567584505557
+      PlayerCharacter_KneelingWhileGathering_116: 998791510234797133
+      PlayerCharacter_KneelingWhileGathering_117: 3933740185387732558
+      PlayerCharacter_KneelingWhileGathering_118: 2809841538366600981
+      PlayerCharacter_KneelingWhileGathering_119: -6288480370312533472
+      PlayerCharacter_KneelingWhileGathering_12: -519245830576338453
+      PlayerCharacter_KneelingWhileGathering_120: 7903127564939706781
+      PlayerCharacter_KneelingWhileGathering_121: 1295001038131207734
+      PlayerCharacter_KneelingWhileGathering_122: -3764135366465287962
+      PlayerCharacter_KneelingWhileGathering_123: 6030672293628790668
+      PlayerCharacter_KneelingWhileGathering_124: -797577063969779999
+      PlayerCharacter_KneelingWhileGathering_125: 1680803945180966384
+      PlayerCharacter_KneelingWhileGathering_126: 5586620850111594730
+      PlayerCharacter_KneelingWhileGathering_127: -1890004294720091319
+      PlayerCharacter_KneelingWhileGathering_13: -2574610824312836973
+      PlayerCharacter_KneelingWhileGathering_14: 2052153128226088551
+      PlayerCharacter_KneelingWhileGathering_15: 8166526483889061608
+      PlayerCharacter_KneelingWhileGathering_16: -7568116683539717685
+      PlayerCharacter_KneelingWhileGathering_17: -1481328141773714609
+      PlayerCharacter_KneelingWhileGathering_18: 8446101359575604621
+      PlayerCharacter_KneelingWhileGathering_19: -8224063085401484217
+      PlayerCharacter_KneelingWhileGathering_2: -5321265357868001410
+      PlayerCharacter_KneelingWhileGathering_20: -2927274688134126600
+      PlayerCharacter_KneelingWhileGathering_21: 2989195366273743428
+      PlayerCharacter_KneelingWhileGathering_22: -1937437065135960667
+      PlayerCharacter_KneelingWhileGathering_23: -5543015876228314293
+      PlayerCharacter_KneelingWhileGathering_24: 3755420962233779294
+      PlayerCharacter_KneelingWhileGathering_25: -317392963125072483
+      PlayerCharacter_KneelingWhileGathering_26: 453242049846467020
+      PlayerCharacter_KneelingWhileGathering_27: -6523138473767591120
+      PlayerCharacter_KneelingWhileGathering_28: -8744818149751004214
+      PlayerCharacter_KneelingWhileGathering_29: 6831639617578511046
+      PlayerCharacter_KneelingWhileGathering_3: 7675602661781008718
+      PlayerCharacter_KneelingWhileGathering_30: 8168282887883183870
+      PlayerCharacter_KneelingWhileGathering_31: 2648290477372305080
+      PlayerCharacter_KneelingWhileGathering_32: 1763241478900737851
+      PlayerCharacter_KneelingWhileGathering_33: 1295275836898347833
+      PlayerCharacter_KneelingWhileGathering_34: 3810195050724984155
+      PlayerCharacter_KneelingWhileGathering_35: 2731876016933537067
+      PlayerCharacter_KneelingWhileGathering_36: -6183178446718822839
+      PlayerCharacter_KneelingWhileGathering_37: -660767612249095020
+      PlayerCharacter_KneelingWhileGathering_38: -972808887307162706
+      PlayerCharacter_KneelingWhileGathering_39: -5055835796160608902
+      PlayerCharacter_KneelingWhileGathering_4: -7482284119456376394
+      PlayerCharacter_KneelingWhileGathering_40: -8670904382852235891
+      PlayerCharacter_KneelingWhileGathering_41: 1266229715510506373
+      PlayerCharacter_KneelingWhileGathering_42: -1731332689789272240
+      PlayerCharacter_KneelingWhileGathering_43: -8321315640646868659
+      PlayerCharacter_KneelingWhileGathering_44: 5304653619764102254
+      PlayerCharacter_KneelingWhileGathering_45: 8451330619949270841
+      PlayerCharacter_KneelingWhileGathering_46: 4639943610589192201
+      PlayerCharacter_KneelingWhileGathering_47: -8109441150669971404
+      PlayerCharacter_KneelingWhileGathering_48: 7035141549412334618
+      PlayerCharacter_KneelingWhileGathering_49: -6081456520615517406
+      PlayerCharacter_KneelingWhileGathering_5: -2282487293573092282
+      PlayerCharacter_KneelingWhileGathering_50: 4722919834873293047
+      PlayerCharacter_KneelingWhileGathering_51: 7981124358524382334
+      PlayerCharacter_KneelingWhileGathering_52: -9072728600081629358
+      PlayerCharacter_KneelingWhileGathering_53: -8945964319167603451
+      PlayerCharacter_KneelingWhileGathering_54: -9182094929341334953
+      PlayerCharacter_KneelingWhileGathering_55: 7412827157379108161
+      PlayerCharacter_KneelingWhileGathering_56: 3419203624900003253
+      PlayerCharacter_KneelingWhileGathering_57: -8039055743713217378
+      PlayerCharacter_KneelingWhileGathering_58: 2529341922869202647
+      PlayerCharacter_KneelingWhileGathering_59: -6237912604694928052
+      PlayerCharacter_KneelingWhileGathering_6: -7366327015788551261
+      PlayerCharacter_KneelingWhileGathering_60: -6052047175793857378
+      PlayerCharacter_KneelingWhileGathering_61: 8998160318506388675
+      PlayerCharacter_KneelingWhileGathering_62: -6525650089671467234
+      PlayerCharacter_KneelingWhileGathering_63: 7335429018979484495
+      PlayerCharacter_KneelingWhileGathering_64: -6756119981458657535
+      PlayerCharacter_KneelingWhileGathering_65: -5112854059800793502
+      PlayerCharacter_KneelingWhileGathering_66: -1593580523831110307
+      PlayerCharacter_KneelingWhileGathering_67: -5088763012835749453
+      PlayerCharacter_KneelingWhileGathering_68: -5278611263114951013
+      PlayerCharacter_KneelingWhileGathering_69: -6924305557475722441
+      PlayerCharacter_KneelingWhileGathering_7: -262628419856543976
+      PlayerCharacter_KneelingWhileGathering_70: 4166617601883600384
+      PlayerCharacter_KneelingWhileGathering_71: -6388761357303090444
+      PlayerCharacter_KneelingWhileGathering_72: -670886249093840135
+      PlayerCharacter_KneelingWhileGathering_73: 6691432319865440121
+      PlayerCharacter_KneelingWhileGathering_74: -3857124957607707574
+      PlayerCharacter_KneelingWhileGathering_75: 3346256455534089717
+      PlayerCharacter_KneelingWhileGathering_76: 6086468308210900845
+      PlayerCharacter_KneelingWhileGathering_77: 5522016225252639989
+      PlayerCharacter_KneelingWhileGathering_78: 1308103669238295033
+      PlayerCharacter_KneelingWhileGathering_79: 8068560893293970150
+      PlayerCharacter_KneelingWhileGathering_8: 2965938987554364893
+      PlayerCharacter_KneelingWhileGathering_80: 2462177112503170070
+      PlayerCharacter_KneelingWhileGathering_81: -7169492426722718481
+      PlayerCharacter_KneelingWhileGathering_82: 541368681152933312
+      PlayerCharacter_KneelingWhileGathering_83: -3895590353439441134
+      PlayerCharacter_KneelingWhileGathering_84: -3892091271949783782
+      PlayerCharacter_KneelingWhileGathering_85: -7775511542667991978
+      PlayerCharacter_KneelingWhileGathering_86: 2226561157761323657
+      PlayerCharacter_KneelingWhileGathering_87: 5137562806156685556
+      PlayerCharacter_KneelingWhileGathering_88: -7002561836614200252
+      PlayerCharacter_KneelingWhileGathering_89: -4188166004789105402
+      PlayerCharacter_KneelingWhileGathering_9: 5146676969826646881
+      PlayerCharacter_KneelingWhileGathering_90: -560878745694299614
+      PlayerCharacter_KneelingWhileGathering_91: -39769306334540091
+      PlayerCharacter_KneelingWhileGathering_92: -8504322685834427274
+      PlayerCharacter_KneelingWhileGathering_93: -1264712577489163162
+      PlayerCharacter_KneelingWhileGathering_94: -2208486806855497271
+      PlayerCharacter_KneelingWhileGathering_95: 5340399963405385269
+      PlayerCharacter_KneelingWhileGathering_96: 5662993233978063711
+      PlayerCharacter_KneelingWhileGathering_97: 5516558130375583720
+      PlayerCharacter_KneelingWhileGathering_98: -3401931052879834149
+      PlayerCharacter_KneelingWhileGathering_99: -5476310897757773685
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

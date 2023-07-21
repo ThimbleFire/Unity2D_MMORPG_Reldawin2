@@ -1,0 +1,2966 @@
+fileFormatVersion: 2
+guid: cdd518e3d762ee94bbaba5785e258768
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4106681533148418433
+    second: PlayerCharacter_Woodcutting_Topless_0
+  - first:
+      213: 2316747067008585854
+    second: PlayerCharacter_Woodcutting_Topless_1
+  - first:
+      213: -5203571662166960875
+    second: PlayerCharacter_Woodcutting_Topless_2
+  - first:
+      213: -4847897065134535111
+    second: PlayerCharacter_Woodcutting_Topless_3
+  - first:
+      213: 8649787513688685191
+    second: PlayerCharacter_Woodcutting_Topless_4
+  - first:
+      213: 2488503401367963385
+    second: PlayerCharacter_Woodcutting_Topless_5
+  - first:
+      213: -6184623461016894278
+    second: PlayerCharacter_Woodcutting_Topless_6
+  - first:
+      213: 2618193048584086890
+    second: PlayerCharacter_Woodcutting_Topless_7
+  - first:
+      213: -3344645305003022563
+    second: PlayerCharacter_Woodcutting_Topless_8
+  - first:
+      213: -2609922032340140060
+    second: PlayerCharacter_Woodcutting_Topless_9
+  - first:
+      213: -7624567600188006385
+    second: PlayerCharacter_Woodcutting_Topless_10
+  - first:
+      213: -8366847409776432505
+    second: PlayerCharacter_Woodcutting_Topless_11
+  - first:
+      213: -3493775860978471435
+    second: PlayerCharacter_Woodcutting_Topless_12
+  - first:
+      213: -3205955055405748945
+    second: PlayerCharacter_Woodcutting_Topless_13
+  - first:
+      213: 5048074230263401306
+    second: PlayerCharacter_Woodcutting_Topless_14
+  - first:
+      213: -7526427437916510386
+    second: PlayerCharacter_Woodcutting_Topless_15
+  - first:
+      213: 5812502340172620025
+    second: PlayerCharacter_Woodcutting_Topless_16
+  - first:
+      213: -6740597124618299698
+    second: PlayerCharacter_Woodcutting_Topless_17
+  - first:
+      213: 2338383582957717864
+    second: PlayerCharacter_Woodcutting_Topless_18
+  - first:
+      213: -5928861209327393878
+    second: PlayerCharacter_Woodcutting_Topless_19
+  - first:
+      213: -7261291552044392451
+    second: PlayerCharacter_Woodcutting_Topless_20
+  - first:
+      213: -454207119580901890
+    second: PlayerCharacter_Woodcutting_Topless_21
+  - first:
+      213: 510418084214006561
+    second: PlayerCharacter_Woodcutting_Topless_22
+  - first:
+      213: 8818173721462090684
+    second: PlayerCharacter_Woodcutting_Topless_23
+  - first:
+      213: -8337615302342010059
+    second: PlayerCharacter_Woodcutting_Topless_24
+  - first:
+      213: -764845684280326458
+    second: PlayerCharacter_Woodcutting_Topless_25
+  - first:
+      213: -1741970349275797859
+    second: PlayerCharacter_Woodcutting_Topless_26
+  - first:
+      213: -8190072497118563363
+    second: PlayerCharacter_Woodcutting_Topless_27
+  - first:
+      213: 6152956481996903044
+    second: PlayerCharacter_Woodcutting_Topless_28
+  - first:
+      213: -3340653395831161000
+    second: PlayerCharacter_Woodcutting_Topless_29
+  - first:
+      213: -8292164954175178154
+    second: PlayerCharacter_Woodcutting_Topless_30
+  - first:
+      213: -4387838376565534061
+    second: PlayerCharacter_Woodcutting_Topless_31
+  - first:
+      213: -8004652059064126696
+    second: PlayerCharacter_Woodcutting_Topless_32
+  - first:
+      213: -6489949695128152502
+    second: PlayerCharacter_Woodcutting_Topless_33
+  - first:
+      213: -1056312609064505518
+    second: PlayerCharacter_Woodcutting_Topless_34
+  - first:
+      213: 7536417657077271532
+    second: PlayerCharacter_Woodcutting_Topless_35
+  - first:
+      213: 120532357427426937
+    second: PlayerCharacter_Woodcutting_Topless_36
+  - first:
+      213: 7413786814975612128
+    second: PlayerCharacter_Woodcutting_Topless_37
+  - first:
+      213: 1495155591926982615
+    second: PlayerCharacter_Woodcutting_Topless_38
+  - first:
+      213: 8494295086941702987
+    second: PlayerCharacter_Woodcutting_Topless_39
+  - first:
+      213: -6031005340514563842
+    second: PlayerCharacter_Woodcutting_Topless_40
+  - first:
+      213: 3562560900251955857
+    second: PlayerCharacter_Woodcutting_Topless_41
+  - first:
+      213: 98522239588074802
+    second: PlayerCharacter_Woodcutting_Topless_42
+  - first:
+      213: -2552529242611516624
+    second: PlayerCharacter_Woodcutting_Topless_43
+  - first:
+      213: -970647366052906208
+    second: PlayerCharacter_Woodcutting_Topless_44
+  - first:
+      213: 2921715989345191726
+    second: PlayerCharacter_Woodcutting_Topless_45
+  - first:
+      213: 6479235577600846551
+    second: PlayerCharacter_Woodcutting_Topless_46
+  - first:
+      213: -8439998815679463535
+    second: PlayerCharacter_Woodcutting_Topless_47
+  - first:
+      213: -7183482298743607507
+    second: PlayerCharacter_Woodcutting_Topless_48
+  - first:
+      213: -262171750403732665
+    second: PlayerCharacter_Woodcutting_Topless_49
+  - first:
+      213: 636853555797068667
+    second: PlayerCharacter_Woodcutting_Topless_50
+  - first:
+      213: -5294828647558006376
+    second: PlayerCharacter_Woodcutting_Topless_51
+  - first:
+      213: -3784205329878606295
+    second: PlayerCharacter_Woodcutting_Topless_52
+  - first:
+      213: 7571047809144218728
+    second: PlayerCharacter_Woodcutting_Topless_53
+  - first:
+      213: -3329187712067599473
+    second: PlayerCharacter_Woodcutting_Topless_54
+  - first:
+      213: 3414301441200524161
+    second: PlayerCharacter_Woodcutting_Topless_55
+  - first:
+      213: 4158151330140071129
+    second: PlayerCharacter_Woodcutting_Topless_56
+  - first:
+      213: 6711507971700907666
+    second: PlayerCharacter_Woodcutting_Topless_57
+  - first:
+      213: -3568205703078698144
+    second: PlayerCharacter_Woodcutting_Topless_58
+  - first:
+      213: 2288325615562386432
+    second: PlayerCharacter_Woodcutting_Topless_59
+  - first:
+      213: -2848076490650608509
+    second: PlayerCharacter_Woodcutting_Topless_60
+  - first:
+      213: -997661246780383213
+    second: PlayerCharacter_Woodcutting_Topless_61
+  - first:
+      213: 7355063265165301520
+    second: PlayerCharacter_Woodcutting_Topless_62
+  - first:
+      213: -7686233269043906251
+    second: PlayerCharacter_Woodcutting_Topless_63
+  - first:
+      213: 1890112212275437843
+    second: PlayerCharacter_Woodcutting_Topless_64
+  - first:
+      213: 6989409582003162689
+    second: PlayerCharacter_Woodcutting_Topless_65
+  - first:
+      213: -3976241545081235630
+    second: PlayerCharacter_Woodcutting_Topless_66
+  - first:
+      213: -5941211902728601112
+    second: PlayerCharacter_Woodcutting_Topless_67
+  - first:
+      213: -1092978230357987021
+    second: PlayerCharacter_Woodcutting_Topless_68
+  - first:
+      213: 1529812225144849061
+    second: PlayerCharacter_Woodcutting_Topless_69
+  - first:
+      213: 3310933033120928101
+    second: PlayerCharacter_Woodcutting_Topless_70
+  - first:
+      213: 5534551602482227411
+    second: PlayerCharacter_Woodcutting_Topless_71
+  - first:
+      213: -6379556479639071350
+    second: PlayerCharacter_Woodcutting_Topless_72
+  - first:
+      213: -1196853948247715224
+    second: PlayerCharacter_Woodcutting_Topless_73
+  - first:
+      213: 8208034444304368810
+    second: PlayerCharacter_Woodcutting_Topless_74
+  - first:
+      213: -182994983263175711
+    second: PlayerCharacter_Woodcutting_Topless_75
+  - first:
+      213: 2192558939132047614
+    second: PlayerCharacter_Woodcutting_Topless_76
+  - first:
+      213: 3809637324971270687
+    second: PlayerCharacter_Woodcutting_Topless_77
+  - first:
+      213: -8675803747689514396
+    second: PlayerCharacter_Woodcutting_Topless_78
+  - first:
+      213: 5936872593396704475
+    second: PlayerCharacter_Woodcutting_Topless_79
+  - first:
+      213: 4345518379633495613
+    second: PlayerCharacter_Woodcutting_Topless_80
+  - first:
+      213: 7317354449931743796
+    second: PlayerCharacter_Woodcutting_Topless_81
+  - first:
+      213: -7951817900363503693
+    second: PlayerCharacter_Woodcutting_Topless_82
+  - first:
+      213: -6913654606020235142
+    second: PlayerCharacter_Woodcutting_Topless_83
+  - first:
+      213: 4671378166884091734
+    second: PlayerCharacter_Woodcutting_Topless_84
+  - first:
+      213: -5563033014542780160
+    second: PlayerCharacter_Woodcutting_Topless_85
+  - first:
+      213: 3190985417794714340
+    second: PlayerCharacter_Woodcutting_Topless_86
+  - first:
+      213: -2308449090387318977
+    second: PlayerCharacter_Woodcutting_Topless_87
+  - first:
+      213: 4796416977405670370
+    second: PlayerCharacter_Woodcutting_Topless_88
+  - first:
+      213: -2721252334194240111
+    second: PlayerCharacter_Woodcutting_Topless_89
+  - first:
+      213: -6484706273628549667
+    second: PlayerCharacter_Woodcutting_Topless_90
+  - first:
+      213: -6673575543314632373
+    second: PlayerCharacter_Woodcutting_Topless_91
+  - first:
+      213: -6942230833092423327
+    second: PlayerCharacter_Woodcutting_Topless_92
+  - first:
+      213: -4671364588291176666
+    second: PlayerCharacter_Woodcutting_Topless_93
+  - first:
+      213: 1130646218729544728
+    second: PlayerCharacter_Woodcutting_Topless_94
+  - first:
+      213: -3887802893986303697
+    second: PlayerCharacter_Woodcutting_Topless_95
+  - first:
+      213: 3490132432562429419
+    second: PlayerCharacter_Woodcutting_Topless_96
+  - first:
+      213: -9028599116280977423
+    second: PlayerCharacter_Woodcutting_Topless_97
+  - first:
+      213: -5489325603369253
+    second: PlayerCharacter_Woodcutting_Topless_98
+  - first:
+      213: 753576327494985559
+    second: PlayerCharacter_Woodcutting_Topless_99
+  - first:
+      213: -3144179110214072560
+    second: PlayerCharacter_Woodcutting_Topless_100
+  - first:
+      213: -6996817879386986197
+    second: PlayerCharacter_Woodcutting_Topless_101
+  - first:
+      213: -6836206486349735226
+    second: PlayerCharacter_Woodcutting_Topless_102
+  - first:
+      213: 1666233138937379082
+    second: PlayerCharacter_Woodcutting_Topless_103
+  - first:
+      213: -5239599499731139764
+    second: PlayerCharacter_Woodcutting_Topless_104
+  - first:
+      213: -2584112427557084904
+    second: PlayerCharacter_Woodcutting_Topless_105
+  - first:
+      213: -6013699120574874108
+    second: PlayerCharacter_Woodcutting_Topless_106
+  - first:
+      213: -2142493686968320442
+    second: PlayerCharacter_Woodcutting_Topless_107
+  - first:
+      213: 8613626023125269402
+    second: PlayerCharacter_Woodcutting_Topless_108
+  - first:
+      213: 3227322849525216109
+    second: PlayerCharacter_Woodcutting_Topless_109
+  - first:
+      213: -6113482871408560154
+    second: PlayerCharacter_Woodcutting_Topless_110
+  - first:
+      213: 3582391251791210652
+    second: PlayerCharacter_Woodcutting_Topless_111
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e280b57e22207c0800000000000000
+      internalID: -4106681533148418433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e70997bce2db62020800000000000000
+      internalID: 2316747067008585854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515df39942339c7b0800000000000000
+      internalID: -5203571662166960875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e4ff4fd4fc8bcb0800000000000000
+      internalID: -4847897065134535111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78af5084ae73a0870800000000000000
+      internalID: 8649787513688685191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f683eca8a0f88220800000000000000
+      internalID: 2488503401367963385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab48a80dabdcb2aa0800000000000000
+      internalID: -6184623461016894278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a656046b4b0b55420800000000000000
+      internalID: 2618193048584086890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_8
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17ed97d0de6591d0800000000000000
+      internalID: -3344645305003022563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_9
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef76e25db1b7cbd0800000000000000
+      internalID: -2609922032340140060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_10
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0067d01a28103690800000000000000
+      internalID: -7624567600188006385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_11
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ae06a3c9cf2eb80800000000000000
+      internalID: -8366847409776432505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_12
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd2b818d5d938fc0800000000000000
+      internalID: -3493775860978471435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_13
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d2cacecd82283d0800000000000000
+      internalID: -3205955055405748945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b47ae34cc5e0640800000000000000
+      internalID: 5048074230263401306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e47ab373f12cc8790800000000000000
+      internalID: -7526427437916510386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_16
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0ad1a15182aa050800000000000000
+      internalID: 5812502340172620025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_17
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec65b1dd0a69472a0800000000000000
+      internalID: -6740597124618299698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_18
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869cccaba7b937020800000000000000
+      internalID: 2338383582957717864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_19
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3a27f742478bda0800000000000000
+      internalID: -5928861209327393878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_20
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff59dd2ec5ba3b90800000000000000
+      internalID: -7261291552044392451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd4deef70552b9f0800000000000000
+      internalID: -454207119580901890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_22
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123e2841b8e551700800000000000000
+      internalID: 510418084214006561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_23
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbbae6b6742706a70800000000000000
+      internalID: 8818173721462090684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_24
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b1b0e9e07da4c80800000000000000
+      internalID: -8337615302342010059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_25
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c60b7807e8b265f0800000000000000
+      internalID: -764845684280326458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_26
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96272a523743d7e0800000000000000
+      internalID: -1741970349275797859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_27
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd33d8ce474075e80800000000000000
+      internalID: -8190072497118563363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482dcd31251b36550800000000000000
+      internalID: 6152956481996903044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_29
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ff7cf9f6d93a1d0800000000000000
+      internalID: -3340653395831161000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_30
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65af17f68ef4cec80800000000000000
+      internalID: -8292164954175178154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_31
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3921cf88e344b13c0800000000000000
+      internalID: -4387838376565534061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_32
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81332ecdc53c9e090800000000000000
+      internalID: -8004652059064126696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_33
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a465bb333211fe5a0800000000000000
+      internalID: -6489949695128152502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_34
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fa1f457493751f0800000000000000
+      internalID: -1056312609064505518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb8211fdebb69860800000000000000
+      internalID: 7536417657077271532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_36
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976f66c5a873ca100800000000000000
+      internalID: 120532357427426937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_37
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4981b04df03e660800000000000000
+      internalID: 7413786814975612128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_38
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d72fb4d61cdfb410800000000000000
+      internalID: 1495155591926982615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_39
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b818a706cc1e570800000000000000
+      internalID: 8494295086941702987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_40
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef84520b8909d4ca0800000000000000
+      internalID: -6031005340514563842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_41
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192b6367342c07130800000000000000
+      internalID: 3562560900251955857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2358f1574750e5100800000000000000
+      internalID: 98522239588074802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_43
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 900
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03bf75f7d28939cd0800000000000000
+      internalID: -2552529242611516624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_44
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 900
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b7f300d519782f0800000000000000
+      internalID: -970647366052906208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_45
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 900
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e27cf7f56350c8820800000000000000
+      internalID: 2921715989345191726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_46
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 900
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7daa8faed6edae950800000000000000
+      internalID: 6479235577600846551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_47
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 900
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f35be4bc91fda80800000000000000
+      internalID: -8439998815679463535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_48
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 900
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2fa415b8e42f4c90800000000000000
+      internalID: -7183482298743607507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b0b0b9e249c5cf0800000000000000
+      internalID: -262171750403732665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_50
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 800
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7b8a3f4fee86d800800000000000000
+      internalID: 636853555797068667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_51
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 800
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8993eb3f56df486b0800000000000000
+      internalID: -5294828647558006376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_52
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 800
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e12735d4dcb7bc0800000000000000
+      internalID: -3784205329878606295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_53
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 800
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8646a898ed3c11960800000000000000
+      internalID: 7571047809144218728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_54
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 800
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f838d972a695cc1d0800000000000000
+      internalID: -3329187712067599473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_55
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 800
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b8cde2219026f20800000000000000
+      internalID: 3414301441200524161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 700
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4215b9a98b4b930800000000000000
+      internalID: 4158151330140071129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_57
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 700
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e5f60f0f0142d50800000000000000
+      internalID: 6711507971700907666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_58
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 700
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063a87671df2b7ec0800000000000000
+      internalID: -3568205703078698144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_59
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 700
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ce506f504c1cf10800000000000000
+      internalID: 2288325615562386432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_60
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 700
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c11a185899978d0800000000000000
+      internalID: -2848076490650608509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_61
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 700
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3106b73c1689722f0800000000000000
+      internalID: -997661246780383213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_62
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 700
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017d3b4221f621660800000000000000
+      internalID: 7355063265165301520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53939d1b093055590800000000000000
+      internalID: -7686233269043906251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_64
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 600
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3112e46fa070b3a10800000000000000
+      internalID: 1890112212275437843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_65
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 600
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e820dbbfe5ff060800000000000000
+      internalID: 6989409582003162689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_66
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 600
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257584cb16d81d8c0800000000000000
+      internalID: -3976241545081235630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_67
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 600
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e10a8a90439c8da0800000000000000
+      internalID: -5941211902728601112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_68
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 600
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331f6402716f4d0f0800000000000000
+      internalID: -1092978230357987021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_69
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a20fcc0d1cfa3510800000000000000
+      internalID: 1529812225144849061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56197423d0cc2fd20800000000000000
+      internalID: 3310933033120928101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_71
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8a501fb5daecc40800000000000000
+      internalID: 5534551602482227411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_72
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85529e9e234777a0800000000000000
+      internalID: -6379556479639071350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_73
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 862dbaedcabe36fe0800000000000000
+      internalID: -1196853948247715224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_74
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa4ceecc6dbc8e170800000000000000
+      internalID: 8208034444304368810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_75
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb7be2480fd57df0800000000000000
+      internalID: -182994983263175711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_76
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 500
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0b21c0db88d6e10800000000000000
+      internalID: 2192558939132047614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f126bf576fc8ed430800000000000000
+      internalID: 3809637324971270687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_78
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ab6f5357a599780800000000000000
+      internalID: -8675803747689514396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_79
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4a9263b22046250800000000000000
+      internalID: 5936872593396704475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_80
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e4cf651f16e4c30800000000000000
+      internalID: 4345518379633495613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_81
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4323ecb6a177c8560800000000000000
+      internalID: 7317354449931743796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_82
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7ad3a00c775a190800000000000000
+      internalID: -7951817900363503693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_83
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 400
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70bb6414c3cd00a0800000000000000
+      internalID: -6913654606020235142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65744a851b114d040800000000000000
+      internalID: 4671378166884091734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_85
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009386e82f22cc2b0800000000000000
+      internalID: -5563033014542780160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_86
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eafa17b458a84c20800000000000000
+      internalID: 3190985417794714340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_87
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37e36178cdb6ffd0800000000000000
+      internalID: -2308449090387318977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_88
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3fae414db409240800000000000000
+      internalID: 4796416977405670370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_89
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195562c7b6b2c3ad0800000000000000
+      internalID: -2721252334194240111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_90
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 300
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd8f976002b106a0800000000000000
+      internalID: -6484706273628549667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b413ff6c662b263a0800000000000000
+      internalID: -6673575543314632373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_92
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16113ccb6dd38af90800000000000000
+      internalID: -6942230833092423327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_93
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627c09a28aafb2fb0800000000000000
+      internalID: -4671364588291176666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_94
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c530adebcd0bf00800000000000000
+      internalID: 1130646218729544728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_95
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21f53bcddfbb0ac0800000000000000
+      internalID: -3887802893986303697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_96
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed14f5b4f07f6030800000000000000
+      internalID: 3490132432562429419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_97
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 200
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7aaa670f8f3b280800000000000000
+      internalID: -9028599116280977423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_98
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdeca59cc7f7ceff0800000000000000
+      internalID: -5489325603369253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_99
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7576b7f5dad357a00800000000000000
+      internalID: 753576327494985559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_100
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0178c7102c1ad54d0800000000000000
+      internalID: -3144179110214072560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_101
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29690d953f46ee90800000000000000
+      internalID: -6996817879386986197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_102
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca17e1ab6ae021a0800000000000000
+      internalID: -6836206486349735226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_103
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09b8573636af1710800000000000000
+      internalID: 1666233138937379082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_104
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 100
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43063df3043947b0800000000000000
+      internalID: -5239599499731139764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811a9c73073632cd0800000000000000
+      internalID: -2584112427557084904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_106
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e3e04038c0b8ca0800000000000000
+      internalID: -6013699120574874108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_107
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e7cb6d7555442e0800000000000000
+      internalID: -2142493686968320442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_108
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b31782b3fb98770800000000000000
+      internalID: 8613626023125269402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_109
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63b3755801c9cc20800000000000000
+      internalID: 3227322849525216109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_110
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7f14518bb882ba0800000000000000
+      internalID: -6113482871408560154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Woodcutting_Topless_111
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c986b79fcd537b130800000000000000
+      internalID: 3582391251791210652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PlayerCharacter_Woodcutting_Topless_0: -4106681533148418433
+      PlayerCharacter_Woodcutting_Topless_1: 2316747067008585854
+      PlayerCharacter_Woodcutting_Topless_10: -7624567600188006385
+      PlayerCharacter_Woodcutting_Topless_100: -3144179110214072560
+      PlayerCharacter_Woodcutting_Topless_101: -6996817879386986197
+      PlayerCharacter_Woodcutting_Topless_102: -6836206486349735226
+      PlayerCharacter_Woodcutting_Topless_103: 1666233138937379082
+      PlayerCharacter_Woodcutting_Topless_104: -5239599499731139764
+      PlayerCharacter_Woodcutting_Topless_105: -2584112427557084904
+      PlayerCharacter_Woodcutting_Topless_106: -6013699120574874108
+      PlayerCharacter_Woodcutting_Topless_107: -2142493686968320442
+      PlayerCharacter_Woodcutting_Topless_108: 8613626023125269402
+      PlayerCharacter_Woodcutting_Topless_109: 3227322849525216109
+      PlayerCharacter_Woodcutting_Topless_11: -8366847409776432505
+      PlayerCharacter_Woodcutting_Topless_110: -6113482871408560154
+      PlayerCharacter_Woodcutting_Topless_111: 3582391251791210652
+      PlayerCharacter_Woodcutting_Topless_12: -3493775860978471435
+      PlayerCharacter_Woodcutting_Topless_13: -3205955055405748945
+      PlayerCharacter_Woodcutting_Topless_14: 5048074230263401306
+      PlayerCharacter_Woodcutting_Topless_15: -7526427437916510386
+      PlayerCharacter_Woodcutting_Topless_16: 5812502340172620025
+      PlayerCharacter_Woodcutting_Topless_17: -6740597124618299698
+      PlayerCharacter_Woodcutting_Topless_18: 2338383582957717864
+      PlayerCharacter_Woodcutting_Topless_19: -5928861209327393878
+      PlayerCharacter_Woodcutting_Topless_2: -5203571662166960875
+      PlayerCharacter_Woodcutting_Topless_20: -7261291552044392451
+      PlayerCharacter_Woodcutting_Topless_21: -454207119580901890
+      PlayerCharacter_Woodcutting_Topless_22: 510418084214006561
+      PlayerCharacter_Woodcutting_Topless_23: 8818173721462090684
+      PlayerCharacter_Woodcutting_Topless_24: -8337615302342010059
+      PlayerCharacter_Woodcutting_Topless_25: -764845684280326458
+      PlayerCharacter_Woodcutting_Topless_26: -1741970349275797859
+      PlayerCharacter_Woodcutting_Topless_27: -8190072497118563363
+      PlayerCharacter_Woodcutting_Topless_28: 6152956481996903044
+      PlayerCharacter_Woodcutting_Topless_29: -3340653395831161000
+      PlayerCharacter_Woodcutting_Topless_3: -4847897065134535111
+      PlayerCharacter_Woodcutting_Topless_30: -8292164954175178154
+      PlayerCharacter_Woodcutting_Topless_31: -4387838376565534061
+      PlayerCharacter_Woodcutting_Topless_32: -8004652059064126696
+      PlayerCharacter_Woodcutting_Topless_33: -6489949695128152502
+      PlayerCharacter_Woodcutting_Topless_34: -1056312609064505518
+      PlayerCharacter_Woodcutting_Topless_35: 7536417657077271532
+      PlayerCharacter_Woodcutting_Topless_36: 120532357427426937
+      PlayerCharacter_Woodcutting_Topless_37: 7413786814975612128
+      PlayerCharacter_Woodcutting_Topless_38: 1495155591926982615
+      PlayerCharacter_Woodcutting_Topless_39: 8494295086941702987
+      PlayerCharacter_Woodcutting_Topless_4: 8649787513688685191
+      PlayerCharacter_Woodcutting_Topless_40: -6031005340514563842
+      PlayerCharacter_Woodcutting_Topless_41: 3562560900251955857
+      PlayerCharacter_Woodcutting_Topless_42: 98522239588074802
+      PlayerCharacter_Woodcutting_Topless_43: -2552529242611516624
+      PlayerCharacter_Woodcutting_Topless_44: -970647366052906208
+      PlayerCharacter_Woodcutting_Topless_45: 2921715989345191726
+      PlayerCharacter_Woodcutting_Topless_46: 6479235577600846551
+      PlayerCharacter_Woodcutting_Topless_47: -8439998815679463535
+      PlayerCharacter_Woodcutting_Topless_48: -7183482298743607507
+      PlayerCharacter_Woodcutting_Topless_49: -262171750403732665
+      PlayerCharacter_Woodcutting_Topless_5: 2488503401367963385
+      PlayerCharacter_Woodcutting_Topless_50: 636853555797068667
+      PlayerCharacter_Woodcutting_Topless_51: -5294828647558006376
+      PlayerCharacter_Woodcutting_Topless_52: -3784205329878606295
+      PlayerCharacter_Woodcutting_Topless_53: 7571047809144218728
+      PlayerCharacter_Woodcutting_Topless_54: -3329187712067599473
+      PlayerCharacter_Woodcutting_Topless_55: 3414301441200524161
+      PlayerCharacter_Woodcutting_Topless_56: 4158151330140071129
+      PlayerCharacter_Woodcutting_Topless_57: 6711507971700907666
+      PlayerCharacter_Woodcutting_Topless_58: -3568205703078698144
+      PlayerCharacter_Woodcutting_Topless_59: 2288325615562386432
+      PlayerCharacter_Woodcutting_Topless_6: -6184623461016894278
+      PlayerCharacter_Woodcutting_Topless_60: -2848076490650608509
+      PlayerCharacter_Woodcutting_Topless_61: -997661246780383213
+      PlayerCharacter_Woodcutting_Topless_62: 7355063265165301520
+      PlayerCharacter_Woodcutting_Topless_63: -7686233269043906251
+      PlayerCharacter_Woodcutting_Topless_64: 1890112212275437843
+      PlayerCharacter_Woodcutting_Topless_65: 6989409582003162689
+      PlayerCharacter_Woodcutting_Topless_66: -3976241545081235630
+      PlayerCharacter_Woodcutting_Topless_67: -5941211902728601112
+      PlayerCharacter_Woodcutting_Topless_68: -1092978230357987021
+      PlayerCharacter_Woodcutting_Topless_69: 1529812225144849061
+      PlayerCharacter_Woodcutting_Topless_7: 2618193048584086890
+      PlayerCharacter_Woodcutting_Topless_70: 3310933033120928101
+      PlayerCharacter_Woodcutting_Topless_71: 5534551602482227411
+      PlayerCharacter_Woodcutting_Topless_72: -6379556479639071350
+      PlayerCharacter_Woodcutting_Topless_73: -1196853948247715224
+      PlayerCharacter_Woodcutting_Topless_74: 8208034444304368810
+      PlayerCharacter_Woodcutting_Topless_75: -182994983263175711
+      PlayerCharacter_Woodcutting_Topless_76: 2192558939132047614
+      PlayerCharacter_Woodcutting_Topless_77: 3809637324971270687
+      PlayerCharacter_Woodcutting_Topless_78: -8675803747689514396
+      PlayerCharacter_Woodcutting_Topless_79: 5936872593396704475
+      PlayerCharacter_Woodcutting_Topless_8: -3344645305003022563
+      PlayerCharacter_Woodcutting_Topless_80: 4345518379633495613
+      PlayerCharacter_Woodcutting_Topless_81: 7317354449931743796
+      PlayerCharacter_Woodcutting_Topless_82: -7951817900363503693
+      PlayerCharacter_Woodcutting_Topless_83: -6913654606020235142
+      PlayerCharacter_Woodcutting_Topless_84: 4671378166884091734
+      PlayerCharacter_Woodcutting_Topless_85: -5563033014542780160
+      PlayerCharacter_Woodcutting_Topless_86: 3190985417794714340
+      PlayerCharacter_Woodcutting_Topless_87: -2308449090387318977
+      PlayerCharacter_Woodcutting_Topless_88: 4796416977405670370
+      PlayerCharacter_Woodcutting_Topless_89: -2721252334194240111
+      PlayerCharacter_Woodcutting_Topless_9: -2609922032340140060
+      PlayerCharacter_Woodcutting_Topless_90: -6484706273628549667
+      PlayerCharacter_Woodcutting_Topless_91: -6673575543314632373
+      PlayerCharacter_Woodcutting_Topless_92: -6942230833092423327
+      PlayerCharacter_Woodcutting_Topless_93: -4671364588291176666
+      PlayerCharacter_Woodcutting_Topless_94: 1130646218729544728
+      PlayerCharacter_Woodcutting_Topless_95: -3887802893986303697
+      PlayerCharacter_Woodcutting_Topless_96: 3490132432562429419
+      PlayerCharacter_Woodcutting_Topless_97: -9028599116280977423
+      PlayerCharacter_Woodcutting_Topless_98: -5489325603369253
+      PlayerCharacter_Woodcutting_Topless_99: 753576327494985559
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -40,17 +40,17 @@ namespace LowCloud.Reldawin
         }
 
         public static Tile GetTileByColour(UnityEngine.Color c) {
-            if( c == UnityEngine.Color.blue ) {
-                return new Tile( XMLLoader.Tile[5].id );//water
+            if( c == new UnityEngine.Color( 0.282353f, 0.627451f, 0.000f ) ) { //grass
+                return new Tile( XMLLoader.Tile[2].id );
             }
-            if( c == new UnityEngine.Color( 0.625f, 0.61f‬, 0.0f ) ) {//sand
+            if( c == new UnityEngine.Color( 0.627451f, 0.6156863f, 0.0f ) ) {//sand
                 return new Tile( XMLLoader.Tile[4].id );
             }
-            if( c == new UnityEngine.Color( 0.003f, 0.22f, 0.19f ) ) {//dirt
+            if( c == new UnityEngine.Color( 0.4f, 0.2235294f, 0.1921569f ) ) {//dirt
                 return new Tile( XMLLoader.Tile[3].id );
             }
-            if( c == new UnityEngine.Color( 0.28f, 0.625f, 0.0f ) ) { //grass
-                return new Tile( XMLLoader.Tile[2].id );
+            if( c == new UnityEngine.Color( 0.0f, 0.2980392f, 0.6196079f ) ) {
+                return new Tile( XMLLoader.Tile[5].id );//water
             }
             return new Tile( XMLLoader.Tile[0].id ); //void or empty
         }

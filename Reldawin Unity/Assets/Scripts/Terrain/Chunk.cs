@@ -64,23 +64,17 @@ namespace LowCloud.Reldawin
             {
                 for ( int _y = 1; _y < Chunk.Size + 1; _y++ )
                 {
-                    if(Tiles[_x, _y].TileType == 0 || Tiles[_x, _y].TileType == 1)
-                    {
-                        UVs = SpriteLoader.TileUVDictionary["Empty"];
-                        continue;
-                    }
-                
-                    Tile[] neighbours = GetNeighbours( _x, _y );
-                    Vector2[] UVs;
+                    Vector2[] UVs = SpriteLoader.TileUVDictionary["Empty"];
 
-                    if ( channel == 0 )
-                    {
-                        UVs = SpriteLoader.TileUVDictionary[XMLLoader.Tile[Tiles[_x, _y].TileType].name + "_" + Random.Range( 0, 16 )];
+                    Tile[] neighbours = GetNeighbours( _x, _y );
+
+                    if ( channel == 0 ) {
+                        UVs = SpriteLoader.GetTileUVs( XMLLoader.Tile[Tiles[_x, _y].TileType].name );
                         foreach ( Tile neighbour in neighbours )
                         {
                             if ( neighbour.TileType != Tiles[_x, _y].TileType && neighbour.GetLayer > Tiles[_x, _y].GetLayer )
                             {
-                                UVs = SpriteLoader.TileUVDictionary[XMLLoader.Tile[neighbour.TileType].name + "_" + Random.Range( 0, 16 )];
+                                UVs = SpriteLoader.GetTileUVs(XMLLoader.Tile[neighbour.TileType].name);
                                 break;
                             }
                         }

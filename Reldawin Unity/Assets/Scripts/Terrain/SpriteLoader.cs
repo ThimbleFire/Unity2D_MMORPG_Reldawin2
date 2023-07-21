@@ -494,5 +494,16 @@ namespace LowCloud.Reldawin
 
             return TileUVDictionary["Void"];
         }
+    
+        public static Vector2[] GetTileUVs(string name) {
+
+            int index = Random.Range( 0, 16 );
+
+            if( TileUVDictionary.ContainsKey( name + "_" + index ) ) {
+                return TileUVDictionary[name + "_" + index];
+            } else
+                return TileUVDictionary["Empty"];
+
+        }
     }
 }
