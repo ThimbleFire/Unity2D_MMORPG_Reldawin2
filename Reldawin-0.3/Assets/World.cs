@@ -1,3 +1,9 @@
+/*   Reldawin-0.3::World.cs
+/    Author: Tony Boothroyd
+/    Created: 21/07/2023
+/    Description: 
+*/
+
 using LowCloud.Reldawin;
 using System;
 using System.Collections.Generic;
@@ -30,12 +36,16 @@ public class World : MonoBehaviour
 
     public Tile[] tiles;
 
+    public Grid grid;
+
     private Dictionary<string, TileBase> keyValuePairs = new();
     private Dictionary<Vector2Int, Chunk> loadedChunks = new();
 
     public LocalPlayerCharacter lpc;
 
     private void Awake() {
+        grid.cellSize = new Vector2( Tile.Width / 100, Tile.Height / 100 );
+        
         foreach( Tile t in tiles ) {
             keyValuePairs.Add( t.color.ToHexString(), t.tileBase );
         }
@@ -44,16 +54,18 @@ public class World : MonoBehaviour
     }
 
     private void LocalPlayerCharacter_LPCOnChunkChange( Vector3Int lastChunk, Vector3Int newChunk ) {
+        Vector2Int dirOfTravel = newChunk - lastChunk;
 
-        for( int y = newChunk.y - 1; y < newChunk.y + 2; y++ ) {
-            for( int x = newChunk.x - 1; x < newChunk.x + 2; x++ ) {
+        for ( int i = -1; i <= 1; i++ )
+        {
+            var dirTravelX = dirOfTravel.x == 0 ? i : dirOfTravel.x;
+            var dirTravelY = dirOfTravel.y == 0 ? i : dirOfTravel.y;
 
-                if( x <= 0 || x >= map.width / Chunk.width ||
-                    y <= 0 || y >= map.height / Chunk.height )
-                    continue;
-                else
-                    LoadChunk( new Vector2Int(x, y) );
-            }
+            Vector2Int createChunkIndex = new Vector2Int( newChunk.x + dirTravelX, newChunk.y + dirTravelY );
+            Vector2Int removeChunkIndex = new Vector2Int( lastChunk.x - dirTravelX, lastChunk.y - dirTravelY );
+
+            RemoveChunk( removeChunkIndex );
+            CreateChunk( createChunkIndex );
         }
     }
 
@@ -73,32 +85,75 @@ public class World : MonoBehaviour
         OnClicked?.Invoke( cellCoordinates, worldPosition );
     }
 
-    private void LoadChunk(Vector2Int cell) {
-        if(loadedChunks.ContainsKey(cell)) {
+    private void CreateChunk(Vector2Int chunkIndex) {
+            
+        if(loadedChunks.ContainsKey(chunkIndex)) {
             return;
         }
-        
-        // Set up the grid cell size so it accomodates the tile size
-        Grid grid = GetComponent<Grid>();
-        grid.cellSize = new Vector2( Tile.Width / 100, Tile.Height / 100 );
+    
+        if(IsChunkOutOfBounds(chunkIndex))
+            return;
 
-        // Populate the world with tiles
-        for( int y = Chunk.height * cell.y; y < Chunk.height * ( cell.y + 1 ); y++ ) {
-            for( int x = Chunk.width * cell.x; x < Chunk.width * ( cell.x + 1 ); x++ ) {
+        Chunk chunk = new Chunk();
+        
+        // Populate the world with default tiles
+        for( int y = Chunk.height * chunkIndex.y; y < Chunk.height * ( chunkIndex.y + 1 ); y++ ) {
+            for( int x = Chunk.width * chunkIndex.x; x < Chunk.width * ( chunkIndex.x + 1 ); x++ ) {
                 tileMap.SetTile(
                     new Vector3Int( y, -x ),
                     keyValuePairs[map.GetPixel( x, y ).ToHexString()]
                 );
             }
         }
+        
+        ///////////////////////////////////////////////////////
 
+        //Send a message to the server to get scene object data
+
+        ///////////////////////////////////////////////////////
+        
+        loadedChunks.Add(cell, chunk);
+
+        UpdateTilemap();    
+    }
+    
+    private void RemoveChunk( Vector2Int chunkIndex )
+    {
+        bool result = loadedChunks.TryGetValue( chunkIndex, out Chunk chunk );
+
+         if ( result == false)
+             return;
+             
+        if(IsChunkOutOfBounds(chunkIndex))
+            return;
+
+        //chunk.RecycleSceneObjects();
+
+        // remove tiles that are out of bounds
+        for( int y = Chunk.height * chunkIndex.y; y < Chunk.height * ( chunkIndex.y + 1 ); y++ ) {
+            for( int x = Chunk.width * chunkIndex.x; x < Chunk.width * ( chunkIndex.x + 1 ); x++ ) {
+                tileMap.SetTile( new Vector3Int( y, -x ), null);
+            }
+        }
+    }
+
+    private bool IsChunkOutOfBounds(Vector2Int chunkIndex)
+    {
+        if ( chunkIndex.x < 0 || chunkIndex.y < 0 || chunkIndex.x > map.Width / Chunk.width || chunkIndex.y > map.Height / chunk.height )
+            return true;
+        return false;
+    }
+
+    private void UpdateTilemap()
+    {        
         tileMap.CompressBounds();
-        //Pathfind.Setup( floor );
+
+        // Update Pathfinding
+        //Pathfind.Setup( tileMap );
+        
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
         collider.size = new Vector3( tileMap.size.x * grid.cellSize.x, tileMap.size.y * grid.cellSize.y );
         collider.offset = new Vector2( tileMap.size.x * grid.cellSize.x / 2, 0.0f );
-    
-        loadedChunks.Add(cell, New Chunk());
     }
 
     [SerializeField]
