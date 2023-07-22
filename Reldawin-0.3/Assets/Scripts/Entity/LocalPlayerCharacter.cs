@@ -54,5 +54,24 @@ namespace LowCloud.Reldawin
         {
             World.OnClicked -= World_OnClicked;
         }
+
+        public Vector2Int[] GetSurroundingChunks
+        {
+            get
+            {
+                return new Vector2Int[8]
+                {
+                                                                            //      Example localPlayerCharacter.InCurrentChunk == 1, 1
+                        InCurrentChunk + Vector2Int.up + Vector2Int.left,   // 0    (0, 2)
+                        InCurrentChunk + Vector2Int.up,                     // 1    (1, 2)
+                        InCurrentChunk + Vector2Int.up + Vector2Int.right,  // 2    (2, 2)
+                        InCurrentChunk + Vector2Int.right,                  // 3    (2, 1)
+                        InCurrentChunk + Vector2Int.right + Vector2Int.down,// 4    (2, 0)
+                        InCurrentChunk + Vector2Int.down,                   // 5    (1, 0)
+                        InCurrentChunk + Vector2Int.down + Vector2Int.left, // 6    (0, 0)
+                        InCurrentChunk + Vector2Int.left                    // 7    (0, 1)
+                };
+            }
+        }
     }
 }
