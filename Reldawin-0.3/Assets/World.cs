@@ -36,17 +36,19 @@ public class World : MonoBehaviour
     public Tile[] tileTypes;
     public Grid grid;
 
+    // tileTypes stored in a dictionary
     private Dictionary<string, TileBase> keyValuePairs = new();
     private Dictionary<Vector2Int, Chunk> loadedChunks = new();
 
     public LocalPlayerCharacter lpc;
 
     private void Awake() {
-        grid.cellSize = new Vector2( Tile.Width / 100, Tile.Height / 100 );        
+        // setup the grid cell size during runtime in case we change tile dimensions. Kind of unneccesary, remove once done debugging
+        grid.cellSize = new Vector2( Tile.Width / 100, Tile.Height / 100 );
+        //catalogue tileTypes in the form of a dictionary so we can access them easily
         foreach( Tile t in tileTypes ) {
             keyValuePairs.Add( t.color.ToHexString(), t.tileBase );
         }
-        LocalPlayerCharacter.LPCOnChunkChange += LocalPlayerCharacter_LPCOnChunkChange;
     }
 
     private void LocalPlayerCharacter_LPCOnChunkChange( Vector3Int lastChunk, Vector3Int newChunk ) {
@@ -66,7 +68,12 @@ public class World : MonoBehaviour
     }
 
     private void Start() {
-        //lpc.MoveToWorldSpace()
+        // Create the starting chunks the player spawns in
+        CreateChunk(lpc.InCurrentChunk);
+        foreach(Vector2Int neighbour in lpc.GetSurroundingChunks)
+            CreateChunk(neighbour);
+        
+        LocalPlayerCharacter.LPCOnChunkChange += LocalPlayerCharacter_LPCOnChunkChange;
     }
 
     private void OnMouseDown() {
