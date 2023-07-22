@@ -3,29 +3,12 @@ Reldawin is a multiplayer 2d isometric RPG. The player character starts in a wil
 
 ![Reldawin](https://i.imgur.com/38DS2Wp.png)
 
+## Reldawin-0.3
+
 https://i.imgur.com/C8AYzRa.gif
 
-## TODO List
+This is a separate build of the game that uses Unity Tilemaps and XMLite-Net. Map and LPC (local player character) data is stored on the local player's client. Equipment and animation status is sent to the server on login and is distributed to nearby OPCs (other player characters) when they're within 2 chunks of one another.
 
-- [Code cleanup]
+LPC coordinates and destination are still stored and distrubted by the server on connection.
 
-_Code cleanup_: Trying to massively speed up the time it takes to load chunks. We're currently reworking how we get UVs. 
-                Through testing we've discovered it is 4 to 5 times faster to get information directly through a static dictionary than through a Get method. 
-
-- [Fix] Interact animations
-- [Add] Crafting
-
-You activate an item in the inventory and use it with another item. The two items are used to query existing recipes featuring those two items. Returned recipes are presented as buttons that can be clicked in order to craft these items. XMLDevice.GetRecipesContaining(itemA, itemB);
-
-- [Add] Doodad destruction  
-- [Add] Mining animation 
-- [Add] Item database
-- [Add] Chat window
-- [Add] Drop item from inventory
-- [Add] Pile of items model for multiple dropped items
-- [Add] Pile of item container
-- [Add] Take from Pile of item container
-- [Add] Doodad decay (yes, including trees which will grow, die and spread naturally over time)
-
-## Bugs to squash
-- Sometimes when you move away from doodads while interacting the interaction animation persists.
+Although much of the code is reused from the Reldawin Unity project, the majority of it is built from the ground up.
