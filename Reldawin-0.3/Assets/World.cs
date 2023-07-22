@@ -33,9 +33,7 @@ public class World : MonoBehaviour
     public delegate void ClickAction( Vector3Int cellClicked, Vector2 pointClicked );
 
     public Tilemap tileMap;
-
-    public Tile[] tiles;
-
+    public Tile[] tileTypes;
     public Grid grid;
 
     private Dictionary<string, TileBase> keyValuePairs = new();
@@ -44,12 +42,10 @@ public class World : MonoBehaviour
     public LocalPlayerCharacter lpc;
 
     private void Awake() {
-        grid.cellSize = new Vector2( Tile.Width / 100, Tile.Height / 100 );
-        
-        foreach( Tile t in tiles ) {
+        grid.cellSize = new Vector2( Tile.Width / 100, Tile.Height / 100 );        
+        foreach( Tile t in tileTypes ) {
             keyValuePairs.Add( t.color.ToHexString(), t.tileBase );
         }
-
         LocalPlayerCharacter.LPCOnChunkChange += LocalPlayerCharacter_LPCOnChunkChange;
     }
 
@@ -70,7 +66,6 @@ public class World : MonoBehaviour
     }
 
     private void Start() {
-
         //lpc.MoveToWorldSpace()
     }
 
@@ -87,9 +82,8 @@ public class World : MonoBehaviour
 
     private void CreateChunk(Vector2Int chunkIndex) {
             
-        if(loadedChunks.ContainsKey(chunkIndex)) {
+        if(loadedChunks.ContainsKey(chunkIndex))
             return;
-        }
     
         if(IsChunkOutOfBounds(chunkIndex))
             return;
@@ -137,15 +131,16 @@ public class World : MonoBehaviour
         }
     }
 
-    private bool IsChunkOutOfBounds(Vector2Int chunkIndex)
-    {
-        if ( chunkIndex.x < 0 || chunkIndex.y < 0 || chunkIndex.x > map.Width / Chunk.width || chunkIndex.y > map.Height / chunk.height )
-            return true;
-        return false;
+    private bool IsChunkOutOfBounds(Vector2Int chunkIndex) {
+        if ( chunkIndex.x < 0 || 
+             chunkIndex.y < 0 || 
+             chunkIndex.x > map.Width / Chunk.width || 
+             chunkIndex.y > map.Height / chunk.height )
+             return true;
+        else return false;
     }
 
-    private void UpdateTilemap()
-    {        
+    private void UpdateTilemap()  
         tileMap.CompressBounds();
 
         // Update Pathfinding
