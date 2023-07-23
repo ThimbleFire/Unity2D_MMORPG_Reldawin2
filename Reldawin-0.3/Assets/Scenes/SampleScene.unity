@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 1836849035}
-  moveSpeed: 1
+  moveSpeed: 5
 --- !u!1 &781324576
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +435,22 @@ PrefabInstance:
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 781324579}
+    - target: {fileID: -6548107773438892968, guid: eb51349936e865046b3c652adc0019bb, type: 3}
+      propertyPath: inLastChunk.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6548107773438892968, guid: eb51349936e865046b3c652adc0019bb, type: 3}
+      propertyPath: inLastChunk.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6548107773438892968, guid: eb51349936e865046b3c652adc0019bb, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1836849037}
+    - target: {fileID: -6548107773438892968, guid: eb51349936e865046b3c652adc0019bb, type: 3}
+      propertyPath: animationController
+      value: 
+      objectReference: {fileID: 1836849036}
     - target: {fileID: 184428291237398188, guid: eb51349936e865046b3c652adc0019bb, type: 3}
       propertyPath: m_Name
       value: LocalPlayerCharacter
@@ -445,11 +461,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 184428291237398190, guid: eb51349936e865046b3c652adc0019bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 184428291237398190, guid: eb51349936e865046b3c652adc0019bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 184428291237398190, guid: eb51349936e865046b3c652adc0019bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -502,6 +518,22 @@ MonoBehaviour:
 --- !u!4 &1836849035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 184428291237398190, guid: eb51349936e865046b3c652adc0019bb, type: 3}
+  m_PrefabInstance: {fileID: 1795183054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1836849036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8338482029174445463, guid: eb51349936e865046b3c652adc0019bb, type: 3}
+  m_PrefabInstance: {fileID: 1795183054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaae6b1efd32d9b408e792544339810a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &1836849037 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 184428291237398191, guid: eb51349936e865046b3c652adc0019bb, type: 3}
   m_PrefabInstance: {fileID: 1795183054}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1951285109

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,9 +12,25 @@ namespace AlwaysEast
         public static event LPCOnChunkChangeHandler LPCOnChunkChange;
         public delegate void LPCOnChunkChangeHandler( Vector3Int lastChunk, Vector3Int newChunk );
 
-        public Vector3Int CellPositionInWorld { get { return tilemap.WorldToCell( transform.position ); } }
-        public Vector3Int InCurrentChunk { get { return new Vector3Int( -Mathf.FloorToInt( CellPositionInWorld.y / Chunk.width ), Mathf.FloorToInt( CellPositionInWorld.x / Chunk.height ) ); } }
-        public Vector3Int inLastChunk = new Vector3Int(-1, -1);
+        protected float MovementSpeed { get; set; } = WalkSpeed;
+        protected Vector2 MovingToward = Vector2.zero;
+        public const float RunSpeed = 0.025f;
+        public const float WalkSpeed = 0.010f;
+        protected bool Running { get; set; }
+
+        public SpriteRenderer spriteRenderer;
+        public AnimationController animationController;
+
+        public Vector3Int CellPositionInWorld = new Vector3Int(0, 0, 0);
+
+        public Vector3Int InCurrentChunk {
+            get {
+                return new Vector3Int( Mathf.FloorToInt( CellPositionInWorld.x / Chunk.width ), Mathf.FloorToInt( CellPositionInWorld.y / Chunk.height ) );
+            }
+        }
+        public Vector3Int inLastChunk = new Vector3Int(0, 0);
+        private Queue<Node> path;
+        protected bool lastNodeOccupied = false;
 
         private void Awake() => World.OnClicked += World_OnClicked;
 
@@ -24,31 +41,106 @@ namespace AlwaysEast
             }
         }
 
+        private void FixedUpdate() {
+            // If the player has not met their destination...
+            if( transform.position != ( Vector3 )MovingToward ) {
+                transform.position = Vector3.MoveTowards( transform.position, MovingToward, MovementSpeed );
+                Vector3Int newPoint = World.gTileMap.WorldToCell( transform.position );
+
+                if( newPoint != CellPositionInWorld ) {
+                    OnMovedTile( newPoint, CellPositionInWorld );
+
+                    if( InCurrentChunk != inLastChunk )
+                        OnMovedChunk( InCurrentChunk, inLastChunk );
+                }
+
+                // If moving the transform puts us in the position
+                if( transform.position == ( Vector3 )MovingToward ) {
+                    MoveToNextNode();
+                }
+            }
+        }
+
+        protected void MoveToNextNode() {
+            if( path == null ) {
+                OnAnimationDestinationMet();
+                return;
+            }
+
+            if( path.Count == 0 ) {
+                OnAnimationDestinationMet();
+                return;
+            }
+
+            Vector2 worldPosition = path.Peek().WorldPosition;
+
+            if( path.Count > 1 ) {
+                MovingToward = worldPosition;
+            } else if( path.Count == 1 ) {
+                if( lastNodeOccupied ) {
+                    Vector3Int worldCell = path.Peek().CellPositionInWorld;
+
+                    path.Clear();
+                    FaceDirection( worldPosition );
+                    MovingToward = transform.position;
+
+                    return;
+                } else {
+                    MovingToward = worldPosition;
+                }
+            }
+
+            path.Dequeue();
+        }
+
+        private void OnAnimationDestinationMet() {
+            animationController.OnAnimationDestinationMet();
+        }
+
+        protected virtual void OnMovedTile( Vector3Int newPoint, Vector3Int lastTile ) {
+            CellPositionInWorld = newPoint;
+            spriteRenderer.sortingOrder = CellPositionInWorld.x * Chunk.height + CellPositionInWorld.y;
+        }
+
+        protected virtual void OnMovedChunk( Vector3Int currentChunk, Vector3Int lastChunk ) {
+            inLastChunk = InCurrentChunk;
+        }
+
         public void MoveToWorldSpace(Vector3 position, Vector2Int chunkCoordinates) {
             transform.position = position;
         }
 
         private void World_OnClicked( Vector3Int cellClicked, Vector2 pointClicked )
         {
-            //path = Pathfinder.GetPath( CellPositionInWorld, cellClicked, out lastNodeOccupied );
-            //if(Interacting)
-            //    Interrupt();
-            //base.pointClicked = pointClicked;
-            //if ( path == null )
-            //{
-            //    SetTargetPosition( pointClicked );
-            //    return;
-            //}
-            //if ( path.Count == 0 )
-            //{
-            //    return;
-            //}
-            //MoveToNextNode();
+            path = Pathfinder.GetPath( CellPositionInWorld, cellClicked );
+
+            if( path == null ) {
+                return;
+            }
+            if( path.Count == 0 ) {
+                return;
+            }
+
+            if( path == null ) {
+                MovingToward = pointClicked;
+
+                return;
+            }
+
+            if( path.Count == 0 ) {
+                return;
+            }
+
+            MoveToNextNode();
         }
 
         private void OnDestroy()
         {
             World.OnClicked -= World_OnClicked;
+        }
+
+        private void FaceDirection( Vector2 worldDirection ) {
+            animationController.FaceDirection( worldDirection );
         }
 
         public Vector3Int[] GetSurroundingChunks

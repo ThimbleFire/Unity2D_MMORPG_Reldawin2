@@ -64,8 +64,9 @@ namespace AlwaysEast
     {
         public static event ClickAction OnClicked;
         public delegate void ClickAction( Vector3Int cellClicked, Vector2 pointClicked );
-
+        
         public Tilemap tileMap;
+        public static Tilemap gTileMap;
         public Tile[] tileTypes;
         public Grid grid;
 
@@ -80,12 +81,12 @@ namespace AlwaysEast
             foreach( Tile t in tileTypes )
                 ResourceRepository.keyValuePairs.Add( t.color.ToHexString().Substring( 0, 6 ), t.tileBase );
             ResourceRepository.map = this.map;
+            gTileMap = tileMap;
 
             for( int y = 0; y < 12; y++ ) {
                 inactiveChunks.Add( new Chunk() );
             }
         }
-
 
         private void Start() {
             // Create the starting chunks the player spawns in
@@ -93,18 +94,26 @@ namespace AlwaysEast
             foreach( Vector3Int neighbour in lpc.GetSurroundingChunks )
                 CreateChunk( neighbour );
 
+            UpdateTilemap();
+
             LocalPlayerCharacter.LPCOnChunkChange += LocalPlayerCharacter_LPCOnChunkChange;
         }
 
-        private void OnMouseDown() {
+        public void Update() {
+
             if( EventSystem.current.IsPointerOverGameObject() )
                 return;
 
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if( Input.GetMouseButtonDown( 0 ) ) {
 
-            Vector3Int cellCoordinates = tileMap.WorldToCell(worldPosition);
-            Debug.Log( cellCoordinates );
-            OnClicked?.Invoke( cellCoordinates, worldPosition );
+                Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint( Input.mousePosition );
+
+                Vector3Int coordinate = grid.WorldToCell(mouseWorldPos);
+
+                Debug.Log( coordinate );
+
+                OnClicked?.Invoke( coordinate, Vector2.zero );
+            }
         }
 
         private void CreateChunk( Vector3Int chunkIndex ) {
@@ -115,8 +124,6 @@ namespace AlwaysEast
             if( IsChunkOutOfBounds( chunkIndex ) )
                 return;
 
-            // Chunk now creates all tiles when declared.
-            // We should object pool them in future. Changing tile coordinates, cell position and world position just requires changing the chunk index.
             Chunk newChunk = inactiveChunks[0];
             inactiveChunks.Remove( inactiveChunks[0] );
             activeChunks.Add( newChunk );
@@ -128,9 +135,7 @@ namespace AlwaysEast
 
             ///////////////////////////////////////////////////////
 
-
             newChunk.Reload( tileMap, chunkIndex );
-            UpdateTilemap();
         }
 
         private void RemoveChunk( Vector3Int chunkIndex ) {
@@ -143,8 +148,9 @@ namespace AlwaysEast
             if( result == false )
                 return;
 
-
-            //chunk.RecycleSceneObjects();
+            inactiveChunks.Add( chunk );
+            activeChunks.Remove( chunk );
+            chunkLookup.Remove( chunkIndex );
 
             // remove tiles that are out of bounds
             for( int y = Chunk.height * chunkIndex.y; y < Chunk.height * ( chunkIndex.y + 1 ); y++ ) {
@@ -152,10 +158,6 @@ namespace AlwaysEast
                     tileMap.SetTile( new Vector3Int( y, -x ), null );
                 }
             }
-
-            inactiveChunks.Add( chunk );
-            activeChunks.Remove( chunk );
-            chunkLookup.Remove( chunkIndex );
         }
 
         private bool IsChunkOutOfBounds( Vector3Int chunkIndex ) {
@@ -171,7 +173,7 @@ namespace AlwaysEast
             tileMap.CompressBounds();
 
             // Update Pathfinding
-            //Pathfind.Setup( tileMap );
+            Pathfinder.Populate( activeChunks );
 
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.size = new Vector3( tileMap.size.x * grid.cellSize.x, tileMap.size.y * grid.cellSize.y );
@@ -195,6 +197,8 @@ namespace AlwaysEast
                     CreateChunk( createChunkIndex );
                 }
             }
+
+            UpdateTilemap();
         }
 
         [SerializeField]
