@@ -14,8 +14,16 @@ namespace AlwaysEast
                 return type != -1; 
             }
         }
-        public Vector3Int CellPositionInGrid { get; set; }
-        public Vector3Int CellPositionInWorld { get; set; }
+        public Vector3Int ChunkIndex { get; set; }
+        public Vector3Int CellPositionInGrid { get; readonly set; }
+        public Vector3Int CellPositionInWorld
+        {
+            get
+            {
+                return /* CellPositionInGrid.y + Chunk.height * ChunkIndex.y, -(CellPositionInGrid.x + Chunk.width * ChunkIndex.x; */ 
+                          ChunkIndex.x * width + CellPositionInGrid.x, ChunkIndex.y * height + CellPositionInGrid.y;
+            }
+        }
         public Vector3 WorldPosition
         { 
             get 
@@ -32,8 +40,10 @@ namespace AlwaysEast
             get { return GCost + HCost; }
         }
 
-        public Node()
+        public Node( Vector3Int _cellPosGrid, Vector3Int _parentChunkIndex )
         {
+            this.ChunkIndex = _parentChunkIndex;
+            this.CellPositionInGrid = _cellPosGrid;
             GCost = 1;
             HCost = 0;
         }
