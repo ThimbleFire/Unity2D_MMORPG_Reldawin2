@@ -37,7 +37,7 @@ public class World : MonoBehaviour
             this.Index = index;
             for(int y = 0; y < height; y++)
             for(int x = 0; x < width; x++)        
-                Nodes[x, y] = new Node( new Vector3Int(x, y) );
+                Nodes[x, y] = new Node( new Vector3Int(x, y), index );
         }
     }
 
