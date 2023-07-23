@@ -18,6 +18,7 @@ public class World : MonoBehaviour
 {
     [Serializable]
     public class Tile {
+    
         public Color color;
         public TileBase tileBase;
 
@@ -25,8 +26,19 @@ public class World : MonoBehaviour
         public const float Height = 32;
     }
     public class Chunk {
+    
         public const int width = 16;
         public const int height = 16;
+        
+        public Vector2Int Index { get; readonly set; }
+        public Pathfinder.Node[,] Nodes { get; set; } = new Node[width, height];
+        
+        public Chunk(Vector2Int index) {
+            this.Index = index;
+            for(int y = 0; y < height; y++)
+            for(int x = 0; x < width; x++)        
+                Nodes[x, y] = new Node( new Vector3Int(x, y) );
+        }
     }
 
     public static event ClickAction OnClicked;
@@ -46,9 +58,8 @@ public class World : MonoBehaviour
         // setup the grid cell size during runtime in case we change tile dimensions. Kind of unneccesary, remove once done debugging
         grid.cellSize = new Vector2( Tile.Width / 100, Tile.Height / 100 );
         //catalogue tileTypes in the form of a dictionary so we can access them easily
-        foreach( Tile t in tileTypes ) {
+        foreach( Tile t in tileTypes )
             keyValuePairs.Add( t.color.ToHexString(), t.tileBase );
-        }
     }
 
     private void LocalPlayerCharacter_LPCOnChunkChange( Vector3Int lastChunk, Vector3Int newChunk ) {
@@ -95,18 +106,19 @@ public class World : MonoBehaviour
         if(IsChunkOutOfBounds(chunkIndex))
             return;
 
-        Chunk chunk = new Chunk();
+        // Chunk now creates all tiles when declared.
+        // We should object pool them in future. Changing tile coordinates, cell position and world position just requires changing the chunk index.
+        Chunk chunk = new Chunk(chunkIndex);
         
         // Populate the world with default tiles
-        for( int y = Chunk.height * chunkIndex.y; y < Chunk.height * ( chunkIndex.y + 1 ); y++ ) {
-            for( int x = Chunk.width * chunkIndex.x; x < Chunk.width * ( chunkIndex.x + 1 ); x++ ) {
-                tileMap.SetTile(
-                    new Vector3Int( y, -x ),
-                    keyValuePairs[map.GetPixel( x, y ).ToHexString()]
-                );
-            }
+        for( int y = 0; y < Chunk.height; y++ ) 
+        for( int x = 0; x < Chunk.width; x++ )
+        {
+            tileMap.SetTile( keyValuePairs[map.GetPixel( x + Chunk.width * chunkIndex.x, y + Chunk.height * chunkIndex.y ).ToHexString()] );
+
+            //chunk.Node[x, y] = new Node();
+            
         }
-        
         ///////////////////////////////////////////////////////
 
         //Send a message to the server to get scene object data
