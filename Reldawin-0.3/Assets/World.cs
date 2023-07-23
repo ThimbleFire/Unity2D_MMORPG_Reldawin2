@@ -55,8 +55,6 @@ public class World : MonoBehaviour
     public LocalPlayerCharacter lpc;
 
     private void Awake() {
-        // setup the grid cell size during runtime in case we change tile dimensions. Kind of unneccesary, remove once done debugging
-        grid.cellSize = new Vector2( Tile.Width / 100, Tile.Height / 100 );
         //catalogue tileTypes in the form of a dictionary so we can access them easily
         foreach( Tile t in tileTypes )
             keyValuePairs.Add( t.color.ToHexString(), t.tileBase );
