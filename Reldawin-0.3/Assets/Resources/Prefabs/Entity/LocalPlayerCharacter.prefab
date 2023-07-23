@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 184428291237398191}
   - component: {fileID: 184428291237398184}
   - component: {fileID: -6548107773438892968}
+  - component: {fileID: 8338482029174445463}
   m_Layer: 7
   m_Name: LocalPlayerCharacter
   m_TagString: Untagged
@@ -73,10 +74,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1522423063
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1981155009564019257, guid: 3f216234930200346a62c8aa5dda38b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &184428291237398184
@@ -120,6 +121,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c3c8ad5c03e6c438c1194b1511864d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  inLastChunk: {x: -1, y: -1, z: 0}
+--- !u!114 &8338482029174445463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184428291237398188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaae6b1efd32d9b408e792544339810a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 184428291237398184}
 --- !u!1 &396908787065752199
 GameObject:
   m_ObjectHideFlags: 0

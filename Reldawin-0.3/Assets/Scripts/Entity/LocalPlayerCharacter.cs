@@ -1,9 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using static World;
 
-namespace LowCloud.Reldawin
+namespace AlwaysEast
 {
     public class LocalPlayerCharacter : MonoBehaviour
     {
@@ -16,14 +15,12 @@ namespace LowCloud.Reldawin
         public Vector3Int InCurrentChunk { get { return new Vector3Int( -Mathf.FloorToInt( CellPositionInWorld.y / Chunk.width ), Mathf.FloorToInt( CellPositionInWorld.x / Chunk.height ) ); } }
         public Vector3Int inLastChunk = new Vector3Int(-1, -1);
 
-        private void Awake()
-        {
-            World.OnClicked += World_OnClicked;
-        }
+        private void Awake() => World.OnClicked += World_OnClicked;
 
         private void Update() {
             if( InCurrentChunk != inLastChunk) {
-                LPCOnChunkChange.Invoke( inLastChunk, InCurrentChunk );
+                LPCOnChunkChange?.Invoke( inLastChunk, InCurrentChunk );
+                Debug.Log( InCurrentChunk );
                 inLastChunk = InCurrentChunk;
             }
         }
@@ -55,21 +52,21 @@ namespace LowCloud.Reldawin
             World.OnClicked -= World_OnClicked;
         }
 
-        public Vector2Int[] GetSurroundingChunks
+        public Vector3Int[] GetSurroundingChunks
         {
             get
             {
-                return new Vector2Int[8]
+                return new Vector3Int[8]
                 {
                                                                             //      Example localPlayerCharacter.InCurrentChunk == 1, 1
-                        InCurrentChunk + Vector2Int.up + Vector2Int.left,   // 0    (0, 2)
-                        InCurrentChunk + Vector2Int.up,                     // 1    (1, 2)
-                        InCurrentChunk + Vector2Int.up + Vector2Int.right,  // 2    (2, 2)
-                        InCurrentChunk + Vector2Int.right,                  // 3    (2, 1)
-                        InCurrentChunk + Vector2Int.right + Vector2Int.down,// 4    (2, 0)
-                        InCurrentChunk + Vector2Int.down,                   // 5    (1, 0)
-                        InCurrentChunk + Vector2Int.down + Vector2Int.left, // 6    (0, 0)
-                        InCurrentChunk + Vector2Int.left                    // 7    (0, 1)
+                        InCurrentChunk + Vector3Int.up + Vector3Int.left,   // 0    (0, 2)
+                        InCurrentChunk + Vector3Int.up,                     // 1    (1, 2)
+                        InCurrentChunk + Vector3Int.up + Vector3Int.right,  // 2    (2, 2)
+                        InCurrentChunk + Vector3Int.right,                  // 3    (2, 1)
+                        InCurrentChunk + Vector3Int.right + Vector3Int.down,// 4    (2, 0)
+                        InCurrentChunk + Vector3Int.down,                   // 5    (1, 0)
+                        InCurrentChunk + Vector3Int.down + Vector3Int.left, // 6    (0, 0)
+                        InCurrentChunk + Vector3Int.left                    // 7    (0, 1)
                 };
             }
         }

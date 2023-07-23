@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace LowCloud.Reldawin
+namespace AlwaysEast
 {
     /// <summary>
     /// Animated entities inherit this class
