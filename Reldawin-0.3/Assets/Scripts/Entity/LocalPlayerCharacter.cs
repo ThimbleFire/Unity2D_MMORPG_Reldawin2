@@ -20,7 +20,6 @@ namespace AlwaysEast
         private void Update() {
             if( InCurrentChunk != inLastChunk) {
                 LPCOnChunkChange?.Invoke( inLastChunk, InCurrentChunk );
-                Debug.Log( InCurrentChunk );
                 inLastChunk = InCurrentChunk;
             }
         }

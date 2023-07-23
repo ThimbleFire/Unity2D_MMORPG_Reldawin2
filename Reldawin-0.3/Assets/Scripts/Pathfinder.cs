@@ -20,8 +20,7 @@ namespace AlwaysEast
         {
             get
             {
-                return /* CellPositionInGrid.y + Chunk.height * ChunkIndex.y, -(CellPositionInGrid.x + Chunk.width * ChunkIndex.x; */
-                          new Vector3Int( ChunkIndex.x * Chunk.width + CellPositionInGrid.x, ChunkIndex.y * Chunk.height + CellPositionInGrid.y );
+                return new Vector3Int( CellPositionInGrid.y + Chunk.height * ChunkIndex.y, -( CellPositionInGrid.x + Chunk.width * ChunkIndex.x ) );
             }
         }
         public Vector3 WorldPosition

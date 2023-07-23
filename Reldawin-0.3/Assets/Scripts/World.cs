@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,7 +14,8 @@ using UnityEngine.Tilemaps;
 using Color = UnityEngine.Color;
 
 namespace AlwaysEast
-{        
+{
+
     [Serializable]
     public class Tile
     {
@@ -33,17 +35,33 @@ namespace AlwaysEast
         public Vector3Int Index { get; set; }
         public Node[,] Nodes { get; set; } = new Node[width, height];
 
-        public Chunk( Vector3Int index ) {
-            this.Index = index;
+        public void Reload( Tilemap tileMap) {
             for( int y = 0; y < height; y++ )
-                for( int x = 0; x < width; x++ )
-                    Nodes[x, y] = new Node( new Vector3Int( x, y ), index );
+            for( int x = 0; x < width; x++ ) {
+                Nodes[x, y] = new Node( new Vector3Int( x, y ), Index );
+                    tileMap.SetTile(
+                    Nodes[x, y].CellPositionInWorld,
+                    ResourceRepository.GetTileAt( x + Chunk.width * Index.x, y + Chunk.height * Index.y )
+                );
+            }
+        }
+        public void Reload(Tilemap tileMap, Vector3Int index) {
+            this.Index = index;
+            Reload( tileMap );
         }
     }
+    public class ResourceRepository
+    {
+        // tileTypes stored in a dictionary
+        public static Dictionary<string, TileBase> keyValuePairs = new();
+        public static Texture2D map;
+        public static TileBase GetTileAt(int x, int y) {
+            return keyValuePairs[map.GetPixel( x, y ).ToHexString().Substring( 0, 6 )];
+        }
+    }
+
     public class World : MonoBehaviour
     {
-
-
         public static event ClickAction OnClicked;
         public delegate void ClickAction( Vector3Int cellClicked, Vector2 pointClicked );
 
@@ -51,32 +69,23 @@ namespace AlwaysEast
         public Tile[] tileTypes;
         public Grid grid;
 
-        // tileTypes stored in a dictionary
-        private Dictionary<string, TileBase> keyValuePairs = new();
-        private Dictionary<Vector3Int, Chunk> loadedChunks = new();
+        public List<Chunk> activeChunks = new List<Chunk>();
+        public List<Chunk> inactiveChunks = new List<Chunk>();
+        private Dictionary<Vector3Int, Chunk> chunkLookup = new();
 
         public LocalPlayerCharacter lpc;
 
         private void Awake() {
             //catalogue tileTypes in the form of a dictionary so we can access them easily
             foreach( Tile t in tileTypes )
-                keyValuePairs.Add( t.color.ToHexString().Substring( 0, 6 ), t.tileBase );
-        }
+                ResourceRepository.keyValuePairs.Add( t.color.ToHexString().Substring( 0, 6 ), t.tileBase );
+            ResourceRepository.map = this.map;
 
-        private void LocalPlayerCharacter_LPCOnChunkChange( Vector3Int lastChunk, Vector3Int newChunk ) {
-            Vector3Int dirOfTravel = newChunk - lastChunk;
-
-            for( int i = -1; i <= 1; i++ ) {
-                var dirTravelX = dirOfTravel.x == 0 ? i : dirOfTravel.x;
-                var dirTravelY = dirOfTravel.y == 0 ? i : dirOfTravel.y;
-
-                Vector3Int createChunkIndex = new Vector3Int( newChunk.x + dirTravelX, newChunk.y + dirTravelY );
-                Vector3Int removeChunkIndex = new Vector3Int( lastChunk.x - dirTravelX, lastChunk.y - dirTravelY );
-
-                RemoveChunk( removeChunkIndex );
-                CreateChunk( createChunkIndex );
+            for( int y = 0; y < 12; y++ ) {
+                inactiveChunks.Add( new Chunk() );
             }
         }
+
 
         private void Start() {
             // Create the starting chunks the player spawns in
@@ -100,7 +109,7 @@ namespace AlwaysEast
 
         private void CreateChunk( Vector3Int chunkIndex ) {
 
-            if( loadedChunks.ContainsKey( chunkIndex ) )
+            if( chunkLookup.ContainsKey( chunkIndex ) )
                 return;
 
             if( IsChunkOutOfBounds( chunkIndex ) )
@@ -108,35 +117,32 @@ namespace AlwaysEast
 
             // Chunk now creates all tiles when declared.
             // We should object pool them in future. Changing tile coordinates, cell position and world position just requires changing the chunk index.
-            Chunk chunk = new Chunk(chunkIndex);
+            Chunk newChunk = inactiveChunks[0];
+            inactiveChunks.Remove( inactiveChunks[0] );
+            activeChunks.Add( newChunk );
+            chunkLookup.Add( chunkIndex, newChunk );
 
-            // Populate the world with default tiles
-            for( int y = chunkIndex.y * Chunk.height; y < (chunkIndex.y + 1) * Chunk.height ; y++ )
-            for( int x = chunkIndex.x * Chunk.width; x < (chunkIndex.x + 1) * Chunk.width; x++ ) {
-                //CellPositionInGrid.y + Chunk.height * ChunkIndex.y, -(CellPositionInGrid.x + Chunk.width * ChunkIndex.x
-                tileMap.SetTile( new Vector3Int(y, -x), keyValuePairs[map.GetPixel( x, y ).ToHexString().Substring( 0, 6 )] );
-
-                //chunk.Node[x, y] = new Node();
-            }
             ///////////////////////////////////////////////////////
 
             //Send a message to the server to get scene object data
 
             ///////////////////////////////////////////////////////
 
-            loadedChunks.Add( chunkIndex, chunk );
 
+            newChunk.Reload( tileMap, chunkIndex );
             UpdateTilemap();
         }
 
         private void RemoveChunk( Vector3Int chunkIndex ) {
-            bool result = loadedChunks.TryGetValue( chunkIndex, out Chunk chunk );
+
+            if( IsChunkOutOfBounds( chunkIndex ) )
+                return;
+
+            bool result = chunkLookup.TryGetValue( chunkIndex, out Chunk chunk );
 
             if( result == false )
                 return;
 
-            if( IsChunkOutOfBounds( chunkIndex ) )
-                return;
 
             //chunk.RecycleSceneObjects();
 
@@ -147,7 +153,9 @@ namespace AlwaysEast
                 }
             }
 
-            loadedChunks.Remove( chunkIndex );
+            inactiveChunks.Add( chunk );
+            activeChunks.Remove( chunk );
+            chunkLookup.Remove( chunkIndex );
         }
 
         private bool IsChunkOutOfBounds( Vector3Int chunkIndex ) {
@@ -168,6 +176,25 @@ namespace AlwaysEast
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.size = new Vector3( tileMap.size.x * grid.cellSize.x, tileMap.size.y * grid.cellSize.y );
             collider.offset = new Vector2( tileMap.size.x * grid.cellSize.x / 2, 0.0f );
+        }
+
+        private void LocalPlayerCharacter_LPCOnChunkChange( Vector3Int lastChunk, Vector3Int newChunk )
+        {
+            using( DebugTimer timer = new DebugTimer( $"Loading Chunks" ) ) 
+            { 
+                Vector3Int dirOfTravel = newChunk - lastChunk;
+
+                for( int i = -1; i <= 1; i++ ) {
+                    var dirTravelX = dirOfTravel.x == 0 ? i : dirOfTravel.x;
+                    var dirTravelY = dirOfTravel.y == 0 ? i : dirOfTravel.y;
+
+                    Vector3Int createChunkIndex = new Vector3Int( newChunk.x + dirTravelX, newChunk.y + dirTravelY );
+                    Vector3Int removeChunkIndex = new Vector3Int( lastChunk.x - dirTravelX, lastChunk.y - dirTravelY );
+
+                    RemoveChunk( removeChunkIndex );
+                    CreateChunk( createChunkIndex );
+                }
+            }
         }
 
         [SerializeField]
