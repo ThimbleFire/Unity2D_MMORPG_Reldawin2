@@ -149,15 +149,15 @@ namespace AlwaysEast
             {
                 return new Vector3Int[8]
                 {
-                                                                            //      Example localPlayerCharacter.InCurrentChunk == 1, 1
-                        InCurrentChunk + Vector3Int.up + Vector3Int.left,   // 0    (0, 2)
-                        InCurrentChunk + Vector3Int.up,                     // 1    (1, 2)
-                        InCurrentChunk + Vector3Int.up + Vector3Int.right,  // 2    (2, 2)
-                        InCurrentChunk + Vector3Int.right,                  // 3    (2, 1)
-                        InCurrentChunk + Vector3Int.right + Vector3Int.down,// 4    (2, 0)
-                        InCurrentChunk + Vector3Int.down,                   // 5    (1, 0)
-                        InCurrentChunk + Vector3Int.down + Vector3Int.left, // 6    (0, 0)
-                        InCurrentChunk + Vector3Int.left                    // 7    (0, 1)
+                                                                            //     Example localPlayerCharacter.InCurrentChunk == 1, 1
+                        InCurrentChunk + Vector3Int.down + Vector3Int.left, //     (0, 0)
+                        InCurrentChunk + Vector3Int.left                    //     (0, 1)
+                        InCurrentChunk + Vector3Int.up + Vector3Int.left,   //     (0, 2)
+                        InCurrentChunk + Vector3Int.down,                   //     (1, 0)
+                        InCurrentChunk + Vector3Int.up,                     //     (1, 2)
+                        InCurrentChunk + Vector3Int.right + Vector3Int.down,//     (2, 0)
+                        InCurrentChunk + Vector3Int.right,                  //     (2, 1)
+                        InCurrentChunk + Vector3Int.up + Vector3Int.right,  //     (2, 2)
                 };
             }
         }
