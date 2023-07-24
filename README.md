@@ -7,8 +7,15 @@ Reldawin is a multiplayer 2d isometric RPG. The player character starts in a wil
 
 https://i.imgur.com/C8AYzRa.gif
 
-This is a separate build of the game that uses Unity Tilemaps and XMLite-Net. Map and LPC (local player character) data is stored on the local player's client. Equipment and animation status is sent to the server on login and is distributed to nearby OPCs (other player characters) when they're within 2 chunks of one another.
+This is a separate build of the game that uses Unity Tilemaps and SQLite-Net.
 
-LPC coordinates and destination are still stored and distrubted by the server on connection.
-
-Although much of the code is reused from the Reldawin Unity project, the majority of it is built from the ground up.
+TODO
+* [x] Chunk Loading
+* [x] Pathfinding
+* [ ] Movement and Animation
+* [ ] Scene Objects
+* [ ] Inventory and Equipment
+* [ ] Gathering
+* [ ] Crafting
+* [ ] Building
+* [ ] Networking and Multiplayer
