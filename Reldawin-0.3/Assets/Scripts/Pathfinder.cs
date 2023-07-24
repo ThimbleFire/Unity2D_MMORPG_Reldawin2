@@ -39,9 +39,8 @@ namespace AlwaysEast
             get { return GCost + HCost; }
         }
 
-        public Node( Vector3Int _cellPosGrid, Vector3Int _parentChunkIndex )
+        public Node( Vector3Int _cellPosGrid )
         {
-            this.ChunkIndex = _parentChunkIndex;
             this.CellPositionInGrid = _cellPosGrid;
             GCost = 1;
             HCost = 0;
