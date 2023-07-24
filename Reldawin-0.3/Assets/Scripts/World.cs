@@ -19,7 +19,6 @@ namespace AlwaysEast
     [Serializable]
     public class Tile
     {
-
         public Color color;
         public TileBase tileBase;
 
@@ -28,6 +27,9 @@ namespace AlwaysEast
     }
     public class Chunk
     {
+        public event OnIndexChangeHandler OnIndexChanged;
+        public delegate void OnIndexChangeHandler( Vector3Int index );
+        
         public const int width = 16;
         public const int height = 16;
 
@@ -37,22 +39,12 @@ namespace AlwaysEast
         public Chunk() {
             for( int y = 0; y < height; y++ )
             for( int x = 0; x <  width; x++ )
-                Nodes[x, y] = new Node( new Vector3Int( x, y) );
+                Nodes[x, y] = new Node( new Vector3Int( x, y), OnIndexChanged );
         }
-
-        public void Reload( Tilemap tileMap) {
-            for( int y = 0; y < height; y++ )
-            for( int x = 0; x < width; x++ ) {
-                Nodes[x, y].ChunkIndex = Index;
-                tileMap.SetTile(
-                Nodes[x, y].CellPositionInWorld,
-                ResourceRepository.GetTileAt( x + Chunk.width * Index.x, y + Chunk.height * Index.y )
-                );
-            }
-        }
-        public void Reload(Tilemap tileMap, Vector3Int index) {
+        
+        public void Reload(Vector3Int index) {
             this.Index = index;
-            Reload( tileMap );
+            OnIndexChanged?.Invoke(Index);
         }
     }
     public class ResourceRepository
