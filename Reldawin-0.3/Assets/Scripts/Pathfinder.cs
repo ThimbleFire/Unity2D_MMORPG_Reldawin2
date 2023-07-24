@@ -15,7 +15,7 @@ namespace AlwaysEast
             }
         }
         private Vector3Int ChunkIndex { get; set; }
-        public Vector3Int CellPositionInGrid { get; set; }
+        private Vector3Int CellPositionInGrid { get; set; }
         public Vector3Int CellPositionInWorld
         {
             get
