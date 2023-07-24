@@ -52,8 +52,10 @@ namespace AlwaysEast
     {
         private static Node[,] nodes = new Node[Chunk.width * 3, Chunk.height * 3];
 
+        private static Vector2Int BottomLeftNodeIndex { get; set; } = Vector2.zero;
+        
         // We want to modify this so we're just sending chunks as a parameter.
-        public static void Populate( List<Chunk> chunks) {
+        public static void Populate( List<Chunk> chunks, _bottomLeftNodeIndex) {
 
             foreach( Chunk chunk in chunks ) {
 
@@ -61,6 +63,8 @@ namespace AlwaysEast
                     nodes[n.CellPositionInWorld.x, n.CellPositionInWorld.y] = n;
                 }
             }
+
+            this.BottomLeftNodeIndex = _bottomLeftNodeIndex;            
         }
         public static Queue<Node> GetPath( Vector3Int start, Vector3Int destination ) {
             destination = new Vector3Int(destination.x, destination.y);
@@ -115,8 +119,8 @@ namespace AlwaysEast
                 Vector3Int.up + Vector3Int.right     // +1, 1
             };
             for( int i = 0; i < offset.Length; i++ ) {
-                int checkX = n.CellPositionInWorld.x + offset[i].x;
-                int checkY = n.CellPositionInWorld.y + offset[i].y;
+                int checkX = n.CellPositionInWorld.x + offset[i].x - BottomLeftNodeIndex.x * Chunk.width;
+                int checkY = n.CellPositionInWorld.y + offset[i].y - BottomLeftNodeIndex.y * Chunk.height;
                 bool checkXInBounds = checkX >= 0 && checkX < nodes.GetLength( 0 );
                 bool checkYInBounds = checkY >= 0 && checkY < nodes.GetLength( 1 );
                 if( !checkXInBounds || !checkYInBounds ) continue;
