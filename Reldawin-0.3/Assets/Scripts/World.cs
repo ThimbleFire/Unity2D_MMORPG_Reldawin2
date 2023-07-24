@@ -173,7 +173,7 @@ namespace AlwaysEast
             tileMap.CompressBounds();
 
             // Update Pathfinding
-            Pathfinder.Populate( activeChunks );
+            Pathfinder.Populate( activeChunks, lpc.GetSurroundingChunks[0].Index );
 
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.size = new Vector3( tileMap.size.x * grid.cellSize.x, tileMap.size.y * grid.cellSize.y );
