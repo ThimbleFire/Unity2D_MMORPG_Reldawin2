@@ -14,7 +14,7 @@ namespace AlwaysEast
                 return type != -1; 
             }
         }
-        public Vector3Int ChunkIndex { get; set; }
+        private Vector3Int ChunkIndex { get; set; }
         public Vector3Int CellPositionInGrid { get; set; }
         public Vector3Int CellPositionInWorld
         {
