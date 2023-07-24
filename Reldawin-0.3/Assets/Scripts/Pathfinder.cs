@@ -31,7 +31,6 @@ namespace AlwaysEast
             } 
         }
         public Node Parent { get; set; }
-
         public int GCost { get; set; }
         public int HCost { get; set; }
         public int FCost
@@ -50,10 +49,8 @@ namespace AlwaysEast
     public class Pathfinder
     {
         private static Node[,] nodes = new Node[Chunk.width * 3, Chunk.height * 3];
-
         private static Vector3Int BottomLeftNodeIndex { get; set; } = Vector3Int.zero;
         
-        // We want to modify this so we're just sending chunks as a parameter.
         public static void Populate( List<Chunk> chunks, Vector3Int _bottomLeftNodeIndex) {
 
             foreach( Chunk chunk in chunks ) {
@@ -135,11 +132,8 @@ namespace AlwaysEast
             return neighbours;
         }
         private static Queue<Node> RetracePath( Node startNode, Node destinationNode ) {
-            //We use a list because we want to reverse it later
             List<Node> path = new List<Node>();
             Node currentNode = destinationNode;
-            // Remove nodes that aren't adjacent to an obsticle.
-            // This allows floating-point, more natural movement
             while( currentNode != startNode ) {
                 bool keep = false;
                 foreach( Node n in GetNeighbours( currentNode ) ) {

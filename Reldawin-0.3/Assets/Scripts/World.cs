@@ -8,7 +8,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -17,7 +16,6 @@ using Color = UnityEngine.Color;
 
 namespace AlwaysEast
 {
-
     [Serializable]
     public class Tile
     {
@@ -27,9 +25,9 @@ namespace AlwaysEast
         public const byte Width = 64;
         public const byte Height = 32;
     }
-    [Serializable]
     public class Chunk
     {
+        public string Name;
         public const byte width = 16;
         public const byte height = 16;
 
@@ -37,6 +35,7 @@ namespace AlwaysEast
         public Node[,] Nodes { get; set; } = new Node[width, height];
         
         public Chunk() {
+            Name = "Inactive";
             for( int y = 0; y < height; y++ )
             for( int x = 0; x <  width; x++ )
                 Nodes[x, y] = new Node( new Vector3Int( x, y) );
@@ -49,6 +48,7 @@ namespace AlwaysEast
         }
 
         public void Reload( Vector3Int index ) {
+            Name = index.ToString();
             for( int y = 0; y < height; y++ )
             for( int x = 0; x < width; x++ ) {
                     this.Index = index;
@@ -75,17 +75,15 @@ namespace AlwaysEast
         public static event ClickAction OnClicked;
         public delegate void ClickAction( Vector3Int cellClicked, Vector2 pointClicked );
         
+        [SerializeField]
+        private Texture2D map;
         public Tilemap tileMap;
         public static Tilemap gTileMap;
         public Tile[] tileTypes;
         public Grid grid;
-
-        [SerializeField]
-        public List<Chunk> activeChunks = new List<Chunk>();
-        [SerializeField]
-        public List<Chunk> inactiveChunks = new List<Chunk>();
+        private List<Chunk> activeChunks = new List<Chunk>();
+        private List<Chunk> inactiveChunks = new List<Chunk>();
         private Dictionary<Vector3Int, Chunk> chunkLookup = new();
-
         public LocalPlayerCharacter lpc;
 
         private void Awake() {
@@ -99,7 +97,6 @@ namespace AlwaysEast
                 inactiveChunks.Add( new Chunk() );
             }
         }
-
         private void Start() {
             // Create the starting chunks the player spawns in
             CreateChunk( lpc.InCurrentChunk );
@@ -110,7 +107,6 @@ namespace AlwaysEast
 
             LocalPlayerCharacter.LPCOnChunkChange += LocalPlayerCharacter_LPCOnChunkChange;
         }
-
         public void Update() {
 
             if( EventSystem.current.IsPointerOverGameObject() )
@@ -122,12 +118,9 @@ namespace AlwaysEast
 
                 Vector3Int coordinate = grid.WorldToCell(mouseWorldPos);
 
-                Debug.Log( coordinate );
-
-                OnClicked?.Invoke( coordinate, Vector2.zero );
+                OnClicked?.Invoke( coordinate, mouseWorldPos );
             }
         }
-
         private void CreateChunk( Vector3Int chunkIndex ) {
 
             if( chunkLookup.ContainsKey( chunkIndex ) )
@@ -149,7 +142,6 @@ namespace AlwaysEast
 
             newChunk.Reload( chunkIndex );
         }
-
         private void RemoveChunk( Vector3Int chunkIndex ) {
 
             if( IsChunkOutOfBounds( chunkIndex ) )
@@ -165,7 +157,6 @@ namespace AlwaysEast
             chunkLookup.Remove( chunkIndex );
             chunk.Erase();
         }
-
         private bool IsChunkOutOfBounds( Vector3Int chunkIndex ) {
             if( chunkIndex.x < 0 ||
                  chunkIndex.y < 0 ||
@@ -174,7 +165,6 @@ namespace AlwaysEast
                 return true;
             else return false;
         }
-
         private void UpdateTilemap() {
             tileMap.CompressBounds();
 
@@ -191,7 +181,6 @@ namespace AlwaysEast
             collider.size = new Vector3( tileMap.size.x * grid.cellSize.x, tileMap.size.y * grid.cellSize.y );
             collider.offset = new Vector2( tileMap.size.x * grid.cellSize.x / 2, 0.0f );
         }
-
         private void LocalPlayerCharacter_LPCOnChunkChange( Vector3Int lastChunk, Vector3Int newChunk )
         {
             using( DebugTimer timer = new DebugTimer( $"Loading Chunks" ) ) 
@@ -210,10 +199,9 @@ namespace AlwaysEast
                 }
             }
 
-            UpdateTilemap();
+            using( DebugTimer timer = new DebugTimer( $"Updating Tilemap" ) ) {
+                UpdateTilemap();
+            }
         }
-
-        [SerializeField]
-        private Texture2D map;
     }
 }

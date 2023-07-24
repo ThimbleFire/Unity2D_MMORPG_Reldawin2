@@ -7,8 +7,6 @@ namespace AlwaysEast
 {
     public class LocalPlayerCharacter : MonoBehaviour
     {
-        public Tilemap tilemap;
-
         public static event LPCOnChunkChangeHandler LPCOnChunkChange;
         public delegate void LPCOnChunkChangeHandler( Vector3Int lastChunk, Vector3Int newChunk );
 
@@ -17,12 +15,9 @@ namespace AlwaysEast
         public const float RunSpeed = 0.025f;
         public const float WalkSpeed = 0.010f;
         protected bool Running { get; set; }
-
         public SpriteRenderer spriteRenderer;
         public AnimationController animationController;
-
         public Vector3Int CellPositionInWorld = new Vector3Int(0, 0, 0);
-
         public Vector3Int InCurrentChunk {
             get {
                 return new Vector3Int( Mathf.FloorToInt( CellPositionInWorld.x / Chunk.width ), Mathf.FloorToInt( CellPositionInWorld.y / Chunk.height ) );
@@ -31,6 +26,8 @@ namespace AlwaysEast
         public Vector3Int inLastChunk;
         private Queue<Node> path;
         protected bool lastNodeOccupied = false;
+        public Tilemap tilemap;
+        public Vector2 pointClicked;
 
         private void Awake() {
             World.OnClicked += World_OnClicked;
@@ -38,23 +35,32 @@ namespace AlwaysEast
             MovingToward = transform.position;
         }
         private void FixedUpdate() {
-            if( transform.position != ( Vector3 )MovingToward ) {
-                transform.position = Vector3.MoveTowards( transform.position, MovingToward, MovementSpeed );
-                Vector3Int newPoint = World.gTileMap.WorldToCell( transform.position );
 
-                if( newPoint != CellPositionInWorld ) {
-
-                    OnMovedTile( newPoint, CellPositionInWorld );
-                }
-
-                // If moving the transform puts us in the position
-                if( transform.position == ( Vector3 )MovingToward ) {
-                    MoveToNextNode();
-                }
+            if( Input.GetKeyDown(KeyCode.R) ) {
+                ToggleRunning();
             }
-        }
 
-        protected void MoveToNextNode() {
+            if( transform.position == ( Vector3 )MovingToward )
+                return;
+
+            transform.position = Vector3.MoveTowards( transform.position, MovingToward, MovementSpeed );
+            Vector3Int newPoint = World.gTileMap.WorldToCell( transform.position );
+
+            if( newPoint != CellPositionInWorld ) {
+
+                OnMovedTile( newPoint, CellPositionInWorld );
+            }
+            // If moving the transform puts us in the position
+            if( transform.position == ( Vector3 )MovingToward ) {
+                MoveToNextNode();
+            }            
+        }
+        private void ToggleRunning() {
+            Running = !Running;
+            MovementSpeed = Running ? RunSpeed : WalkSpeed;
+            animationController.ToggleRun( Running );
+        }
+        private void MoveToNextNode() {
             if( path == null ) {
                 OnAnimationDestinationMet();
                 return;
@@ -65,48 +71,41 @@ namespace AlwaysEast
                 return;
             }
 
-            Vector2 worldPosition = path.Peek().WorldPosition;
+            Vector2 nextNodeWorldPosition = path.Peek().WorldPosition;
 
-            if( path.Count > 1 ) {
-                MovingToward = worldPosition;
-            } else if( path.Count == 1 ) {
+            if( path.Count > 1 )
+                SetTargetPosition( nextNodeWorldPosition );
+            else if( path.Count == 1 )
+            {
                 if( lastNodeOccupied ) {
-                    Vector3Int worldCell = path.Peek().CellPositionInWorld;
-
                     path.Clear();
-                    FaceDirection( worldPosition );
+                    FaceDirection( nextNodeWorldPosition );
                     MovingToward = transform.position;
 
                     return;
                 } else {
-                    MovingToward = worldPosition;
+                    SetTargetPosition( pointClicked );
                 }
             }
-
             path.Dequeue();
         }
-
         private void OnAnimationDestinationMet() {
             animationController.OnAnimationDestinationMet();
         }
-
-        protected virtual void OnMovedTile( Vector3Int newPoint, Vector3Int lastTile ) {
+        private void OnMovedTile( Vector3Int newPoint, Vector3Int lastTile ) {
             CellPositionInWorld = newPoint;
 
             if( InCurrentChunk != inLastChunk )
                 OnMovedChunk( InCurrentChunk );
         }
-
-        protected virtual void OnMovedChunk( Vector3Int currentChunk ) 
+        private void OnMovedChunk( Vector3Int currentChunk ) 
         {
             LPCOnChunkChange?.Invoke( inLastChunk, currentChunk );
             inLastChunk = currentChunk;
         }
-
         public void MoveToWorldSpace(Vector3 position, Vector2Int chunkCoordinates) {
             transform.position = position;
         }
-
         private void World_OnClicked( Vector3Int cellClicked, Vector2 pointClicked )
         {
             path = Pathfinder.GetPath( CellPositionInWorld, cellClicked );
@@ -117,29 +116,25 @@ namespace AlwaysEast
             if( path.Count == 0 ) {
                 return;
             }
-
+            //I mean... is this, does this... do ANTHING?
+            this.pointClicked = pointClicked;
             if( path == null ) {
-                MovingToward = pointClicked;
-
+                SetTargetPosition( pointClicked );
                 return;
             }
-
             if( path.Count == 0 ) {
                 return;
             }
 
             MoveToNextNode();
         }
-
         private void OnDestroy()
         {
             World.OnClicked -= World_OnClicked;
         }
-
         private void FaceDirection( Vector2 worldDirection ) {
             animationController.FaceDirection( worldDirection );
         }
-
         public Vector3Int[] GetSurroundingChunks
         {
             get
@@ -157,6 +152,11 @@ namespace AlwaysEast
                         InCurrentChunk + Vector3Int.up + Vector3Int.right  //     (2, 2)
                 };
             }
+        }
+        public void SetTargetPosition( Vector2 worldPosition ) {
+            MovingToward = worldPosition;
+
+            animationController.SetAnimationMoveDirection( ( Vector2 )transform.position - MovingToward );
         }
     }
 }
