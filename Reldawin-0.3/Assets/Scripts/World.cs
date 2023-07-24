@@ -28,20 +28,25 @@ namespace AlwaysEast
     }
     public class Chunk
     {
-
         public const int width = 16;
         public const int height = 16;
 
         public Vector3Int Index { get; set; }
         public Node[,] Nodes { get; set; } = new Node[width, height];
 
+        public Chunk() {
+            for( int y = 0; y < height; y++ )
+            for( int x = 0; x <  width; x++ )
+                Nodes[x, y] = new Node( new Vector3Int( x, y) );
+        }
+
         public void Reload( Tilemap tileMap) {
             for( int y = 0; y < height; y++ )
             for( int x = 0; x < width; x++ ) {
-                Nodes[x, y] = new Node( new Vector3Int( x, y ), Index );
-                    tileMap.SetTile(
-                    Nodes[x, y].CellPositionInWorld,
-                    ResourceRepository.GetTileAt( x + Chunk.width * Index.x, y + Chunk.height * Index.y )
+                Nodes[x, y].ChunkIndex = Index;
+                tileMap.SetTile(
+                Nodes[x, y].CellPositionInWorld,
+                ResourceRepository.GetTileAt( x + Chunk.width * Index.x, y + Chunk.height * Index.y )
                 );
             }
         }
