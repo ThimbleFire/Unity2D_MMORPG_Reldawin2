@@ -41,16 +41,15 @@ namespace AlwaysEast
                 Nodes[x, y] = new Node( new Vector3Int( x, y) );
         }
 
-        public void Reload( Tilemap tileMap) {
+        public void Reload( Vector3Int index ) {
             for( int y = 0; y < height; y++ )
             for( int x = 0; x < width; x++ ) {
                 Nodes[x, y].ChunkIndex = Index;
-                tileMap.SetTile( Nodes[x, y].CellPositionInWorld, ResourceRepository.GetTileAt( Nodes[x, y].CellPositionInGrid ) );
+                World.gTilemap.SetTile( 
+                    Nodes[x, y].CellPositionInWorld, 
+                    ResourceRepository.GetTileAt( Nodes[x, y].CellPositionInGrid ) 
+                );
             }
-        }
-        public void Reload(Tilemap tileMap, Vector3Int index) {
-            this.Index = index;
-            Reload( tileMap );
         }
     }
     public class ResourceRepository
