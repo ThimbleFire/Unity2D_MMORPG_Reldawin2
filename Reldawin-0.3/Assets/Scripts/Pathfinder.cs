@@ -14,8 +14,8 @@ namespace AlwaysEast
                 return type != -1; 
             }
         }
-        private Vector3Int ChunkIndex { get; set; }
-        private Vector3Int CellPositionInGrid { get; set; }
+        public Vector3Int ChunkIndex { get; set; }
+        public Vector3Int CellPositionInGrid { get; set; }
         public Vector3Int CellPositionInWorld
         {
             get
@@ -51,24 +51,29 @@ namespace AlwaysEast
     {
         private static Node[,] nodes = new Node[Chunk.width * 3, Chunk.height * 3];
 
-        private static Vector2Int BottomLeftNodeIndex { get; set; } = Vector2.zero;
+        private static Vector3Int BottomLeftNodeIndex { get; set; } = Vector3Int.zero;
         
         // We want to modify this so we're just sending chunks as a parameter.
-        public static void Populate( List<Chunk> chunks, _bottomLeftNodeIndex) {
+        public static void Populate( List<Chunk> chunks, Vector3Int _bottomLeftNodeIndex) {
 
             foreach( Chunk chunk in chunks ) {
 
                 foreach( Node n in chunk.Nodes ) {
-                    nodes[n.CellPositionInWorld.x, n.CellPositionInWorld.y] = n;
+                    nodes[n.CellPositionInWorld.x - _bottomLeftNodeIndex.x * Chunk.width,
+                        n.CellPositionInWorld.y - _bottomLeftNodeIndex.y * Chunk.height] = n;
                 }
             }
 
-            this.BottomLeftNodeIndex = _bottomLeftNodeIndex;            
+            BottomLeftNodeIndex = _bottomLeftNodeIndex;
         }
         public static Queue<Node> GetPath( Vector3Int start, Vector3Int destination ) {
-            destination = new Vector3Int(destination.x, destination.y);
+            
+            start = new Vector3Int( start.x - BottomLeftNodeIndex.x * Chunk.width, start.y - BottomLeftNodeIndex.y * Chunk.height );
+            destination = new Vector3Int( destination.x - BottomLeftNodeIndex.x * Chunk.width, destination.y - BottomLeftNodeIndex.y * Chunk.height );
+            
             if( start == destination )
                 return null;
+
             Node startNode = nodes[start.x, start.y];
             Node destinationNode = nodes[destination.x, destination.y];
             List<Node> openSet = new List<Node>();

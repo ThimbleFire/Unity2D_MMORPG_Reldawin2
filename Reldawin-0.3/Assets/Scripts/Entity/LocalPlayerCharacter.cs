@@ -28,30 +28,23 @@ namespace AlwaysEast
                 return new Vector3Int( Mathf.FloorToInt( CellPositionInWorld.x / Chunk.width ), Mathf.FloorToInt( CellPositionInWorld.y / Chunk.height ) );
             }
         }
-        public Vector3Int inLastChunk = new Vector3Int(0, 0);
+        public Vector3Int inLastChunk;
         private Queue<Node> path;
         protected bool lastNodeOccupied = false;
 
-        private void Awake() => World.OnClicked += World_OnClicked;
-
-        private void Update() {
-            if( InCurrentChunk != inLastChunk) {
-                LPCOnChunkChange?.Invoke( inLastChunk, InCurrentChunk );
-                inLastChunk = InCurrentChunk;
-            }
+        private void Awake() {
+            World.OnClicked += World_OnClicked;
+            inLastChunk = InCurrentChunk;
+            MovingToward = transform.position;
         }
-
         private void FixedUpdate() {
-            // If the player has not met their destination...
             if( transform.position != ( Vector3 )MovingToward ) {
                 transform.position = Vector3.MoveTowards( transform.position, MovingToward, MovementSpeed );
                 Vector3Int newPoint = World.gTileMap.WorldToCell( transform.position );
 
                 if( newPoint != CellPositionInWorld ) {
-                    OnMovedTile( newPoint, CellPositionInWorld );
 
-                    if( InCurrentChunk != inLastChunk )
-                        OnMovedChunk( InCurrentChunk, inLastChunk );
+                    OnMovedTile( newPoint, CellPositionInWorld );
                 }
 
                 // If moving the transform puts us in the position
@@ -99,11 +92,15 @@ namespace AlwaysEast
 
         protected virtual void OnMovedTile( Vector3Int newPoint, Vector3Int lastTile ) {
             CellPositionInWorld = newPoint;
-            spriteRenderer.sortingOrder = CellPositionInWorld.x * Chunk.height + CellPositionInWorld.y;
+
+            if( InCurrentChunk != inLastChunk )
+                OnMovedChunk( InCurrentChunk );
         }
 
-        protected virtual void OnMovedChunk( Vector3Int currentChunk, Vector3Int lastChunk ) {
-            inLastChunk = InCurrentChunk;
+        protected virtual void OnMovedChunk( Vector3Int currentChunk ) 
+        {
+            LPCOnChunkChange?.Invoke( inLastChunk, currentChunk );
+            inLastChunk = currentChunk;
         }
 
         public void MoveToWorldSpace(Vector3 position, Vector2Int chunkCoordinates) {
@@ -151,13 +148,13 @@ namespace AlwaysEast
                 {
                                                                             //     Example localPlayerCharacter.InCurrentChunk == 1, 1
                         InCurrentChunk + Vector3Int.down + Vector3Int.left, //     (0, 0)
-                        InCurrentChunk + Vector3Int.left                    //     (0, 1)
+                        InCurrentChunk + Vector3Int.left,                    //     (0, 1)
                         InCurrentChunk + Vector3Int.up + Vector3Int.left,   //     (0, 2)
                         InCurrentChunk + Vector3Int.down,                   //     (1, 0)
                         InCurrentChunk + Vector3Int.up,                     //     (1, 2)
                         InCurrentChunk + Vector3Int.right + Vector3Int.down,//     (2, 0)
                         InCurrentChunk + Vector3Int.right,                  //     (2, 1)
-                        InCurrentChunk + Vector3Int.up + Vector3Int.right,  //     (2, 2)
+                        InCurrentChunk + Vector3Int.up + Vector3Int.right  //     (2, 2)
                 };
             }
         }

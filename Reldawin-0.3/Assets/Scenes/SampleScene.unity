@@ -246,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638506756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1.49, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -451,6 +451,14 @@ PrefabInstance:
       propertyPath: animationController
       value: 
       objectReference: {fileID: 1836849036}
+    - target: {fileID: -6548107773438892968, guid: eb51349936e865046b3c652adc0019bb, type: 3}
+      propertyPath: CellPositionInWorld.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6548107773438892968, guid: eb51349936e865046b3c652adc0019bb, type: 3}
+      propertyPath: CellPositionInWorld.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 184428291237398188, guid: eb51349936e865046b3c652adc0019bb, type: 3}
       propertyPath: m_Name
       value: LocalPlayerCharacter
@@ -465,7 +473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 184428291237398190, guid: eb51349936e865046b3c652adc0019bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.16
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 184428291237398190, guid: eb51349936e865046b3c652adc0019bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -549,7 +557,6 @@ GameObject:
   - component: {fileID: 1951285112}
   - component: {fileID: 1951285113}
   - component: {fileID: 1951285116}
-  - component: {fileID: 1951285117}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Terrain
@@ -608,6 +615,8 @@ MonoBehaviour:
   - color: {r: 0.5058824, g: 0.3019608, b: 0.18823531, a: 0}
     tileBase: {fileID: 11400000, guid: 550cba361c6b49a4eb2189e3f96550a0, type: 2}
   grid: {fileID: 1951285110}
+  activeChunks: []
+  inactiveChunks: []
   lpc: {fileID: 1836849032}
   map: {fileID: 2800000, guid: ebc5b4ff3aeba064d91c5ef452a55c9d, type: 3}
 --- !u!61 &1951285113
@@ -727,15 +736,3 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1951285117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951285109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13fd65f6ea8647e46951c357f5f0a960, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

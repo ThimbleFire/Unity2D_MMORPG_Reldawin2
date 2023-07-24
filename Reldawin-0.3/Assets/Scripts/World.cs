@@ -24,15 +24,14 @@ namespace AlwaysEast
         public Color color;
         public TileBase tileBase;
 
-        // Could these be bytes?
-        public const float Width = 64;
-        public const float Height = 32;
+        public const byte Width = 64;
+        public const byte Height = 32;
     }
+    [Serializable]
     public class Chunk
-    {        
-        // Could these be bytes?
-        public const int width = 16;
-        public const int height = 16;
+    {
+        public const byte width = 16;
+        public const byte height = 16;
 
         public Vector3Int Index { get; set; }
         public Node[,] Nodes { get; set; } = new Node[width, height];
@@ -43,14 +42,21 @@ namespace AlwaysEast
                 Nodes[x, y] = new Node( new Vector3Int( x, y) );
         }
 
+        public void Erase() {
+            for( int y = 0; y < height; y++ )
+            for( int x = 0; x < width; x++ )
+                World.gTileMap.SetTile( Nodes[x, y].CellPositionInWorld, null );
+        }
+
         public void Reload( Vector3Int index ) {
             for( int y = 0; y < height; y++ )
             for( int x = 0; x < width; x++ ) {
-                Nodes[x, y].ChunkIndex = Index;
-                World.gTilemap.SetTile( 
-                    Nodes[x, y].CellPositionInWorld, 
-                    ResourceRepository.GetTileAt( Nodes[x, y].CellPositionInGrid ) 
-                );
+                    this.Index = index;
+                    Nodes[x, y].ChunkIndex = Index;
+                    World.gTileMap.SetTile(
+                        Nodes[x, y].CellPositionInWorld, 
+                        ResourceRepository.GetTileAt( Nodes[x, y].CellPositionInWorld ) 
+                        );
             }
         }
     }
@@ -59,8 +65,8 @@ namespace AlwaysEast
         // tileTypes stored in a dictionary
         public static Dictionary<string, TileBase> keyValuePairs = new();
         public static Texture2D map;
-        public static TileBase GetTileAt(int x, int y) {
-            return keyValuePairs[map.GetPixel( x, y ).ToHexString().Substring( 0, 6 )];
+        public static TileBase GetTileAt(Vector3Int coords) {
+            return keyValuePairs[map.GetPixel( coords.x, coords.y ).ToHexString().Substring( 0, 6 )];
         }
     }
 
@@ -74,7 +80,9 @@ namespace AlwaysEast
         public Tile[] tileTypes;
         public Grid grid;
 
+        [SerializeField]
         public List<Chunk> activeChunks = new List<Chunk>();
+        [SerializeField]
         public List<Chunk> inactiveChunks = new List<Chunk>();
         private Dictionary<Vector3Int, Chunk> chunkLookup = new();
 
@@ -139,7 +147,7 @@ namespace AlwaysEast
 
             ///////////////////////////////////////////////////////
 
-            newChunk.Reload( tileMap, chunkIndex );
+            newChunk.Reload( chunkIndex );
         }
 
         private void RemoveChunk( Vector3Int chunkIndex ) {
@@ -155,13 +163,7 @@ namespace AlwaysEast
             inactiveChunks.Add( chunk );
             activeChunks.Remove( chunk );
             chunkLookup.Remove( chunkIndex );
-
-            // remove tiles that are out of bounds
-            for( int y = Chunk.height * chunkIndex.y; y < Chunk.height * ( chunkIndex.y + 1 ); y++ ) {
-                for( int x = Chunk.width * chunkIndex.x; x < Chunk.width * ( chunkIndex.x + 1 ); x++ ) {
-                    tileMap.SetTile( new Vector3Int( y, -x ), null );
-                }
-            }
+            chunk.Erase();
         }
 
         private bool IsChunkOutOfBounds( Vector3Int chunkIndex ) {
@@ -176,8 +178,14 @@ namespace AlwaysEast
         private void UpdateTilemap() {
             tileMap.CompressBounds();
 
-            // Update Pathfinding
-            Pathfinder.Populate( activeChunks, lpc.GetSurroundingChunks[0].Index );
+            // cheap fix, we should improve this
+            Vector3Int offset =
+                activeChunks.Find( x => x.Index == lpc.GetSurroundingChunks[0] ) != null ? lpc.GetSurroundingChunks[0] :
+                activeChunks.Find( x => x.Index == lpc.GetSurroundingChunks[3] ) != null ? lpc.GetSurroundingChunks[3] :
+                activeChunks.Find( x => x.Index == lpc.GetSurroundingChunks[1] ) != null ? lpc.GetSurroundingChunks[1] :
+                lpc.InCurrentChunk;
+
+            Pathfinder.Populate( activeChunks, offset );
 
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.size = new Vector3( tileMap.size.x * grid.cellSize.x, tileMap.size.y * grid.cellSize.y );
