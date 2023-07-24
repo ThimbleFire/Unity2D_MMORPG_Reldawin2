@@ -22,29 +22,35 @@ namespace AlwaysEast
         public Color color;
         public TileBase tileBase;
 
+        // Could these be bytes?
         public const float Width = 64;
         public const float Height = 32;
     }
     public class Chunk
-    {
-        public event OnIndexChangeHandler OnIndexChanged;
-        public delegate void OnIndexChangeHandler( Vector3Int index );
-        
+    {        
+        // Could these be bytes?
         public const int width = 16;
         public const int height = 16;
 
         public Vector3Int Index { get; set; }
         public Node[,] Nodes { get; set; } = new Node[width, height];
-
+        
         public Chunk() {
             for( int y = 0; y < height; y++ )
             for( int x = 0; x <  width; x++ )
-                Nodes[x, y] = new Node( new Vector3Int( x, y), OnIndexChanged );
+                Nodes[x, y] = new Node( new Vector3Int( x, y) );
         }
-        
-        public void Reload(Vector3Int index) {
+
+        public void Reload( Tilemap tileMap) {
+            for( int y = 0; y < height; y++ )
+            for( int x = 0; x < width; x++ ) {
+                Nodes[x, y].ChunkIndex = Index;
+                tileMap.SetTile( Nodes[x, y].CellPositionInWorld, ResourceRepository.GetTileAt( Nodes[x, y].CellPositionInGrid ) );
+            }
+        }
+        public void Reload(Tilemap tileMap, Vector3Int index) {
             this.Index = index;
-            OnIndexChanged?.Invoke(Index);
+            Reload( tileMap );
         }
     }
     public class ResourceRepository
