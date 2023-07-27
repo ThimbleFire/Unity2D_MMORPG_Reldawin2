@@ -12,13 +12,29 @@ https://i.imgur.com/C8AYzRa.gif
 
 This is a separate build of the game that uses Unity Tilemaps and SQLite-Net.
 
+The server hosts the map. players connect then login. the server returns the players position. the client places the character at that position which causes chunks to spawn. chunks request map data from the server then begin building the world.
+
+characters start off naked. they right click tiles and forage.
+
+crude iron + stone shard = crude knife.
+branch + crude knife = shaft & wood scrap.
+wood scrap + shaft = fire.
+fire + crude iron = molten crude iron.
+crude knife + shaft = mallet head, wooden handle
+mallet head + molten crude iron = crude hammer head, crude stone chisel, crude pickaxe head, crude axe head, crude saw, crude nails, crude anvil, crude shovel head.
+crude tool heads + shaft = crude tool.
+mine iron and smelt it to produce regular iron.
+axe + tree = logs + saw = planks + nails = wall, door, window.
+anvil + Molten iron = ribbon + planks = water barrel.
+
+
 TODO
 * [x] Chunk Loading
 * [x] Pathfinding
 * [x] Movement and Animation
+* [ ] Networking and Multiplayer
 * [ ] Scene Objects
 * [ ] Inventory and Equipment
 * [ ] Gathering
 * [ ] Crafting
 * [ ] Building
-* [ ] Networking and Multiplayer
