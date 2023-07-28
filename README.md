@@ -8,7 +8,7 @@ Reldawin is a multiplayer 2d isometric RPG. The player character starts in a wil
 https://i.imgur.com/C8AYzRa.gif
 
 ![image](https://github.com/ThimbleFire/Reldawin/assets/14812476/d34e4bc6-4a94-4d19-8afb-ec084a64c209)
-
+![sow grow demo2](https://github.com/ThimbleFire/Reldawin/assets/14812476/1651338e-8964-45a3-8e7f-2a7eb7b19ead)
 
 This is a separate build of the game that uses Unity Tilemaps and SQLite-Net.
 
@@ -17,7 +17,7 @@ TODO
 * [x] Pathfinding
 * [x] Movement and Animation
 * [ ] place scripts and their associated resources together in a folder to better understand what uses what.
-* [ ] Networking and Multiplayer
+* [x] Networking and Multiplayer
 * [ ] Scene Objects
 * [ ] Inventory and Equipment
 * [ ] Gathering
