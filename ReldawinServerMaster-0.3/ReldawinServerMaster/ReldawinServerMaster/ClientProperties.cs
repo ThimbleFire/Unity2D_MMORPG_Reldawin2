@@ -6,16 +6,6 @@ namespace Bindings
 {
     internal class ClientProperties
     {
-        public Vector2Int CurrentChunk
-        {
-            get
-            {
-                return new Vector2Int( (int)Math.Floor( Position.x / 5d )
-                                     , (int)Math.Floor( Position.y / 5d )
-                                     );
-            }
-        }
-
         public ClientProperties()
         {
             Clear();

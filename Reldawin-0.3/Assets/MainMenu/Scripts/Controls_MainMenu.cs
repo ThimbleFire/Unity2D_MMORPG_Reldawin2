@@ -16,10 +16,10 @@ namespace AlwaysEast
 
         public void OnBtnLoginClicked() {
 
-            string usrname = username.GetComponent<TMPro.TMP_InputField>().text;
-            string pword = password.GetComponent<TMPro.TMP_InputField>().text;
-
-            ClientTCP.SendLoginAttemptQuery( usrname, pword );
+            using PacketBuffer buffer = new PacketBuffer( Packet.Account_Login_Query );
+            buffer.WriteString( username.GetComponent<TMPro.TMP_InputField>().text );
+            buffer.WriteString( password.GetComponent<TMPro.TMP_InputField>().text );
+            ClientTCP.SendData( buffer.ToArray() );
         }
 
         public void OnBtnCreateAccountClicked() {

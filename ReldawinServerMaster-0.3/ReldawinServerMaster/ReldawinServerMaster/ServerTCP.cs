@@ -1,7 +1,4 @@
 ﻿using Bindings;
-using MySqlX.XDevAPI;
-using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 
@@ -130,42 +127,12 @@ namespace ReldawinServerMaster
 
         public static void ChangeClientPosition( int index, int x, int y )
         {
+            // set the coordinates on the server
             clients[index].MovePosition( x, y );
+
+            // set the coordinates on the database
             SQLReader.SetEntityCoordinates( x, y, clients[index].properties.ID );
-
-            // if the tile being walked on is water and we're not already swimming
-            if ( clients[index].properties.Swimming == false )
-            {
-                clients[index].properties.Swimming = true;
-
-                List<Client> clientList = FetchOtherClients( index );
-                clientList.Add( clients[index] );
-
-                using ( PacketBuffer buffer = new PacketBuffer( Packet.ToggleSwimming ) )
-                {
-                    buffer.WriteInteger( clients[index].properties.ID );
-
-                    foreach ( Client client in clientList )
-                        SendDataTo( client.index, buffer.ToArray() );
-                }
-            }
-            if(clients[index].properties.Swimming == true)
-            {
-                clients[index].properties.Swimming = false;
-
-                List<Client> clientList = FetchOtherClients( index );
-                clientList.Add( clients[index] );
-
-                using ( PacketBuffer buffer = new PacketBuffer( Packet.ToggleSwimming ) )
-                {
-                    buffer.WriteInteger( clients[index].properties.ID );
-
-                    foreach ( Client client in clientList )
-                        SendDataTo( client.index, buffer.ToArray() );
-                }
-            }
         }
-
         
         public static void SendToggleRunningToAllPlayers(int index, int ID)
         {
@@ -423,11 +390,11 @@ namespace ReldawinServerMaster
             return clientList;
         }
 
-        internal static void SendCoordinatesOnDatabase( int index ) {
+        internal static void SendCoordinatesOnDatabase( int index, Vector2Int coordinates ) {
 
             using( PacketBuffer buffer = new PacketBuffer( Packet.RequestSpawn ) ) {
-                buffer.WriteInteger( clients[index].properties.Position.x );
-                buffer.WriteInteger( clients[index].properties.Position.y );
+                buffer.WriteInteger( coordinates.x );
+                buffer.WriteInteger( coordinates.y );
                 SendDataTo( index, buffer.ToArray() );
             }
         }

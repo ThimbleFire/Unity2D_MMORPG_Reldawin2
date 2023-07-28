@@ -16,12 +16,10 @@ namespace AlwaysEast
         {
             Connect();
         }
-
         public static void SendData( byte[] input )
         {
             clientSocket.Send( input );
         }
-
         public void Connect()
         {
             const int numberOfRetries = 3;
@@ -53,7 +51,6 @@ namespace AlwaysEast
                 }
             }
         }
-
         private static void OnRecieve()
         {
             byte[] sizeInfo = new byte[4];
@@ -101,7 +98,6 @@ namespace AlwaysEast
                 clientSocket.Close();
             }
         }
-
         private void ConnectCallback( IAsyncResult ar )
         {
             try
@@ -120,35 +116,6 @@ namespace AlwaysEast
             }
         }
 
-        private void OnApplicationQuit()
-        {
-            clientSocket.Close();
-            close = true;
-        }
-
-        public static void SendConfirmRecieve()
-        {
-            using PacketBuffer buffer = new PacketBuffer( Packet.ConnectionOK );
-            SendData( buffer.ToArray() );
-        }
-        public static void SavePositionToServer( Vector2Int newPosition )
-        {
-            using PacketBuffer buffer = new PacketBuffer( Packet.SavePositionToServer );
-            buffer.WriteInteger( newPosition.x );
-            buffer.WriteInteger( newPosition.y );
-            SendData( buffer.ToArray() );
-        }
-        public static void SendPing()
-        {
-            using PacketBuffer buffer = new PacketBuffer( Packet.PingTest );
-            SendData( buffer.ToArray() );
-        }
-        public static void RequestSpawnCoordinates()
-        {
-            using PacketBuffer buffer = new PacketBuffer( Packet.RequestSpawn );
-            buffer.WriteInteger( Game.dbID );
-            SendData( buffer.ToArray() );
-        }
         public static void ToggleRunning()
         {
             using PacketBuffer buffer = new PacketBuffer( Packet.ToggleRunning );
@@ -161,13 +128,6 @@ namespace AlwaysEast
             buffer.WriteInteger( (int)doodadWorldCellPosition.x );
             buffer.WriteInteger( (int)doodadWorldCellPosition.y );
             buffer.WriteInteger( Game.dbID );
-            SendData( buffer.ToArray() );
-        }
-        public static void SendLoginAttemptQuery( string username, string password )
-        {
-            using PacketBuffer buffer = new PacketBuffer( Packet.Account_Login_Query );
-            buffer.WriteString( username );
-            buffer.WriteString( password );
             SendData( buffer.ToArray() );
         }
         public static void SendChunkDataQuery( Vector2Int chunkPosition )
@@ -189,12 +149,6 @@ namespace AlwaysEast
             using PacketBuffer buffer = new PacketBuffer( Packet.StopInteract );
             SendData( buffer.ToArray() );
         }
-        public static void SendUsernameQuery( string text )
-        {
-            using PacketBuffer buffer = new PacketBuffer( Packet.DoesUserExist );
-            buffer.WriteString( text );
-            SendData( buffer.ToArray() );
-        }
         public static void AnnounceMovementToNearbyPlayers( int ID, Vector2 position, bool hasInventorySpace )
         {
             using PacketBuffer buffer = new PacketBuffer( Packet.AnnounceMovementToNearbyPlayers );
@@ -203,17 +157,16 @@ namespace AlwaysEast
             buffer.WriteInteger( ID );
             SendData( buffer.ToArray() );
         }
-        public static void SendCreateAccountQuery( string username, string password )
-        {
-            using PacketBuffer buffer = new PacketBuffer( Packet.Account_Create_Query );
-            buffer.WriteString( username );
-            buffer.WriteString( password );
-            SendData( buffer.ToArray() );
-        }
         public static void OtherPlayerCharacterListRequest()
         {
             using PacketBuffer buffer = new PacketBuffer( Packet.OtherPlayerCharacterListRequest );
             SendData( buffer.ToArray() );
+        }
+
+        private void OnApplicationQuit()
+        {
+            clientSocket.Close();
+            close = true;
         }
 
         public static Socket clientSocket = new Socket( AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp );

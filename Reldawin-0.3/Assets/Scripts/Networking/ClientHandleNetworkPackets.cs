@@ -102,9 +102,15 @@ namespace AlwaysEast
 
         private static void HandleConnectionOK( byte[] data )
         {
-            using PacketBuffer buffer = new PacketBuffer( data );
-            int cpIndex = buffer.ReadInteger();
-            ClientTCP.SendConfirmRecieve();
+            int cpIndex = -1;
+
+            using( PacketBuffer buffer = new PacketBuffer( data ) ) {
+                cpIndex = buffer.ReadInteger();
+            }
+
+            using( PacketBuffer buffer = new PacketBuffer( Packet.ConnectionOK ) ) {
+                ClientTCP.SendData( buffer.ToArray() );
+            }        
 
             eventProcessor.QueueEvent( (Packet)cpIndex );
         }

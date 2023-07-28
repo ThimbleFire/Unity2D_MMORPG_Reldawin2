@@ -28,25 +28,25 @@ namespace ReldawinServerMaster
         }
 
         public static void SetEntityCoordinates(int x, int y, int ID) {
-            EntityCoordinates entityCoordinates = _connection.Table<EntityCoordinates>().Where(v=>v.ID.Equals(ID)).FirstOrDefault();
+            EntityCoordinates entityCoordinates = _connection.Table<EntityCoordinates>().Where(v=>v.ID == ID).FirstOrDefault();
             entityCoordinates.CoordinateX = x;
             entityCoordinates.CoordinateY = y;
             _connection.Update( entityCoordinates );
         }
 
         public static Vector2Int GetEntityCoordinates(int ID) {
-            EntityCoordinates entityCoordinates = _connection.Table<EntityCoordinates>().Where(v=>v.ID.Equals(ID)).FirstOrDefault();
+            EntityCoordinates entityCoordinates = _connection.Table<EntityCoordinates>().Where(v=>v.ID == ID).FirstOrDefault();
             return new Vector2Int( entityCoordinates.CoordinateX, entityCoordinates.CoordinateY );
         }
 
         #pragma warning disable CS8603 // Possible null reference return.
         public static object GetEntityId( string username ) {
-            return _connection.Table<UserCredentials>().Where( v => v.Username.Equals( username ) ).FirstOrDefault()?.ID;            
+            return _connection.Table<UserCredentials>().Where( v => v.Username== username ).FirstOrDefault()?.ID;            
         }
         #pragma warning restore CS8603 // Possible null reference return.
 
         public static void GetPlayerIDAndPassword( string username, out string password, out int id ) {
-            UserCredentials userCredentials = _connection.Table<UserCredentials>().Where( v => v.Username.Equals( username ) ).FirstOrDefault();
+            UserCredentials userCredentials = _connection.Table<UserCredentials>().Where( v => v.Username == username ).FirstOrDefault();
             password = userCredentials.Password;
             id = userCredentials.ID;
         }

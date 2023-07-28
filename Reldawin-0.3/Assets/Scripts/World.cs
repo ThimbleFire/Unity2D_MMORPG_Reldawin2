@@ -106,7 +106,9 @@ namespace AlwaysEast
 
             LocalPlayerCharacter.LPCOnChunkChange += LocalPlayerCharacter_LPCOnChunkChange;
 
-            ClientTCP.RequestSpawnCoordinates();
+            using PacketBuffer buffer = new PacketBuffer( Packet.RequestSpawn );
+            buffer.WriteInteger( Game.dbID );
+            ClientTCP.SendData( buffer.ToArray() );
         }
         public void Update() {
 

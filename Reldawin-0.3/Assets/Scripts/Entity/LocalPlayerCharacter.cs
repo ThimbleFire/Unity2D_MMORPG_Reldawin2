@@ -95,8 +95,13 @@ namespace AlwaysEast
             animationController.OnAnimationDestinationMet();
         }
         private void OnMovedTile( Vector3Int newPoint, Vector3Int lastTile ) {
-            CellPositionInWorld = newPoint;
 
+            using PacketBuffer buffer = new PacketBuffer( Packet.SavePositionToServer );
+            buffer.WriteInteger( newPoint.x );
+            buffer.WriteInteger( newPoint.y );
+            ClientTCP.SendData( buffer.ToArray() );
+
+            CellPositionInWorld = newPoint;
             if( InCurrentChunk != inLastChunk )
                 OnMovedChunk( InCurrentChunk );
         }

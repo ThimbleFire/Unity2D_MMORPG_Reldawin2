@@ -10,15 +10,15 @@ namespace ReldawinServerMaster
         public byte[] buffer = new byte[1024];
         public bool closing;
         public bool loggedIn = false;
+        //Index is not to be mistaken for ID.
+        //ID represents the player character's position on credential's database.
+        //Index is the index on the server.
         public int index;
         public string ip;
         public ClientProperties properties;
         public Socket socket;
 
-        public void MovePosition( int x, int y )
-        {
-            properties.Position = new Vector2Int( x, y );
-        }
+        public void MovePosition( int x, int y ) => properties.Position = new Vector2Int( x, y );
 
         public void Setup( Vector2Int coordinates, int id )
         {
@@ -44,7 +44,7 @@ namespace ReldawinServerMaster
             socket = null;
             loggedIn = false;
 
-            index = 0;
+            index = 0; // I can't imagine this is neccesary
             properties.Clear();
         }
 
@@ -67,7 +67,7 @@ namespace ReldawinServerMaster
 
                     ServerHandleNetworkData.HandleNetworkInformation( index
                                                                     , dataBuffer
-                                                                    );
+                                                                    , properties.Username);
                     socket.BeginReceive( buffer
                                        , 0
                                        , buffer.Length

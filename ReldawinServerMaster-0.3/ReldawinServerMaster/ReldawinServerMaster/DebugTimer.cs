@@ -1,7 +1,4 @@
-﻿using System;
-using ReldawinServerMaster.Properties;
-
-// code by cliss on Github
+﻿// code by cliss on Github
 // https://gist.github.com/cliss/f03f7268a1c9006daf88
 
 public class DebugTimer : IDisposable
@@ -23,8 +20,7 @@ public class DebugTimer : IDisposable
     {
         _watch.Stop();
         GC.SuppressFinalize( this );
-        if(Config.Debugging)
-            Console.WriteLine( _watch.Elapsed.TotalMilliseconds + "ms to call " + _blockName );
+        Console.WriteLine( _watch.Elapsed.TotalMilliseconds + "ms to call " + _blockName );
     }
 
     ~DebugTimer()

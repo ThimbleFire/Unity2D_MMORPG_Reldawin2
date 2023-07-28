@@ -88,7 +88,10 @@ namespace AlwaysEast
                         ping_timer = ping_timer_iterator + ping_timer;
 
                         ping_pinging = true;
-                        ClientTCP.SendPing();
+
+                        using PacketBuffer buffer = new PacketBuffer( Packet.PingTest );
+                        ClientTCP.SendData( buffer.ToArray() );
+
                         Resources.UnloadUnusedAssets();
                     }
                 }

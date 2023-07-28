@@ -2,6 +2,7 @@ using AlwaysEast;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AlwaysEast
 {
@@ -15,13 +16,16 @@ namespace AlwaysEast
         [SerializeField] private GameObject mainMenuWindow;
 
         public void OnCreateAccountClicked() {
-            ClientTCP.SendCreateAccountQuery( username.GetComponent<TMPro.TMP_InputField>().text
-                                            , password.GetComponent<TMPro.TMP_InputField>().text
-                                            );
+            using PacketBuffer buffer = new PacketBuffer( Packet.Account_Create_Query );
+            buffer.WriteString( username.GetComponent<TMPro.TMP_InputField>().text );
+            buffer.WriteString( password.GetComponent<TMPro.TMP_InputField>().text );
+            ClientTCP.SendData( buffer.ToArray() );
         }
 
         public void OnIpfUsernameCharChanged( TMPro.TMP_InputField ipf ) {
-            ClientTCP.SendUsernameQuery( ipf.text );
+            using PacketBuffer buffer = new PacketBuffer( Packet.DoesUserExist );
+            buffer.WriteString( ipf.GetComponent<TMPro.TMP_InputField>().text );
+            ClientTCP.SendData( buffer.ToArray() );
         }
 
         public void OnBtnReturnToMainMenuClicked() {

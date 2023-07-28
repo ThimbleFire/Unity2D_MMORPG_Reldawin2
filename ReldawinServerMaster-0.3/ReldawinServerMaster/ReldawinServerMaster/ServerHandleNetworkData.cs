@@ -16,14 +16,14 @@ namespace ReldawinServerMaster
             {
                 { (int)Packet.ConnectionOK, HandleOnUserConnect },
                 { (int)Packet.Account_Login_Query, HandleUserLoginQuery },
-                { (int)Packet.RequestSpawn, NetworkWorld.HandleSpawnRequest },
+                { (int)Packet.RequestSpawn, HandleSpawnRequest },
                 { (int)Packet.SavePositionToServer, HandlePlayerCharacterMovedPosition },
                 { (int)Packet.Account_Create_Query, HandleAccountCreateQuery },
                 { (int)Packet.PingTest, HandlePingTest  },
-                { (int)Packet.DoesUserExist, MainMenu_CreateAccountControls.DoesUserExist },
+                { (int)Packet.DoesUserExist, DoesUserExist },
                 { (int)Packet.OtherPlayerCharacterListRequest, HandleOtherPlayerCharacterListRequest },
-                { (int)Packet.Load_Chunk, ChunkLoader.HandleLoadChunkQuery },
-                { (int)Packet.Load_Doodads, DoodadLoader.HandleLoadDoodadsQuery },
+                { (int)Packet.Load_Chunk, HandleLoadChunkQuery },
+                { (int)Packet.Load_Doodads, HandleLoadDoodadsQuery },
                 { (int)Packet.AnnounceMovementToNearbyPlayers, LocalPlayerCharacter.HandleMoveQuery },
                 { (int)Packet.StartInteract, LocalPlayerCharacter.StartInteract },
                 { (int)Packet.StopInteract, LocalPlayerCharacter.StopInteract },
@@ -31,7 +31,7 @@ namespace ReldawinServerMaster
             };
         }
 
-        public static void HandleNetworkInformation( int index, byte[] data )
+        public static void HandleNetworkInformation( int index, byte[] data, string sender )
         {
             using ( PacketBuffer buffer = new PacketBuffer() )
             {
@@ -42,7 +42,9 @@ namespace ReldawinServerMaster
                 while ( buffer.GetReadPosition() < data.Length )
                 {
                     packetNum = buffer.ReadInteger();
-                    Console.WriteLine( $"Client::RecieveCallback ({(Packet)packetNum})" );
+
+                    if(sender != string.Empty )
+                        Console.WriteLine( $"{sender} recieveCallback - {(Packet)packetNum}" );
 
                     if ( packets.TryGetValue( packetNum, out Packet_ packet ) )
                     {
@@ -57,13 +59,17 @@ namespace ReldawinServerMaster
             ServerTCP.SendPingTest( index );
         }
 
+        public static void HandleLoadChunkQuery( int index, PacketBuffer buffer ) {
+            int chunkX = buffer.ReadInteger();
+            int chunkY = buffer.ReadInteger();
+
+            ServerTCP.SendChunkDataToPlayer( index, chunkX, chunkY );
+        }
+
         public static void HandlePlayerCharacterMovedPosition( int index, PacketBuffer buffer )
         {
-            //we increase this by 1 because [zero, zero] on in-game is out of bounds but needs to be defined
-            //so that tiles at the edge of the world have a tile type to blend with.
-
-            int newPosX = buffer.ReadInteger() + 1;
-            int newPosY = buffer.ReadInteger() + 1;
+            int newPosX = buffer.ReadInteger();
+            int newPosY = buffer.ReadInteger();
 
             ServerTCP.ChangeClientPosition( index, newPosX, newPosY );
         }
@@ -104,6 +110,27 @@ namespace ReldawinServerMaster
         private static void HandleOnUserConnect( int index, PacketBuffer buffer )
         {
             Console.WriteLine( "[ServerHandleNetworkData][HandleOnUserConnect] " );
+        }
+
+        private static void HandleSpawnRequest( int index, PacketBuffer buffer ) {
+            int playerID = buffer.ReadInteger();
+            Vector2Int coordinates = SQLReader.GetEntityCoordinates( playerID );
+
+            //redundant
+            ServerTCP.InitializeClient( index, coordinates, playerID );
+            ServerTCP.SendCoordinatesOnDatabase( index, coordinates );
+        }
+        private static void HandleLoadDoodadsQuery( int index, PacketBuffer buffer ) {
+            int chunkX = buffer.ReadInteger();
+            int chunkY = buffer.ReadInteger();
+
+            ServerTCP.SendChunkDoodadsToPlayer( index, chunkX, chunkY );
+        }
+        private static void DoesUserExist( int index, PacketBuffer buffer ) {
+            string username = buffer.ReadString();
+            object result = SQLReader.GetEntityId( username );
+
+            ServerTCP.ReturnDoesUserExist( index, result == null ? false : true );
         }
 
         private static void HandleUserLoginQuery( int index, PacketBuffer buffer )
