@@ -34,12 +34,14 @@ namespace AlwaysEast
             inLastChunk = InCurrentChunk;
             MovingToward = transform.position;
         }
-        private void FixedUpdate() {
 
-            if( Input.GetKeyDown(KeyCode.R) ) {
+        private void Update() {
+            if( Input.GetKeyDown( KeyCode.R ) ) {
                 ToggleRunning();
             }
+        }
 
+        private void FixedUpdate() {
             if( transform.position == ( Vector3 )MovingToward )
                 return;
 

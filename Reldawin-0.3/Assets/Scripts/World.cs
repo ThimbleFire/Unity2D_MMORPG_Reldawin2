@@ -20,10 +20,10 @@ namespace AlwaysEast
     public class Tile
     {
         public Color color;
-        public TileBase tileBase;
+        public List<TileBase> tileBases;
 
         public const byte Width = 64;
-        public const byte Height = 32;
+        public const byte Height = 31;
     }
     public class Chunk
     {
@@ -63,10 +63,11 @@ namespace AlwaysEast
     public class ResourceRepository
     {
         // tileTypes stored in a dictionary
-        public static Dictionary<string, TileBase> keyValuePairs = new();
+        public static Dictionary<string, List<TileBase>> keyValuePairs = new();
         public static Texture2D map;
         public static TileBase GetTileAt(Vector3Int coords) {
-            return keyValuePairs[map.GetPixel( coords.x, coords.y ).ToHexString().Substring( 0, 6 )];
+            List<TileBase> t = keyValuePairs[map.GetPixel( coords.x, coords.y ).ToHexString().Substring( 0, 6 )];
+            return t[UnityEngine.Random.Range( 0, t.Count )];
         }
     }
 
@@ -89,7 +90,7 @@ namespace AlwaysEast
         private void Awake() {
             //catalogue tileTypes in the form of a dictionary so we can access them easily
             foreach( Tile t in tileTypes )
-                ResourceRepository.keyValuePairs.Add( t.color.ToHexString().Substring( 0, 6 ), t.tileBase );
+                ResourceRepository.keyValuePairs.Add( t.color.ToHexString().Substring( 0, 6 ), t.tileBases );
             ResourceRepository.map = this.map;
             gTileMap = tileMap;
 
