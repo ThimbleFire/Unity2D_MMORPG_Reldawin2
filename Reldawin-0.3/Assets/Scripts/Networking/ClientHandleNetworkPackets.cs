@@ -19,7 +19,7 @@ namespace AlwaysEast
                 { (int)Packet.Account_Create_Success, HandleAccountCreateSuccess },
                 { (int)Packet.Account_Login_Fail, HandleLoginFail },
                 { (int)Packet.Account_Login_Success, HandleLoginSuccess },
-                { (int)Packet.RequestSeed, HandleSeedRequest },
+                { (int)Packet.RequestSpawn, HandleSpawnRequest },
                 { (int)Packet.PingTest, HandlePingTest },
                 { (int)Packet.DoesUserExist, HandleDoesUserExist },
                 { (int)Packet.OtherPlayerCharacterLoggedIn, HandleOtherPlayerCharacterLogin },
@@ -136,17 +136,13 @@ namespace AlwaysEast
             eventProcessor.QueueEvent( (Packet)cpIndex );
         }
 
-        private static void HandleSeedRequest( byte[] data )
+        private static void HandleSpawnRequest( byte[] data )
         {
             using PacketBuffer buffer = new PacketBuffer( data );
             int cpIndex = buffer.ReadInteger();
-            int map_seed = buffer.ReadInteger();
-            int map_width = buffer.ReadInteger();
-            int map_height = buffer.ReadInteger();
             int cellPosX = buffer.ReadInteger();
             int cellPosY = buffer.ReadInteger();
-            int internalGameClockTime = buffer.ReadInteger();
-            eventProcessor.QueueEvent( (Packet)cpIndex, map_seed, map_width, map_height, cellPosX, cellPosY, internalGameClockTime );
+            eventProcessor.QueueEvent( (Packet)cpIndex, cellPosX, cellPosY );
         }
 
         private static void HandlePingTest( byte[] data )

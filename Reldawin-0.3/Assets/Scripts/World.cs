@@ -71,7 +71,7 @@ namespace AlwaysEast
         }
     }
 
-    public class World : MonoBehaviour
+    public class World : SceneBehaviour
     {
         public static event ClickAction OnClicked;
         public delegate void ClickAction( Vector3Int cellClicked, Vector2 pointClicked );
@@ -88,7 +88,7 @@ namespace AlwaysEast
         public LocalPlayerCharacter lpc;
 
         private void Awake() {
-            //catalogue tileTypes in the form of a dictionary so we can access them easily
+
             foreach( Tile t in tileTypes )
                 ResourceRepository.keyValuePairs.Add( t.color.ToHexString().Substring( 0, 6 ), t.tileBases );
             ResourceRepository.map = this.map;
@@ -97,16 +97,16 @@ namespace AlwaysEast
             for( int y = 0; y < 12; y++ ) {
                 inactiveChunks.Add( new Chunk() );
             }
-        }
-        private void Start() {
-            // Create the starting chunks the player spawns in
-            CreateChunk( lpc.InCurrentChunk );
-            foreach( Vector3Int neighbour in lpc.GetSurroundingChunks )
-                CreateChunk( neighbour );
 
-            UpdateTilemap();
+            EventProcessor.AddInstructionParams( Packet.Load_Chunk, HandleChunkData );
+            EventProcessor.AddInstructionParams( Packet.RequestSpawn, HandleRequestSpawnResponse );
+        }
+
+        private void Start() {
 
             LocalPlayerCharacter.LPCOnChunkChange += LocalPlayerCharacter_LPCOnChunkChange;
+
+            ClientTCP.RequestSpawnCoordinates();
         }
         public void Update() {
 
@@ -203,6 +203,23 @@ namespace AlwaysEast
             using( DebugTimer timer = new DebugTimer( $"Updating Tilemap" ) ) {
                 UpdateTilemap();
             }
+        }
+        private void HandleChunkData(params object[] args) {
+
+            EventProcessor.RemoveInstructionParams( Packet.Load_Chunk );
+            Vector2Int chunkIndex = new Vector2Int( (int)args[0], (int)args[1] );
+            string data = (string)args[2];
+        }
+        private void HandleRequestSpawnResponse( object[] args ) {
+            EventProcessor.RemoveInstructionParams( Packet.RequestSpawn );
+            Vector3Int coordinates = new Vector3Int( (int)args[0], (int)args[1] );
+            // Teleport is the method for spawning the player character and should only be used as such. This is not a method for moving the entity around the game.
+            lpc.Teleport( coordinates );
+            // Create the starting chunks the player spawns in
+            CreateChunk( lpc.InCurrentChunk );
+            foreach( Vector3Int neighbour in lpc.GetSurroundingChunks )
+                CreateChunk( neighbour );
+            UpdateTilemap();
         }
     }
 }

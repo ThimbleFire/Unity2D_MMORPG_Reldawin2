@@ -143,9 +143,9 @@ namespace AlwaysEast
             using PacketBuffer buffer = new PacketBuffer( Packet.PingTest );
             SendData( buffer.ToArray() );
         }
-        public static void RequestMapDetails()
+        public static void RequestSpawnCoordinates()
         {
-            using PacketBuffer buffer = new PacketBuffer( Packet.RequestSeed );
+            using PacketBuffer buffer = new PacketBuffer( Packet.RequestSpawn );
             buffer.WriteInteger( Game.dbID );
             SendData( buffer.ToArray() );
         }

@@ -16,7 +16,7 @@ namespace ReldawinServerMaster
             {
                 { (int)Packet.ConnectionOK, HandleOnUserConnect },
                 { (int)Packet.Account_Login_Query, HandleUserLoginQuery },
-                { (int)Packet.RequestSeed, NetworkWorld.HandleSeedRequest },
+                { (int)Packet.RequestSpawn, NetworkWorld.HandleSpawnRequest },
                 { (int)Packet.SavePositionToServer, HandlePlayerCharacterMovedPosition },
                 { (int)Packet.Account_Create_Query, HandleAccountCreateQuery },
                 { (int)Packet.PingTest, HandlePingTest  },
@@ -42,6 +42,7 @@ namespace ReldawinServerMaster
                 while ( buffer.GetReadPosition() < data.Length )
                 {
                     packetNum = buffer.ReadInteger();
+                    Console.WriteLine( $"Client::RecieveCallback ({(Packet)packetNum})" );
 
                     if ( packets.TryGetValue( packetNum, out Packet_ packet ) )
                     {
@@ -109,21 +110,18 @@ namespace ReldawinServerMaster
         {
             string username = buffer.ReadString();
             string password = buffer.ReadString();
-            object[] result = SQLReader.GetPlayerIDAndPassword( username );
+            SQLReader.GetPlayerIDAndPassword( username, out string pwordOnDB, out int id );
 
-            if ( result == null )
+            if ( password == null )
             {
                 ServerTCP.SendLoginFail( index, Log.DatabaseUsernameMismatch );
                 return;
             }
 
-            string recordedPassword = Convert.ToString( result[0] );
-            int recordedID = Convert.ToInt32( result[1] );
-
-            if ( recordedPassword == password )
+            if ( pwordOnDB == password )
             {
                 Console.WriteLine( "[ServerHandleNetworkData] " + Log.SERVER_LOGIN_SUCCESS, username );
-                ServerTCP.SendLoginSuccess( index, recordedID, username );
+                ServerTCP.SendLoginSuccess( index, id, username );
             }
             else
             {

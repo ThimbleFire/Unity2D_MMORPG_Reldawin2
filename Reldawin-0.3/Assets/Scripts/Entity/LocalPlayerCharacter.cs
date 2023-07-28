@@ -160,5 +160,12 @@ namespace AlwaysEast
 
             animationController.SetAnimationMoveDirection( ( Vector2 )transform.position - MovingToward );
         }
+
+        internal void Teleport( Vector3Int coordinates ) {
+            transform.position = World.gTileMap.CellToWorld( coordinates );
+            this.CellPositionInWorld = coordinates;
+            MovingToward = transform.position;
+            inLastChunk = InCurrentChunk;
+        }
     }
 }

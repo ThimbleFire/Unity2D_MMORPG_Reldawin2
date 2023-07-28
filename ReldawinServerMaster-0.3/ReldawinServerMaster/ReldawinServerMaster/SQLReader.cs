@@ -39,13 +39,16 @@ namespace ReldawinServerMaster
             return new Vector2Int( entityCoordinates.CoordinateX, entityCoordinates.CoordinateY );
         }
 
+        #pragma warning disable CS8603 // Possible null reference return.
         public static object GetEntityId( string username ) {
-            return _connection.Table<UserCredentials>().Where( v => v.Username.Equals( username ) ).FirstOrDefault()?.ID;
+            return _connection.Table<UserCredentials>().Where( v => v.Username.Equals( username ) ).FirstOrDefault()?.ID;            
         }
+        #pragma warning restore CS8603 // Possible null reference return.
 
-        public static object[] GetPlayerIDAndPassword( string username ) {
+        public static void GetPlayerIDAndPassword( string username, out string password, out int id ) {
             UserCredentials userCredentials = _connection.Table<UserCredentials>().Where( v => v.Username.Equals( username ) ).FirstOrDefault();
-            return new object[2] { userCredentials.Password, userCredentials.ID };
+            password = userCredentials.Password;
+            id = userCredentials.ID;
         }
 
         public static void CreateAccount( string username, string password ) {

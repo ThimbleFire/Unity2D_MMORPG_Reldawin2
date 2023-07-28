@@ -1,4 +1,5 @@
 ﻿using Bindings;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -420,6 +421,15 @@ namespace ReldawinServerMaster
                         clientList.Add( client );
 
             return clientList;
+        }
+
+        internal static void SendCoordinatesOnDatabase( int index ) {
+
+            using( PacketBuffer buffer = new PacketBuffer( Packet.RequestSpawn ) ) {
+                buffer.WriteInteger( clients[index].properties.Position.x );
+                buffer.WriteInteger( clients[index].properties.Position.y );
+                SendDataTo( index, buffer.ToArray() );
+            }
         }
     }
 }

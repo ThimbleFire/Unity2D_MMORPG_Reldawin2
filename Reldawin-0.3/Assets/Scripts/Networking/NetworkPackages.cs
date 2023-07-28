@@ -15,7 +15,7 @@
         Account_Create_Success,
         
         //Request map dimensions, seed, player position
-        RequestSeed,
+        RequestSpawn,
 
         //Let the server know the player has moved tile
         SavePositionToServer,

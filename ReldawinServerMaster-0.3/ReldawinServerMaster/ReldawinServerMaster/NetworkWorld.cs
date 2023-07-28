@@ -9,13 +9,14 @@ namespace ReldawinServerMaster
 {
     class NetworkWorld
     {
-        public static void HandleSeedRequest( int index, PacketBuffer buffer )
+        public static void HandleSpawnRequest( int index, PacketBuffer buffer )
         {
             int playerID = buffer.ReadInteger();
             Vector2Int coordinates = SQLReader.GetEntityCoordinates( playerID );
 
             //redundant
             ServerTCP.InitializeClient( index, coordinates, playerID );
+            ServerTCP.SendCoordinatesOnDatabase( index );
         }
     }
 }

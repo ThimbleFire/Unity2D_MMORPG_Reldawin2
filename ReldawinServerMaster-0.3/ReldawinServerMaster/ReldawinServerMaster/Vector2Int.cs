@@ -72,7 +72,7 @@
 
         public static bool operator !=( Vector2Int a, Vector2Int b )
         {
-            if ( a.x != b.x || a.y != b.y )
+            if ( a?.x != b?.x || a?.y != b?.y )
                 return true;
             else
                 return false;
