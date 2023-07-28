@@ -20,9 +20,9 @@ namespace ReldawinServerMaster
             properties.Position = new Vector2Int( x, y );
         }
 
-        public void Setup( int x, int y, int id )
+        public void Setup( Vector2Int coordinates, int id )
         {
-            properties.Position = new Vector2Int( x, y );
+            properties.Position = coordinates;
             properties.ID = id;
             loggedIn = true;
         }

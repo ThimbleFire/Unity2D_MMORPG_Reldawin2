@@ -12,7 +12,7 @@ namespace ReldawinServerMaster
         public static void DoesUserExist( int index, PacketBuffer buffer )
         {
             string username = buffer.ReadString();
-            object[] result = CommonSQL.GetEntityID( username );
+            object result = SQLReader.GetEntityId( username );
 
             ServerTCP.ReturnDoesUserExist( index, result == null ? false : true );
         }

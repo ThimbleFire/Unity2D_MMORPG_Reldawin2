@@ -80,7 +80,7 @@ namespace ReldawinServerMaster
             //SQL stuff
             Console.WriteLine( Log.SERVER_CREATE_ACCOUNT_QUERY, username );
 
-            object[] result = CommonSQL.GetEntityID( username );
+            object result = SQLReader.GetEntityId( username );
 
             if ( result != null )
             {
@@ -88,14 +88,14 @@ namespace ReldawinServerMaster
                 return;
             }
 
-            CommonSQL.CreateAccount( username, password );
+            SQLReader.CreateAccount( username, password );
 
-            result = CommonSQL.GetEntityID( username );
+            result = SQLReader.GetEntityId( username );
 
             // Create the newly created account entity
-            int entityID = Convert.ToInt32( result[0] );
+            int entityID = Convert.ToInt32( result );
 
-            CommonSQL.CreateEntity( 50, 50, entityID );
+            SQLReader.CreateEntity( 50, 50, entityID );
 
             ServerTCP.SendAccountCreateSuccess( index, Log.DatabaseAccountCreated );
         }
@@ -109,7 +109,7 @@ namespace ReldawinServerMaster
         {
             string username = buffer.ReadString();
             string password = buffer.ReadString();
-            object[] result = CommonSQL.GetPlayerIDAndPassword( username );
+            object[] result = SQLReader.GetPlayerIDAndPassword( username );
 
             if ( result == null )
             {

@@ -46,9 +46,9 @@ namespace ReldawinServerMaster
             }
         }
 
-        public static void InitializeClient( int index, int x, int y, int id )
+        public static void InitializeClient( int index, Vector2Int coordinates, int id )
         {
-            clients[index].Setup( x, y, id );
+            clients[index].Setup( coordinates, id );
         }
 
         public static void TickResult( int index, int yieldItemID )
@@ -130,7 +130,7 @@ namespace ReldawinServerMaster
         public static void ChangeClientPosition( int index, int x, int y )
         {
             clients[index].MovePosition( x, y );
-            CommonSQL.SetEntityCoodinates( x, y, clients[index].properties.ID );
+            SQLReader.SetEntityCoordinates( x, y, clients[index].properties.ID );
 
             // if the tile being walked on is water and we're not already swimming
             if ( clients[index].properties.Swimming == false )
@@ -332,7 +332,7 @@ namespace ReldawinServerMaster
                 {
                     buffer.WriteString( username );
 
-                    object[] result = CommonSQL.GetEntityCoordinates( id );
+                    Vector2Int result = SQLReader.GetEntityCoordinates( id );
 
                     if ( result == null )
                     {
@@ -341,8 +341,8 @@ namespace ReldawinServerMaster
                     }
 
                     // Send players the logging-in players coordinates so they can decide whether they're worth loading in their game
-                    buffer.WriteInteger( Convert.ToInt32( result[0] ) );
-                    buffer.WriteInteger( Convert.ToInt32( result[1] ) );
+                    buffer.WriteInteger( result.x );
+                    buffer.WriteInteger( result.y );
                     buffer.WriteInteger( id );
 
                     // Tell all the players another player has logged in.

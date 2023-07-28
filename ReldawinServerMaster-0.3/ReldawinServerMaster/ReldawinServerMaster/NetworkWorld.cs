@@ -12,12 +12,10 @@ namespace ReldawinServerMaster
         public static void HandleSeedRequest( int index, PacketBuffer buffer )
         {
             int playerID = buffer.ReadInteger();
-            object[] result = CommonSQL.GetEntityCoordinates( playerID );
-            int playerX = Convert.ToInt32( result[0] );
-            int playerY = Convert.ToInt32( result[1] );
+            Vector2Int coordinates = SQLReader.GetEntityCoordinates( playerID );
 
             //redundant
-            ServerTCP.InitializeClient( index, playerX, playerY, playerID );
+            ServerTCP.InitializeClient( index, coordinates, playerID );
         }
     }
 }
