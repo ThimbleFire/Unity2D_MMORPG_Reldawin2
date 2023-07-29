@@ -8,12 +8,10 @@
 
         private static void Main( string[] args ) {
             SQLReader.Setup();
-
+            MapData.Setup();
             ServerHandleNetworkData.InitializeNetworkPackages();
-            Console.WriteLine( "[Program] Setup complete, network packages" );
-
             ServerTCP.SetupServer();
-            Console.WriteLine( "[Program] Setup complete, Server" );
+            Console.WriteLine( "All good" );
 
             while( true ) {
                 Console.ReadLine();

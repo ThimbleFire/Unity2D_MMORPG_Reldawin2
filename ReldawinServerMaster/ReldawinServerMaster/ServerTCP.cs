@@ -105,12 +105,8 @@ namespace ReldawinServerMaster
 
         public static void SendChunkDataToPlayer( int index, int chunkX, int chunkY ) {
             using( new DebugTimer( clients[index].properties.Username + " SendChunkDataToPlayer" ) ) {
-                string data = string.Empty; /* = World.GetChunkData( chunkX, chunkY );*/
 
-                // We're not currently saving map data to the database. Just send back empty data.
-                for( int y = 0; y < 20; y++ ) {
-                    data += "01020304050403020102";
-                }
+                string data = MapData.GetChunk(chunkX, chunkY);
 
                 using( PacketBuffer buffer = new PacketBuffer( Packet.Load_Chunk ) ) {
                     buffer.WriteInteger( chunkX );

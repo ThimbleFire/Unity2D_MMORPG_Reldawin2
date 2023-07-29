@@ -76,8 +76,8 @@ namespace AlwaysEast
         public static event ClickAction OnClicked;
         public delegate void ClickAction( Vector3Int cellClicked, Vector2 pointClicked );
 
-        public const int Width = 8192;
-        public const int Height = 8192;
+        public const int Width = 1000;
+        public const int Height = 1000;
 
         public Tilemap tileMap;
         public static Tilemap gTileMap;
