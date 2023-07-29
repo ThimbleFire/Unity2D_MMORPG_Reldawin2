@@ -1383,37 +1383,37 @@ MonoBehaviour:
   map: {fileID: 2800000, guid: ebc5b4ff3aeba064d91c5ef452a55c9d, type: 3}
   tileMap: {fileID: 781324579}
   tileTypes:
-  - color: {r: 0.3647059, g: 0.46274513, b: 0.7960785, a: 1}
+  - associatedCharacter: 48
     tileBases:
     - {fileID: 11400000, guid: 1308e4846f9aba449825654c49a0fecc, type: 2}
     - {fileID: 11400000, guid: b77941b3de04d6e45973c3e39d95bd11, type: 2}
     - {fileID: 11400000, guid: e682e1bd33084d54c9e98742e25283c7, type: 2}
     - {fileID: 11400000, guid: 3ee533f8c848cb84f9e83284836065e8, type: 2}
-  - color: {r: 0.4431373, g: 0.6666667, b: 0.20392159, a: 1}
+  - associatedCharacter: 49
     tileBases:
     - {fileID: 11400000, guid: 0a0b79526b8e45e488d0ee6fd3124919, type: 2}
     - {fileID: 11400000, guid: 7d29f14cab863944699f55275688e2f1, type: 2}
     - {fileID: 11400000, guid: d22edc38367405545aec4bd0f8767d9a, type: 2}
     - {fileID: 11400000, guid: 0a7cfefd3ff10834289b201110fa16c9, type: 2}
-  - color: {r: 0.89019614, g: 0.8117648, b: 0.34117648, a: 0}
+  - associatedCharacter: 50
     tileBases:
     - {fileID: 11400000, guid: 9668298901167064b8c7c67338490f4e, type: 2}
     - {fileID: 11400000, guid: c80649acaa21ca544b07967a1977d78f, type: 2}
     - {fileID: 11400000, guid: bb482c4530b78344ebcd228ec72e167b, type: 2}
     - {fileID: 11400000, guid: 56131cfa40011df4a9625f869399b3a7, type: 2}
-  - color: {r: 0.5058824, g: 0.3019608, b: 0.18823531, a: 0}
+  - associatedCharacter: 51
     tileBases:
     - {fileID: 11400000, guid: d631586b62ef4a14c9cc9c0afb310314, type: 2}
     - {fileID: 11400000, guid: 9c49c006b60d7be49be2904ae9e69025, type: 2}
     - {fileID: 11400000, guid: 9b47fbb7881e6754aa28f4e5cf7a0781, type: 2}
     - {fileID: 11400000, guid: 296a399a478356642aaed0e135b6d39e, type: 2}
-  - color: {r: 0.12941177, g: 0.36862746, b: 0.12941177, a: 0}
+  - associatedCharacter: 52
     tileBases:
     - {fileID: 11400000, guid: 88508e0450882c94d8235c58a7fadf12, type: 2}
     - {fileID: 11400000, guid: 25743329ca33a4a40bad9d3a60eba12c, type: 2}
     - {fileID: 11400000, guid: 53e44f61be7358244822b485649d6e5d, type: 2}
     - {fileID: 11400000, guid: 5e4d43bfdb84b7948bdc3541cfc3187a, type: 2}
-  - color: {r: 0, g: 0, b: 0, a: 0}
+  - associatedCharacter: 53
     tileBases:
     - {fileID: 11400000, guid: 5c231a7742789814f8d1a14e3625bce3, type: 2}
   grid: {fileID: 1951285110}

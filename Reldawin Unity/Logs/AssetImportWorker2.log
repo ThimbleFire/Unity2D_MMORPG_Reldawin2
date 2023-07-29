@@ -384,3 +384,27 @@ Received Import Request.
 Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a4fe85251aa2e89732c359432baa2c3') in 0.000416 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4257.960525 seconds.
+  path: Assets/Scenes/Gameplay.unity
+  artifactKey: Guid(88ab8a0ffac3f0c499105560c869dd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Gameplay.unity using Guid(88ab8a0ffac3f0c499105560c869dd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '336272357adb45b44322c8064d5107ec') in 0.000465 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 8802.057409 seconds.
+  path: Assets/Scripts/Entity
+  artifactKey: Guid(d6ecd521a5a511041968b5e73492154f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Entity using Guid(d6ecd521a5a511041968b5e73492154f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca4a384b3ef8d202bc425675bb37f29b') in 0.000602 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.726387 seconds.
+  path: Assets/Scripts/Entity/Entity.cs
+  artifactKey: Guid(535ef6274cdd8dd46915e6980ec1f694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Entity/Entity.cs using Guid(535ef6274cdd8dd46915e6980ec1f694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f37806ecf59da1098bf6a62ccfad31bf') in 0.000539 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0

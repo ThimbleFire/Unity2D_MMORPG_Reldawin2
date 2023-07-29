@@ -19,7 +19,7 @@ namespace AlwaysEast
     [Serializable]
     public class Tile
     {
-        public Color color;
+        public char associatedCharacter;
         public List<TileBase> tileBases;
 
         public const byte Width = 64;
@@ -28,8 +28,8 @@ namespace AlwaysEast
     public class Chunk
     {
         public string Name;
-        public const byte width = 16;
-        public const byte height = 16;
+        public const byte width = 20;
+        public const byte height = 20;
 
         public Vector3Int Index { get; set; }
         public Node[,] Nodes { get; set; } = new Node[width, height];
@@ -47,15 +47,16 @@ namespace AlwaysEast
                 World.gTileMap.SetTile( Nodes[x, y].CellPositionInWorld, null );
         }
 
-        public void Reload( Vector3Int index ) {
+        public void Reload( Vector3Int index, string data ) {
             Name = index.ToString();
+            Index = index;
+            int iteration = 0;
             for( int y = 0; y < height; y++ )
             for( int x = 0; x < width; x++ ) {
-                    this.Index = index;
                     Nodes[x, y].ChunkIndex = Index;
                     World.gTileMap.SetTile(
                         Nodes[x, y].CellPositionInWorld, 
-                        ResourceRepository.GetTileAt( Nodes[x, y].CellPositionInWorld ) 
+                        ResourceRepository.GetTilebaseOfType( data[iteration++] ) 
                         );
             }
         }
@@ -63,11 +64,10 @@ namespace AlwaysEast
     public class ResourceRepository
     {
         // tileTypes stored in a dictionary
-        public static Dictionary<string, List<TileBase>> keyValuePairs = new();
+        public static Dictionary<char, List<TileBase>> keyValuePairs = new();
         public static Texture2D map;
-        public static TileBase GetTileAt(Vector3Int coords) {
-            List<TileBase> t = keyValuePairs[map.GetPixel( coords.x, coords.y ).ToHexString().Substring( 0, 6 )];
-            return t[UnityEngine.Random.Range( 0, t.Count )];
+        public static TileBase GetTilebaseOfType( char v ) {
+            return keyValuePairs[v][UnityEngine.Random.Range( 0, keyValuePairs[v].Count )];
         }
     }
 
@@ -90,7 +90,8 @@ namespace AlwaysEast
         private void Awake() {
 
             foreach( Tile t in tileTypes )
-                ResourceRepository.keyValuePairs.Add( t.color.ToHexString().Substring( 0, 6 ), t.tileBases );
+                ResourceRepository.keyValuePairs.Add( t.associatedCharacter, t.tileBases );
+
             ResourceRepository.map = this.map;
             gTileMap = tileMap;
 
@@ -101,7 +102,6 @@ namespace AlwaysEast
             EventProcessor.AddInstructionParams( Packet.Load_Chunk, HandleChunkData );
             EventProcessor.AddInstructionParams( Packet.RequestSpawn, HandleRequestSpawnResponse );
         }
-
         private void Start() {
 
             LocalPlayerCharacter.LPCOnChunkChange += LocalPlayerCharacter_LPCOnChunkChange;
@@ -132,18 +132,7 @@ namespace AlwaysEast
             if( IsChunkOutOfBounds( chunkIndex ) )
                 return;
 
-            Chunk newChunk = inactiveChunks[0];
-            inactiveChunks.Remove( inactiveChunks[0] );
-            activeChunks.Add( newChunk );
-            chunkLookup.Add( chunkIndex, newChunk );
-
-            ///////////////////////////////////////////////////////
-
-            //Send a message to the server to get scene object data
-
-            ///////////////////////////////////////////////////////
-
-            newChunk.Reload( chunkIndex );
+            ClientTCP.SendChunkDataQuery( chunkIndex );
         }
         private void RemoveChunk( Vector3Int chunkIndex ) {
 
@@ -201,16 +190,21 @@ namespace AlwaysEast
                     CreateChunk( createChunkIndex );
                 }
             }
-
-            using( DebugTimer timer = new DebugTimer( $"Updating Tilemap" ) ) {
-                UpdateTilemap();
-            }
         }
         private void HandleChunkData(params object[] args) {
 
-            EventProcessor.RemoveInstructionParams( Packet.Load_Chunk );
-            Vector2Int chunkIndex = new Vector2Int( (int)args[0], (int)args[1] );
+            Vector3Int chunkIndex = new Vector3Int( (int)args[0], (int)args[1] );
             string data = (string)args[2];
+
+            Chunk newChunk = inactiveChunks[0];
+            inactiveChunks.Remove( inactiveChunks[0] );
+            activeChunks.Add( newChunk );
+            chunkLookup.Add( chunkIndex, newChunk );
+
+            newChunk.Reload( chunkIndex, data );
+            
+            //this should really be called after all chunks have loaded...
+            UpdateTilemap();
         }
         private void HandleRequestSpawnResponse( object[] args ) {
             EventProcessor.RemoveInstructionParams( Packet.RequestSpawn );
@@ -221,7 +215,6 @@ namespace AlwaysEast
             CreateChunk( lpc.InCurrentChunk );
             foreach( Vector3Int neighbour in lpc.GetSurroundingChunks )
                 CreateChunk( neighbour );
-            UpdateTilemap();
         }
     }
 }

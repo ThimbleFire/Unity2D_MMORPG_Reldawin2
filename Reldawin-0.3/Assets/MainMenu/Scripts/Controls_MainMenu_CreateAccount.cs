@@ -40,28 +40,15 @@ namespace AlwaysEast
 
         private void OnNetworkAccountCreatedResult( params object[] args ) {
             txtErrorLog.enabled = true;
-            txtErrorLog.text = ( string )args[0];
             txtErrorLog.color = UnityEngine.Color.green;
             btnCreateAccount.interactable = false;
+            OnBtnReturnToMainMenuClicked();
         }
 
         protected override void Awake() {
             base.Awake();
             EventProcessor.AddInstructionParams( Packet.DoesUserExist, OnNetworkQueryUsernameResultReturned );
             EventProcessor.AddInstructionParams( Packet.Account_Create_Success, OnNetworkAccountCreatedResult );
-        }
-
-        public void Update() {
-            if( Input.GetKeyDown( KeyCode.Tab ) ) {
-                if( system.currentSelectedGameObject == username ) {
-                    system.SetSelectedGameObject( password, new BaseEventData( system ) );
-                    return;
-                }
-                if( system.currentSelectedGameObject == password ) {
-                    system.SetSelectedGameObject( username, new BaseEventData( system ) );
-                    return;
-                }
-            }
         }
 
         private void OnDestroy() {

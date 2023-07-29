@@ -1,16 +1,45 @@
 ﻿using Bindings;
-using System;
-using System.Collections.Generic;
 
 namespace ReldawinServerMaster
 {
     internal class ServerHandleNetworkData
     {
         private static Dictionary<int, Packet_> packets;
+
         private delegate void Packet_( int index, PacketBuffer buffer );
 
-        public static void InitializeNetworkPackages()
-        {
+        public static void HandleLoadChunkQuery( int index, PacketBuffer buffer ) {
+            int chunkX = buffer.ReadInteger();
+            int chunkY = buffer.ReadInteger();
+
+            ServerTCP.SendChunkDataToPlayer( index, chunkX, chunkY );
+        }
+
+        public static void HandleNetworkInformation( int index, byte[] data, string sender ) {
+            using( PacketBuffer buffer = new PacketBuffer(data) ) {
+                while( buffer.GetReadPosition < data.Length ) {
+                    if( packets.TryGetValue( buffer.ReadInteger(), out Packet_ packet ) )
+                        packet.Invoke( index, buffer );
+                }
+            }
+        }
+
+        public static void HandleOtherPlayerCharacterListRequest( int index, PacketBuffer buffer ) {
+            ServerTCP.SendOtherPlayerCharacterListRequest( index );
+        }
+
+        public static void HandlePingTest( int index, PacketBuffer buffer ) {
+            ServerTCP.SendPingTest( index );
+        }
+
+        public static void HandlePlayerCharacterMovedPosition( int index, PacketBuffer buffer ) {
+            int newPosX = buffer.ReadInteger();
+            int newPosY = buffer.ReadInteger();
+
+            ServerTCP.ChangeClientPosition( index, newPosX, newPosY );
+        }
+
+        public static void InitializeNetworkPackages() {
             Console.WriteLine( "[ServerHandleNetworkData] Initialize Network Packages" );
             packets = new Dictionary<int, Packet_>
             {
@@ -30,57 +59,14 @@ namespace ReldawinServerMaster
                 { (int)Packet.ToggleRunning, LocalPlayerCharacter.ToggleRunning }
             };
         }
+        private static void DoesUserExist( int index, PacketBuffer buffer ) {
+            string username = buffer.ReadString();
+            object result = SQLReader.GetEntityId( username );
 
-        public static void HandleNetworkInformation( int index, byte[] data, string sender )
-        {
-            using ( PacketBuffer buffer = new PacketBuffer() )
-            {
-                int packetNum = -1;
-
-                buffer.WriteBytes( data );
-
-                while ( buffer.GetReadPosition() < data.Length )
-                {
-                    packetNum = buffer.ReadInteger();
-
-                    if(sender != string.Empty )
-                        Console.WriteLine( $"{sender} recieveCallback - {(Packet)packetNum}" );
-
-                    if ( packets.TryGetValue( packetNum, out Packet_ packet ) )
-                    {
-                        packet.Invoke( index, buffer );
-                    }
-                }
-            }
+            ServerTCP.ReturnDoesUserExist( index, result == null ? false : true );
         }
 
-        public static void HandlePingTest( int index, PacketBuffer buffer )
-        {
-            ServerTCP.SendPingTest( index );
-        }
-
-        public static void HandleLoadChunkQuery( int index, PacketBuffer buffer ) {
-            int chunkX = buffer.ReadInteger();
-            int chunkY = buffer.ReadInteger();
-
-            ServerTCP.SendChunkDataToPlayer( index, chunkX, chunkY );
-        }
-
-        public static void HandlePlayerCharacterMovedPosition( int index, PacketBuffer buffer )
-        {
-            int newPosX = buffer.ReadInteger();
-            int newPosY = buffer.ReadInteger();
-
-            ServerTCP.ChangeClientPosition( index, newPosX, newPosY );
-        }
-
-        public static void HandleOtherPlayerCharacterListRequest( int index, PacketBuffer buffer )
-        {
-            ServerTCP.SendOtherPlayerCharacterListRequest( index );
-        }
-
-        private static void HandleAccountCreateQuery( int index, PacketBuffer buffer )
-        {
+        private static void HandleAccountCreateQuery( int index, PacketBuffer buffer ) {
             string username = buffer.ReadString();
             string password = buffer.ReadString();
 
@@ -89,9 +75,8 @@ namespace ReldawinServerMaster
 
             object result = SQLReader.GetEntityId( username );
 
-            if ( result != null )
-            {
-                ServerTCP.SendAccountCreateFail( index, Log.DatabaseAccountAlreadyExists );
+            if( result != null ) {
+                ServerTCP.SendAccountCreateFail( index );
                 return;
             }
 
@@ -104,11 +89,17 @@ namespace ReldawinServerMaster
 
             SQLReader.CreateEntity( 50, 50, entityID );
 
-            ServerTCP.SendAccountCreateSuccess( index, Log.DatabaseAccountCreated );
+            ServerTCP.SendAccountCreateSuccess( index );
         }
 
-        private static void HandleOnUserConnect( int index, PacketBuffer buffer )
-        {
+        private static void HandleLoadDoodadsQuery( int index, PacketBuffer buffer ) {
+            int chunkX = buffer.ReadInteger();
+            int chunkY = buffer.ReadInteger();
+
+            ServerTCP.SendChunkDoodadsToPlayer( index, chunkX, chunkY );
+        }
+
+        private static void HandleOnUserConnect( int index, PacketBuffer buffer ) {
             Console.WriteLine( "[ServerHandleNetworkData][HandleOnUserConnect] " );
         }
 
@@ -120,38 +111,20 @@ namespace ReldawinServerMaster
             ServerTCP.InitializeClient( index, coordinates, playerID );
             ServerTCP.SendCoordinatesOnDatabase( index, coordinates );
         }
-        private static void HandleLoadDoodadsQuery( int index, PacketBuffer buffer ) {
-            int chunkX = buffer.ReadInteger();
-            int chunkY = buffer.ReadInteger();
-
-            ServerTCP.SendChunkDoodadsToPlayer( index, chunkX, chunkY );
-        }
-        private static void DoesUserExist( int index, PacketBuffer buffer ) {
-            string username = buffer.ReadString();
-            object result = SQLReader.GetEntityId( username );
-
-            ServerTCP.ReturnDoesUserExist( index, result == null ? false : true );
-        }
-
-        private static void HandleUserLoginQuery( int index, PacketBuffer buffer )
-        {
+        private static void HandleUserLoginQuery( int index, PacketBuffer buffer ) {
             string username = buffer.ReadString();
             string password = buffer.ReadString();
             SQLReader.GetPlayerIDAndPassword( username, out string pwordOnDB, out int id );
 
-            if ( password == null )
-            {
+            if( password == null ) {
                 ServerTCP.SendLoginFail( index, Log.DatabaseUsernameMismatch );
                 return;
             }
 
-            if ( pwordOnDB == password )
-            {
+            if( pwordOnDB == password ) {
                 Console.WriteLine( "[ServerHandleNetworkData] " + Log.SERVER_LOGIN_SUCCESS, username );
                 ServerTCP.SendLoginSuccess( index, id, username );
-            }
-            else
-            {
+            } else {
                 ServerTCP.SendLoginFail( index, Log.DatabasePasswordMismatch );
             }
         }

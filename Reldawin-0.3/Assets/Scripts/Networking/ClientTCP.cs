@@ -130,7 +130,7 @@ namespace AlwaysEast
             buffer.WriteInteger( Game.dbID );
             SendData( buffer.ToArray() );
         }
-        public static void SendChunkDataQuery( Vector2Int chunkPosition )
+        public static void SendChunkDataQuery( Vector3Int chunkPosition )
         {
             using PacketBuffer buffer = new PacketBuffer( Packet.Load_Chunk );
             buffer.WriteInteger( chunkPosition.x );

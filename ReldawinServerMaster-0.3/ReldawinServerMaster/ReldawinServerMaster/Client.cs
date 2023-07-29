@@ -1,6 +1,4 @@
 ﻿using Bindings;
-using System;
-using System.Collections.Generic;
 using System.Net.Sockets;
 
 namespace ReldawinServerMaster
@@ -9,35 +7,33 @@ namespace ReldawinServerMaster
     {
         public byte[] buffer = new byte[1024];
         public bool closing;
-        public bool loggedIn = false;
         //Index is not to be mistaken for ID.
         //ID represents the player character's position on credential's database.
         //Index is the index on the server.
         public int index;
+
         public string ip;
+        public bool loggedIn = false;
         public ClientProperties properties;
         public Socket socket;
 
         public void MovePosition( int x, int y ) => properties.Position = new Vector2Int( x, y );
 
-        public void Setup( Vector2Int coordinates, int id )
-        {
+        public void Setup( Vector2Int coordinates, int id ) {
             properties.Position = coordinates;
             properties.ID = id;
             loggedIn = true;
         }
 
-        public void StartClient()
-        {
+        public void StartClient() {
             socket.BeginReceive( buffer, 0, buffer.Length, SocketFlags.None, new AsyncCallback( RecieveCallback ), socket );
             closing = false;
 
             properties = new ClientProperties();
         }
 
-        private void CloseClient( int index )
-        {
-            ServerTCP.AnnounceDisconnect(index, properties.ID);
+        private void CloseClient( int index ) {
+            ServerTCP.AnnounceDisconnect( index, properties.ID );
             closing = true;
             Console.WriteLine( properties.Username + " safely disconnected." );
             socket.Close();
@@ -48,26 +44,21 @@ namespace ReldawinServerMaster
             properties.Clear();
         }
 
-        private void RecieveCallback( IAsyncResult ar )
-        {
+        private void RecieveCallback( IAsyncResult ar ) {
             Socket socket = (Socket)ar.AsyncState;
 
-            try
-            {
+            try {
                 int bytesRead = socket.EndReceive( ar );
 
-                if ( bytesRead <= 0 )
-                {
+                if( bytesRead <= 0 ) {
                     CloseClient( index );
-                }
-                else
-                {
+                } else {
                     byte[] dataBuffer = new byte[bytesRead];
                     Array.Copy( buffer, dataBuffer, bytesRead );
 
                     ServerHandleNetworkData.HandleNetworkInformation( index
                                                                     , dataBuffer
-                                                                    , properties.Username);
+                                                                    , properties.Username );
                     socket.BeginReceive( buffer
                                        , 0
                                        , buffer.Length
@@ -76,9 +67,7 @@ namespace ReldawinServerMaster
                                        , socket
                                        );
                 }
-            }
-            catch ( Exception e )
-            {
+            } catch( Exception e ) {
                 Console.WriteLine( "[Client::RecieveCallBack] " + e.Message, index );
                 CloseClient( index );
             }
