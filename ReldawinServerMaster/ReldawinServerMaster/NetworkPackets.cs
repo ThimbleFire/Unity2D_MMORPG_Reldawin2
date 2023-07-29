@@ -10,7 +10,7 @@
         Account_Create_Query,
         Account_Create_Fail,
         Account_Create_Success,
-        RequestSeed,
+        RequestSpawn,
         SavePositionToServer,
         AnnounceMovementToNearbyPlayers,
         PingTest,
