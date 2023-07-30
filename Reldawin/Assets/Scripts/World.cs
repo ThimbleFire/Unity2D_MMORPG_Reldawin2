@@ -162,8 +162,8 @@ namespace AlwaysEast
         private bool IsChunkOutOfBounds( Vector3Int chunkIndex ) {
             if( chunkIndex.x < 0 ||
                  chunkIndex.y < 0 ||
-                 chunkIndex.x > World.Width / Chunk.width ||
-                 chunkIndex.y > World.Height / Chunk.height )
+                 chunkIndex.x >= World.Width / Chunk.width ||
+                 chunkIndex.y >= World.Height / Chunk.height )
                 return true;
             else return false;
         }
@@ -179,6 +179,7 @@ namespace AlwaysEast
 
             Pathfinder.Populate( activeChunks, offset );
 
+            // This might not be needed anymore. Experiment by removing the BoxCollider2D component.
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.size = new Vector3( tileMap.size.x * grid.cellSize.x, tileMap.size.y * grid.cellSize.y );
             collider.offset = new Vector2( tileMap.size.x * grid.cellSize.x / 2, 0.0f );
