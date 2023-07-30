@@ -9,16 +9,16 @@ https://i.imgur.com/C8AYzRa.gif
 
 ![image](https://github.com/ThimbleFire/Reldawin/assets/14812476/d34e4bc6-4a94-4d19-8afb-ec084a64c209)
 ![sow grow demo2](https://github.com/ThimbleFire/Reldawin/assets/14812476/1651338e-8964-45a3-8e7f-2a7eb7b19ead)
-
-This is a separate build of the game that uses Unity Tilemaps and SQLite-Net.
+![image](https://github.com/ThimbleFire/Reldawin/assets/14812476/a5af8b0e-445d-4272-a300-cc4dca819bf9)
 
 TODO
 * [x] Chunk Loading
 * [x] Pathfinding
 * [x] Movement and Animation
-* [ ] place scripts and their associated resources together in a folder to better understand what uses what.
 * [x] Networking and Multiplayer
-* [ ] Scene Objects
+* [x] Loading scene objects on chunk change
+* [ ] Unloading scene objects on chunk change
+* [ ] Resource pool scene objects
 * [ ] Inventory and Equipment
 * [ ] Gathering
 * [ ] Crafting
