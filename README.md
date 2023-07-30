@@ -17,8 +17,7 @@ TODO
 * [x] Movement and Animation
 * [x] Networking and Multiplayer
 * [x] Loading scene objects on chunk change
-* [ ] Unloading scene objects on chunk change
-* [ ] Resource pool scene objects
+* [x] Resource pool scene objects
 * [ ] Inventory and Equipment
 * [ ] Gathering
 * [ ] Crafting
