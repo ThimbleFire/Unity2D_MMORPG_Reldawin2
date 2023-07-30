@@ -114,18 +114,15 @@ namespace ReldawinServerMaster
         private static void HandleUserLoginQuery( int index, PacketBuffer buffer ) {
             string username = buffer.ReadString();
             string password = buffer.ReadString();
-            SQLReader.GetPlayerIDAndPassword( username, out string pwordOnDB, out int id );
+            UserCredentials userCredentials = SQLReader.GetPlayerIDAndPassword( username, password );
 
-            if( password == null ) {
+            if( userCredentials == null ) {
                 ServerTCP.SendLoginFail( index, Log.DatabaseUsernameMismatch );
                 return;
             }
-
-            if( pwordOnDB == password ) {
-                Console.WriteLine( "[ServerHandleNetworkData] " + Log.SERVER_LOGIN_SUCCESS, username );
-                ServerTCP.SendLoginSuccess( index, id, username );
-            } else {
-                ServerTCP.SendLoginFail( index, Log.DatabasePasswordMismatch );
+            else {
+                Console.WriteLine( $"{username} has logged in." );
+                ServerTCP.SendLoginSuccess( index, userCredentials.ID, username );
             }
         }
     }

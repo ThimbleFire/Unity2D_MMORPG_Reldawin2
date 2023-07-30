@@ -7,8 +7,8 @@
         }
 
         private static void Main( string[] args ) {
-            SQLReader.Setup();
             MapData.Setup();
+            SQLReader.Setup();
             ServerHandleNetworkData.InitializeNetworkPackages();
             ServerTCP.SetupServer();
             Console.WriteLine( "All good" );

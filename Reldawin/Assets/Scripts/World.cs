@@ -8,6 +8,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Xml;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -27,13 +29,17 @@ namespace AlwaysEast
     }
     public class Chunk
     {
+        public static event ChunkDestroyImminent OnChunkDestroyed;
+        public delegate void ChunkDestroyImminent( Vector3Int chunkIndex, List<SceneObject> sceneObjects );
+
         public string Name;
         public const byte width = 20;
         public const byte height = 20;
 
         public Vector3Int Index { get; set; }
         public Node[,] Nodes { get; set; } = new Node[width, height];
-        
+        public List<SceneObject> activeSceneObjects = new List<SceneObject>();
+
         public Chunk() {
             Name = "Inactive";
             for( int y = 0; y < height; y++ )
@@ -41,33 +47,35 @@ namespace AlwaysEast
                 Nodes[x, y] = new Node( new Vector3Int( x, y) );
         }
 
+
         public void Erase() {
             for( int y = 0; y < height; y++ )
             for( int x = 0; x < width; x++ )
                 World.gTileMap.SetTile( Nodes[x, y].CellPositionInWorld, null );
+
+            activeSceneObjects.ForEach( x => x.gameObject.SetActive( false ) );
+            OnChunkDestroyed?.Invoke( Index, activeSceneObjects );
         }
 
-        public void Reload( Vector3Int index, string data ) {
+        public void Reload( Vector3Int index, string data, List<SceneObjectData> sceneObjectData, List<SceneObject> inactiveSceneObjects ) {
             Name = index.ToString();
             Index = index;
             int iteration = 0;
             for( int y = 0; y < height; y++ )
             for( int x = 0; x < width; x++ ) {
-                    Nodes[x, y].ChunkIndex = Index;
-                    World.gTileMap.SetTile(
-                        Nodes[x, y].CellPositionInWorld, 
-                        ResourceRepository.GetTilebaseOfType( data[iteration++] ) 
-                        );
+                Nodes[x, y].ChunkIndex = Index;
+                World.gTileMap.SetTile(
+                    Nodes[x, y].CellPositionInWorld, 
+                    ResourceRepository.GetTilebaseOfType( data[iteration++] ) 
+                    );
             }
-        }
-    }
-    public class ResourceRepository
-    {
-        // tileTypes stored in a dictionary
-        public static Dictionary<char, List<TileBase>> keyValuePairs = new();
-        public static Texture2D map;
-        public static TileBase GetTilebaseOfType( char v ) {
-            return keyValuePairs[v][UnityEngine.Random.Range( 0, keyValuePairs[v].Count )];
+
+            foreach( SceneObjectData objectData in sceneObjectData ) {
+                Vector3 worldPosition = Nodes[objectData.x - ( index.x * Chunk.width ), objectData.y - ( index.y * Chunk.height )].WorldPosition;
+                inactiveSceneObjects[0].Setup( ResourceRepository.GetSprite( objectData.Type ) );
+                inactiveSceneObjects[0].transform.position = worldPosition;
+                activeSceneObjects.Add( inactiveSceneObjects[0] );
+            }
         }
     }
 
@@ -81,19 +89,15 @@ namespace AlwaysEast
 
         public Tilemap tileMap;
         public static Tilemap gTileMap;
-        public Tile[] tileTypes;
         public Grid grid;
         private List<Chunk> activeChunks = new List<Chunk>();
         private List<Chunk> inactiveChunks = new List<Chunk>();
+        public List<SceneObject> inactiveSceneObjects = new List<SceneObject>();
         private Dictionary<Vector3Int, Chunk> chunkLookup = new();
         public LocalPlayerCharacter lpc;
         private byte chunksToLoad = 0;
 
         private void Awake() {
-
-            foreach( Tile t in tileTypes )
-                ResourceRepository.keyValuePairs.Add( t.associatedCharacter, t.tileBases );
-
             gTileMap = tileMap;
 
             for( int y = 0; y < 12; y++ ) {
@@ -102,6 +106,7 @@ namespace AlwaysEast
 
             EventProcessor.AddInstructionParams( Packet.Load_Chunk, HandleChunkData );
             EventProcessor.AddInstructionParams( Packet.RequestSpawn, HandleRequestSpawnResponse );
+            Chunk.OnChunkDestroyed += Chunk_OnChunkDestroyed;
         }
         private void Start() {
 
@@ -203,8 +208,11 @@ namespace AlwaysEast
             inactiveChunks.Remove( inactiveChunks[0] );
             activeChunks.Add( newChunk );
             chunkLookup.Add( chunkIndex, newChunk );
+            List<SceneObjectData> objects = (List<SceneObjectData>)args[3];
 
-            newChunk.Reload( chunkIndex, data );
+            newChunk.Reload( chunkIndex, data, objects, inactiveSceneObjects.GetRange( 0, objects.Count ) );
+
+            inactiveSceneObjects.RemoveRange( 0, objects.Count );
 
             chunksToLoad--;
 
@@ -220,6 +228,13 @@ namespace AlwaysEast
             CreateChunk( lpc.InCurrentChunk );
             foreach( Vector3Int neighbour in lpc.GetSurroundingChunks )
                 CreateChunk( neighbour );
+        }
+        private void Chunk_OnChunkDestroyed( Vector3Int chunkIndex, List<SceneObject> sceneObjectsToRecycle ) {
+            foreach( SceneObject doodad in sceneObjectsToRecycle ) {
+                doodad.transform.SetParent( transform );
+            }
+
+            inactiveSceneObjects.AddRange( sceneObjectsToRecycle );
         }
     }
 }

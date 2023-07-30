@@ -42,13 +42,22 @@ namespace AlwaysEast
             txtErrorLog.enabled = true;
             txtErrorLog.color = UnityEngine.Color.green;
             btnCreateAccount.interactable = false;
-            OnBtnReturnToMainMenuClicked();
+        }
+
+        private void OnEnable() {
+            EventProcessor.AddInstructionParams( Packet.DoesUserExist, OnNetworkQueryUsernameResultReturned );
+            EventProcessor.AddInstructionParams( Packet.Account_Create_Success, OnNetworkAccountCreatedResult );
+
+        }
+        private void OnDisable() {
+
+            EventProcessor.RemoveInstructionParams( Packet.DoesUserExist );
+            EventProcessor.RemoveInstructionParams( Packet.Account_Create_Success );
+
         }
 
         protected override void Awake() {
             base.Awake();
-            EventProcessor.AddInstructionParams( Packet.DoesUserExist, OnNetworkQueryUsernameResultReturned );
-            EventProcessor.AddInstructionParams( Packet.Account_Create_Success, OnNetworkAccountCreatedResult );
         }
 
         private void OnDestroy() {

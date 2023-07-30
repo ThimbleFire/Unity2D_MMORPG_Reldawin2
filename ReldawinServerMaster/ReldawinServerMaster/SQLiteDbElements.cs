@@ -62,4 +62,13 @@ namespace ReldawinServerMaster
         public string Password { get; set; }
         public string Username { get; set; }
     }
+
+    public class SceneObjects
+    {
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
+        public int CoordinateX { get; set; }
+        public int CoordinateY { get; set; }
+        public int Type { get; set; }
+    }
 }

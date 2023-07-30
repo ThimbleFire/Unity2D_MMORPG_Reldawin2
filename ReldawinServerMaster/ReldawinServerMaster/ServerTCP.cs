@@ -108,10 +108,24 @@ namespace ReldawinServerMaster
 
                 string data = MapData.GetChunk(chunkX, chunkY);
 
+                SceneObjects[] sceneObjects = SQLReader.GetSceneObjectsInChunk(chunkX, chunkY);
+
                 using( PacketBuffer buffer = new PacketBuffer( Packet.Load_Chunk ) ) {
                     buffer.WriteInteger( chunkX );
                     buffer.WriteInteger( chunkY );
                     buffer.WriteString( data );
+
+                    if( sceneObjects == null ) {
+                        buffer.WriteInteger( 0 );
+                    } else {
+                        buffer.WriteInteger( sceneObjects.Length );
+                        for( int i = 0; i < sceneObjects.Length; i++ ) {
+                            buffer.WriteInteger( sceneObjects[i].Type );
+                            buffer.WriteInteger( sceneObjects[i].CoordinateX );
+                            buffer.WriteInteger( sceneObjects[i].CoordinateY );
+                        }
+                    }
+
                     SendDataTo( index, buffer.ToArray() );
                 }
             }
@@ -269,10 +283,10 @@ namespace ReldawinServerMaster
             serverSocket.Bind( new IPEndPoint( IPAddress.Any, 5555 ) );
             serverSocket.Listen( Log.BUFFER_PLAYERS );
             serverSocket.BeginAccept( new AsyncCallback( AcceptCallback ), null );
-
             for( int i = 0; i < Log.MAX_PLAYERS; i++ ) {
                 clients[i] = new Client();
             }
+
         }
 
         public static void TickResult( int index, int yieldItemID ) => Harvest( index, yieldItemID );

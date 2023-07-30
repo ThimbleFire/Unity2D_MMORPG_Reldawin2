@@ -119,9 +119,8 @@ namespace AlwaysEast
         {
             using PacketBuffer buffer = new PacketBuffer( data );
             int cpIndex = buffer.ReadInteger();
-            string message = buffer.ReadString();
 
-            eventProcessor.QueueEvent( (Packet)cpIndex, message );
+            eventProcessor.QueueEvent( (Packet)cpIndex );
         }
 
         private static void HandleLoginFail( byte[] data )
@@ -224,27 +223,13 @@ namespace AlwaysEast
             int chunkX = buffer.ReadInteger();
             int chunkY = buffer.ReadInteger();
             string chunkData = buffer.ReadString();
-            eventProcessor.QueueEvent( (Packet)cpIndex, chunkX, chunkY, chunkData );
+            int sceneObjectCount = buffer.ReadInteger();
+            List<SceneObjectData> objects = new List<SceneObjectData>();
+            for( int i = 0; i < sceneObjectCount; i++ ) {
+                objects.Add( new SceneObjectData() { Type = buffer.ReadInteger(), x = buffer.ReadInteger(), y = buffer.ReadInteger() } );
+            }
+            eventProcessor.QueueEvent( (Packet)cpIndex, chunkX, chunkY, chunkData, objects);
         }
-
-        /// <summary>Fires when a chunk has finished loading and is ready to be populated by objects</summary>
-        //private static void HandleLoadChunkDoodadQuery( byte[] data )
-        //{
-        //    using PacketBuffer buffer = new PacketBuffer( data );
-        //    int cpIndex = buffer.ReadInteger();
-        //    Vector2Int chunkIndex = new Vector2Int( buffer.ReadInteger(), buffer.ReadInteger() );
-        //    int count = buffer.ReadInteger();
-        //    List<Doodad.Data> doodads = new List<Doodad.Data>();
-        //    for ( int i = 0; i < count; i++ )
-        //    {
-        //        int doodadType = buffer.ReadByte();
-        //        int tileX = buffer.ReadInteger();
-        //        int tileY = buffer.ReadInteger();
-        //        Vector2Int tilePos = new Vector2Int( tileX, tileY );
-        //        doodads.Add( new Doodad.Data( doodadType, tilePos, chunkIndex ) );
-        //    }
-        //    eventProcessor.QueueEvent( (Packet)cpIndex, chunkIndex, doodads );
-        //}
 
         private void Awake()
         {
