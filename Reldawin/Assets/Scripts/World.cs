@@ -55,6 +55,7 @@ namespace AlwaysEast
 
             activeSceneObjects.ForEach( x => x.gameObject.SetActive( false ) );
             OnChunkDestroyed?.Invoke( Index, activeSceneObjects );
+            activeSceneObjects.Clear();
         }
 
         public void Reload( Vector3Int index, string data, List<SceneObjectData> sceneObjectData, List<SceneObject> inactiveSceneObjects ) {
@@ -75,6 +76,7 @@ namespace AlwaysEast
                 inactiveSceneObjects[0].Setup( ResourceRepository.GetSprite( objectData.Type ) );
                 inactiveSceneObjects[0].transform.position = worldPosition;
                 activeSceneObjects.Add( inactiveSceneObjects[0] );
+                inactiveSceneObjects.RemoveAt( 0 );
             }
         }
     }
