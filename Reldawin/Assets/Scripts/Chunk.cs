@@ -39,9 +39,9 @@ namespace AlwaysEast
         }
         public void Erase(Tilemap tileMap) {
             // Is erasing tiles neccesary? They'll just be overwritten when Reload is called.
-            //for( int y = 0; y < height; y++ )
-            //for( int x = 0; x < width; x++ )
-            //    tileMap.SetTile( Nodes[x, y].CellPositionInWorld, null );
+            for( int y = 0; y < height; y++ )
+                for( int x = 0; x < width; x++ )
+                    tileMap.SetTile( Nodes[x, y].CellPositionInWorld, null );
             activeSceneObjects.ForEach( x => x.gameObject.SetActive( false ) );
             OnChunkDestroyed?.Invoke( Index, activeSceneObjects );
             activeSceneObjects.Clear();

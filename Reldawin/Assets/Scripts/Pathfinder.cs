@@ -12,7 +12,7 @@ namespace AlwaysEast
         public Vector3Int ChunkIndex { get { return _chunk._index; } }
         public Vector3Int CellPositionInGrid { get; set; }
         public Vector3Int CellPositionInWorld { get { return new Vector3Int( CellPositionInGrid.x + Chunk.width * ChunkIndex.x, CellPositionInGrid.y + Chunk.height * ChunkIndex.y ); } }
-        public Vector3 WorldPosition { get { return World.gTileMap.CellToWorld( CellPositionInWorld ); } }
+        public Vector3 WorldPosition { get { return ResourceRepository.tilemap.CellToWorld( CellPositionInWorld ); } }
         public Node Parent { get; set; }
         public int GCost { get; set; }
         public int HCost { get; set; }

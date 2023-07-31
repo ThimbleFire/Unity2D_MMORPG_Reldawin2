@@ -26,7 +26,6 @@ namespace AlwaysEast
         public const int Width = 1000;
         public const int Height = 1000;
         public Tilemap tileMap;
-        public Grid grid;
         private List<Chunk> activeChunks = new List<Chunk>();
         private List<Chunk> inactiveChunks = new List<Chunk>();
         public List<SceneObject> inactiveSceneObjects = new List<SceneObject>();
@@ -54,7 +53,7 @@ namespace AlwaysEast
                 if( EventSystem.current.IsPointerOverGameObject() )
                     return;
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint( Input.mousePosition );
-                Vector3Int coordinate = grid.WorldToCell(mouseWorldPos);
+                Vector3Int coordinate = tileMap.WorldToCell(mouseWorldPos);
                 OnClicked?.Invoke( coordinate, mouseWorldPos );
             }
         }
@@ -94,11 +93,6 @@ namespace AlwaysEast
                 activeChunks.Find( x => x.Index == lpc.GetSurroundingChunks[1] ) != null ? lpc.GetSurroundingChunks[1] :
                 lpc.InCurrentChunk;
             Pathfinder.Populate( activeChunks, offset );
-// This might not be needed anymore. Experiment by removing the BoxCollider2D component. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            BoxCollider2D collider = GetComponent<BoxCollider2D>();
-            collider.size = new Vector3( tileMap.size.x * grid.cellSize.x, tileMap.size.y * grid.cellSize.y );
-            collider.offset = new Vector2( tileMap.size.x * grid.cellSize.x / 2, 0.0f );
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         }
         private void LocalPlayerChangedChunk( Vector3Int lastChunk, Vector3Int newChunk ) {
             using( DebugTimer timer = new DebugTimer( $"Loading Chunks" ) ) {

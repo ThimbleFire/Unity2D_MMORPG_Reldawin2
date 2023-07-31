@@ -17,18 +17,21 @@ namespace AlwaysEast
         public static Sprite GetSprite( int i ) {
             return sprites[i];
         }
+        public static Tilemap tilemap;
     }
 
     public class ResourceLoader : MonoBehaviour
     {
         public Tile[] _tileTypes;
         public Sprite[] _sprites;
+        public Tilemap tileMap;
 
         private void Awake() {
             foreach( Tile t in _tileTypes )
                 ResourceRepository.keyValuePairs.Add( t.associatedCharacter, t.tileBases );
             for( int i = 0; i < _sprites.Length; i++ )
                 ResourceRepository.sprites.Add( i, _sprites[i] );
+            ResourceRepository.tilemap = tileMap;
             Destroy( this );
         }
     }

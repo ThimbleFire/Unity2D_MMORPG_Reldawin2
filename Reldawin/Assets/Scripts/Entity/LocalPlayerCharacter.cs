@@ -46,7 +46,7 @@ namespace AlwaysEast
                 return;
 
             transform.position = Vector3.MoveTowards( transform.position, MovingToward, MovementSpeed );
-            Vector3Int newPoint = World.gTileMap.WorldToCell( transform.position );
+            Vector3Int newPoint = tilemap.WorldToCell( transform.position );
 
             if( newPoint != CellPositionInWorld ) {
 
@@ -167,7 +167,7 @@ namespace AlwaysEast
         }
 
         internal void Teleport( Vector3Int coordinates ) {
-            transform.position = World.gTileMap.CellToWorld( coordinates );
+            transform.position = tilemap.CellToWorld( coordinates );
             this.CellPositionInWorld = coordinates;
             MovingToward = transform.position;
             inLastChunk = InCurrentChunk;
