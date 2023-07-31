@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Doodads xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <list>
+    <DEDoodad>
+      <Droprate>
+        <Droprate>
+          <Id>0</Id>
+          <Percent>0</Percent>
+        </Droprate>
+      </Droprate>
+      <Name>Tree</Name>
+      <Id>0</Id>
+      <Interact>WOODCUTTING</Interact>
+    </DEDoodad>
+    <DEDoodad>
+      <Droprate>
+        <Droprate>
+          <Id>0</Id>
+          <Percent>25</Percent>
+        </Droprate>
+      </Droprate>
+      <Name>Tree2</Name>
+      <Id>1</Id>
+      <Interact>NONE</Interact>
+    </DEDoodad>
+  </list>
+</Doodads>

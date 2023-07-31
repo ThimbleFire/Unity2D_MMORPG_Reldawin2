@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace AlwaysEast
@@ -11,13 +9,13 @@ namespace AlwaysEast
         public static string username;
         public static bool rememberUsernameOnMainMenu = false;
 
-
         public static void Save() {
             PlayerPrefs.SetString( "username", username );
             PlayerPrefs.SetString( "password", password );
             PlayerPrefs.SetInt( "dbID", dbID );
             PlayerPrefs.SetInt( "rememberUsernameOnMainMenu", rememberUsernameOnMainMenu == true ? 1 : 0 );
         }
+
         public static void Load() {
             username = PlayerPrefs.GetString( "username" );
             password = PlayerPrefs.GetString( "password" );

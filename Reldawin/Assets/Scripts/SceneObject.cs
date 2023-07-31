@@ -1,26 +1,22 @@
-﻿using AlwaysEast;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace AlwaysEast
 {
     public class SceneObjectData
-    {
-        public int x, y, Type;
-    }
+    { public int x, y, Type; }
 
     public class SceneObject : MonoBehaviour
     {
-        [SerializeField] 
-        private new SpriteRenderer renderer;
+        [SerializeField]
+        private SpriteRenderer renderer;
 
-        public void Setup( Sprite sprite ) {
+        private SceneObjectData data;
 
-            // setup sprite
+        public void Setup( SceneObjectData _data ) {
+            this.data = _data;
+            Sprite sprite = ResourceRepository.GetSprite( data.Type );
             renderer.sprite = sprite;
-
-            // enable the game object
             gameObject.SetActive( true );
-
             gameObject.name = sprite.name;
         }
     }

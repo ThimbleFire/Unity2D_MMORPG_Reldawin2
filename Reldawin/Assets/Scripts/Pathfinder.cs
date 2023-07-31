@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ namespace AlwaysEast
         private IChunk _chunk;
         public int type = -1;
         public bool Occupied { get { return type != -1; } }
-        public Vector3Int ChunkIndex { get { return _chunk._index; } }
+        public Vector3Int ChunkIndex { get { return _chunk.SIndex; } }
         public Vector3Int CellPositionInGrid { get; set; }
         public Vector3Int CellPositionInWorld { get { return new Vector3Int( CellPositionInGrid.x + Chunk.width * ChunkIndex.x, CellPositionInGrid.y + Chunk.height * ChunkIndex.y ); } }
         public Vector3 WorldPosition { get { return ResourceRepository.tilemap.CellToWorld( CellPositionInWorld ); } }
@@ -17,6 +16,7 @@ namespace AlwaysEast
         public int GCost { get; set; }
         public int HCost { get; set; }
         public int FCost { get { return GCost + HCost; } }
+
         public Node( IChunk iChunk, Vector3Int _cellPosGrid ) {
             _chunk = iChunk;
             this.CellPositionInGrid = _cellPosGrid;
@@ -28,8 +28,9 @@ namespace AlwaysEast
     public class Pathfinder
     {
         private static Node[,] nodes = new Node[Chunk.width * 3, Chunk.height * 3];
-        private static Vector3Int BottomLeftNodeIndex { get; set; } = Vector3Int.zero;        
-        public static void Populate( List<Chunk> chunks, Vector3Int _bottomLeftNodeIndex) {
+        private static Vector3Int BottomLeftNodeIndex { get; set; } = Vector3Int.zero;
+
+        public static void Populate( List<Chunk> chunks, Vector3Int _bottomLeftNodeIndex ) {
             foreach( Chunk chunk in chunks ) {
                 foreach( Node n in chunk.Nodes ) {
                     nodes[n.CellPositionInWorld.x - _bottomLeftNodeIndex.x * Chunk.width,
@@ -38,7 +39,8 @@ namespace AlwaysEast
             }
             BottomLeftNodeIndex = _bottomLeftNodeIndex;
         }
-        public static Queue<Node> GetPath( Vector3Int start, Vector3Int destination ) {            
+
+        public static Queue<Node> GetPath( Vector3Int start, Vector3Int destination ) {
             start = new Vector3Int( start.x - BottomLeftNodeIndex.x * Chunk.width, start.y - BottomLeftNodeIndex.y * Chunk.height );
             destination = new Vector3Int( destination.x - BottomLeftNodeIndex.x * Chunk.width, destination.y - BottomLeftNodeIndex.y * Chunk.height );
             if( start == destination )
@@ -78,6 +80,7 @@ namespace AlwaysEast
             }
             return null;
         }
+
         private static List<Node> GetNeighbours( Node n ) {
             List<Node> neighbours = new List<Node>();
             Vector3Int[] offset = new Vector3Int[8]
@@ -103,6 +106,7 @@ namespace AlwaysEast
             }
             return neighbours;
         }
+
         private static Queue<Node> RetracePath( Node startNode, Node destinationNode ) {
             List<Node> path = new List<Node>();
             Node currentNode = destinationNode;
@@ -119,6 +123,7 @@ namespace AlwaysEast
             path.Reverse();
             return new Queue<Node>( path ); ;
         }
+
         private static int GetDistance( Node a, Node b ) {
             int disX = Mathf.Abs( a.CellPositionInWorld.x - b.CellPositionInWorld.x );
             int disY = Mathf.Abs( a.CellPositionInWorld.y - b.CellPositionInWorld.y );

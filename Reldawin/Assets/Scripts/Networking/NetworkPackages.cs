@@ -13,7 +13,7 @@
         Account_Create_Query,
         Account_Create_Fail,
         Account_Create_Success,
-        
+
         //Request map dimensions, seed, player position
         RequestSpawn,
 
@@ -37,6 +37,7 @@
 
         //Ask the server to subscribe the client to an interact
         StartInteract,
+
         YieldInteract,
         StopInteract,
 

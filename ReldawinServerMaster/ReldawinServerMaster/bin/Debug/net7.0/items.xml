@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Items xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <list>
+    <IEItem>
+      <Id>0</Id>
+    </IEItem>
+    <IEItem>
+      <Id>0</Id>
+    </IEItem>
+    <IEItem>
+      <Id>0</Id>
+    </IEItem>
+    <IEItem>
+      <Id>0</Id>
+    </IEItem>
+    <IEItem>
+      <Name>noname</Name>
+      <Id>0</Id>
+      <ItemSpriteFileName16x16 />
+      <ItemSpriteFileName32x32 />
+      <ItemSpriteOnFloorFileName />
+      <FlavourText>nodesc</FlavourText>
+    </IEItem>
+  </list>
+</Items>

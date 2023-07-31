@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,6 +7,7 @@ namespace AlwaysEast
     public class LocalPlayerCharacter : MonoBehaviour
     {
         public static event LPCOnChunkChangeHandler LPCOnChunkChange;
+
         public delegate void LPCOnChunkChangeHandler( Vector3Int lastChunk, Vector3Int newChunk );
 
         protected float MovementSpeed { get; set; } = WalkSpeed;
@@ -17,12 +17,14 @@ namespace AlwaysEast
         protected bool Running { get; set; }
         public SpriteRenderer spriteRenderer;
         public AnimationController animationController;
-        public Vector3Int CellPositionInWorld = new Vector3Int(0, 0, 0);
+        public Vector3Int CellPositionInWorld = new Vector3Int( 0, 0, 0 );
+
         public Vector3Int InCurrentChunk {
             get {
                 return new Vector3Int( Mathf.FloorToInt( CellPositionInWorld.x / Chunk.width ), Mathf.FloorToInt( CellPositionInWorld.y / Chunk.height ) );
             }
         }
+
         public Vector3Int inLastChunk;
         private Queue<Node> path;
         protected bool lastNodeOccupied = false;
@@ -49,19 +51,20 @@ namespace AlwaysEast
             Vector3Int newPoint = tilemap.WorldToCell( transform.position );
 
             if( newPoint != CellPositionInWorld ) {
-
                 OnMovedTile( newPoint, CellPositionInWorld );
             }
             // If moving the transform puts us in the position
             if( transform.position == ( Vector3 )MovingToward ) {
                 MoveToNextNode();
-            }            
+            }
         }
+
         private void ToggleRunning() {
             Running = !Running;
             MovementSpeed = Running ? RunSpeed : WalkSpeed;
             animationController.ToggleRun( Running );
         }
+
         private void MoveToNextNode() {
             if( path == null ) {
                 OnAnimationDestinationMet();
@@ -77,8 +80,7 @@ namespace AlwaysEast
 
             if( path.Count > 1 )
                 SetTargetPosition( nextNodeWorldPosition );
-            else if( path.Count == 1 )
-            {
+            else if( path.Count == 1 ) {
                 if( lastNodeOccupied ) {
                     path.Clear();
                     FaceDirection( nextNodeWorldPosition );
@@ -91,11 +93,12 @@ namespace AlwaysEast
             }
             path.Dequeue();
         }
+
         private void OnAnimationDestinationMet() {
             animationController.OnAnimationDestinationMet();
         }
-        private void OnMovedTile( Vector3Int newPoint, Vector3Int lastTile ) {
 
+        private void OnMovedTile( Vector3Int newPoint, Vector3Int lastTile ) {
             using PacketBuffer buffer = new PacketBuffer( Packet.SavePositionToServer );
             buffer.WriteInteger( newPoint.x );
             buffer.WriteInteger( newPoint.y );
@@ -105,16 +108,17 @@ namespace AlwaysEast
             if( InCurrentChunk != inLastChunk )
                 OnMovedChunk( InCurrentChunk );
         }
-        private void OnMovedChunk( Vector3Int currentChunk ) 
-        {
+
+        private void OnMovedChunk( Vector3Int currentChunk ) {
             LPCOnChunkChange?.Invoke( inLastChunk, currentChunk );
             inLastChunk = currentChunk;
         }
-        public void MoveToWorldSpace(Vector3 position, Vector2Int chunkCoordinates) {
+
+        public void MoveToWorldSpace( Vector3 position, Vector2Int chunkCoordinates ) {
             transform.position = position;
         }
-        private void World_OnClicked( Vector3Int cellClicked, Vector2 pointClicked )
-        {
+
+        private void World_OnClicked( Vector3Int cellClicked, Vector2 pointClicked ) {
             path = Pathfinder.GetPath( CellPositionInWorld, cellClicked );
 
             if( path == null ) {
@@ -135,17 +139,17 @@ namespace AlwaysEast
 
             MoveToNextNode();
         }
-        private void OnDestroy()
-        {
+
+        private void OnDestroy() {
             World.OnClicked -= World_OnClicked;
         }
+
         private void FaceDirection( Vector2 worldDirection ) {
             animationController.FaceDirection( worldDirection );
         }
-        public Vector3Int[] GetSurroundingChunks
-        {
-            get
-            {
+
+        public Vector3Int[] GetSurroundingChunks {
+            get {
                 return new Vector3Int[8]
                 {
                                                                             //     Example localPlayerCharacter.InCurrentChunk == 1, 1
@@ -156,10 +160,11 @@ namespace AlwaysEast
                         InCurrentChunk + Vector3Int.up,                     //     (1, 2)
                         InCurrentChunk + Vector3Int.right + Vector3Int.down,//     (2, 0)
                         InCurrentChunk + Vector3Int.right,                  //     (2, 1)
-                        InCurrentChunk + Vector3Int.up + Vector3Int.right  //     (2, 2)
+                        InCurrentChunk + Vector3Int.up + Vector3Int.right   //     (2, 2)
                 };
             }
         }
+
         public void SetTargetPosition( Vector2 worldPosition ) {
             MovingToward = worldPosition;
 

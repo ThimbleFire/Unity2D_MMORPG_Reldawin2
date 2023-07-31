@@ -23,44 +23,43 @@ namespace AlwaysEast
         public bool Running { get; set; }
         public bool Swimming { get; set; }
         private int activeAnimationHash = int.MinValue;
-                
-        public void ToggleRun(bool running)
-        {
+
+        public void ToggleRun( bool running ) {
             Running = running;
 
             Animator.SetBool( runningHash, running );
         }
-        public void ToggleSwimming(bool swimming)
-        {
+
+        public void ToggleSwimming( bool swimming ) {
             Swimming = swimming;
 
             Animator.SetBool( swimmingHash, swimming );
         }
-        public void Interrupt()
-        {
-            if(activeAnimationHash != 999)
+
+        public void Interrupt() {
+            if( activeAnimationHash != 999 )
                 Animator.SetBool( activeAnimationHash, false );
 
             activeAnimationHash = 999;
         }
-        public void FaceDirection( Vector2 worldDirection )
-        {
-            LastMoveDirection = transform.position - (Vector3)worldDirection;
+
+        public void FaceDirection( Vector2 worldDirection ) {
+            LastMoveDirection = transform.position - ( Vector3 )worldDirection;
 
             Animator.SetBool( movingHash, false );
             Animator.SetFloat( moveXHash, -LastMoveDirection.x );
             Animator.SetFloat( moveYHash, -LastMoveDirection.y );
         }
-        public void OnAnimationDestinationMet()
-        {
+
+        public void OnAnimationDestinationMet() {
             LastMoveDirection = MoveDirection;
 
             Animator.SetBool( movingHash, false );
             Animator.SetFloat( moveXHash, -LastMoveDirection.x );
             Animator.SetFloat( moveYHash, -LastMoveDirection.y );
         }
-        public void SetAnimationMoveDirection( Vector2 direction )
-        {
+
+        public void SetAnimationMoveDirection( Vector2 direction ) {
             MoveDirection = direction;
 
             Animator.SetBool( movingHash, true );

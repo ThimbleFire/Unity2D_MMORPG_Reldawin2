@@ -1,8 +1,6 @@
-using AlwaysEast;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace AlwaysEast
 {
@@ -33,27 +31,25 @@ namespace AlwaysEast
             gameObject.SetActive( false );
         }
 
-        private void OnNetworkQueryUsernameResultReturned( params object[] args ) {
+        private void UsernameQueryCallback( params object[] args ) {
             bool result = (bool)args[0];
             btnCreateAccount.interactable = !result;
         }
 
-        private void OnNetworkAccountCreatedResult( params object[] args ) {
+        private void AccountCreateSuccessCallback( params object[] args ) {
             txtErrorLog.enabled = true;
             txtErrorLog.color = UnityEngine.Color.green;
             btnCreateAccount.interactable = false;
         }
 
         private void OnEnable() {
-            EventProcessor.AddInstructionParams( Packet.DoesUserExist, OnNetworkQueryUsernameResultReturned );
-            EventProcessor.AddInstructionParams( Packet.Account_Create_Success, OnNetworkAccountCreatedResult );
-
+            EventProcessor.AddInstructionParams( Packet.DoesUserExist, UsernameQueryCallback );
+            EventProcessor.AddInstructionParams( Packet.Account_Create_Success, AccountCreateSuccessCallback );
         }
-        private void OnDisable() {
 
+        private void OnDisable() {
             EventProcessor.RemoveInstructionParams( Packet.DoesUserExist );
             EventProcessor.RemoveInstructionParams( Packet.Account_Create_Success );
-
         }
 
         protected override void Awake() {

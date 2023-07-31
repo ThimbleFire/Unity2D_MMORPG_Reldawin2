@@ -4,17 +4,16 @@ namespace AlwaysEast
 {
     public class ClientParams
     {
-        public Vector2Int GetCellPos
-        {
-            get 
-            { 
-                return new Vector2Int( cellPosX, cellPosY ); 
-            } 
+        public Vector2Int GetCellPos {
+            get {
+                return new Vector2Int( cellPosX, cellPosY );
+            }
         }
 
-        public ClientParams() { }
-        public ClientParams( string username, int cellPosX, int cellPosY, int ID, bool Running, bool Swimming)
-        {
+        public ClientParams() {
+        }
+
+        public ClientParams( string username, int cellPosX, int cellPosY, int ID, bool Running, bool Swimming ) {
             this.username = username;
             this.cellPosX = cellPosX;
             this.cellPosY = cellPosY;

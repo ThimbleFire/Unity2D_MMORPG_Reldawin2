@@ -30,12 +30,12 @@ namespace AlwaysEast
 
         public static event OnConnectedEventHandler OnConnectedEvent;
 
-        public void SetConnectionStrength( ConnectionStrength strength )
-        {
-            connectionStrengthImg.sprite = connectionStrengthIco[(byte)strength];
+        public void SetConnectionStrength( ConnectionStrength strength ) {
+            connectionStrengthImg.sprite = connectionStrengthIco[( byte )strength];
         }
 
 #pragma warning disable CS0114 // Member hides inherited member; missing override keyword
+
         private void Awake()
 #pragma warning restore CS0114 // Member hides inherited member; missing override keyword
         {
@@ -45,46 +45,37 @@ namespace AlwaysEast
 
             DontDestroyOnLoad( gameObject );
 
-            EventProcessor.AddInstructionParams( Packet.ConnectionOK, OnConnected );
-            EventProcessor.AddInstructionParams( Packet.PingTest, PingResponse );
-            EventProcessor.AddInstructionParams( Packet.Crash, CrashRecovery );
+            EventProcessor.AddInstructionParams( Packet.ConnectionOK, OnSuccessfulConnectCallback );
+            EventProcessor.AddInstructionParams( Packet.PingTest, PingResponseCallback );
+            EventProcessor.AddInstructionParams( Packet.Crash, CrashRecoveryCallback );
         }
 
-        private void OnConnected( params object[] args )
-        {
+        private void OnSuccessfulConnectCallback( params object[] args ) {
             SetConnectionStrength( ConnectionStrength.Connected );
             Strength = ConnectionStrength.Connected;
 
             OnConnectedEvent?.Invoke();
         }
 
-        private void CrashRecovery( object[] obj )
-        {
+        private void CrashRecoveryCallback( object[] obj ) {
             SetConnectionStrength( ConnectionStrength.Connecting );
             Strength = ConnectionStrength.Connecting;
         }
 
-        private void PingResponse( params object[] args )
-        {
+        private void PingResponseCallback( params object[] args ) {
             ping_pinging = false;
             ping_last_ms = ping_active_test_duration * 100;
             ping_active_test_duration = 0.0f;
         }
 
-        private void Update()
-        {
-            if ( Strength == ConnectionStrength.Connected )
-            {
-                if ( ping_pinging == true )
-                {
+        private void Update() {
+            if( Strength == ConnectionStrength.Connected ) {
+                if( ping_pinging == true ) {
                     ping_active_test_duration += Time.deltaTime;
-                }
-                else
-                {
+                } else {
                     ping_timer -= Time.deltaTime;
 
-                    if ( ping_timer <= 0.0f )
-                    {
+                    if( ping_timer <= 0.0f ) {
                         ping_timer = ping_timer_iterator + ping_timer;
 
                         ping_pinging = true;
@@ -102,13 +93,12 @@ namespace AlwaysEast
             float fps = 1.0f / framerate_deltaTime;
 
             framerate_update_timer -= Time.deltaTime;
-            if ( framerate_update_timer <= 0.0f )
-            {
+            if( framerate_update_timer <= 0.0f ) {
                 //reset timer
                 framerate_update_timer = framerate_update_interval - framerate_update_timer;
 
                 //update text
-                connectionAndFramerateText.text = string.Format( "FPS: {0}   " + ( Strength == ConnectionStrength.Connected ? "Ping: {1}ms" : "Offline" ), (int)fps, ping_last_ms.ToString( "0" ) );
+                connectionAndFramerateText.text = string.Format( "FPS: {0}   " + ( Strength == ConnectionStrength.Connected ? "Ping: {1}ms" : "Offline" ), ( int )fps, ping_last_ms.ToString( "0" ) );
             }
         }
     }

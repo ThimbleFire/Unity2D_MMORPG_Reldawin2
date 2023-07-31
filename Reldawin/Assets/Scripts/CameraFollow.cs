@@ -9,10 +9,11 @@ namespace AlwaysEast
         private Vector3 targetPos;
         public float moveSpeed;
 
-        void Start() {
+        private void Start() {
             startingPosition = transform.position;
         }
-        void Update() {
+
+        private void Update() {
             if( followTarget != null ) {
                 targetPos = new Vector3( followTarget.position.x, followTarget.position.y, transform.position.z );
                 Vector3 velocity = (targetPos - transform.position) * moveSpeed;

@@ -14,36 +14,29 @@ namespace AlwaysEast
         private readonly List<Packet> m_queuedEvents = new List<Packet>();
         private readonly List<object[]> m_queuedParams = new List<object[]>();
 
-        public void AddInstructionParams( Packet packet, Action<object[]> d )
-        {
+        public void AddInstructionParams( Packet packet, Action<object[]> d ) {
             instructionParams.Add( packet, d );
         }
 
-        public void ClearInstructions()
-        {
+        public void ClearInstructions() {
             instructionParams.Clear();
         }
 
-        public void QueueEvent( Packet action, params object[] m )
-        {
+        public void QueueEvent( Packet action, params object[] m ) {
             m_queuedEvents.Add( action );
             m_queuedParams.Add( m );
         }
 
-        public void RemoveInstructionParams( Packet packet )
-        {
+        public void RemoveInstructionParams( Packet packet ) {
             instructionParams.Remove( packet );
         }
 
-        private void Awake()
-        {
+        private void Awake() {
             DontDestroyOnLoad( this );
         }
 
-        private void MoveQueuedEventsToExecuting()
-        {
-            if ( m_queuedEvents.Count > 0 )
-            {
+        private void MoveQueuedEventsToExecuting() {
+            if( m_queuedEvents.Count > 0 ) {
                 Packet e = m_queuedEvents[0];
                 object[] p = m_queuedParams[0];
 
@@ -55,24 +48,19 @@ namespace AlwaysEast
             }
         }
 
-        private void Update()
-        {
+        private void Update() {
             MoveQueuedEventsToExecuting();
 
-            if ( m_executingEvents.Count > 0 )
-            {
+            if( m_executingEvents.Count > 0 ) {
                 Packet action = m_executingEvents[0];
                 object[] p = m_executingParams[0];
 
                 m_executingEvents.RemoveAt( 0 );
                 m_executingParams.RemoveAt( 0 );
 
-                if ( instructionParams.ContainsKey( action ) )
-                {
+                if( instructionParams.ContainsKey( action ) ) {
                     instructionParams[action].Invoke( p );
-                }
-                else
-                {
+                } else {
                     Debug.LogError( string.Format( "No instruction for {0}.", action ) );
                 }
             }

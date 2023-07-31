@@ -15,7 +15,6 @@ namespace AlwaysEast
         [SerializeField] private GameObject creationWindow;
 
         public void OnBtnLoginClicked() {
-
             using PacketBuffer buffer = new PacketBuffer( Packet.Account_Login_Query );
             buffer.WriteString( username.GetComponent<TMPro.TMP_InputField>().text );
             buffer.WriteString( password.GetComponent<TMPro.TMP_InputField>().text );
@@ -39,12 +38,12 @@ namespace AlwaysEast
                 rememberUsername.isOn = false;
         }
 
-        private void OnNetworkLoginFail( params object[] args ) {
+        private void LoginFailCallback( params object[] args ) {
             txtErrorLog.enabled = true;
             txtErrorLog.text = ( string )args[0];
         }
 
-        private void OnNetworkLoginSuccess( params object[] args ) {
+        private void LoginSuccessCallback( params object[] args ) {
             // store the users name on their computer
             if( rememberUsername.isOn )
                 Game.username = username.GetComponent<TMPro.TMP_InputField>().text;
@@ -63,8 +62,8 @@ namespace AlwaysEast
             Game.Load();
 
             NetworkConnection.OnConnectedEvent += OnNetworkConnectedToLobby;
-            EventProcessor.AddInstructionParams( Packet.Account_Login_Fail, OnNetworkLoginFail );
-            EventProcessor.AddInstructionParams( Packet.Account_Login_Success, OnNetworkLoginSuccess );
+            EventProcessor.AddInstructionParams( Packet.Account_Login_Fail, LoginFailCallback );
+            EventProcessor.AddInstructionParams( Packet.Account_Login_Success, LoginSuccessCallback );
         }
 
         public void Update() {

@@ -23,7 +23,7 @@ namespace AlwaysEast
         public void Dispose() {
             _watch.Stop();
             GC.SuppressFinalize( this );
-            if( true )
+            if( false )
                 Debug.Log( $"Call time: {_watch.Elapsed.TotalMilliseconds} ms {_blockName}" );
         }
 
