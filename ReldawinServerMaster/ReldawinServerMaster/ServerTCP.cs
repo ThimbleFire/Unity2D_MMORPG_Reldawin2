@@ -114,17 +114,12 @@ namespace ReldawinServerMaster
                     buffer.WriteInteger( chunkX );
                     buffer.WriteInteger( chunkY );
                     buffer.WriteString( data );
-
-                    if( sceneObjects == null ) {
-                        buffer.WriteInteger( 0 );
-                    } else {
-                        buffer.WriteInteger( sceneObjects.Length );
+                        buffer.WriteInteger( sceneObjects ? sceneObjects.Length : 0 );
                         for( int i = 0; i < sceneObjects.Length; i++ ) {
                             buffer.WriteInteger( sceneObjects[i].Type );
-                            buffer.WriteInteger( sceneObjects[i].CoordinateX );
-                            buffer.WriteInteger( sceneObjects[i].CoordinateY );
+                            buffer.WriteInteger(sceneObjects[i].CoordinateX);
+                            buffer.WriteInteger(sceneObjects[i].CoordinateY);
                         }
-                    }
 
                     SendDataTo( index, buffer.ToArray() );
                 }
