@@ -43,14 +43,13 @@ namespace AlwaysEast
         public Chunk() {
             for( int y = 0; y < height; y++ )
             for( int x = 0; x <  width; x++ )
-                Nodes[x, y] = new Node( new Vector3Int( x, y) );
+                Nodes[x, y] = new Node( this, new Vector3Int( x, y) );
         }
         public void Erase(Tilemap tileMap) {
-            //Is erasing tiles neccesary? They'll just be overwritten when Reload is called.
-            for( int y = 0; y < height; y++ )
-            for( int x = 0; x < width; x++ )
-                tileMap.SetTile( Nodes[x, y].CellPositionInWorld, null );
-
+            // Is erasing tiles neccesary? They'll just be overwritten when Reload is called.
+            //for( int y = 0; y < height; y++ )
+            //for( int x = 0; x < width; x++ )
+            //    tileMap.SetTile( Nodes[x, y].CellPositionInWorld, null );
             activeSceneObjects.ForEach( x => x.gameObject.SetActive( false ) );
             OnChunkDestroyed?.Invoke( Index, activeSceneObjects );
             activeSceneObjects.Clear();
@@ -60,8 +59,6 @@ namespace AlwaysEast
             int iteration = 0;
             for( int y = 0; y < height; y++ )
             for( int x = 0; x < width; x++ ) {
-                // We could set Node.ChunkIndex automatically by using a template
-                Nodes[x, y].ChunkIndex = Index;
                 tileMap.SetTile(
                     Nodes[x, y].CellPositionInWorld, 
                     ResourceRepository.GetTilebaseOfType( data[iteration++] ) 
@@ -98,20 +95,20 @@ namespace AlwaysEast
             for( int y = 0; y < 12; y++ ) {
                 inactiveChunks.Add( new Chunk() );
             }
-            EventProcessor.AddInstructionParams( Packet.Load_Chunk, HandleChunkData );
-            EventProcessor.AddInstructionParams( Packet.RequestSpawn, HandleRequestSpawnResponse );
-            Chunk.OnChunkDestroyed += Chunk_OnChunkDestroyed;
+            EventProcessor.AddInstructionParams( Packet.Load_Chunk, ReceivedChunkData );
+            EventProcessor.AddInstructionParams( Packet.RequestSpawn, ReceivedSpawnCoordinates );
+            Chunk.OnChunkDestroyed += OnChunkDestroyed;
         }
         private void Start() {
-            LocalPlayerCharacter.LPCOnChunkChange += LocalPlayerCharacter_LPCOnChunkChange;
+            LocalPlayerCharacter.LPCOnChunkChange += LocalPlayerChangedChunk;
             using PacketBuffer buffer = new PacketBuffer( Packet.RequestSpawn );
             buffer.WriteInteger( Game.dbID );
             ClientTCP.SendData( buffer.ToArray() );
         }
         public void Update() {
-            if( EventSystem.current.IsPointerOverGameObject() )
-                return;
             if( Input.GetMouseButtonDown( 0 ) ) {
+                if( EventSystem.current.IsPointerOverGameObject() )
+                    return;
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint( Input.mousePosition );
                 Vector3Int coordinate = grid.WorldToCell(mouseWorldPos);
                 OnClicked?.Invoke( coordinate, mouseWorldPos );
@@ -139,28 +136,27 @@ namespace AlwaysEast
             chunk.Erase( tileMap );
         }
         private bool IsChunkOutOfBounds( Vector3Int chunkIndex ) {
-            if( chunkIndex.x < 0 ||
-                 chunkIndex.y < 0 ||
-                 chunkIndex.x >= World.Width / Chunk.width ||
-                 chunkIndex.y >= World.Height / Chunk.height )
+            if( chunkIndex.x < 0 || chunkIndex.y < 0 || chunkIndex.x >= World.Width / Chunk.width || chunkIndex.y >= World.Height / Chunk.height )
                 return true;
             else return false;
         }
         private void UpdateTilemap() {
             tileMap.CompressBounds();
             // cheap fix, we should improve this
+            // Pathfinder map { 0, 0 } starts at the bottom of the screen. We need to offset that to the bottom-most loaded chunk.
             Vector3Int offset =
                 activeChunks.Find( x => x.Index == lpc.GetSurroundingChunks[0] ) != null ? lpc.GetSurroundingChunks[0] :
                 activeChunks.Find( x => x.Index == lpc.GetSurroundingChunks[3] ) != null ? lpc.GetSurroundingChunks[3] :
                 activeChunks.Find( x => x.Index == lpc.GetSurroundingChunks[1] ) != null ? lpc.GetSurroundingChunks[1] :
                 lpc.InCurrentChunk;
             Pathfinder.Populate( activeChunks, offset );
-            // This might not be needed anymore. Experiment by removing the BoxCollider2D component.
+// This might not be needed anymore. Experiment by removing the BoxCollider2D component. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.size = new Vector3( tileMap.size.x * grid.cellSize.x, tileMap.size.y * grid.cellSize.y );
             collider.offset = new Vector2( tileMap.size.x * grid.cellSize.x / 2, 0.0f );
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         }
-        private void LocalPlayerCharacter_LPCOnChunkChange( Vector3Int lastChunk, Vector3Int newChunk ) {
+        private void LocalPlayerChangedChunk( Vector3Int lastChunk, Vector3Int newChunk ) {
             using( DebugTimer timer = new DebugTimer( $"Loading Chunks" ) ) {
                 Vector3Int dirOfTravel = newChunk - lastChunk;
                 for( int i = -1; i <= 1; i++ ) {
@@ -173,7 +169,7 @@ namespace AlwaysEast
                 }
             }
         }
-        private void HandleChunkData(params object[] args) {
+        private void ReceivedChunkData(params object[] args) {
             Vector3Int chunkIndex = new Vector3Int( (int)args[0], (int)args[1] );
             string data = (string)args[2];
             Chunk newChunk = inactiveChunks[0];
@@ -187,7 +183,7 @@ namespace AlwaysEast
             if(chunksToLoad <= 0)
                 UpdateTilemap();
         }
-        private void HandleRequestSpawnResponse( object[] args ) {
+        private void ReceivedSpawnCoordinates( object[] args ) {
             EventProcessor.RemoveInstructionParams( Packet.RequestSpawn );
             Vector3Int coordinates = new Vector3Int( (int)args[0], (int)args[1] );
             // Teleport is the method for spawning the player character and should only be used as such. This is not a method for moving the entity around the game.
@@ -197,7 +193,7 @@ namespace AlwaysEast
             foreach( Vector3Int neighbour in lpc.GetSurroundingChunks )
                 CreateChunk( neighbour );
         }
-        private void Chunk_OnChunkDestroyed( Vector3Int chunkIndex, List<SceneObject> sceneObjectsToRecycle ) {
+        private void OnChunkDestroyed( Vector3Int chunkIndex, List<SceneObject> sceneObjectsToRecycle ) {
             inactiveSceneObjects.AddRange( sceneObjectsToRecycle );
         }
     }
