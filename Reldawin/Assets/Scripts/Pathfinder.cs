@@ -6,40 +6,19 @@ namespace AlwaysEast
 {
     public class Node
     {
+        private IChunk _chunk;
         public int type = -1;
-        public bool Occupied 
-        { 
-            get 
-            { 
-                return type != -1; 
-            }
-        }
-        public Vector3Int ChunkIndex { get; set; }
+        public bool Occupied { get { return type != -1; } }
+        public Vector3Int ChunkIndex { get { return _chunk._index; } }
         public Vector3Int CellPositionInGrid { get; set; }
-        public Vector3Int CellPositionInWorld
-        {
-            get
-            {
-                return new Vector3Int( CellPositionInGrid.x + Chunk.width * ChunkIndex.x, CellPositionInGrid.y + Chunk.height * ChunkIndex.y );
-            }
-        }
-        public Vector3 WorldPosition
-        { 
-            get 
-            {
-                return World.gTileMap.CellToWorld( CellPositionInWorld );
-            } 
-        }
+        public Vector3Int CellPositionInWorld { get { return new Vector3Int( CellPositionInGrid.x + Chunk.width * ChunkIndex.x, CellPositionInGrid.y + Chunk.height * ChunkIndex.y ); } }
+        public Vector3 WorldPosition { get { return World.gTileMap.CellToWorld( CellPositionInWorld ); } }
         public Node Parent { get; set; }
         public int GCost { get; set; }
         public int HCost { get; set; }
-        public int FCost
-        {
-            get { return GCost + HCost; }
-        }
-
-        public Node( Vector3Int _cellPosGrid )
-        {
+        public int FCost { get { return GCost + HCost; } }
+        public Node( IChunk iChunk, Vector3Int _cellPosGrid ) {
+            _chunk = iChunk;
             this.CellPositionInGrid = _cellPosGrid;
             GCost = 1;
             HCost = 0;
@@ -49,28 +28,21 @@ namespace AlwaysEast
     public class Pathfinder
     {
         private static Node[,] nodes = new Node[Chunk.width * 3, Chunk.height * 3];
-        private static Vector3Int BottomLeftNodeIndex { get; set; } = Vector3Int.zero;
-        
+        private static Vector3Int BottomLeftNodeIndex { get; set; } = Vector3Int.zero;        
         public static void Populate( List<Chunk> chunks, Vector3Int _bottomLeftNodeIndex) {
-
             foreach( Chunk chunk in chunks ) {
-
                 foreach( Node n in chunk.Nodes ) {
                     nodes[n.CellPositionInWorld.x - _bottomLeftNodeIndex.x * Chunk.width,
                         n.CellPositionInWorld.y - _bottomLeftNodeIndex.y * Chunk.height] = n;
                 }
             }
-
             BottomLeftNodeIndex = _bottomLeftNodeIndex;
         }
-        public static Queue<Node> GetPath( Vector3Int start, Vector3Int destination ) {
-            
+        public static Queue<Node> GetPath( Vector3Int start, Vector3Int destination ) {            
             start = new Vector3Int( start.x - BottomLeftNodeIndex.x * Chunk.width, start.y - BottomLeftNodeIndex.y * Chunk.height );
             destination = new Vector3Int( destination.x - BottomLeftNodeIndex.x * Chunk.width, destination.y - BottomLeftNodeIndex.y * Chunk.height );
-            
             if( start == destination )
                 return null;
-
             Node startNode = nodes[start.x, start.y];
             Node destinationNode = nodes[destination.x, destination.y];
             List<Node> openSet = new List<Node>();
