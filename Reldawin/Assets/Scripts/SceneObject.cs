@@ -21,7 +21,7 @@ namespace AlwaysEast
             // enable the game object
             gameObject.SetActive( true );
 
-            gameObject.name = name;
+            gameObject.name = sprite.name;
         }
     }
 }
