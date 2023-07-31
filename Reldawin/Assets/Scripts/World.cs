@@ -27,20 +27,20 @@ namespace AlwaysEast
         public const byte Width = 64;
         public const byte Height = 31;
     }
-    public class Chunk
+    public interface IChunk { Vector3Int _index { get; } }
+    public class Chunk : IChunk
     {
         public static event ChunkDestroyImminent OnChunkDestroyed;
         public delegate void ChunkDestroyImminent( Vector3Int chunkIndex, List<SceneObject> sceneObjects );
 
-        public string Name;
         public const byte width = 20;
         public const byte height = 20;
         public Vector3Int Index { get; set; }
+        public Vector3Int _index { get { return Index; } }
         public Node[,] Nodes { get; set; } = new Node[width, height];
         public List<SceneObject> activeSceneObjects = new List<SceneObject>();
         
         public Chunk() {
-            Name = "Inactive";
             for( int y = 0; y < height; y++ )
             for( int x = 0; x <  width; x++ )
                 Nodes[x, y] = new Node( new Vector3Int( x, y) );
@@ -56,7 +56,6 @@ namespace AlwaysEast
             activeSceneObjects.Clear();
         }
         public void Reload( Tilemap tileMap, Vector3Int index, string data, List<SceneObjectData> sceneObjectData, List<SceneObject> inactiveSceneObjects ) {
-            Name = index.ToString();
             Index = index;
             int iteration = 0;
             for( int y = 0; y < height; y++ )
