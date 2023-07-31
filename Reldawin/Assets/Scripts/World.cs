@@ -95,8 +95,8 @@ namespace AlwaysEast
             for( int y = 0; y < 12; y++ ) {
                 inactiveChunks.Add( new Chunk() );
             }
-            EventProcessor.AddInstructionParams( Packet.Load_Chunk, ReceivedChunkData );
-            EventProcessor.AddInstructionParams( Packet.RequestSpawn, ReceivedSpawnCoordinates );
+            EventProcessor.AddInstructionParams( Packet.Load_Chunk, ReceivedChunkDataCallback );
+            EventProcessor.AddInstructionParams( Packet.RequestSpawn, ReceivedSpawnCoordinatesCallback );
             Chunk.OnChunkDestroyed += OnChunkDestroyed;
         }
         private void Start() {
@@ -169,7 +169,7 @@ namespace AlwaysEast
                 }
             }
         }
-        private void ReceivedChunkData(params object[] args) {
+        private void ReceivedChunkDataCallback(params object[] args) {
             Vector3Int chunkIndex = new Vector3Int( (int)args[0], (int)args[1] );
             string data = (string)args[2];
             Chunk newChunk = inactiveChunks[0];
@@ -183,7 +183,7 @@ namespace AlwaysEast
             if(chunksToLoad <= 0)
                 UpdateTilemap();
         }
-        private void ReceivedSpawnCoordinates( object[] args ) {
+        private void ReceivedSpawnCoordinatesCallback( object[] args ) {
             EventProcessor.RemoveInstructionParams( Packet.RequestSpawn );
             Vector3Int coordinates = new Vector3Int( (int)args[0], (int)args[1] );
             // Teleport is the method for spawning the player character and should only be used as such. This is not a method for moving the entity around the game.
