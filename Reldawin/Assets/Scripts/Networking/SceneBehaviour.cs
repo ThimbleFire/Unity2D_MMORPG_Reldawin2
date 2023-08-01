@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-
 namespace AlwaysEast
 {
     public class SceneBehaviour : MonoBehaviour
@@ -9,7 +8,6 @@ namespace AlwaysEast
             get;
             set;
         }
-
         /// <summary>
         /// YOU MUST CALL Base.Awake() before setting up events!
         /// </summary>
@@ -22,11 +20,9 @@ namespace AlwaysEast
                 }
             }
         }
-
         protected void LoadScene( string name ) {
             SceneManager.LoadScene( name );
         }
-
         protected void LoadScene( int index ) {
             SceneManager.LoadScene( index );
         }

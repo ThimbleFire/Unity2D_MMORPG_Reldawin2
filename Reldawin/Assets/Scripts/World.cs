@@ -3,22 +3,17 @@
 /    Created: 21/07/2023
 /    Description:
 */
-
 // https://stackoverflow.com/questions/1940165/how-to-access-to-the-parent-object-in-c-sharp
-
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
-
 namespace AlwaysEast
 {
     public class World : SceneBehaviour
     {
         public static event ClickAction OnClicked;
-
         public delegate void ClickAction( Vector3Int cellClicked, Vector2 pointClicked );
-
         public const int Width = 1000;
         public const int Height = 1000;
         public Tilemap tileMap;
@@ -28,7 +23,6 @@ namespace AlwaysEast
         private Dictionary<Vector3Int, Chunk> chunkLookup = new();
         public LocalPlayerCharacter lpc;
         private byte chunksToLoad = 0;
-
         private void Awake() {
             //Maybe consider making chunks actual gameobjects?
             for( int y = 0; y < 12; y++ ) {
@@ -38,14 +32,12 @@ namespace AlwaysEast
             EventProcessor.AddInstructionParams( Packet.RequestSpawn, ReceivedSpawnCoordinatesCallback );
             Chunk.OnChunkDestroyed += OnChunkDestroyed;
         }
-
         private void Start() {
             LocalPlayerCharacter.LPCOnChunkChange += LocalPlayerChangedChunk;
             using PacketBuffer buffer = new PacketBuffer( Packet.RequestSpawn );
             buffer.WriteInteger( Game.dbID );
             ClientTCP.SendData( buffer.ToArray() );
         }
-
         public void Update() {
             if( Input.GetMouseButtonDown( 0 ) ) {
                 if( EventSystem.current.IsPointerOverGameObject() )
@@ -55,7 +47,6 @@ namespace AlwaysEast
                 OnClicked?.Invoke( coordinate, mouseWorldPos );
             }
         }
-
         private void CreateChunk( Vector3Int chunkIndex ) {
             if( chunkLookup.ContainsKey( chunkIndex ) )
                 return;
@@ -64,7 +55,6 @@ namespace AlwaysEast
             chunksToLoad++;
             ClientTCP.SendChunkDataQuery( chunkIndex );
         }
-
         private void RemoveChunk( Vector3Int chunkIndex ) {
             if( IsChunkOutOfBounds( chunkIndex ) )
                 return;
@@ -78,13 +68,11 @@ namespace AlwaysEast
             chunkLookup.Remove( chunkIndex );
             chunk.Erase( tileMap );
         }
-
         private bool IsChunkOutOfBounds( Vector3Int chunkIndex ) {
             if( chunkIndex.x < 0 || chunkIndex.y < 0 || chunkIndex.x >= World.Width / Chunk.width || chunkIndex.y >= World.Height / Chunk.height )
                 return true;
             else return false;
         }
-
         private void UpdateTilemap() {
             tileMap.CompressBounds();
             // cheap fix, we should improve this
@@ -96,7 +84,6 @@ namespace AlwaysEast
                 lpc.InCurrentChunk;
             Pathfinder.Populate( activeChunks, offset );
         }
-
         private void LocalPlayerChangedChunk( Vector3Int lastChunk, Vector3Int newChunk ) {
             Vector3Int dirOfTravel = newChunk - lastChunk;
             for( int i = -1; i <= 1; i++ ) {
@@ -108,7 +95,6 @@ namespace AlwaysEast
                 CreateChunk( createChunkIndex );
             }
         }
-
         private void ReceivedChunkDataCallback( params object[] args ) {
             Vector3Int chunkIndex = new Vector3Int( (int)args[0], (int)args[1] );
             string data = (string)args[2];
@@ -123,7 +109,6 @@ namespace AlwaysEast
             if( chunksToLoad <= 0 )
                 UpdateTilemap();
         }
-
         private void ReceivedSpawnCoordinatesCallback( object[] args ) {
             EventProcessor.RemoveInstructionParams( Packet.RequestSpawn );
             Vector3Int coordinates = new Vector3Int( (int)args[0], (int)args[1] );
@@ -134,7 +119,6 @@ namespace AlwaysEast
             foreach( Vector3Int neighbour in lpc.GetSurroundingChunks )
                 CreateChunk( neighbour );
         }
-
         private void OnChunkDestroyed( Vector3Int chunkIndex, List<SceneObject> sceneObjectsToRecycle ) {
             inactiveSceneObjects.AddRange( sceneObjectsToRecycle );
         }

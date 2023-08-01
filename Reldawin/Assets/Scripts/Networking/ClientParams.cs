@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 namespace AlwaysEast
 {
     public class ClientParams
@@ -9,10 +8,8 @@ namespace AlwaysEast
                 return new Vector2Int( cellPosX, cellPosY );
             }
         }
-
         public ClientParams() {
         }
-
         public ClientParams( string username, int cellPosX, int cellPosY, int ID, bool Running, bool Swimming ) {
             this.username = username;
             this.cellPosX = cellPosX;
@@ -21,7 +18,6 @@ namespace AlwaysEast
             this.Running = Running;
             this.Swimming = Swimming;
         }
-
         public string username;
         public int cellPosX, cellPosY;
         public int ID;

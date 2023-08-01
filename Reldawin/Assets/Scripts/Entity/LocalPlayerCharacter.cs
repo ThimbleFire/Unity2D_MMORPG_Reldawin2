@@ -1,15 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
 namespace AlwaysEast
 {
     public class LocalPlayerCharacter : MonoBehaviour
     {
         public static event LPCOnChunkChangeHandler LPCOnChunkChange;
-
         public delegate void LPCOnChunkChangeHandler( Vector3Int lastChunk, Vector3Int newChunk );
-
         protected float MovementSpeed { get; set; } = WalkSpeed;
         protected Vector2 MovingToward = Vector2.zero;
         public const float RunSpeed = 0.025f;
@@ -18,66 +15,54 @@ namespace AlwaysEast
         public SpriteRenderer spriteRenderer;
         public AnimationController animationController;
         public Vector3Int CellPositionInWorld = new Vector3Int( 0, 0, 0 );
-
         public Vector3Int InCurrentChunk {
             get {
                 return new Vector3Int( Mathf.FloorToInt( CellPositionInWorld.x / Chunk.width ), Mathf.FloorToInt( CellPositionInWorld.y / Chunk.height ) );
             }
         }
-
         public Vector3Int inLastChunk;
         private Queue<Node> path;
         protected bool lastNodeOccupied = false;
         public Tilemap tilemap;
         public Vector2 pointClicked;
-
         private void Awake() {
             World.OnClicked += World_OnClicked;
             inLastChunk = InCurrentChunk;
             MovingToward = transform.position;
         }
-
         private void Update() {
             if( Input.GetKeyDown( KeyCode.R ) ) {
                 ToggleRunning();
             }
         }
-
         private void FixedUpdate() {
-            if( transform.position == ( Vector3 )MovingToward )
+            if( transform.position == (Vector3)MovingToward )
                 return;
-
             transform.position = Vector3.MoveTowards( transform.position, MovingToward, MovementSpeed );
             Vector3Int newPoint = tilemap.WorldToCell( transform.position );
-
             if( newPoint != CellPositionInWorld ) {
                 OnMovedTile( newPoint, CellPositionInWorld );
             }
             // If moving the transform puts us in the position
-            if( transform.position == ( Vector3 )MovingToward ) {
+            if( transform.position == (Vector3)MovingToward ) {
                 MoveToNextNode();
             }
         }
-
         private void ToggleRunning() {
             Running = !Running;
             MovementSpeed = Running ? RunSpeed : WalkSpeed;
             animationController.ToggleRun( Running );
         }
-
         private void MoveToNextNode() {
             if( path == null ) {
                 OnAnimationDestinationMet();
                 return;
             }
-
             if( path.Count == 0 ) {
                 OnAnimationDestinationMet();
                 return;
             }
-
             Vector2 nextNodeWorldPosition = path.Peek().WorldPosition;
-
             if( path.Count > 1 )
                 SetTargetPosition( nextNodeWorldPosition );
             else if( path.Count == 1 ) {
@@ -85,42 +70,35 @@ namespace AlwaysEast
                     path.Clear();
                     FaceDirection( nextNodeWorldPosition );
                     MovingToward = transform.position;
-
                     return;
-                } else {
+                }
+                else {
                     SetTargetPosition( pointClicked );
                 }
             }
             path.Dequeue();
         }
-
         private void OnAnimationDestinationMet() {
             animationController.OnAnimationDestinationMet();
         }
-
         private void OnMovedTile( Vector3Int newPoint, Vector3Int lastTile ) {
             using PacketBuffer buffer = new PacketBuffer( Packet.SavePositionToServer );
             buffer.WriteInteger( newPoint.x );
             buffer.WriteInteger( newPoint.y );
             ClientTCP.SendData( buffer.ToArray() );
-
             CellPositionInWorld = newPoint;
             if( InCurrentChunk != inLastChunk )
                 OnMovedChunk( InCurrentChunk );
         }
-
         private void OnMovedChunk( Vector3Int currentChunk ) {
             LPCOnChunkChange?.Invoke( inLastChunk, currentChunk );
             inLastChunk = currentChunk;
         }
-
         public void MoveToWorldSpace( Vector3 position, Vector2Int chunkCoordinates ) {
             transform.position = position;
         }
-
         private void World_OnClicked( Vector3Int cellClicked, Vector2 pointClicked ) {
             path = Pathfinder.GetPath( CellPositionInWorld, cellClicked );
-
             if( path == null ) {
                 return;
             }
@@ -136,18 +114,14 @@ namespace AlwaysEast
             if( path.Count == 0 ) {
                 return;
             }
-
             MoveToNextNode();
         }
-
         private void OnDestroy() {
             World.OnClicked -= World_OnClicked;
         }
-
         private void FaceDirection( Vector2 worldDirection ) {
             animationController.FaceDirection( worldDirection );
         }
-
         public Vector3Int[] GetSurroundingChunks {
             get {
                 return new Vector3Int[8]
@@ -164,13 +138,10 @@ namespace AlwaysEast
                 };
             }
         }
-
         public void SetTargetPosition( Vector2 worldPosition ) {
             MovingToward = worldPosition;
-
-            animationController.SetAnimationMoveDirection( ( Vector2 )transform.position - MovingToward );
+            animationController.SetAnimationMoveDirection( (Vector2)transform.position - MovingToward );
         }
-
         internal void Teleport( Vector3Int coordinates ) {
             transform.position = tilemap.CellToWorld( coordinates );
             this.CellPositionInWorld = coordinates;

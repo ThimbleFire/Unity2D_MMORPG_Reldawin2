@@ -1,5 +1,4 @@
 using UnityEngine;
-
 namespace AlwaysEast
 {
     public class CameraFollow : MonoBehaviour
@@ -8,11 +7,9 @@ namespace AlwaysEast
         public Transform followTarget;
         private Vector3 targetPos;
         public float moveSpeed;
-
         private void Start() {
             startingPosition = transform.position;
         }
-
         private void Update() {
             if( followTarget != null ) {
                 targetPos = new Vector3( followTarget.position.x, followTarget.position.y, transform.position.z );
