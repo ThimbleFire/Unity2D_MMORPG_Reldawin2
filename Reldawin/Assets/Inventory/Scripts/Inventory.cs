@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using AlwaysEast;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
@@ -7,7 +8,6 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
     public static bool MousedOverGearSlot = false;
     public static UIItemOnClick ItemBeingDragged = null;
     public List<RectTransform> availableHoverCells;
-    public Transform itemsTransform;
     private Vector3 lastPosition = Vector3.zero;
     private Dictionary<Vector2Int, RectTransform> unavailableHoverCells = new Dictionary<Vector2Int, RectTransform>( 12 );
     private List<Vector2Int> hovered = new List<Vector2Int>();
@@ -36,8 +36,8 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
             return false;
         }
     }
-    public int InventoryLeftPosition = 300;
-    public int InventoryTopPosition = 217;
+    public RectTransform inventoryPosition;
+    public CameraFollow cameraFollow;
     public void OnPointerClick( PointerEventData eventData ) {
         if( !Dragging )
             return;
@@ -51,9 +51,9 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
         //snap the item to the hovered cells
         ItemBeingDragged.Position =
             new Vector2(
-                InventoryLeftPosition + ( ItemBeingDragged.uiWidth * 25 ) + ( topLeft.x * 50 ),
-                InventoryTopPosition - ( ( ItemBeingDragged.uiHeight * 25 ) + ( topLeft.y * 50 ) ) );
-        ItemBeingDragged.transform.SetParent( itemsTransform );
+                inventoryPosition.position.x + ( ItemBeingDragged.uiWidth * 25 ) + ( topLeft.x * 50 ),
+                inventoryPosition.position.y - ( ( ItemBeingDragged.uiHeight * 25 ) + ( topLeft.y * 50 ) ) );
+        ItemBeingDragged.transform.SetParent( inventoryPosition );
         AudioDevice.Play( ItemBeingDragged.GetComponent<ItemStats>().soundEndDrag );
         foreach( Vector2Int item in Intersecting ) {
             occupied.Add( item );
@@ -83,7 +83,7 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
         for( int y = 0; y < slotBounds.GetLength( 1 ); y++ ) {
             for( int x = 0; x < slotBounds.GetLength( 0 ); x++ ) {
                 slotBounds[x, y] = new Rect {
-                    position = new Vector2( InventoryLeftPosition + ( x * 50 ), InventoryTopPosition - 25 - ( y * 50 ) ),
+                    position = new Vector2( inventoryPosition.position.x + ( x * 50 ), inventoryPosition.position.y - 25 - ( y * 50 ) ),
                     size = new Vector2( 50, 50 )
                 };
             }
@@ -137,13 +137,20 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
     }
     private void AssignHoverCell( Vector2Int coordinates ) {
         availableHoverCells[0].gameObject.SetActive( true );
-        availableHoverCells[0].position = new Vector2( InventoryLeftPosition + 25 + ( coordinates.x * 50 ), InventoryTopPosition - 25 - ( coordinates.y * 50 ) );
+        availableHoverCells[0].position = new Vector2( inventoryPosition.position.x + 25 + ( coordinates.x * 50 ), inventoryPosition.position.y - 25 - ( coordinates.y * 50 ) );
         if( occupied.Contains( coordinates ) )
             availableHoverCells[0].GetComponent<UnityEngine.UI.Image>().color = new Color( 0.2980392f, 0, 0, 0.2f );
         else if( hovered.Contains( coordinates ) )
             availableHoverCells[0].GetComponent<UnityEngine.UI.Image>().color = new Color( 0, 0.2980392f, 0, 0.2f );
         unavailableHoverCells.Add( coordinates, availableHoverCells[0] );
         availableHoverCells.RemoveAt( 0 );
+    }
+    private void OnDisable() {
+        cameraFollow.SetCameraMode( CameraFollow.CameraMode.NoOffset );
+        ItemStatBillboard.Hide();
+    }
+    private void OnEnable() {
+        cameraFollow.SetCameraMode( CameraFollow.CameraMode.InventoryOffset );
     }
 }
 namespace UnityEngine.EventSystems
