@@ -11,6 +11,8 @@ https://i.imgur.com/C8AYzRa.gif
 ![sow grow demo2](https://github.com/ThimbleFire/Reldawin/assets/14812476/1651338e-8964-45a3-8e7f-2a7eb7b19ead)
 ![image](https://github.com/ThimbleFire/Reldawin/assets/14812476/a5af8b0e-445d-4272-a300-cc4dca819bf9)
 ![image](https://github.com/ThimbleFire/Reldawin/assets/14812476/0dab24a7-0953-42c9-83c6-c908a99e932b)
+![sow grow demo2](https://github.com/ThimbleFire/Reldawin/assets/14812476/02fafe96-97c4-4016-aa8e-2a017c7444a9)
+
 
 TODO
 * [x] Chunk Loading
