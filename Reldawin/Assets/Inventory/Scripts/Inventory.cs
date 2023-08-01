@@ -176,9 +176,9 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
         availableHoverCells[0].position = new Vector2( InventoryLeftPosition + 25 + ( coordinates.x * 50 ), InventoryTopPosition - 25 - ( coordinates.y * 50 ) );
 
         if( occupied.Contains( coordinates ) )
-            availableHoverCells[0].GetComponent<UnityEngine.UI.Image>().color = new Color( 1.0f, 0, 0, 0.2f );
+            availableHoverCells[0].GetComponent<UnityEngine.UI.Image>().color = new Color( 0.2980392f, 0, 0, 0.2f );
         else if( hovered.Contains( coordinates ) )
-            availableHoverCells[0].GetComponent<UnityEngine.UI.Image>().color = new Color( 0, 1.0f, 0, 0.2f );
+            availableHoverCells[0].GetComponent<UnityEngine.UI.Image>().color = new Color( 0, 0.2980392f, 0, 0.2f );
 
         unavailableHoverCells.Add( coordinates, availableHoverCells[0] );
         availableHoverCells.RemoveAt( 0 );

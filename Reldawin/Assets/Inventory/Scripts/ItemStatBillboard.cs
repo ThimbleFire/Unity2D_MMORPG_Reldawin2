@@ -22,17 +22,17 @@ public class ItemStatBillboard : MonoBehaviour
 
         textBody.text = item.Tooltip;
 
-        RectTransform itemTransform = item.GetComponent<RectTransform>();
+        //set billboard position
+        rTransform.position = item.transform.position + Vector3.up * ( item.GetComponent<RectTransform>().sizeDelta.y / 2 );
 
-        Vector3 position = itemTransform.position -
-          Vector3.down * textBody.preferredHeight + Vector3.down * ( itemTransform.sizeDelta.y / 2 );
-
-        rTransform.position = position;
-
-        if( position.y + textBody.preferredHeight > 800 )
-            position += Vector3.down * textBody.preferredHeight / 2;
-
-        rTransform.position = position;
+        bool billboardExceedsTopOfScreen = rTransform.position.y + textBody.preferredHeight > Screen.height;
+        bool billboardExceedsRightOfScreen = rTransform.position.x + textBody.preferredWidth / 2 > Screen.width;
+        if( billboardExceedsTopOfScreen ) {
+            rTransform.position += Vector3.up * ( Screen.height - ( rTransform.position.y + textBody.preferredHeight ) );
+        }
+        if( billboardExceedsRightOfScreen ) {
+            rTransform.position += Vector3.right * ( Screen.width - ( rTransform.position.x + textBody.preferredWidth / 2 ) );
+        }
     }
 
     public static void Hide() {
