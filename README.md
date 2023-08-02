@@ -25,3 +25,24 @@ TODO
 * [ ] Gathering
 * [ ] Crafting
 * [ ] Building
+
+////////////////////////////////////// throwaway code
+
+```c#
+public static void Main() {
+    decimal myValue = 0b0111_1111_1111_1111_1111_1111_000_0101_0000_0100_0000_0011_0000_0010_0000_0001;		
+    byte[] r = ToBaseTen(3, 1, myValue);
+}	
+private static byte[] ToBaseTen(int start, int length, decimal myValue) {
+    byte[] source;
+    byte[] target = new byte[2] { byte.MaxValue, byte.MaxValue };
+    MemoryStream m = new MemoryStream();
+    BinaryWriter writer = new BinaryWriter(m);
+    writer.Write(myValue);
+    source = m.ToArray();
+    Array.Copy(source, source.GetLowerBound(0)+start, target, target.GetLowerBound(0), length);
+    m.Close();
+    writer.Close();
+    return target;
+}
+```
