@@ -49,10 +49,10 @@ namespace AlwaysEast
             Prefix                 = 0b10000000,
             Suffix                 = 0b01000000
         }
-        
+
         public decimal binary;
 
-        public int Id { get { return Convert.ToInt32( binary.Substring( 0, 8 ) ); } }
+        //public int Id { get { return Convert.ToInt32( binary.Substring( 0, 8 ) ); } }
     }
 
     public class ItemEditor : EditorBase

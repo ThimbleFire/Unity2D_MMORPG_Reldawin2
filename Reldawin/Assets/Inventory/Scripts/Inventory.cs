@@ -10,8 +10,8 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
     public List<RectTransform> availableHoverCells;
     private Vector3 lastPosition = Vector3.zero;
     private Dictionary<Vector2Int, RectTransform> unavailableHoverCells = new Dictionary<Vector2Int, RectTransform>( 12 );
-    private List<Vector2Int> hovered = new List<Vector2Int>();
-    private List<Vector2Int> occupied = new List<Vector2Int>();
+    public List<Vector2Int> hovered = new List<Vector2Int>();
+    public List<Vector2Int> occupied = new List<Vector2Int>();
     private Rect[,] slotBounds = new Rect[10, 4];
     private List<Vector2Int> Intersecting {
         get {
@@ -55,7 +55,7 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
                 inventoryPosition.position.y - ( ( ItemBeingDragged.uiHeight * 25 ) + ( topLeft.y * 50 ) ) );
         ItemBeingDragged.transform.SetParent( inventoryPosition );
         AudioDevice.Play( ItemBeingDragged.GetComponent<ItemStats>().soundEndDrag );
-        foreach( Vector2Int item in Intersecting ) {
+        foreach( Vector2Int item in hovered ) {
             occupied.Add( item );
         }
         ItemBeingDragged.GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -109,17 +109,16 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
         if( Intersecting.Count == 0 )
             return;
         Vector2Int topLeft = Intersecting[0];
-        for( int y = 0; y < ItemBeingDragged.uiHeight; y++ ) {
-            for( int x = 0; x < ItemBeingDragged.uiWidth; x++ ) {
-                if( topLeft.x + x > 9 || topLeft.x + x < 0 ||
-                     topLeft.y + y > 3 || topLeft.y + y < 0 )
+
+        for( int y = topLeft.y; y < topLeft.y + ItemBeingDragged.uiHeight; y++ )
+            for( int x = topLeft.x; x < topLeft.x + ItemBeingDragged.uiWidth; x++ ) {
+                if( x > 7 || y > 3 || x < 0 || y < 0 )
                     continue;
-                if( ItemBeingDragged.Intersects( slotBounds[topLeft.x + x, topLeft.y + y] ) ) {
-                    hovered.Add( new Vector2Int( topLeft.x + x, topLeft.y + y ) );
-                    AssignHoverCell( new Vector2Int( topLeft.x + x, topLeft.y + y ) );
+                if( ItemBeingDragged.Intersects( slotBounds[x, y] ) ) {
+                    hovered.Add( new Vector2Int( x, y ) );
+                    AssignHoverCell( new Vector2Int( x, y ) );
                 }
             }
-        }
         lastPosition = Input.mousePosition;
     }
     private void ReleaseHoverCellAll() {
