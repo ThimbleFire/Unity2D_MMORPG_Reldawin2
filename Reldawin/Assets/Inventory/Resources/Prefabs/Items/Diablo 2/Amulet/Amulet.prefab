@@ -31,9 +31,10 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -87,7 +88,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3916007653819829664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ee81fa5f3f8ad441a5a099fde331598, type: 3}
+  m_Script: {fileID: 11500000, guid: e486150e21ef69d42b3faddbca315a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiWidth: 1
+  uiHeight: 1
+--- !u!114 &6486214371683436868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916007653819829664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6259368be395f9d4abb409aacf6700a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemBasics:
@@ -98,27 +113,9 @@ MonoBehaviour:
   implicits: []
   prefixes: []
   suffixes: []
-  requirements:
-  - stat: 1
-    value: 12
-  - stat: 0
-    value: 3
+  requirements: []
   description: 
   soundEndDrag: {fileID: 8300000, guid: c2269f50e1697cd40899efb287f83db9, type: 3}
---- !u!114 &6486214371683436868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3916007653819829664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfdab941fbd05a245a959f4702ee1503, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiWidth: 1
-  uiHeight: 1
 --- !u!225 &5231977224292475610
 CanvasGroup:
   m_ObjectHideFlags: 0

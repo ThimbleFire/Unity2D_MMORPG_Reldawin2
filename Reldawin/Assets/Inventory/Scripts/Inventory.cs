@@ -1,5 +1,7 @@
 ﻿using AlwaysEast;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
@@ -36,34 +38,43 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
             return false;
         }
     }
-    public RectTransform inventoryPosition;
+    public RectTransform inventoryContainer;
     public CameraFollow cameraFollow;
+    private List<UIItemOnClick> itemsInInventory = new List<UIItemOnClick>();
+    /// <summary> On Click While Holding Item </summary>
     public void OnPointerClick( PointerEventData eventData ) {
-        if( !Dragging )
+        if( Dragging == false )
             return;
         if( ItemBeingDragged == null )
             return;
         if( hovered.Count < ItemBeingDragged.uiWidth * ItemBeingDragged.uiHeight )
             return;
-        if( AreHoveredOccupied == true )
+        if( AreHoveredOccupied == true ) {
             return;
+        }
         Vector2Int topLeft = Intersecting[0];
         //snap the item to the hovered cells
-        ItemBeingDragged.Position =
-            new Vector2(
-                inventoryPosition.position.x + ( ItemBeingDragged.uiWidth * 25 ) + ( topLeft.x * 50 ),
-                inventoryPosition.position.y - ( ( ItemBeingDragged.uiHeight * 25 ) + ( topLeft.y * 50 ) ) );
-        ItemBeingDragged.transform.SetParent( inventoryPosition );
+        ItemBeingDragged.transform.SetParent( inventoryContainer );
+        ItemBeingDragged.transform.position = new Vector2(
+            inventoryContainer.position.x +
+            ItemBeingDragged.uiWidth * 25 + topLeft.x * 50,
+            inventoryContainer.position.y - ( ItemBeingDragged.uiHeight * 25 + topLeft.y * 50 )
+            );
+        // play sound effect of item being placed
         AudioDevice.Play( ItemBeingDragged.GetComponent<ItemStats>().soundEndDrag );
+        // occupy any hovered inventory slots
         foreach( Vector2Int item in hovered ) {
             occupied.Add( item );
         }
+        // clear and stop highlighting hovered inventory slots
+        ReleaseHoverCellAll();
+        //release item being dragged
         ItemBeingDragged.GetComponent<CanvasGroup>().blocksRaycasts = true;
         ItemBeingDragged = null;
         Dragging = false;
         Cursor.visible = true;
-        ReleaseHoverCellAll();
     }
+    /// <summary> Pick up item from inventory or equipment </summary>
     public void PickupCursor( UIItemOnClick t ) {
         if( Dragging == false ) {
             ItemBeingDragged = t;
@@ -83,7 +94,7 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
         for( int y = 0; y < slotBounds.GetLength( 1 ); y++ ) {
             for( int x = 0; x < slotBounds.GetLength( 0 ); x++ ) {
                 slotBounds[x, y] = new Rect {
-                    position = new Vector2( inventoryPosition.position.x + ( x * 50 ), inventoryPosition.position.y - 25 - ( y * 50 ) ),
+                    position = new Vector2( inventoryContainer.position.x + ( x * 50 ), inventoryContainer.position.y - ( y * 50 ) - 50 ),
                     size = new Vector2( 50, 50 )
                 };
             }
@@ -97,7 +108,7 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
             return;
         if( Input.mousePosition == lastPosition )
             return;
-        ItemBeingDragged.Position = Input.mousePosition;
+        ItemBeingDragged.transform.position = Input.mousePosition;
         ReleaseHoverCellAll();
         if( Intersecting.Count == 0 )
             return;
@@ -136,7 +147,7 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
     }
     private void AssignHoverCell( Vector2Int coordinates ) {
         availableHoverCells[0].gameObject.SetActive( true );
-        availableHoverCells[0].position = new Vector2( inventoryPosition.position.x + 25 + ( coordinates.x * 50 ), inventoryPosition.position.y - 25 - ( coordinates.y * 50 ) );
+        availableHoverCells[0].position = new Vector2( inventoryContainer.position.x + 25 + ( coordinates.x * 50 ), inventoryContainer.position.y - 25 - ( coordinates.y * 50 ) );
         if( occupied.Contains( coordinates ) )
             availableHoverCells[0].GetComponent<UnityEngine.UI.Image>().color = new Color( 0.2980392f, 0, 0, 0.2f );
         else if( hovered.Contains( coordinates ) )
@@ -150,6 +161,43 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
     }
     private void OnEnable() {
         cameraFollow.SetCameraMode( CameraFollow.CameraMode.InventoryOffset );
+    }
+    private void OnPickup( GameObject prefab ) {
+        UIItemOnClick itemToAdd = prefab.GetComponent<UIItemOnClick>();
+
+        for( int y = 0; y < 4; y++ ) {
+            for( int x = 0; x < 8; x++ ) {
+                Vector2Int topLeft = new Vector2Int(x, y);
+                if( CanPlaceAtSlot( topLeft, itemToAdd.uiWidth, itemToAdd.uiHeight ) ) {
+                    UIItemOnClick item = Instantiate( prefab, null ).GetComponent<UIItemOnClick>();
+                    item.transform.SetParent( inventoryContainer );
+                    item.transform.position = new Vector2(
+                        inventoryContainer.position.x + item.uiWidth * 25 + topLeft.x * 50,
+                        inventoryContainer.position.y - ( item.uiHeight * 25 + topLeft.y * 50 )
+                        );
+                    itemsInInventory.Add( item );
+                    AudioDevice.PlayGeneric( AudioDevice.Sound.Pickup );
+                    return;
+                }
+            }
+        }
+    }
+    private bool CanPlaceAtSlot( Vector2Int slot, int width, int height ) {
+        for( int y = slot.y; y < height + slot.y; y++ )
+            for( int x = slot.x; x < width + slot.x; x++ ) {
+                if( x > 7 || y > 3 )
+                    return false;
+                if( occupied.Contains( new Vector2Int( x, y ) ) )
+                    return false;
+            }
+
+        // we're going to place the item at this position. Loop it again and this time set them as occupied.
+
+        for( int y = slot.y; y < height + slot.y; y++ )
+            for( int x = slot.x; x < width + slot.x; x++ )
+                occupied.Add( new Vector2Int( x, y ) );
+
+        return true;
     }
 }
 namespace UnityEngine.EventSystems

@@ -2,7 +2,6 @@
 using UnityEngine.EventSystems;
 public class UIItemOnClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public Vector3 Position { set { transform.position = value; } }
     public byte uiWidth;
     public byte uiHeight;
     public Rect GetRect {
