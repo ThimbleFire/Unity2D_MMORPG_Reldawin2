@@ -100,6 +100,8 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
             }
         }
         gameObject.SetActive( false );
+
+        ItemFactory.Build();
     }
     private void LateUpdate() {
         if( Dragging == false )
