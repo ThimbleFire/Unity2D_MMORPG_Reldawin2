@@ -207,7 +207,19 @@ public class ItemFactory
         for( int i = 0; i < byteList2.Count; i++ )
             Debug.Log( ( (int)byteList2[i] ).ToBinaryString() );
 
-
+        // We can combine item type and item sprite. Have the right 4 bits determine item type and left 4 bits determine item sprite.
+        // This means 16 total item types and 16 sprite variations for each item type
+        // You can reduce casts by removing enums and having each be constant bytes. Enums elements are essentially constants anyway.
+        // This could make things complicated however
+        
+		//byte[] data = { Head + cap, value1, value2, durability, 0b00000000, Str + 3, Str + 0, Str + 0 };
+		//ulong itemBinaries = BitConverter.ToUInt64(data, 0);
+		//Console.WriteLine(itemBinaries);
+		//List<byte> byteList = new List<byte>(BitConverter.GetBytes(itemBinaries));
+		//for(int i = 0; i < byteList.Count; i++) {
+		//	Console.WriteLine(Convert.ToString(byteList[i], 2));
+		//}
+        
         //reading
 
         //List<Item_Prefix> prefixes = new List<Item_Prefix>();
