@@ -219,8 +219,11 @@ public class ItemFactory
 		//for(int i = 0; i < byteList.Count; i++) {
 		//	Console.WriteLine(Convert.ToString(byteList[i], 2));
 		//}
-        
-        //reading
+
+	//Write a formula for armour stats (value1, value2, durability, 'cap' tier) based on the player character level and the slain NPC level
+	//Have attribute requirements be determined by prefixes and suffixes. If a suffix boosts mana regen by 60% for example, have it subsequently require 40 intelligence.
+
+	//reading
 
         //List<Item_Prefix> prefixes = new List<Item_Prefix>();
         //List<Item_Prefix> suffixes = new List<Item_Prefix>();
