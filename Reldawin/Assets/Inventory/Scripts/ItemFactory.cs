@@ -28,13 +28,6 @@ public class ItemFactory
         Quest                   = 0b00001101,
         Belt                    = 0b00001110
     }; 
-    public enum Item_Size : byte {
-        _1x1                    = 0b00000000,
-        _2x1                    = 0b00000001,
-        _2x2                    = 0b00000010,
-        _2x3                    = 0b00000011,
-        _2x4                    = 0b00000100
-    }; 
     public enum Item_Sprite_Filename : byte {
         amulet1                 = 0b00000000,
         amulet2                 = 0b00000001,
@@ -54,7 +47,7 @@ public class ItemFactory
         smallshield             = 0b00001111,
         studdedleather          = 0b00010000
     };
-    public enum Item_Prefix : short
+    public enum Item_Prefix : byte
     {
         Nothing                 = 0b00000000, //0
         //Plus_Accuracy           = 0b00000001, //1
@@ -134,7 +127,7 @@ public class ItemFactory
         Plus_Stagger_Recovery   = 0b00100011, //35
         Plus_Magic_Find         = 0b00100100, //36
     };
-    public enum Item_Implicit : short
+    public enum Item_Implicit : byte
     {
         Nothing                 = 0b00000000, //0
         //Plus_Accuracy           = 0b00000001, //1
@@ -174,13 +167,15 @@ public class ItemFactory
         Plus_Stagger_Recovery   = 0b00100011, //35
         Plus_Magic_Find         = 0b00100100, //36
     };
-    [Flags] public enum Requirement : short
+    //Requirements value cannot exceed 63.
+    //Requirements value of zero will not appear in the item tooltip.
+    [Flags] public enum Requirement : byte
     {
         Strength    = 0b00000000,
         Dex         = 0b01000000,
         Const       = 0b10000000,
         Int         = 0b11000000
-    }; //Requirements cannot exceed 63, else the bits would overlap attribute bits
+    }; 
 
     public static void Build() {
 
@@ -189,9 +184,9 @@ public class ItemFactory
         itemBinaries1 += (long)  value1                      << 8;
         itemBinaries1 += (long)  value2                      << 16;
         itemBinaries1 += (long)  durability                  << 24;
-        itemBinaries1 += (long)  Item_Size._2x2              << 32;
-        itemBinaries1 += (long)  Item_Sprite_Filename.cap    << 40;
-        itemBinaries1 += (long)( Requirement.Strength + 11 ) << 48;
+        itemBinaries1 += (long)  Item_Sprite_Filename.cap    << 32;
+        itemBinaries1 += (long)( Requirement.Strength + 11 ) << 40;
+        itemBinaries1 += (long)( Requirement.Strength + 0 )  << 48;
         itemBinaries1 += (long)( Requirement.Strength + 0 )  << 56;
 
         Debug.Log( itemBinaries1.ToBinaryString() );
@@ -199,15 +194,13 @@ public class ItemFactory
         for( int i = 0; i < byteList1.Count; i++ )
             Debug.Log( ( (int)byteList1[i] ).ToBinaryString() );
 
-        long itemBinaries2 = 0;
-        itemBinaries2 += (long)( Requirement.Strength + 0 ) << 0;
-        itemBinaries2 += (long)  Item_Implicit.Nothing      << 8;
-        itemBinaries2 += (long)  Item_Prefix.Plus_Life      << 16;
+        itemBinaries2 += (long)  Item_Implicit.Nothing      << 0;
+        itemBinaries2 += (long)  Item_Prefix.Plus_Life      << 8;
+        itemBinaries2 += (long)  Item_Prefix.Nothing        << 16;
         itemBinaries2 += (long)  Item_Prefix.Nothing        << 24;
-        itemBinaries2 += (long)  Item_Prefix.Nothing        << 32;
+        itemBinaries2 += (long)  Item_Suffix.Nothing        << 32;
         itemBinaries2 += (long)  Item_Suffix.Nothing        << 40;
         itemBinaries2 += (long)  Item_Suffix.Nothing        << 48;
-        itemBinaries2 += (long)  Item_Suffix.Nothing        << 56;
 
         Debug.Log( itemBinaries2.ToBinaryString() );
         List<byte> byteList2 = new List<byte>(BitConverter.GetBytes(itemBinaries2));
