@@ -86,48 +86,48 @@ public class ItemFactory
 	const byte Plus_Block_Recovery     = 0b00100010; //34
 	const byte Plus_Stagger_Recovery   = 0b00100011; //35
 	const byte Plus_Magic_Find         = 0b00100100; //36
-	// attributes
-	const byte Strength       		   = 0b00000000;
-	const byte Dexterity        	   = 0b01000000;
-	const byte Constitution     	   = 0b10000000;
-	const byte Intelligence     	   = 0b11000000;
+													 // attributes
+	const byte Strength                = 0b00000000;
+	const byte Dexterity               = 0b01000000;
+	const byte Constitution            = 0b10000000;
+	const byte Intelligence            = 0b11000000;
 
-    public static void Build() {
-	    byte value1 = 0;
-	    byte value2 = 0;
-	    byte durability = 0;
-		
+	public static void Build() {
+		byte value1 = 0;
+		byte value2 = 0;
+		byte durability = 0;
+
 		byte[] data = { Head + cap, value1, value2, durability, 0b00000000, Strength + 3, Strength + 0, Strength + 0 };
 		ulong itemBinaries = BitConverter.ToUInt64(data, 0);
-		Console.WriteLine(itemBinaries);
+		Console.WriteLine( itemBinaries );
 		List<byte> byteList = new List<byte>(BitConverter.GetBytes(itemBinaries));
-		for(int i = 0; i < byteList.Count; i++) {
-			Console.WriteLine(Convert.ToString(byteList[i], 2));
+		for( int i = 0; i < byteList.Count; i++ ) {
+			Console.WriteLine( Convert.ToString( byteList[i], 2 ) );
 		}
 
-	// We can combine item type and item sprite. Have the right 4 bits determine item type and left 4 bits determine item sprite.
-	// This means 16 total item types and 16 sprite variations for each item type
-	// You can reduce casts by removing enums and having each be constant bytes. Enums elements are essentially constants anyway.
-	// This could make things complicated however
+		// We can combine item type and item sprite. Have the right 4 bits determine item type and left 4 bits determine item sprite.
+		// This means 16 total item types and 16 sprite variations for each item type
+		// You can reduce casts by removing enums and having each be constant bytes. Enums elements are essentially constants anyway.
+		// This could make things complicated however
 
-	//Write a formula for armour stats (value1, value2, durability, 'cap' tier) based on the player character level and the slain NPC level
-	//Have attribute requirements be determined by prefixes and suffixes. If a suffix boosts mana regen by 60% for example, have it subsequently require 40 intelligence.
+		//Write a formula for armour stats (value1, value2, durability, 'cap' tier) based on the player character level and the slain NPC level
+		//Have attribute requirements be determined by prefixes and suffixes. If a suffix boosts mana regen by 60% for example, have it subsequently require 40 intelligence.
 
-	//reading
+		//reading
 
-	//List<Item_Prefix> prefixes = new List<Item_Prefix>();
-	//List<Item_Prefix> suffixes = new List<Item_Prefix>();
-	//List<Item_Prefix> implicits = new List<Item_Prefix>();
-	//byteList.ForEach( v => list.Add( (Item_Affix)v ) );
+		//List<Item_Prefix> prefixes = new List<Item_Prefix>();
+		//List<Item_Prefix> suffixes = new List<Item_Prefix>();
+		//List<Item_Prefix> implicits = new List<Item_Prefix>();
+		//byteList.ForEach( v => list.Add( (Item_Affix)v ) );
 
-	//for( int i = 0; i < byteList.Count; i++ ) {
-	//    System.Collections.BitArray bits = new BitArray(byteList[i]);
-	//    if( bits[6] && bits[7] ) implicits.Add( (Item_Prefix)byteList[i] );
-	//    else if( bits[6] )       suffixes.Add( (Item_Prefix)byteList[i] );
-	//    else if( bits[7] )       prefixes.Add( (Item_Prefix)byteList[i] );
-	//}
-	//foreach( Item_Prefix item in prefixes ) { Debug.Log( item ); }
-	//foreach( Item_Prefix item in suffixes ) { Debug.Log( item ); }
-	//foreach( Item_Prefix item in implicits ) { Debug.Log( item ); }
-    }
+		//for( int i = 0; i < byteList.Count; i++ ) {
+		//    System.Collections.BitArray bits = new BitArray(byteList[i]);
+		//    if( bits[6] && bits[7] ) implicits.Add( (Item_Prefix)byteList[i] );
+		//    else if( bits[6] )       suffixes.Add( (Item_Prefix)byteList[i] );
+		//    else if( bits[7] )       prefixes.Add( (Item_Prefix)byteList[i] );
+		//}
+		//foreach( Item_Prefix item in prefixes ) { Debug.Log( item ); }
+		//foreach( Item_Prefix item in suffixes ) { Debug.Log( item ); }
+		//foreach( Item_Prefix item in implicits ) { Debug.Log( item ); }
+	}
 }
