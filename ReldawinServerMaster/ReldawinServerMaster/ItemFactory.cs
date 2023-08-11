@@ -90,19 +90,65 @@ namespace ReldawinServerMaster
         const byte Constitution            = 0b10000000;
         const byte Intelligence            = 0b11000000;
 
+        [Flags]
+        enum ItemPropertyTT : byte
+        {
+            HasDefAtk =    0b00000001,
+            HasImplicit =  0b00000010,
+            HasPrefix1 =   0b00000100,
+            HasPrefix2 =   0b00001000,
+            HasPrefix3 =   0b00001100,
+            HasSuffix1 =   0b00010000,
+            HasSuffix2 =   0b00100000,
+            HasSuffix3 =   0b00110000,
+        }
+
         const byte maxLevel = 60;
 
         public static void Generate(int characterLevel, out byte[] data)
         {
             Random rand = new Random();
-            byte itemType = (byte)(rand.Next(1, 10) * 16);
-            byte itemTier = (byte)rand.Next(0, (byte)MathF.Floor(characterLevel / 3));
-            byte value1   = (byte)rand.Next(3 + itemTier * 11, 7 + itemTier * 11); // min damage / defense
-            byte value2   = (byte)(itemType == Secondary ? 0 : value1 + 4);                            ;
-            byte durability = (byte)rand.Next(10 + itemTier * 12, 7 + itemTier * 11);
 
-            data = new byte[] { (byte)(itemType + itemTier), value1, value2, dura };
+            byte randomType = (byte)(rand.Next(1, 10) * 16);
+            byte randomTier = (byte)rand.Next(0, (int)MathF.Floor(characterLevel / 3));
+            
+            byte itemType = randomType;
+            byte itemTier = randomTier;
+            byte itemIdentity = (byte)(itemType + itemTier);
+
+            int[] rarity =
+            rand.Next( 0, 99 ) <= 05 ? new int[] { 3, 3 }:
+            rand.Next( 0, 99 ) <= 04 ? new int[] { 3, 2 }:
+            rand.Next( 0, 99 ) <= 06 ? new int[] { 2, 2 }:
+            rand.Next( 0, 99 ) <= 08 ? new int[] { 2, 1 }:
+            rand.Next( 0, 99 ) <= 10 ? new int[] { 1, 1 }:
+            rand.Next( 0, 99 ) <= 12 ? new int[] { 1, 0 }: 
+                                       new int[] { 0, 0 };
+
+            ItemPropertyTT itemProperties =
+           (itemType == Primary || 
+            itemType == Head || 
+            itemType == Chest || 
+            itemType == Feet || 
+            itemType == Gloves ? ItemPropertyTT.HasDefAtk : 0 |
+            ItemPropertyTT.HasImplicit |
+           (rarity[0] == 3 ? ItemPropertyTT.HasPrefix3 :
+            rarity[0] == 2 ? ItemPropertyTT.HasPrefix2 :
+            rarity[0] == 1 ? ItemPropertyTT.HasPrefix1 : 0) |
+           (rarity[1] == 3 ? ItemPropertyTT.HasSuffix3 :
+            rarity[1] == 2 ? ItemPropertyTT.HasSuffix2 :
+            rarity[1] == 1 ? ItemPropertyTT.HasSuffix1 : 0));
+
+            if( itemProperties == ItemPropertyTT.HasDefAtk  ) {
+               
+            }
+
+            data = new byte[] { itemIdentity, (byte)itemProperties };
+
+
+            //byte value1   = (byte)rand.Next(3 + itemTier * 11, 7 + itemTier * 11); // min damage / defense
+            //byte value2   = (byte)(itemType == Secondary ? 0 : value1 + 4);                            ;
+            //byte durability = (byte)rand.Next(7 + itemTier * 9, 10 + itemTier * 11);
         }
-
     }
 }
