@@ -37,6 +37,14 @@ namespace ReldawinServerMaster
         public byte inventoryPos { get; set; }
         //byte.max means the item is equipped.
     }
+    public class Affix
+    {
+        public byte affixIndex;
+        public string Name;
+        public byte intelligence, dexterity, level, strength;
+        public byte power;
+        //tiers are separate entries
+    }
 
     public class MapOreVeins
     {
