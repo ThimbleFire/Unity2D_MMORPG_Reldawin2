@@ -14,8 +14,8 @@ namespace ReldawinServerMaster
         const byte Chest                   = 0b00100000; //32
         const byte Gloves                  = 0b00110000; //48
         const byte Feet                    = 0b01000000; //64
-        const byte Primary                 = 0b01010000; //80 
-        const byte Secondary               = 0b01100000; //96
+        const byte Secondary               = 0b01010000; //80
+        const byte Primary                 = 0b01100000; //96 
         const byte Ring                    = 0b01110000; //112
         const byte Neck                    = 0b10000000; //128
         const byte Belt                    = 0b10010000; //144
@@ -91,64 +91,93 @@ namespace ReldawinServerMaster
         const byte Intelligence            = 0b11000000;
 
         [Flags]
-        enum ItemPropertyTT : byte
+        enum ItemPropertyTT : uint
         {
-            HasDefAtk =    0b00000001,
-            HasImplicit =  0b00000010,
-            HasPrefix1 =   0b00000100,
-            HasPrefix2 =   0b00001000,
-            HasPrefix3 =   0b00001100,
-            HasSuffix1 =   0b00010000,
-            HasSuffix2 =   0b00100000,
-            HasSuffix3 =   0b00110000,
+            HasV1 =        0b00000001,
+            HasV2 =        0b00000010,
+            HasDura =      0b00000100,
+            HasImplicit =  0b00001000,
+            HasPrefix1 =   0b00010000,
+            HasPrefix2 =   0b00100000,
+            HasPrefix3 =   0b00110000,
+            HasSuffix1 =   0b01000000,
+            HasSuffix2 =   0b10000000,
+            HasSuffix3 =   0b11000000,
         }
 
         const byte maxLevel = 60;
 
-        public static void Generate(int characterLevel, out byte[] data)
+        public static void Generate(int characterLevel, out List<byte> d)
         {
+            d = new List<byte>();
             Random rand = new Random();
 
-            byte randomType = (byte)(rand.Next(1, 10) * 16);
-            byte randomTier = (byte)rand.Next(0, (int)MathF.Floor(characterLevel / 3));
-            
-            byte itemType = randomType;
-            byte itemTier = randomTier;
+            // Item identity
+
+            int itemType = rand.Next(1, 10) * 16;
+            int itemTier = rand.Next(0, (int)MathF.Ceiling(characterLevel / 3));
             byte itemIdentity = (byte)(itemType + itemTier);
+            d.Add( itemIdentity );
+
+            // Item truth table
+
+            ItemPropertyTT truthTable = 0b00000000;
+
+            bool itemHasAttackMinOrDefense = itemType >= 16 && itemType <=  96;
+            bool itemHasAttackMax = itemType == Primary;
+
+            if( itemHasAttackMinOrDefense )
+                truthTable |= ItemPropertyTT.HasV1;
+            if( itemHasAttackMax )
+                truthTable |= ItemPropertyTT.HasV2;
+            if( itemHasAttackMinOrDefense || itemHasAttackMax )
+                truthTable |= ItemPropertyTT.HasDura;
+
+            // we have no item data and no way to determine whether an item should have an implicit value
+
+            if( false )
+                truthTable |= ItemPropertyTT.HasImplicit;
 
             int[] rarity =
-            rand.Next( 0, 99 ) <= 05 ? new int[] { 3, 3 }:
-            rand.Next( 0, 99 ) <= 04 ? new int[] { 3, 2 }:
-            rand.Next( 0, 99 ) <= 06 ? new int[] { 2, 2 }:
-            rand.Next( 0, 99 ) <= 08 ? new int[] { 2, 1 }:
-            rand.Next( 0, 99 ) <= 10 ? new int[] { 1, 1 }:
-            rand.Next( 0, 99 ) <= 12 ? new int[] { 1, 0 }: 
+            rand.Next( 0, 99 ) <= 01 ? new int[] { 3, 3 }:
+            rand.Next( 0, 99 ) <= 03 ? new int[] { 3, 2 }:
+            rand.Next( 0, 99 ) <= 05 ? new int[] { 2, 2 }:
+            rand.Next( 0, 99 ) <= 07 ? new int[] { 2, 1 }:
+            rand.Next( 0, 99 ) <= 09 ? new int[] { 1, 1 }:
+            rand.Next( 0, 99 ) <= 11 ? new int[] { 1, 0 }:
                                        new int[] { 0, 0 };
 
-            ItemPropertyTT itemProperties =
-           (itemType == Primary || 
-            itemType == Head || 
-            itemType == Chest || 
-            itemType == Feet || 
-            itemType == Gloves ? ItemPropertyTT.HasDefAtk : 0 |
-            ItemPropertyTT.HasImplicit |
-           (rarity[0] == 3 ? ItemPropertyTT.HasPrefix3 :
-            rarity[0] == 2 ? ItemPropertyTT.HasPrefix2 :
-            rarity[0] == 1 ? ItemPropertyTT.HasPrefix1 : 0) |
-           (rarity[1] == 3 ? ItemPropertyTT.HasSuffix3 :
-            rarity[1] == 2 ? ItemPropertyTT.HasSuffix2 :
-            rarity[1] == 1 ? ItemPropertyTT.HasSuffix1 : 0));
-
-            if( itemProperties == ItemPropertyTT.HasDefAtk  ) {
-               
+            switch( rarity[0] ) {
+                case 1: truthTable |= ItemPropertyTT.HasPrefix1; break;
+                case 2: truthTable |= ItemPropertyTT.HasPrefix2; break;
+                case 3: truthTable |= ItemPropertyTT.HasPrefix3; break;
+            }
+            switch( rarity[1] ) {
+                case 1: truthTable |= ItemPropertyTT.HasSuffix1; break;
+                case 2: truthTable |= ItemPropertyTT.HasSuffix2; break;
+                case 3: truthTable |= ItemPropertyTT.HasSuffix3; break;
             }
 
-            data = new byte[] { itemIdentity, (byte)itemProperties };
+            d.Add( (byte)truthTable );
 
+            //item properties
 
-            //byte value1   = (byte)rand.Next(3 + itemTier * 11, 7 + itemTier * 11); // min damage / defense
-            //byte value2   = (byte)(itemType == Secondary ? 0 : value1 + 4);                            ;
-            //byte durability = (byte)rand.Next(7 + itemTier * 9, 10 + itemTier * 11);
+            if( truthTable.HasFlag( ItemPropertyTT.HasV1 ) )
+                d.Add( byte.MaxValue );
+            if( truthTable.HasFlag( ItemPropertyTT.HasV2 ) )
+                d.Add( byte.MaxValue );
+            if( truthTable.HasFlag( ItemPropertyTT.HasDura ) )
+                d.Add( byte.MaxValue / 2 );
+            if( truthTable.HasFlag( ItemPropertyTT.HasDura ) )
+                d.Add( byte.MaxValue );
+
+            for( int i = 0; i < rarity[0]; i++ ) {
+                d.Add( byte.MaxValue );
+            }
+            for( int i = 0; i < rarity[1]; i++ ) {
+                d.Add( byte.MaxValue );
+            }
+
         }
     }
 }

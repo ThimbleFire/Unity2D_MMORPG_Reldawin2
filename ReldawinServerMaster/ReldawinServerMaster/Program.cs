@@ -18,10 +18,11 @@
 
                 switch( command ) {
                     case "":
-                        ItemFactory.Generate( 1, out byte[] data );
-                        for( int i = 0; i < data.Length; i++ ) {
-                            Console.WriteLine( Convert.ToString( data[i], 2 ).PadLeft( 8, '0' ) );
+                        ItemFactory.Generate( 1, out List<byte> data );
+                        foreach( byte item in data ) {
+                            Console.WriteLine( Convert.ToString( item, 2 ).PadLeft( 8, '0' ) );
                         }
+                        
                         break;
                 }
             }

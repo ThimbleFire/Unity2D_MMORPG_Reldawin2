@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEditor;
 using UnityEngine;
 
@@ -57,6 +58,8 @@ namespace AlwaysEast
 
     public class ItemEditor : EditorBase
     {
+        //private SQLiteConnection _connection;
+
         private Vector2 scrollView;
 
         //private ItemState activeItem;
@@ -83,10 +86,10 @@ namespace AlwaysEast
         protected override void MainWindow() {
             scrollView = EditorGUILayout.BeginScrollView( scrollView, false, true, GUILayout.Width( position.width ) );
             {
-                //obj = PaintXMLLookup( obj, "Resource File", true );
-                //if( PaintButton( "Save" ) ) {
-                //    Save();
-                //}
+                obj = PaintXMLLookup( obj, "Resource File", true );
+                if( PaintButton( "Save" ) ) {
+                    Save();
+                }
                 //PaintTextField( ref activeItem.Name, "Item Name" );
                 //activeItem.ItemType = (ItemState.Type)PaintPopup( Helper.ItemTypeNames, (int)activeItem.ItemType, "Item Type" );
                 //PaintSpriteField( ref SpriteUI );
