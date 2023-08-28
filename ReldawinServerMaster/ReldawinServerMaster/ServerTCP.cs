@@ -218,7 +218,8 @@ namespace ReldawinServerMaster
                     buffer.WriteInteger( ID );
                     buffer.WriteFloat( pointX );
                     buffer.WriteFloat( pointY );
-                    buffer.WriteBoolean( clients[index].properties.items.Count < 20 );
+                    //temporarily removed hasInventorySpace on client and server since inventory mechanics have changed
+                    //buffer.WriteBoolean( clients[index].properties.items.Count < 20 );
 
                     foreach( Client client in clientList )
                         SendDataTo( client.index, buffer.ToArray() );
@@ -285,6 +286,15 @@ namespace ReldawinServerMaster
         }
 
         public static void TickResult( int index, int yieldItemID ) => Harvest( index, yieldItemID );
+
+        internal static void PlaceItemInInventory( byte index, List<byte> data ) {
+            using( new DebugTimer( clients[index].properties.Username + "PlaceItemInInventory" ) ) {
+                using( PacketBuffer buffer = new PacketBuffer( Packet.PlaceItemInInventory ) ) {
+                    buffer.WriteBytes( data.ToArray() );
+                    SendDataTo( index, buffer.ToArray() );
+                }
+            }
+        }
 
         internal static void SendCoordinatesOnDatabase( int index, Vector2Int coordinates ) {
             using( PacketBuffer buffer = new PacketBuffer( Packet.RequestSpawn ) ) {

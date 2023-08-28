@@ -123,8 +123,10 @@ public class ItemStats : MonoBehaviour
     public class ItemBasics
     {
         public Type type;
+        public byte tier;
         public int value, value2;
         public byte durability;
+        public string SpriteFilePath { get { return $"Sprites/Equipment/{type}/{tier}"; } }
     }
     [System.Serializable]
     public class Prefix
@@ -145,8 +147,13 @@ public class ItemStats : MonoBehaviour
         public int value;
     }
     public static string[] Type_Text = new string[15] { "Any", "Helmet", "Chest", "Gloves", "Legs", "Feet", "Weapon", "Offhand", "Ring", "Amulet", "Artifact", "Miscellaneous", "Consumable", "Quest Item", "Belt" };
-    public enum Type
-    { ANY, HEAD, CHEST, GLOVES, LEGS, FEET, PRIMARY, SECONDARY, RING, NECK, ARTIFACT, MISC, CONSUMABLE, QUEST, BELT }
+    public enum Type { ANY, HEAD, CHEST, GLOVES, BELT, FEET, PRIMARY, SECONDARY, RING, NECK, ARTIFACT, MISC, CONSUMABLE, QUEST }
+    internal void LoadSprite() {
+        Sprite sprite = Resources.Load<Sprite>( itemBasics.SpriteFilePath );
+        GetComponent<UnityEngine.UI.Image>().sprite = sprite;
+        GetComponent<UnityEngine.UI.Image>().SetNativeSize();
+        GetComponent<UIItemOnClick>().SetSize();
+    }
 }
 public class GearStats
 {

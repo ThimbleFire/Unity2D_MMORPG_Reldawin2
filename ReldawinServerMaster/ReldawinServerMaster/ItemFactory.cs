@@ -1,52 +1,116 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System;
+using Bindings;
 
 namespace ReldawinServerMaster
 {
     public class ItemFactory
     {
+        public static List<byte> RollGlobalLootTable( ClientProperties cProperties ) {
+
+            List<byte> outgoing = new List<byte>();
+
+            Random rand = new Random();
+            int type = rand.Next( 1, 10 ) * 16;
+            int tier = rand.Next( 0, (int)MathF.Ceiling( cProperties.CharacterLevel / 3 ) );
+            byte identity = (byte)(type + tier);
+            outgoing.Add( identity );
+
+            byte prefixes = 0;
+            byte suffixes = 0;
+
+            if( true ) {
+                if( rand.Next( 0, 255 ) < cProperties.MagicFind )
+                    prefixes++;
+            }
+            if( cProperties.CharacterLevel >= 9 ) {
+                if( rand.Next( 0, 255 ) < cProperties.MagicFind )
+                    suffixes++;
+            }
+            if( cProperties.CharacterLevel >= 18 ) {
+                if( rand.Next( 0, 255 ) < cProperties.MagicFind )
+                    prefixes++;
+            }
+            if( cProperties.CharacterLevel >= 27 ) {
+                if( rand.Next( 0, 255 ) < cProperties.MagicFind )
+                    suffixes++;
+            }
+            if( cProperties.CharacterLevel >= 36 ) {
+                if( rand.Next( 0, 255 ) < cProperties.MagicFind )
+                    prefixes++;
+            }
+            if( cProperties.CharacterLevel >= 45 ) {
+                if( rand.Next( 0, 255 ) < cProperties.MagicFind )
+                    suffixes++;
+            }
+
+            // type range is set to only include items with either an attack or defence value meaning this is always true
+            ItemPropertyTruthTable itemTruthTable = ItemPropertyTruthTable.HasDefAtk;
+
+            //No data exists with predefined implicits for item types and tiers, this could be defined as 
+
+            switch( prefixes ) {
+                case 1: itemTruthTable |= ItemPropertyTruthTable.HasPrefix1; break;
+                case 2: itemTruthTable |= ItemPropertyTruthTable.HasPrefix2; break;
+                case 3: itemTruthTable |= ItemPropertyTruthTable.HasPrefix3; break;
+            }
+            switch( suffixes ) {
+                case 1: itemTruthTable |= ItemPropertyTruthTable.HasSuffix1; break;
+                case 2: itemTruthTable |= ItemPropertyTruthTable.HasSuffix2; break;
+                case 3: itemTruthTable |= ItemPropertyTruthTable.HasSuffix3; break;
+            }
+
+            outgoing.Add( (byte)itemTruthTable );
+
+            if( itemTruthTable.HasFlag(ItemPropertyTruthTable.HasDefAtk) )
+                outgoing.Add( (byte)rand.Next( 3 + tier * 11, 7 + tier * 11 ));
+
+            if( itemTruthTable.HasFlag( ItemPropertyTruthTable.HasImplicit) )
+                outgoing.Add( 0 ); // Implicits aren't implemented
+
+            int cLvlDiv20 = (int)MathF.Ceiling( cProperties.CharacterLevel / 20 );
+
+            for( int i = 0; i < prefixes; i++ )
+                outgoing.Add( BuildAffix( rand, cLvlDiv20 ) );
+
+            for( int i = 0; i < suffixes; i++ )
+                outgoing.Add( BuildAffix( rand, cLvlDiv20 ) );
+
+            return outgoing;
+        }
+
+        private static byte BuildAffix(Random rand, int cLvlDiv20) {
+            int affixPow = rand.Next( 1, 1 * cLvlDiv20 ) * 64;
+            int affixID = rand.Next( 0, 36 ); // In future, we want to split affixes into prefixes and suffixes
+            return (byte)( affixPow + affixID );
+        }
+
+        [Flags]
+        enum ItemPropertyTruthTable : byte
+        {
+            HasDefAtk =    0b00000001,
+            HasImplicit =  0b00000010,
+            HasPrefix1 =   0b00000100,
+            HasPrefix2 =   0b00001000,
+            HasPrefix3 =   0b00001100,
+            HasSuffix1 =   0b00010000,
+            HasSuffix2 =   0b00100000,
+            HasSuffix3 =   0b00110000,
+        }
+
         //Types
         const byte Material                = 0b00000000; //0
         const byte Head                    = 0b00010000; //16
         const byte Chest                   = 0b00100000; //32
         const byte Gloves                  = 0b00110000; //48
         const byte Feet                    = 0b01000000; //64
-        const byte Secondary               = 0b01010000; //80
-        const byte Primary                 = 0b01100000; //96 
+        const byte Primary                 = 0b01010000; //80 
+        const byte Secondary               = 0b01100000; //96
         const byte Ring                    = 0b01110000; //112
         const byte Neck                    = 0b10000000; //128
         const byte Belt                    = 0b10010000; //144
         const byte Consumable              = 0b10100000; //160
-        //Sprites
-        const byte amulet1                 = 0b00000000;
-        const byte amulet2                 = 0b00000001;
-        //
-        const byte ring1                   = 0b00000000;
-        const byte ring2                   = 0b00000001;
-        //
-        const byte chainboots              = 0b00000000;
-        const byte heavyboots              = 0b00000001;
-        //
-        const byte quiltedarmor            = 0b00000000;
-        const byte studdedleather          = 0b00000001;
-        //
-        const byte cap                     = 0b00000000;
-        const byte skullcap                = 0b00000001;
-        //
-        const byte axe                     = 0b00000000;
-        const byte broadaxe                = 0b00000001;
-        //
-        const byte buckler                 = 0b00000000;
-        const byte smallshield             = 0b00000001;
-        //
-        const byte chain                   = 0b00000000;
-        const byte heavygloves             = 0b00000001;
-        //
-        const byte sash                    = 0b00000000;
-        //Affixes
+                                                         //Affixes
         const byte Nothing                 = 0b00000000; //0
         const byte Plus_Accuracy           = 0b00000001; //1
         const byte Dmg_Phys_Min            = 0b00000010; //2
@@ -84,100 +148,10 @@ namespace ReldawinServerMaster
         const byte Plus_Block_Recovery     = 0b00100010; //34
         const byte Plus_Stagger_Recovery   = 0b00100011; //35
         const byte Plus_Magic_Find         = 0b00100100; //36
-                                                         // attributes
+
         const byte Strength                = 0b00000000;
         const byte Dexterity               = 0b01000000;
         const byte Constitution            = 0b10000000;
         const byte Intelligence            = 0b11000000;
-
-        [Flags]
-        enum ItemPropertyTT : uint
-        {
-            HasV1 =        0b00000001,
-            HasV2 =        0b00000010,
-            HasDura =      0b00000100,
-            HasImplicit =  0b00001000,
-            HasPrefix1 =   0b00010000,
-            HasPrefix2 =   0b00100000,
-            HasPrefix3 =   0b00110000,
-            HasSuffix1 =   0b01000000,
-            HasSuffix2 =   0b10000000,
-            HasSuffix3 =   0b11000000,
-        }
-
-        const byte maxLevel = 60;
-
-        public static void Generate(int characterLevel, out List<byte> d)
-        {
-            d = new List<byte>();
-            Random rand = new Random();
-
-            // Item identity
-
-            int itemType = rand.Next(1, 10) * 16;
-            int itemTier = rand.Next(0, (int)MathF.Ceiling(characterLevel / 3));
-            byte itemIdentity = (byte)(itemType + itemTier);
-            d.Add( itemIdentity );
-
-            // Item truth table
-
-            ItemPropertyTT truthTable = 0b00000000;
-
-            bool itemHasAttackMinOrDefense = itemType >= 16 && itemType <=  96;
-            bool itemHasAttackMax = itemType == Primary;
-
-            if( itemHasAttackMinOrDefense )
-                truthTable |= ItemPropertyTT.HasV1;
-            if( itemHasAttackMax )
-                truthTable |= ItemPropertyTT.HasV2;
-            if( itemHasAttackMinOrDefense || itemHasAttackMax )
-                truthTable |= ItemPropertyTT.HasDura;
-
-            // we have no item data and no way to determine whether an item should have an implicit value
-
-            if( false )
-                truthTable |= ItemPropertyTT.HasImplicit;
-
-            int[] rarity =
-            rand.Next( 0, 99 ) <= 01 ? new int[] { 3, 3 }:
-            rand.Next( 0, 99 ) <= 03 ? new int[] { 3, 2 }:
-            rand.Next( 0, 99 ) <= 05 ? new int[] { 2, 2 }:
-            rand.Next( 0, 99 ) <= 07 ? new int[] { 2, 1 }:
-            rand.Next( 0, 99 ) <= 09 ? new int[] { 1, 1 }:
-            rand.Next( 0, 99 ) <= 11 ? new int[] { 1, 0 }:
-                                       new int[] { 0, 0 };
-
-            switch( rarity[0] ) {
-                case 1: truthTable |= ItemPropertyTT.HasPrefix1; break;
-                case 2: truthTable |= ItemPropertyTT.HasPrefix2; break;
-                case 3: truthTable |= ItemPropertyTT.HasPrefix3; break;
-            }
-            switch( rarity[1] ) {
-                case 1: truthTable |= ItemPropertyTT.HasSuffix1; break;
-                case 2: truthTable |= ItemPropertyTT.HasSuffix2; break;
-                case 3: truthTable |= ItemPropertyTT.HasSuffix3; break;
-            }
-
-            d.Add( (byte)truthTable );
-
-            //item properties
-
-            if( truthTable.HasFlag( ItemPropertyTT.HasV1 ) )
-                d.Add( byte.MaxValue );
-            if( truthTable.HasFlag( ItemPropertyTT.HasV2 ) )
-                d.Add( byte.MaxValue );
-            if( truthTable.HasFlag( ItemPropertyTT.HasDura ) )
-                d.Add( byte.MaxValue / 2 );
-            if( truthTable.HasFlag( ItemPropertyTT.HasDura ) )
-                d.Add( byte.MaxValue );
-
-            for( int i = 0; i < rarity[0]; i++ ) {
-                d.Add( byte.MaxValue );
-            }
-            for( int i = 0; i < rarity[1]; i++ ) {
-                d.Add( byte.MaxValue );
-            }
-
-        }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
+public class Inventory : SceneBehaviour, IPickupCursor, IPointerClickHandler
 {
     public static bool Dragging = false;
     public static bool MousedOverGearSlot = false;
@@ -41,6 +41,7 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
     public RectTransform inventoryContainer;
     public CameraFollow cameraFollow;
     private List<UIItemOnClick> itemsInInventory = new List<UIItemOnClick>();
+    public GameObject itemTemplatePrefab;
     /// <summary> On Click While Holding Item </summary>
     public void OnPointerClick( PointerEventData eventData ) {
         if( Dragging == false )
@@ -99,10 +100,69 @@ public class Inventory : MonoBehaviour, IPickupCursor, IPointerClickHandler
                 };
             }
         }
+
+        //We're going to want to move this to another class, as this class is only enabled when the inventory is open.
+        //Meaning you can't pick up items with a closed inventory. This is not good.
+        EventProcessor.AddInstructionParams( Packet.PlaceItemInInventory, ServerPlacesItemInInventory );
         gameObject.SetActive( false );
 
-        ItemFactory.Build();
+        //ItemFactory.Build();
     }
+    private void Start() {
+
+    }
+
+    [Flags]
+    enum ItemPropertyTruthTable : byte
+    {
+        HasDefAtk =    0b00000001,
+        HasImplicit =  0b00000010,
+        HasPrefix1 =   0b00000100,
+        HasPrefix2 =   0b00001000,
+        HasPrefix3 =   0b00001100,
+        HasSuffix1 =   0b00010000,
+        HasSuffix2 =   0b00100000,
+        HasSuffix3 =   0b00110000,
+    }
+
+    private void ServerPlacesItemInInventory( object[] obj ) {
+
+        byte index = 0;
+
+        byte _pow = 0;
+        byte _implicit;
+        byte _prefix1;
+        byte _prefix2;
+        byte _prefix3;
+        byte _suffix1;
+        byte _suffix2;
+        byte _suffix3;
+
+        List<byte> data = (List<byte>)obj[0];
+        byte identity                                                    = data[index++];
+        ItemPropertyTruthTable tt =                (ItemPropertyTruthTable)data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasDefAtk ) )        _pow = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasImplicit ) ) _implicit = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasPrefix1 ) )  _prefix1  = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasPrefix2 ) )  _prefix2  = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasPrefix3 ) )  _prefix3  = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasSuffix1 ) )  _suffix1  = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasSuffix2 ) )  _suffix2  = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasSuffix3 ) )  _suffix3  = data[index++];
+
+        byte type = (byte)(identity >> 4);
+        byte tier = (byte)(identity & 15);
+
+        GameObject item = Instantiate( itemTemplatePrefab, inventoryContainer );
+
+        ItemStats stats = item.GetComponent<ItemStats>();
+
+        stats.itemBasics.type = (ItemStats.Type)type;
+        stats.itemBasics.tier = tier;
+        stats.itemBasics.value = _pow;
+        stats.LoadSprite();
+    }
+
     private void LateUpdate() {
         if( Dragging == false )
             return;

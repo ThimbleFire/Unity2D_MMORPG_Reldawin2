@@ -24,6 +24,7 @@
         StopInteract,
         ToggleRunning,
         ToggleSwimming,
-        Disconnect
+        Disconnect,
+        PlaceItemInInventory
     };
 }

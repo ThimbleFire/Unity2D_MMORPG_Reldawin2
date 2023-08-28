@@ -86,10 +86,10 @@ namespace AlwaysEast
         protected override void MainWindow() {
             scrollView = EditorGUILayout.BeginScrollView( scrollView, false, true, GUILayout.Width( position.width ) );
             {
-                obj = PaintXMLLookup( obj, "Resource File", true );
-                if( PaintButton( "Save" ) ) {
-                    Save();
-                }
+                //obj = PaintXMLLookup( obj, "Resource File", true );
+                //if( PaintButton( "Save" ) ) {
+                //    Save();
+                //}
                 //PaintTextField( ref activeItem.Name, "Item Name" );
                 //activeItem.ItemType = (ItemState.Type)PaintPopup( Helper.ItemTypeNames, (int)activeItem.ItemType, "Item Type" );
                 //PaintSpriteField( ref SpriteUI );

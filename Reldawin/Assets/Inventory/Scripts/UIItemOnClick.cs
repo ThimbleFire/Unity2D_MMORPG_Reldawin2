@@ -25,4 +25,10 @@ public class UIItemOnClick : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     public void OnPointerExit( PointerEventData eventData ) {
         ItemStatBillboard.Hide();
     }
+    public void SetSize() {
+        Vector2 size = GetComponent<UnityEngine.UI.Image>().sprite.bounds.size * 100;
+
+        uiWidth = (byte)( size.x / 50 );
+        uiHeight = (byte)( size.y / 50 );
+    }
 }

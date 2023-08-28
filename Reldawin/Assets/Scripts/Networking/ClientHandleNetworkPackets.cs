@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 namespace AlwaysEast
 {
@@ -27,9 +28,17 @@ namespace AlwaysEast
                 { (int)Packet.ToggleRunning, HandleToggleRunning },
                 { (int)Packet.StartInteract, HandleConfirmStartInteract },
                 { (int)Packet.ToggleSwimming, HandleToggleSwimming },
-                { (int)Packet.Disconnect, HandleDisconnect }
+                { (int)Packet.Disconnect, HandleDisconnect },
+                { (int)Packet.PlaceItemInInventory, ServerPlaceItemInInventory }
             };
         }
+
+        private static void ServerPlaceItemInInventory( byte[] data ) {
+            using PacketBuffer buffer = new PacketBuffer( data );
+            int cpIndex = buffer.ReadInteger();
+            eventProcessor.QueueEvent( (Packet)cpIndex, new List<byte>( buffer.ReadBytes( buffer.Length() ) ) );
+        }
+
         private static void HandleConfirmStartInteract( byte[] data ) {
             using PacketBuffer buffer = new PacketBuffer( data );
             int cpIndex = buffer.ReadInteger();
@@ -155,8 +164,8 @@ namespace AlwaysEast
             int entityID = buffer.ReadInteger();
             float worldPosX = buffer.ReadFloat();
             float worldPosY = buffer.ReadFloat();
-            bool hasInventorySpace = buffer.ReadBoolean();
-            eventProcessor.QueueEvent( (Packet)cpIndex, entityID, worldPosX, worldPosY, hasInventorySpace );
+            //bool hasInventorySpace = buffer.ReadBoolean();
+            eventProcessor.QueueEvent( (Packet)cpIndex, entityID, worldPosX, worldPosY, /*hasInventorySpace*/ true );
         }
         /// <summary>Fires when the local player character's position exceeds their current chunks border</summary>
         private static void HandleLoadChunkQuery( byte[] data ) {
