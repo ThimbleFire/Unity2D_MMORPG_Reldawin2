@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static ItemStats;
+
 public class Inventory : SceneBehaviour, IPickupCursor, IPointerClickHandler
 {
+    public LocalPlayerCharacter lpc; 
     public static bool Dragging = false;
     public static bool MousedOverGearSlot = false;
     public static UIItemOnClick ItemBeingDragged = null;
@@ -14,7 +17,7 @@ public class Inventory : SceneBehaviour, IPickupCursor, IPointerClickHandler
     private Dictionary<Vector2Int, RectTransform> unavailableHoverCells = new Dictionary<Vector2Int, RectTransform>( 12 );
     public List<Vector2Int> hovered = new List<Vector2Int>();
     public List<Vector2Int> occupied = new List<Vector2Int>();
-    private Rect[,] slotBounds = new Rect[10, 4];
+    private Rect[,] slotBounds = new Rect[8, 4];
     private List<Vector2Int> Intersecting {
         get {
             List<Vector2Int> intersecting = new List<Vector2Int>();
@@ -42,6 +45,8 @@ public class Inventory : SceneBehaviour, IPickupCursor, IPointerClickHandler
     public CameraFollow cameraFollow;
     private List<UIItemOnClick> itemsInInventory = new List<UIItemOnClick>();
     public GameObject itemTemplatePrefab;
+    public GameObject itemOnGroundTemplatePrefab;
+    public RectTransform canvasWorldSpace;
     /// <summary> On Click While Holding Item </summary>
     public void OnPointerClick( PointerEventData eventData ) {
         if( Dragging == false )
@@ -141,26 +146,112 @@ public class Inventory : SceneBehaviour, IPickupCursor, IPointerClickHandler
         List<byte> data = (List<byte>)obj[0];
         byte identity                                                    = data[index++];
         ItemPropertyTruthTable tt =                (ItemPropertyTruthTable)data[index++];
-        if( tt.HasFlag( ItemPropertyTruthTable.HasDefAtk ) )        _pow = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasDefAtk ) ) _pow = data[index++];
         if( tt.HasFlag( ItemPropertyTruthTable.HasImplicit ) ) _implicit = data[index++];
-        if( tt.HasFlag( ItemPropertyTruthTable.HasPrefix1 ) )  _prefix1  = data[index++];
-        if( tt.HasFlag( ItemPropertyTruthTable.HasPrefix2 ) )  _prefix2  = data[index++];
-        if( tt.HasFlag( ItemPropertyTruthTable.HasPrefix3 ) )  _prefix3  = data[index++];
-        if( tt.HasFlag( ItemPropertyTruthTable.HasSuffix1 ) )  _suffix1  = data[index++];
-        if( tt.HasFlag( ItemPropertyTruthTable.HasSuffix2 ) )  _suffix2  = data[index++];
-        if( tt.HasFlag( ItemPropertyTruthTable.HasSuffix3 ) )  _suffix3  = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasPrefix1 ) ) _prefix1 = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasPrefix2 ) ) _prefix2 = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasPrefix3 ) ) _prefix3 = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasSuffix1 ) ) _suffix1 = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasSuffix2 ) ) _suffix2 = data[index++];
+        if( tt.HasFlag( ItemPropertyTruthTable.HasSuffix3 ) ) _suffix3 = data[index++];
 
         byte type = (byte)(identity >> 4);
         byte tier = (byte)(identity & 15);
 
-        GameObject item = Instantiate( itemTemplatePrefab, inventoryContainer );
+        ItemBasics itemBasics = new ItemBasics()
+        {
+            type = (ItemStats.Type)type,
+            tier = tier,
+            value = _pow
+        };
 
-        ItemStats stats = item.GetComponent<ItemStats>();
+        Sprite sprite = Resources.Load<Sprite>( itemBasics.SpriteFilePath );
 
-        stats.itemBasics.type = (ItemStats.Type)type;
-        stats.itemBasics.tier = tier;
-        stats.itemBasics.value = _pow;
-        stats.LoadSprite();
+        byte width = (byte)(sprite.rect.width / 50);
+        byte height = (byte)(sprite.rect.height / 50);
+
+
+        List<Vector2Int> inventorySlot = FindInventorySpaceForItem(width, height);
+
+        if( inventorySlot == null ) {
+            Debug.Log( "Drop item on ground. No inventory space available" );
+            GameObject item = Instantiate(itemOnGroundTemplatePrefab, canvasWorldSpace);
+            item.transform.position = lpc.transform.position;
+        }
+        else {
+
+            GameObject item = Instantiate( itemTemplatePrefab, inventoryContainer );
+
+            ItemStats stats = item.GetComponent<ItemStats>();
+
+            UnityEngine.UI.Image itemImage = item.GetComponent<UnityEngine.UI.Image>();
+            itemImage.sprite = sprite;
+            itemImage.SetNativeSize();
+
+            stats.itemBasics = itemBasics;
+
+            UIItemOnClick uiItemOnClick = item.GetComponent<UIItemOnClick>();
+            uiItemOnClick.uiWidth = width;
+            uiItemOnClick.uiHeight = height;
+
+            Vector2Int topLeft = inventorySlot[0];
+
+            item.transform.position = new Vector2(
+                inventoryContainer.position.x +
+                uiItemOnClick.uiWidth * 25 + topLeft.x * 50,
+                inventoryContainer.position.y - ( uiItemOnClick.uiHeight * 25 + topLeft.y * 50 )
+                );
+            item.GetComponent<CanvasGroup>().blocksRaycasts = true;
+
+            foreach( Vector2Int nnn in inventorySlot ) {
+                occupied.Add( nnn );
+            }
+        }
+    }
+
+    private List<Vector2Int> FindInventorySpaceForItem( byte itemWidth, byte itemHeight ) {
+
+        for( int y = 0; y < slotBounds.GetLength( 1 ); y++ ) {
+                if( y + itemHeight >= slotBounds.GetLength( 1 ) )
+                    break;
+            for( int x = 0; x < slotBounds.GetLength( 0 ); x++ ) {
+
+                if( x + itemWidth > slotBounds.GetLength( 0 ) )
+                    break;
+
+                List<Vector2Int> space = SearchItemDimensionsForSpace( itemWidth, itemHeight, x, y );
+
+                if( space == null )
+                    continue;
+                else
+                    return space;
+            }
+        }
+        return null;
+    }
+    private List<Vector2Int> SearchItemDimensionsForSpace( byte itemWidth, byte itemHeight, int x, int y ) {
+
+        int takeup = itemWidth * itemHeight;
+        List<Vector2Int> potentialSlots = new List<Vector2Int>();
+
+        for( int ix = 0; ix < itemWidth; ix++ ) {
+
+            for( int iy = 0; iy < itemHeight; iy++ ) {
+
+                if( occupied.Contains( new Vector2Int( x + ix, y + iy ) ) ) {
+                    potentialSlots.Clear();
+                    return null;
+                }
+                else {
+                    potentialSlots.Add( new Vector2Int( x + ix, y + iy ) );
+                }
+
+                if( potentialSlots.Count == takeup ) {
+                    return potentialSlots;
+                }
+            }
+        }
+        return null;
     }
 
     private void LateUpdate() {

@@ -148,12 +148,6 @@ public class ItemStats : MonoBehaviour
     }
     public static string[] Type_Text = new string[15] { "Any", "Helmet", "Chest", "Gloves", "Legs", "Feet", "Weapon", "Offhand", "Ring", "Amulet", "Artifact", "Miscellaneous", "Consumable", "Quest Item", "Belt" };
     public enum Type { ANY, HEAD, CHEST, GLOVES, BELT, FEET, PRIMARY, SECONDARY, RING, NECK, ARTIFACT, MISC, CONSUMABLE, QUEST }
-    internal void LoadSprite() {
-        Sprite sprite = Resources.Load<Sprite>( itemBasics.SpriteFilePath );
-        GetComponent<UnityEngine.UI.Image>().sprite = sprite;
-        GetComponent<UnityEngine.UI.Image>().SetNativeSize();
-        GetComponent<UIItemOnClick>().SetSize();
-    }
 }
 public class GearStats
 {
