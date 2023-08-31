@@ -28,7 +28,11 @@ Item db element pos is represented by a byte.
 Item db element size is represented by a byte.
 - 2 bits represent width
 - 2 bits represent height
-4 bits unused.
+4 bits unused. could represent RGBA tint?
+
+* [ ] Item Database structure
+
+
 
 * [ ] Item Editor
 
