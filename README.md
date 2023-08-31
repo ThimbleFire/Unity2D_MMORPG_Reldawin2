@@ -13,18 +13,18 @@ https://i.imgur.com/C8AYzRa.gif
 ![sow grow demo2](https://github.com/ThimbleFire/Reldawin/assets/14812476/cd1e3840-ebfb-44a5-92d8-d30670bfe17b)
 
 TODO
-* [x] Chunk Loading
-* [x] Pathfinding
-* [x] Movement and Animation
-* [x] Networking and Multiplayer
-* [x] Loading scene objects on chunk change
-* [x] Resource pool scene objects
-* [x] Inventory and Equipment UI
-* [x] Server placing loot drops in inventory
-* [x] Server placing loot drops on ground
-* [ ] Server placing gathered resources on ground
-      Gathered resources are type material, varying by tier
-* [ ] 
+* [ ] Inventory occupation on server
+
+Inventory is 8x4 and can be represented by 4 bytes, one byte for each row.
+likewise, there are 8 equipment pieces (excluding rings), which a byte can also represent.
+
+* [ ] Item Editor
+
+server generates item.
+server sends item to client.
+client has database containing item names, min and max values.
+client looks up entry with matching identity.
+
 * [ ] Gathering
 * [ ] Crafting
 * [ ] Building
