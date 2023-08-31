@@ -15,8 +15,17 @@ https://i.imgur.com/C8AYzRa.gif
 TODO
 * [ ] Inventory occupation on server
 
-Inventory is 8x4 and can be represented by 4 bytes, one byte for each row.
-likewise, there are 8 equipment pieces (excluding rings), which a byte can also represent.
+The inventory is an 8x4 grid and is represented by an integer. 4 bytes, 1 bit each slot.
+Equipment is represented by a 16-bit ushort.
+
+These bytes are updated when an item is placed into the inventory, or equipment slot.
+
+Item db element pos is represented by a byte.
+- 2 bits represent the y-axis
+- 4 bits represent the x-axis
+- 1 bit represents whether the item is equipped
+
+
 
 * [ ] Item Editor
 
