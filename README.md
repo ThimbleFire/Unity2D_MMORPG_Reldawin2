@@ -25,7 +25,10 @@ Item db element pos is represented by a byte.
 - 4 bits represent the x-axis
 - 2 bit represents whether the item is equipped, in the inventory, or on the ground.
 
-
+Item db element size is represented by a byte.
+- 2 bits represent width
+- 2 bits represent height
+4 bits unused.
 
 * [ ] Item Editor
 
