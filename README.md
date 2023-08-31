@@ -23,7 +23,7 @@ These bytes are updated when an item is placed into the inventory, or equipment 
 Item db element pos is represented by a byte.
 - 2 bits represent the y-axis
 - 4 bits represent the x-axis
-- 1 bit represents whether the item is equipped
+- 2 bit represents whether the item is equipped, in the inventory, or on the ground.
 
 
 
