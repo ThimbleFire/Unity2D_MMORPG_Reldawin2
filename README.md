@@ -15,25 +15,9 @@ https://i.imgur.com/C8AYzRa.gif
 TODO
 * [ ] Inventory occupation on server
 
-The inventory is an 8x4 grid and is represented by an integer. 4 bytes, 1 bit each slot.
-Equipment is represented by a 16-bit ushort.
 
-These bytes are updated when an item is placed into the inventory, or equipment slot.
-
-Item db element pos is represented by a byte.
-- 2 bits represent the y-axis
-- 4 bits represent the x-axis
-- 2 bit represents whether the item is equipped, in the inventory, or on the ground.
-
-Item db element size is represented by a byte.
-- 2 bits represent width
-- 2 bits represent height
-4 bits unused. could represent RGBA tint?
 
 * [ ] Item Database structure
-
-
-
 * [ ] Item Editor
 
 server generates item.
