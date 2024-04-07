@@ -75,13 +75,11 @@ namespace AlwaysEast
         }
         private void UpdateTilemap() {
             tileMap.CompressBounds();
-            // cheap fix, we should improve this
-            // Pathfinder map { 0, 0 } starts at the bottom of the screen. We need to offset that to the bottom-most loaded chunk.
-            Vector3Int offset =
-                activeChunks.Find( x => x.Index == lpc.GetSurroundingChunks[0] ) != null ? lpc.GetSurroundingChunks[0] :
-                activeChunks.Find( x => x.Index == lpc.GetSurroundingChunks[3] ) != null ? lpc.GetSurroundingChunks[3] :
-                activeChunks.Find( x => x.Index == lpc.GetSurroundingChunks[1] ) != null ? lpc.GetSurroundingChunks[1] :
-                lpc.InCurrentChunk;
+
+            Vector3Int offset = lpc.InCurrentChunk;
+            if(offset.x > 0) --offset.x;
+            if(offset.y > 0) --offset.y;
+            
             Pathfinder.Populate( activeChunks, offset );
         }
         private void LocalPlayerChangedChunk( Vector3Int lastChunk, Vector3Int newChunk ) {
